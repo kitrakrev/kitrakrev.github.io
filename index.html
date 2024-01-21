@@ -136,73 +136,103 @@
           >Experience</a
         >
         <a
+        href="#"
+        class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
+        onclick="showContent('openSourceContributions')"
+        >Open Source Contributions</a
+      >
+
+        <a
+        href="#"
+        class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
+        onclick="showContent('resume')"
+        >Resume</a
+      >
+        <a
           href="#"
           class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
           onclick="showContent('contact')"
           >Contact</a
         >
-        <a
-          href="#"
-          class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
-          onclick="showContent('resume')"
-          >Resume</a
-        >
+       
       </div>
 
       <!-- Content for Tabs -->
       <div class="lg:w-3/4 p-4 bg-white rounded-lg shadow-md mb-16">
-        <!-- About Content -->
-        <div id="aboutContent" class="tab-content">
-          <h3 class="text-3xl font-semibold mb-4 text-gray-800">About Me</h3>
+<!-- About Content -->
+<div id="aboutContent" class="tab-content">
+    <h3 class="text-3xl font-semibold mb-4 text-gray-800">About Me</h3>
 
-          <p class="text-gray-700 leading-6">
-            Greetings! I am Karthik Raja Anandan, a driven software engineer
-            with a profound background in computer science and engineering. My
-            journey has been dedicated to creating impactful solutions using
-            cutting-edge technologies, with a strong inclination towards Natural
-            Language Processing (NLP) and machine learning.
-          </p>
+    <p class="text-gray-700 leading-6">
+        Hi! I'm Karthik Raja Anandan, a dedicated software engineer passionate about pushing tech boundaries. My expertise includes Natural Language Processing (NLP), where I contribute to innovative solutions. Eager to connect for collaborative projects and continued learning.
+    </p>
 
-          <p class="text-gray-700 leading-6">
-            Aspiring to pursue a Master's in NLP, I am fueled by the passion to
-            contribute to the evolving field of language understanding and
-            artificial intelligence. My expertise lies in developing intelligent
-            applications that leverage NLP algorithms to extract meaningful
-            insights from textual data.
-          </p>
+    <!-- Additional Details (optional) -->
+    <div class="mt-8 border-t pt-4 border-gray-300">
+        <h4 class="text-xl font-semibold mb-4 text-gray-800">Additional Details</h4>
+        <ul class="list-disc list-inside text-gray-700 leading-6">
+            <li>Bachelor's Degree in Computer Science Engineering</li>
+            <li>Software Developer</li>
+            <li>Open Source Contributor</li>
+            <li>Passionate about NLP</li>
+        </ul>
+    </div>
+</div>
 
-          <p class="text-gray-700 leading-6">
-            Armed with a Bachelor's Degree in Computer Science Engineering, I
-            bring a wealth of knowledge and hands-on experience in developing
-            web applications with a keen focus on user experience. My goal is to
-            embark on a research journey, advancing the capabilities of NLP to
-            address real-world challenges.
-          </p>
 
-          <p class="text-gray-700 leading-6">
-            An enthusiastic participant in hackathons and coding competitions, I
-            thrive in challenging environments that demand innovative
-            problem-solving. Explore my portfolio, and let's connect for
-            exciting projects or collaborations. I am eager to contribute my
-            skills and passion to groundbreaking research in NLP.
-          </p>
+<!-- Open Source Contributions Content -->
+<div id="openSourceContributionsContent" class="tab-content hidden">
+  <h3 class="text-3xl font-semibold mb-4 text-gray-800 border-b pb-2">Open Source Contributions</h3>
 
-          <!-- Additional Details (optional) -->
-          <div class="mt-8 border-t pt-4 border-gray-300">
-            <h4 class="text-xl font-semibold mb-4 text-gray-800">
-              Additional Details
-            </h4>
-            <ul class="list-disc list-inside text-gray-700 leading-6">
-              <li>Bachelor's Degree in Computer Science Engineering</li>
-              <li>Passionate about NLP and machine learning</li>
-              <li>
-                Experience in developing web applications with a focus on user
-                experience
-              </li>
-              <li>Active participant in hackathons and coding competitions</li>
-            </ul>
-          </div>
-        </div>
+  <ul class="list-disc list-inside text-gray-700 leading-6 mt-4">
+      <!-- Contribution 1 -->
+      <li class="mb-3">
+          <strong>
+              <a href="https://github.com/unifyai/ivy/pull/13280/commits/fd543a06326b07164808eae7676c21cad0bbcf39" target="_blank" class="text-purple-600 hover:underline">
+                  <img src="https://img.shields.io/github/stars/unifyai/ivy?style=social" alt="Stars" />
+                  <i class="fab fa-github"></i> Ivy Framework - Numpy Unwrap Function
+              </a>
+          </strong>
+          - Contributed to Ivy Framework by adding the Numpy Unwrap function. View the pull request for details.
+      </li>
+
+      <!-- Contribution 2 -->
+      <li class="mb-3">
+          <strong>
+              <a href="https://github.com/MULTI-ON/api" target="_blank" class="text-purple-600 hover:underline">
+                  <img src="https://img.shields.io/github/stars/MULTI-ON/api?style=social" alt="Stars" />
+                  <i class="fab fa-github"></i> MultiOn SDK
+              </a>
+          </strong>
+          - Added and updated features in the MultiOn SDK. Check out the repository for more information.
+      </li>
+
+      <!-- Contribution 3 -->
+      <li class="mb-3">
+          <strong>
+              <a href="https://github.com/langchain-ai/langchain/pull/8110" target="_blank" class="text-purple-600 hover:underline">
+                  <img src="https://img.shields.io/github/stars/langchain-ai/langchain?style=social" alt="Stars" />
+                  <i class="fab fa-github"></i> Langchain - Integrated MultiOn
+              </a>
+          </strong>
+          - Integrated MultiOn into Langchain. Visit the pull request to see the changes made.
+      </li>
+
+      <!-- Add more contributions as needed -->
+  </ul>
+
+  <!-- Additional Information -->
+  <div class="mt-6">
+      <p class="text-gray-700 leading-6">
+          Explore more contributions on GitHub: <a href="https://github.com/kitrak-rev" target="_blank" class="text-purple-600 hover:underline"><i class="fab fa-github"></i> GitHub</a>
+      </p>
+      <!-- Add more social media icons and links as needed -->
+  </div>
+</div>
+
+
+
+
 
         <!-- Blog Content -->
         <div id="blogContent" class="tab-content">
@@ -280,11 +310,6 @@
                 nine-way classification of Siddha diseases using NLP and machine
                 learning techniques.
               </p>
-              <a
-              href="https://github.com/kitrak-rev/IBM-Project-16525-1659616543"
-              class="text-purple-500 hover:underline"
-              target="_blank"
-              >go to Repo</a>
             </div>
             <div class="p-4 bg-purple-100 rounded-lg shadow-md">
               <h4 class="text-xl font-semibold mb-2 text-purple-800">
@@ -295,111 +320,77 @@
                 integration using technologies like IBM Cloud, Docker, and
                 Kubernetes.
               </p>
-                   <a
+              <a
                 href="https://github.com/kitrak-rev/IBM-Project-16525-1659616543"
                 class="text-purple-500 hover:underline"
                 target="_blank"
-                >go to Repo</a>
+                >go to Repo</a
+              >
             </div>
             <!-- Add more projects -->
           </div>
         </div>
-        <!-- Publications Content -->
-        <div id="publicationsContent" class="tab-content">
-          <h3 class="text-2xl font-semibold mb-4 text-gray-800">
-            Publications
-          </h3>
-          <!-- Research Papers -->
-          <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            <!-- Multilingual Sentimental Analysis -->
-            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+<!-- Publications Content -->
+<div id="publicationsContent" class="tab-content">
+    <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+        Publications
+    </h3>
+    <!-- Research Papers -->
+    <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Multilingual Sentimental Analysis -->
+        <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold mb-2 text-purple-800">
                 Multilingual Sentimental Analysis using Few-shot learning
-              </h4>
-              <p class="text-gray-700 leading-6">
-                Exploring state-of-the-art Natural Language models for embedding
-                layer generation. Detailed analysis of Meta-learning techniques
-                available. Changing layer connection and model types to improve
-                accuracy of models.
-              </p>
-              <a
-                href="https://www.researchsquare.com/article/rs-2897622/v1"
-                class="text-purple-500 hover:underline"
-                target="_blank"
-                >Read Paper</a
-              >
-            </div>
-            <!-- Neural Network based TB Classification -->
-            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-              <h4 class="text-xl font-semibold mb-2 text-purple-800">
-                Simple Neural Network based TB Classification (CLEF)
-              </h4>
-              <p class="text-gray-700 leading-6">
-                Used CT-scan images to detect TB. Handled Houndsfield input and
-                used preprocessing to get the sections of interest. Technical
-                Skills: TensorFlow, Houndsfield.
-              </p>
-              <a
-                href="https://ceur-ws.org/Vol-2936/paper-92.pdf"
-                class="text-purple-500 hover:underline"
-                target="_blank"
-                >Read Paper</a
-              >
-            </div>
-            <!-- Offensive Text Prediction -->
-            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-              <h4 class="text-xl font-semibold mb-2 text-purple-800">
-                Offensive Text Prediction using Machine Learning and Deep
-                Learning approaches (FIRE)
-              </h4>
-              <p class="text-gray-700 leading-6">
-                Used Bi-LSTM for classification after based on native language
-                tokenizer. Used Naive Bayes to get close results to the LSTM
-                model.
-              </p>
-              <a
-                href="https://ceur-ws.org/Vol-3159/T3-11.pdf"
-                class="text-purple-500 hover:underline"
-                target="_blank"
-                >Read Paper</a
-              >
-            </div>
-            <!-- User Rating Predictor -->
-            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-              <h4 class="text-xl font-semibold mb-2 text-purple-800">
-                Multi Regressor Based User Rating Predictor for ImageCLEF Aware
-                2022 (CLEF)
-              </h4>
-              <p class="text-gray-700 leading-6">
-                Used classic random forest and pipelined with multi-output
-                regressor.
-              </p>
-              <a
-                href="https://ceur-ws.org/Vol-3180/paper-121.pdf"
-                class="text-purple-500 hover:underline"
-                target="_blank"
-                >Read Paper</a
-              >
-            </div>
-            <!-- Abusive and Threatening Language Detection -->
-            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-              <h4 class="text-xl font-semibold mb-2 text-purple-800">
-                Abusive and Threatening Language Detection in Native Urdu Script
-                Tweets (FIRE)
-              </h4>
-              <p class="text-gray-700 leading-6">
-                Vectorization and Tf-IDf. Used classic MLP and SVM.
-              </p>
-              <a
-                href="https://ceur-ws.org/Vol-3159/T4-7.pdf"
-                class="text-purple-500 hover:underline"
-                target="_blank"
-                >Read Paper</a
-              >
-            </div>
-            <!-- Add more publications as needed -->
-          </div>
+            </h4>
+            <p class="text-gray-700 leading-6">
+                Explored state-of-the-art Natural Language models for embedding layer generation. Conducted a detailed analysis of Meta-learning techniques and implemented changes in layer connections and model types to enhance accuracy.
+            </p>
+            <a href="https://www.researchsquare.com/article/rs-2897622/v1" class="text-purple-500 hover:underline" target="_blank">Read Paper</a>
         </div>
+        <!-- Neural Network based TB Classification -->
+        <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Simple Neural Network based TB Classification (CLEF)
+            </h4>
+            <p class="text-gray-700 leading-6">
+                Utilized CT-scan images for TB detection, handling Houndsfield input, and employing preprocessing techniques to extract relevant sections. Technical Skills: TensorFlow, Houndsfield.
+            </p>
+            <a href="https://ceur-ws.org/Vol-2936/paper-92.pdf" class="text-purple-500 hover:underline" target="_blank">Read Paper</a>
+        </div>
+        <!-- Offensive Text Prediction -->
+        <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Offensive Text Prediction using Machine Learning and Deep Learning approaches (FIRE)
+            </h4>
+            <p class="text-gray-700 leading-6">
+                Employed Bi-LSTM for classification based on native language tokenizer. Integrated Naive Bayes for comparable results to the LSTM model.
+            </p>
+            <a href="https://ceur-ws.org/Vol-3159/T3-11.pdf" class="text-purple-500 hover:underline" target="_blank">Read Paper</a>
+        </div>
+        <!-- User Rating Predictor -->
+        <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Multi Regressor Based User Rating Predictor for ImageCLEF Aware 2022 (CLEF)
+            </h4>
+            <p class="text-gray-700 leading-6">
+                Implemented a classic random forest pipelined with a multi-output regressor.
+            </p>
+            <a href="https://ceur-ws.org/Vol-3180/paper-121.pdf" class="text-purple-500 hover:underline" target="_blank">Read Paper</a>
+        </div>
+        <!-- Abusive and Threatening Language Detection -->
+        <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Abusive and Threatening Language Detection in Native Urdu Script Tweets (FIRE)
+            </h4>
+            <p class="text-gray-700 leading-6">
+                Utilized vectorization and Tf-IDf, implementing classic MLP and SVM for effective results.
+            </p>
+            <a href="https://ceur-ws.org/Vol-3159/T4-7.pdf" class="text-purple-500 hover:underline" target="_blank">Read Paper</a>
+        </div>
+        <!-- Add more publications as needed -->
+    </div>
+</div>
+
 
         <!-- Skills Content -->
         <div id="skillsContent" class="tab-content">
@@ -440,6 +431,7 @@
         <!-- Experience Content -->
         <div id="experienceContent" class="tab-content">
           <h3 class="text-2xl font-semibold mb-4 text-gray-800">Experience</h3>
+          <!-- Citi Bank Experience -->
           <div class="mb-4">
             <p class="text-lg font-semibold text-purple-800">
               Citi Bank - Software Engineer (Aug 2023 - Present)
@@ -450,17 +442,48 @@
               interned for 3 months in 2022.
             </p>
           </div>
+          <!-- MultiOn Internship -->
           <div class="mb-4">
             <p class="text-lg font-semibold text-purple-800">
-              MultiOn - NLP Intern (2023)
+              MultiOn - NLP (2023)
             </p>
             <p class="text-gray-700 leading-6">
               Contributed to the development of a personalized browser AGI tool
               at MultiOn. Built a Python API wrapper and integrated it with
-              LangChain.
+              LangChain. Added personalization feature and google API integration.
             </p>
           </div>
-          <!-- Add more experience -->
+          <!-- College Experience -->
+          <div class="mb-4">
+            <p class="text-lg font-semibold text-purple-800">
+              SSN College of Engineering - Computer Science Engineering Student
+              (2019 - 2023)
+            </p>
+            <p class="text-gray-700 leading-6">
+              Actively involved in various roles and responsibilities within the
+              college, showcasing leadership, teamwork, and organizational
+              skills. Detailed involvement in core committees and clubs, such
+              as:
+            </p>
+            <ul class="list-disc list-inside text-gray-700 leading-6">
+              <li>IEEECS Student Chapter Core Committee Member (Vice Chair)</li>
+              <li>IEEE Student Chapter Core Committee Member (Treasurer)</li>
+              <li>
+                ACM Student Chapter Core Committee Member (Event Deputy Head)
+              </li>
+              <li>
+                Computer Society of India Student Chapter Core Committee Member
+                (Vice Chair)
+              </li>
+              <li>
+                SSN Coding Club Committee Member (Competitive Programming Team)
+              </li>
+            </ul>
+          </div>
+          <!-- Work Experience Details -->
+          <div class="mb-4">
+            <!-- Add more experiences if needed -->
+          </div>
         </div>
 
         <!-- Contact Content -->
