@@ -1,326 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <style>
+      /* Custom Styles */
+      body {
+        background-color: #f5f7fb;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <style>
-    /* Custom Styles */
-    body {
-      background-color: #f5f7fb;
-    }
+      #top {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
 
-    #top {
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
+      .avatar {
+        width: 120px;
+        height: 120px;
+      }
 
-    .avatar {
-      width: 120px;
-      height: 120px;
-    }
+      .tab-content {
+        display: none;
+        width: 100%;
+      }
 
-    .tab-content {
-      display: none;
-      width: 100%;
-    }
+      .tab-content.active {
+        display: block;
+      }
 
-    .tab-content.active {
-      display: block;
-    }
+      .tab-link {
+        transition: color 0.3s ease-in-out;
+      }
 
-    .tab-link {
-      transition: color 0.3s ease-in-out;
-    }
+      .tab-link:hover {
+        color: #805ad5;
+      }
 
-    .tab-link:hover {
-      color: #805ad5;
-    }
+      .sidenav {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        max-height: 500px;
+        /* Set a fixed max-height for the sidebar */
+      }
 
-    .sidenav {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      max-height: 500px; /* Set a fixed max-height for the sidebar */
-    }
+      .sidenav a {
+        transition: color 0.3s ease-in-out;
+      }
 
-    .sidenav a {
-      transition: color 0.3s ease-in-out;
-    }
+      .sidenav a:hover {
+        color: #805ad5;
+      }
 
-    .sidenav a:hover {
-      color: #805ad5;
-    }
+      /* Footer Styles */
+      footer {
+        background-color: #2c3e50;
+        color: #ffffff;
+        text-align: center;
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
 
-    /* Footer Styles */
-    footer {
-      background-color: #2c3e50;
-      color: #ffffff;
-      text-align: center;
-      padding: 1rem;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
-</head>
-
-<body class="font-sans bg-gray-100">
-   
-  <div id="top" class="mx-2 flex flex-col lg:flex-row items-center justify-center bg-white p-8 rounded-lg shadow-md">
-    <div class="mr-8 mb-4 lg:mb-0">
-      <img src="https://media.licdn.com/dms/image/D5603AQGHxodNwTd-Xg/profile-displayphoto-shrink_800_800/0/1684527586429?e=1711584000&v=beta&t=GciToEhm_QEHERdTXc2h8mNeheVasomcGM3WzCqeWug"
-        alt="Avatar" class="avatar rounded-full border-4 border-purple-500" />
-    </div>
-    <div>
-      <h2 class="text-3xl font-bold text-gray-800 mb-2">Karthik Raja Anandan</h2>
-      <p class="text-gray-600">Software Engineer | Machine Learning Enthusiast</p>
-      <div class="mt-4">
-        <a href="#" class="text-purple-500 hover:underline">Portfolio</a>
+  <body class="font-sans bg-gray-100">
+    <div
+      id="top"
+      class="mx-2 flex flex-col lg:flex-row items-center justify-center bg-white p-8 rounded-lg shadow-md"
+    >
+      <div class="mr-8 mb-4 lg:mb-0">
+        <img
+          src="assets/profile.jpg"
+          alt="Avatar"
+          class="avatar rounded-full border-4 border-purple-500"
+        />
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">
+          Karthik Raja Anandan
+        </h2>
+        <p class="text-gray-600">
+          Software Engineer | Machine Learning Enthusiast
+        </p>
+        <div class="mt-4">
+          <a href="#" class="text-purple-500 hover:underline">Portfolio</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="mx-2 mt-6 mb-16 lg:flex">
-    <!-- Tabs -->
-    <div class="sidenav lg:w-1/4 lg:h-full p-4 bg-white rounded-lg shadow-md">
-        <a href="#" class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md" onclick="showContent('about')">About</a>
-        <a href="#" class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md" onclick="showContent('publications')">Publications</a>
+    <div class="mx-2 mt-6 mb-16 lg:flex">
+      <!-- Tabs -->
+      <div class="sidenav lg:w-1/4 lg:h-full p-4 bg-white rounded-lg shadow-md">
+        <a
+          href="#"
+          class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
+          onclick="showContent('about')"
+          >About</a
+        >
+        <a
+          href="#"
+          class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
+          onclick="showContent('publications')"
+          >Publications</a
+        >
         <!-- <a href="#" class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md" onclick="showContent('blog')">Blogs</a> -->
-        <a href="#" class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md" onclick="showContent('achievements')">Achievements</a>
-        <a href="#" class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md" onclick="showContent('projects')">Projects</a>
-        <a href="#" class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md" onclick="showContent('skills')">Skills</a>
-        <a href="#" class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md" onclick="showContent('experience')">Experience</a>
-        <a href="#" class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md" onclick="showContent('contact')">Contact</a>
-        <a href="#" class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md" onclick="showContent('resume')">Resume</a>
+        <a
+          href="#"
+          class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
+          onclick="showContent('achievements')"
+          >Achievements</a
+        >
+        <a
+          href="#"
+          class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
+          onclick="showContent('projects')"
+          >Projects</a
+        >
+        <a
+          href="#"
+          class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
+          onclick="showContent('skills')"
+          >Skills</a
+        >
+        <a
+          href="#"
+          class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
+          onclick="showContent('experience')"
+          >Experience</a
+        >
+        <a
+          href="#"
+          class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
+          onclick="showContent('contact')"
+          >Contact</a
+        >
+        <a
+          href="#"
+          class="block py-3 px-4 text-purple-700 hover:bg-purple-100 hover:text-purple-900 transition duration-300 ease-in-out rounded-md"
+          onclick="showContent('resume')"
+          >Resume</a
+        >
       </div>
 
-    <!-- Content for Tabs -->
-    <div class="lg:w-3/4 p-4 bg-white rounded-lg shadow-md mb-16">
+      <!-- Content for Tabs -->
+      <div class="lg:w-3/4 p-4 bg-white rounded-lg shadow-md mb-16">
         <!-- About Content -->
         <div id="aboutContent" class="tab-content">
-        <h3 class="text-3xl font-semibold mb-4 text-gray-800">About Me</h3>
+          <h3 class="text-3xl font-semibold mb-4 text-gray-800">About Me</h3>
 
-        <p class="text-gray-700 leading-6">Greetings! I am Karthik Raja Anandan, a driven software engineer with a profound background in computer science and engineering. My journey has been dedicated to creating impactful solutions using cutting-edge technologies, with a strong inclination towards Natural Language Processing (NLP) and machine learning.</p>
+          <p class="text-gray-700 leading-6">
+            Greetings! I am Karthik Raja Anandan, a driven software engineer
+            with a profound background in computer science and engineering. My
+            journey has been dedicated to creating impactful solutions using
+            cutting-edge technologies, with a strong inclination towards Natural
+            Language Processing (NLP) and machine learning.
+          </p>
 
-        <p class="text-gray-700 leading-6">Aspiring to pursue a Master's in NLP, I am fueled by the passion to contribute to the evolving field of language understanding and artificial intelligence. My expertise lies in developing intelligent applications that leverage NLP algorithms to extract meaningful insights from textual data.</p>
+          <p class="text-gray-700 leading-6">
+            Aspiring to pursue a Master's in NLP, I am fueled by the passion to
+            contribute to the evolving field of language understanding and
+            artificial intelligence. My expertise lies in developing intelligent
+            applications that leverage NLP algorithms to extract meaningful
+            insights from textual data.
+          </p>
 
-        <p class="text-gray-700 leading-6">Armed with a Bachelor's Degree in Computer Science Engineering, I bring a wealth of knowledge and hands-on experience in developing web applications with a keen focus on user experience. My goal is to embark on a research journey, advancing the capabilities of NLP to address real-world challenges.</p>
+          <p class="text-gray-700 leading-6">
+            Armed with a Bachelor's Degree in Computer Science Engineering, I
+            bring a wealth of knowledge and hands-on experience in developing
+            web applications with a keen focus on user experience. My goal is to
+            embark on a research journey, advancing the capabilities of NLP to
+            address real-world challenges.
+          </p>
 
-        <p class="text-gray-700 leading-6">An enthusiastic participant in hackathons and coding competitions, I thrive in challenging environments that demand innovative problem-solving. Explore my portfolio, and let's connect for exciting projects or collaborations. I am eager to contribute my skills and passion to groundbreaking research in NLP.</p>
+          <p class="text-gray-700 leading-6">
+            An enthusiastic participant in hackathons and coding competitions, I
+            thrive in challenging environments that demand innovative
+            problem-solving. Explore my portfolio, and let's connect for
+            exciting projects or collaborations. I am eager to contribute my
+            skills and passion to groundbreaking research in NLP.
+          </p>
 
-        <!-- Additional Details (optional) -->
-        <div class="mt-8 border-t pt-4 border-gray-300">
-        <h4 class="text-xl font-semibold mb-4 text-gray-800">Additional Details</h4>
-        <ul class="list-disc list-inside text-gray-700 leading-6">
-        <li>Bachelor's Degree in Computer Science Engineering</li>
-        <li>Passionate about NLP and machine learning</li>
-        <li>Experience in developing web applications with a focus on user experience</li>
-        <li>Active participant in hackathons and coding competitions</li>
-        </ul>
+          <!-- Additional Details (optional) -->
+          <div class="mt-8 border-t pt-4 border-gray-300">
+            <h4 class="text-xl font-semibold mb-4 text-gray-800">
+              Additional Details
+            </h4>
+            <ul class="list-disc list-inside text-gray-700 leading-6">
+              <li>Bachelor's Degree in Computer Science Engineering</li>
+              <li>Passionate about NLP and machine learning</li>
+              <li>
+                Experience in developing web applications with a focus on user
+                experience
+              </li>
+              <li>Active participant in hackathons and coding competitions</li>
+            </ul>
+          </div>
         </div>
-        </div>
-  
-  
+
         <!-- Blog Content -->
         <div id="blogContent" class="tab-content">
-            <h3 class="text-2xl font-semibold mb-4 text-gray-800">Blog</h3>
-            <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-                <h4 class="text-xl font-semibold mb-2 text-purple-800">Exploring the Latest Trends in NLP Research</h4>
-                <p class="text-gray-700 leading-6">Dive into the cutting-edge advancements in Natural Language Processing research and discover how they are reshaping the future of language understanding.</p>
-              </div>
-              <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-                <h4 class="text-xl font-semibold mb-2 text-purple-800">The Role of Machine Learning in Language Translation</h4>
-                <p class="text-gray-700 leading-6">Explore the significance of machine learning algorithms in language translation and their impact on cross-cultural communication.</p>
-              </div>
-              <!-- Add more blog topics -->
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800">Blog</h3>
+          <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Exploring the Latest Trends in NLP Research
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Dive into the cutting-edge advancements in Natural Language
+                Processing research and discover how they are reshaping the
+                future of language understanding.
+              </p>
             </div>
-          </div>    
-    <!-- Achievements Content -->
-    <div id="achievementsContent" class="tab-content">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Achievements</h3>
-        <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-2 text-purple-800">Winner - Smart India Hackathon (SIH) 2022</h4>
-            <p class="text-gray-700 leading-6">Led a team to victory in the national-level Smart India Hackathon, showcasing innovation and problem-solving skills.</p>
-          </div>
-          <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-2 text-purple-800">Elite - Competitive Programming NPTEL Exam 2021</h4>
-            <p class="text-gray-700 leading-6">Achieved elite status in the Competitive Programming NPTEL Exam, demonstrating proficiency in algorithmic problem-solving.</p>
-          </div>
-          <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-2 text-purple-800">ICPC Kanpur-Mathura Regionalist 2021</h4>
-            <p class="text-gray-700 leading-6">Secured the 65th national rank in the ICPC Kanpur-Mathura regional contest, showcasing competitive programming skills.</p>
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                The Role of Machine Learning in Language Translation
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Explore the significance of machine learning algorithms in
+                language translation and their impact on cross-cultural
+                communication.
+              </p>
+            </div>
+            <!-- Add more blog topics -->
           </div>
         </div>
-      </div>
+        <!-- Achievements Content -->
+        <div id="achievementsContent" class="tab-content">
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+            Achievements
+          </h3>
+          <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Winner - Smart India Hackathon (SIH) 2022
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Led a team to victory in the national-level Smart India
+                Hackathon, showcasing innovation and problem-solving skills.
+              </p>
+            </div>
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Elite - Competitive Programming NPTEL Exam 2021
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Achieved elite status in the Competitive Programming NPTEL Exam,
+                demonstrating proficiency in algorithmic problem-solving.
+              </p>
+            </div>
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                ICPC Kanpur-Mathura Regionalist 2021
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Secured the 65th national rank in the ICPC Kanpur-Mathura
+                regional contest, showcasing competitive programming skills.
+              </p>
+            </div>
+          </div>
+        </div>
 
-    <!-- Projects Content -->
-    <div id="projectsContent" class="tab-content">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Projects</h3>
-        <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-2 text-purple-800">Siddha Expert System</h4>
-            <p class="text-gray-700 leading-6">Developed an expert system for Siddha prognosis, involving a nine-way
-              classification of Siddha diseases using NLP and machine learning techniques.</p>
+        <!-- Projects Content -->
+        <div id="projectsContent" class="tab-content">
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800">Projects</h3>
+          <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Siddha Expert System
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Developed an expert system for Siddha prognosis, involving a
+                nine-way classification of Siddha diseases using NLP and machine
+                learning techniques.
+              </p>
+              <a
+              href="https://github.com/kitrak-rev/IBM-Project-16525-1659616543"
+              class="text-purple-500 hover:underline"
+              target="_blank"
+              >go to Repo</a>
+            </div>
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Personal Expense Tracker
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Built a cloud-based expense analytics system with CI/CD
+                integration using technologies like IBM Cloud, Docker, and
+                Kubernetes.
+              </p>
+                   <a
+                href="https://github.com/kitrak-rev/IBM-Project-16525-1659616543"
+                class="text-purple-500 hover:underline"
+                target="_blank"
+                >go to Repo</a>
+            </div>
+            <!-- Add more projects -->
           </div>
-          <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-2 text-purple-800">Personal Expense Tracker</h4>
-            <p class="text-gray-700 leading-6">Built a cloud-based expense analytics system with CI/CD integration using
-              technologies like IBM Cloud, Docker, and Kubernetes.</p>
-          </div>
-          <!-- Add more projects -->
         </div>
-      </div>
-<!-- Publications Content -->
-<div id="publicationsContent" class="tab-content">
-    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Publications</h3>
-    <!-- Research Papers -->
-    <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Multilingual Sentimental Analysis -->
-        <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-2 text-purple-800">Multilingual Sentimental Analysis using Few-shot learning</h4>
-            <p class="text-gray-700 leading-6">
-                Exploring state-of-the-art Natural Language models for embedding layer generation. Detailed analysis of Meta-learning techniques available. Changing layer connection and model types to improve accuracy of models.
-            </p>
-            <a href="<Your_Paper_Link>" class="text-purple-500 hover:underline" target="_blank">Read Paper</a>
-        </div>
-        <!-- Neural Network based TB Classification -->
-        <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-2 text-purple-800">Simple Neural Network based TB Classification (CLEF)</h4>
-            <p class="text-gray-700 leading-6">
-                Used CT-scan images to detect TB. Handled Houndsfield input and used preprocessing to get the sections of interest. Technical Skills: TensorFlow, Houndsfield.
-            </p>
-            <a href="<Your_Paper_Link>" class="text-purple-500 hover:underline" target="_blank">Read Paper</a>
-        </div>
-        <!-- Offensive Text Prediction -->
-        <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-2 text-purple-800">Offensive Text Prediction using Machine Learning and Deep Learning approaches (FIRE)</h4>
-            <p class="text-gray-700 leading-6">
-                Used Bi-LSTM for classification after based on native language tokenizer. Used Naive Bayes to get close results to the LSTM model.
-            </p>
-            <a href="<Your_Paper_Link>" class="text-purple-500 hover:underline" target="_blank">Read Paper</a>
-        </div>
-        <!-- User Rating Predictor -->
-        <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-2 text-purple-800">Multi Regressor Based User Rating Predictor for ImageCLEF Aware 2022 (CLEF)</h4>
-            <p class="text-gray-700 leading-6">
-                Used classic random forest and pipelined with multi-output regressor.
-            </p>
-            <a href="<Your_Paper_Link>" class="text-purple-500 hover:underline" target="_blank">Read Paper</a>
-        </div>
-        <!-- Abusive and Threatening Language Detection -->
-        <div class="p-4 bg-purple-100 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-2 text-purple-800">Abusive and Threatening Language Detection in Native Urdu Script Tweets (FIRE)</h4>
-            <p class="text-gray-700 leading-6">
+        <!-- Publications Content -->
+        <div id="publicationsContent" class="tab-content">
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+            Publications
+          </h3>
+          <!-- Research Papers -->
+          <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Multilingual Sentimental Analysis -->
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Multilingual Sentimental Analysis using Few-shot learning
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Exploring state-of-the-art Natural Language models for embedding
+                layer generation. Detailed analysis of Meta-learning techniques
+                available. Changing layer connection and model types to improve
+                accuracy of models.
+              </p>
+              <a
+                href="https://www.researchsquare.com/article/rs-2897622/v1"
+                class="text-purple-500 hover:underline"
+                target="_blank"
+                >Read Paper</a
+              >
+            </div>
+            <!-- Neural Network based TB Classification -->
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Simple Neural Network based TB Classification (CLEF)
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Used CT-scan images to detect TB. Handled Houndsfield input and
+                used preprocessing to get the sections of interest. Technical
+                Skills: TensorFlow, Houndsfield.
+              </p>
+              <a
+                href="https://ceur-ws.org/Vol-2936/paper-92.pdf"
+                class="text-purple-500 hover:underline"
+                target="_blank"
+                >Read Paper</a
+              >
+            </div>
+            <!-- Offensive Text Prediction -->
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Offensive Text Prediction using Machine Learning and Deep
+                Learning approaches (FIRE)
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Used Bi-LSTM for classification after based on native language
+                tokenizer. Used Naive Bayes to get close results to the LSTM
+                model.
+              </p>
+              <a
+                href="https://ceur-ws.org/Vol-3159/T3-11.pdf"
+                class="text-purple-500 hover:underline"
+                target="_blank"
+                >Read Paper</a
+              >
+            </div>
+            <!-- User Rating Predictor -->
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Multi Regressor Based User Rating Predictor for ImageCLEF Aware
+                2022 (CLEF)
+              </h4>
+              <p class="text-gray-700 leading-6">
+                Used classic random forest and pipelined with multi-output
+                regressor.
+              </p>
+              <a
+                href="https://ceur-ws.org/Vol-3180/paper-121.pdf"
+                class="text-purple-500 hover:underline"
+                target="_blank"
+                >Read Paper</a
+              >
+            </div>
+            <!-- Abusive and Threatening Language Detection -->
+            <div class="p-4 bg-purple-100 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-purple-800">
+                Abusive and Threatening Language Detection in Native Urdu Script
+                Tweets (FIRE)
+              </h4>
+              <p class="text-gray-700 leading-6">
                 Vectorization and Tf-IDf. Used classic MLP and SVM.
-            </p>
-            <a href="<Your_Paper_Link>" class="text-purple-500 hover:underline" target="_blank">Read Paper</a>
+              </p>
+              <a
+                href="https://ceur-ws.org/Vol-3159/T4-7.pdf"
+                class="text-purple-500 hover:underline"
+                target="_blank"
+                >Read Paper</a
+              >
+            </div>
+            <!-- Add more publications as needed -->
+          </div>
         </div>
-        <!-- Add more publications as needed -->
-    </div>
-</div>
 
-
-
-     <!-- Skills Content -->
-<div id="skillsContent" class="tab-content">
-    <h3 class="text-3xl font-semibold mb-4 text-gray-800">Skills</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Programming Languages -->
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-4 text-purple-800">Programming Languages</h4>
-            <ul class="list-disc list-inside text-gray-700 leading-6">
+        <!-- Skills Content -->
+        <div id="skillsContent" class="tab-content">
+          <h3 class="text-3xl font-semibold mb-4 text-gray-800">Skills</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Programming Languages -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-4 text-purple-800">
+                Programming Languages
+              </h4>
+              <ul class="list-disc list-inside text-gray-700 leading-6">
                 <li>Python (Pandas, PyTorch, NumPy, Scikit-learn)</li>
                 <li>C/C++</li>
                 <li>Java (Spring)</li>
                 <li>HTML/CSS</li>
                 <li>JavaScript (Node.js)</li>
                 <li>SQL</li>
-            </ul>
-        </div>
+              </ul>
+            </div>
 
-        <!-- Soft Skills -->
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <h4 class="text-xl font-semibold mb-4 text-purple-800">Soft Skills</h4>
-            <ul class="list-disc list-inside text-gray-700 leading-6">
+            <!-- Soft Skills -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-4 text-purple-800">
+                Soft Skills
+              </h4>
+              <ul class="list-disc list-inside text-gray-700 leading-6">
                 <li>Time Management</li>
                 <li>Teamwork</li>
                 <li>Problem-solving</li>
                 <li>Documentation</li>
                 <li>Engaging Presentation</li>
-            </ul>
+              </ul>
+            </div>
+            <!-- Add more skills sections as needed -->
+          </div>
         </div>
-        <!-- Add more skills sections as needed -->
-    </div>
-</div>
 
-    <!-- Experience Content -->
-    <div id="experienceContent" class="tab-content">
-    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Experience</h3>
-    <div class="mb-4">
-        <p class="text-lg font-semibold text-purple-800">Citi Bank - Software Engineer (Aug 2023 - Present)</p>
-        <p class="text-gray-700 leading-6">Contributed to the development of a commit tracking system with added sentence similarity-based contribution scoring. Initially interned for 3 months in 2022.</p>
-    </div>
-    <div class="mb-4">
-        <p class="text-lg font-semibold text-purple-800">MultiOn - NLP Intern (Part Time)</p>
-        <p class="text-gray-700 leading-6">Contributed to the development of a personalized browser AGI tool at MultiOn. Built a Python API wrapper and integrated it with LangChain.</p>
-    </div>
-    <!-- Add more experience -->
-    </div>
+        <!-- Experience Content -->
+        <div id="experienceContent" class="tab-content">
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800">Experience</h3>
+          <div class="mb-4">
+            <p class="text-lg font-semibold text-purple-800">
+              Citi Bank - Software Engineer (Aug 2023 - Present)
+            </p>
+            <p class="text-gray-700 leading-6">
+              Contributed to the development of a commit tracking system with
+              added sentence similarity-based contribution scoring. Initially
+              interned for 3 months in 2022.
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="text-lg font-semibold text-purple-800">
+              MultiOn - NLP Intern (2023)
+            </p>
+            <p class="text-gray-700 leading-6">
+              Contributed to the development of a personalized browser AGI tool
+              at MultiOn. Built a Python API wrapper and integrated it with
+              LangChain.
+            </p>
+          </div>
+          <!-- Add more experience -->
+        </div>
 
-      <!-- Contact Content -->
-      <div id="contactContent" class="tab-content">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Contact</h3>
-        <p class="text-gray-700 leading-6">Feel free to reach out! Whether you have a project in mind, want to collaborate, or just say hello, I'm always open to new opportunities and connections.</p>
+        <!-- Contact Content -->
+        <div id="contactContent" class="tab-content">
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800">Contact</h3>
+          <p class="text-gray-700 leading-6">
+            Feel free to reach out! Whether you have a project in mind, want to
+            collaborate, or just say hello, I'm always open to new opportunities
+            and connections.
+          </p>
+        </div>
+        <!-- Resume Content -->
+        <div id="resumeContent" class="tab-content">
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800">Resume</h3>
+          <!-- Embed PDF Viewer -->
+          <div class="mb-4 h-64">
+            <iframe
+              src="assets/resume.pdf"
+              class="w-full h-full"
+              frameborder="0"
+            ></iframe>
+          </div>
+          <!-- Download Link (Open in a New Tab) -->
+          <div class="flex items-center space-x-2">
+            <a
+              href="assets/resume.pdf"
+              download
+              target="_blank"
+              class="text-purple-500 hover:underline"
+              >Download Resume</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-6 h-6 text-gray-500"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </div>
+        </div>
       </div>
-<!-- Resume Content -->
-<div id="resumeContent" class="tab-content">
-    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Resume</h3>
-    <!-- Embed PDF Viewer -->
-    <div class="mb-4 h-64">
-      <iframe src="assets/resume.pdf" class="w-full h-full" frameborder="0"></iframe>
+
+      <!-- Footer -->
+      <footer class="bg-gray-800 text-white text-center py-2">
+        <p class="text-gray-300">
+          &copy; 2024 Karthik Raja Anandan | Personal Website
+        </p>
+      </footer>
     </div>
-    <!-- Download Link (Open in a New Tab) -->
-    <div class="flex items-center space-x-2">
-      <a href="assets/resume.pdf" download target="_blank" class="text-purple-500 hover:underline">Download Resume</a>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-        class="w-6 h-6 text-gray-500">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M15 19l-7-7 7-7"></path>
-      </svg>
-    </div>
-  </div>
-  
-  
-</div>
+    <script>
+      function showContent(tab) {
+        // Hide all content
+        var contentElements = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < contentElements.length; i++) {
+          contentElements[i].classList.remove("active");
+        }
 
-
-<!-- Footer -->
-<footer class="bg-gray-800 text-white text-center py-2">
-    <p class="text-gray-300">&copy; 2024 Karthik Raja Anandan | Personal Website</p>
-  </footer>
-  
-    
-  <script>
-    function showContent(tab) {
-      // Hide all content
-      var contentElements = document.getElementsByClassName('tab-content');
-      for (var i = 0; i < contentElements.length; i++) {
-        contentElements[i].classList.remove('active');
+        // Show the selected content
+        var selectedContent = document.getElementById(tab + "Content");
+        if (selectedContent) {
+          selectedContent.classList.add("active");
+        }
       }
-
-      // Show the selected content
-      var selectedContent = document.getElementById(tab + 'Content');
-      if (selectedContent) {
-        selectedContent.classList.add('active');
-      }
-    }
-    showContent('about');
-  </script>
-</body>
-
+      showContent("about");
+    </script>
+  </body>
 </html>
-
-
