@@ -7,6 +7,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <style>
       /* Custom Styles */
       body {
@@ -71,29 +72,18 @@
   </head>
 
   <body class="font-sans bg-gray-100">
-    <div
-      id="top"
-      class="mx-2 flex flex-col lg:flex-row items-center justify-center bg-white p-8 rounded-lg shadow-md"
-    >
-      <div class="mr-8 mb-4 lg:mb-0">
-        <img
-          src="assets/profile.jpg"
-          alt="Avatar"
-          class="avatar rounded-full border-4 border-purple-500"
-        />
-      </div>
-      <div>
-        <h2 class="text-3xl font-bold text-gray-800 mb-2">
-          Karthik Raja Anandan
-        </h2>
-        <p class="text-gray-600">
-          Software Engineer | Machine Learning Enthusiast
-        </p>
-        <div class="mt-4">
-          <a href="#" class="text-purple-500 hover:underline">Portfolio</a>
-        </div>
-      </div>
-    </div>
+<!-- Top Section with Contacts -->
+<div id="top" class="mx-2 flex flex-col lg:flex-row items-center justify-center bg-white p-8 rounded-lg shadow-md">
+  <div class="mr-8 mb-4 lg:mb-0">
+      <img src="assets/profile.jpg" alt="Avatar" class="avatar rounded-full border-4 border-purple-500" />
+  </div>
+  <div>
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">Karthik Raja Anandan</h2>
+      <p class="text-gray-600">Software Engineer | Machine Learning & NLP Enthusiast</p>
+
+  </div>
+</div>
+
 
     <div class="mx-2 mt-6 mb-16 lg:flex">
       <!-- Tabs -->
@@ -488,15 +478,41 @@
           </div>
         </div>
 
-        <!-- Contact Content -->
-        <div id="contactContent" class="tab-content">
-          <h3 class="text-2xl font-semibold mb-4 text-gray-800">Contact</h3>
-          <p class="text-gray-700 leading-6">
-            Feel free to reach out! Whether you have a project in mind, want to
-            collaborate, or just say hello, I'm always open to new opportunities
-            and connections.
-          </p>
-        </div>
+<!-- Aesthetic Contact Section -->
+<div id="contactContent" class="tab-content">
+  <h3 class="text-3xl font-semibold mb-6 text-gray-900">Get in Touch</h3>
+  <p class="text-gray-700 leading-6">
+      I'm excited to connect and explore new opportunities. Whether you have a project in mind, want to collaborate, or just say hello, drop me a message!
+  </p>
+
+  <!-- Contact Information -->
+  <div class="mt-8 space-y-4">
+      <!-- GitHub -->
+      <div class="flex items-center">
+          <i class="fab fa-github text-purple-500 mr-3"></i>
+          <a href="https://github.com/kitrak-rev" target="_blank" class="text-purple-500 hover:underline">GitHub</a>
+      </div>
+      
+      <!-- LinkedIn -->
+      <div class="flex items-center">
+          <i class="fab fa-linkedin text-purple-500 mr-3"></i>
+          <a href="https://www.linkedin.com/in/kitrak-rev/" target="_blank" class="text-purple-500 hover:underline">LinkedIn</a>
+      </div>
+      
+      <!-- Email -->
+      <div class="flex items-center">
+          <i class="far fa-envelope text-purple-500 mr-3"></i>
+          <a href="mailto:karthikraja2k1@gmail.com" class="text-purple-500 hover:underline">karthikraja2k1@gmail.com</a>
+      </div>
+      
+      <!-- Twitter -->
+      <div class="flex items-center">
+          <i class="fab fa-twitter text-purple-500 mr-3"></i>
+          <a href="https://twitter.com/Kitrak_rev" target="_blank" class="text-purple-500 hover:underline">Twitter</a>
+      </div>
+  </div>
+</div>
+
         <!-- Resume Content -->
         <div id="resumeContent" class="tab-content">
           <h3 class="text-2xl font-semibold mb-4 text-gray-800">Resume</h3>
