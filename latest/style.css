@@ -1,0 +1,852 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa; /* Default light mode background */
+    color: #333; /* Default text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: #fafafa;
+    color: #333;
+}
+
+body.light-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent white */
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for navbar */
+}
+
+body.light-mode .navbar .logo a,
+body.light-mode .navbar .menu li a {
+    color: #333;
+}
+
+body.light-mode .navbar .mode-toggle {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+}
+
+body.light-mode .section {
+    background-color: #fff;
+    color: #333;
+}
+
+body.light-mode .project-card,
+body.light-mode .blog-card {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow for cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-mode .project-card:hover,
+body.light-mode .blog-card:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+body.light-mode .contact-form button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+body.light-mode footer {
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #181818;
+    color: #f1f1f1;
+}
+
+body.dark-mode .navbar {
+    background-color: rgba(40, 40, 40, 0.8); /* Translucent dark */
+    color: #f1f1f1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Strong shadow for navbar */
+}
+
+body.dark-mode .navbar .logo a,
+body.dark-mode .navbar .menu li a {
+    color: #010101;
+}
+
+body.dark-mode .navbar .mode-toggle {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .navbar .mode-toggle:hover {
+    background-color: #1abc9c;
+}
+
+body.dark-mode .section {
+    background-color: #2c2c2c;
+    color: #f1f1f1;
+}
+
+body.dark-mode .project-card,
+body.dark-mode .blog-card {
+    background-color: #333;
+    color: #f1f1f1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow for cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .project-card:hover,
+body.dark-mode .blog-card:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+}
+
+body.dark-mode .contact-form button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+body.dark-mode footer {
+    background-color: #2c2c2c;
+    color: #f1f1f1;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Blurring background for navbar */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .logo a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu li a {
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Mode Toggle Button */
+.navbar .mode-toggle {
+    font-size: 22px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .mode-toggle:hover {
+    background-color: #0056b3;
+}
+
+/* Sections */
+.section {
+    margin-top: 100px;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Blog Cards */
+.blog-cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.blog-card {
+    width: 300px;
+    flex-shrink: 0;
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow for blog cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.blog-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.blog-excerpt {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Forms */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #007bff;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Social Icons */
+.social-icon {
+    font-size: 30px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #fafafa;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+footer.dark-mode {
+    background-color: #2c2c2c;
+    color: #f1f1f1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar .menu {
+        display: none;
+    }
+
+    .navbar .menu.show {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .menu li a {
+        font-size: 1.2rem;
+
+    }
+
+    .section {
+        padding: 30px 20px;
+    }
+
+    .blog-cards-container {
+        flex-wrap: wrap;
+    }
+
+    .blog-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Project Cards */
+.project-cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.project-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure content is not hidden behind the navbar */
+html {
+    scroll-padding-top: 50px; /* Adjust the value to the height of your navbar */
+}
+/* About Section */
+#about .section {
+    margin-top: 50px;
+    padding: 40px 30px;
+    background-color: #fff; /* Default background for light mode */
+    color: #333; /* Default text color for light mode */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#about .about-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#about .about-photo {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#about .about-text {
+    flex: 1;
+    max-width: 600px;
+    font-size: 1.1rem;
+}
+
+#about .about-text h2 {
+    font-size: 2rem;
+    color: inherit; /* Will adapt based on mode */
+}
+
+#about .about-text a {
+    color: #007bff; /* Link color for both light and dark modes */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#about .about-text a:hover {
+    color: #0056b3;
+}
+
+/* Dark Mode Styles */
+body.dark-mode #about .section {
+    background-color: #333; /* Dark mode background */
+    color: #f1f1f1; /* Light text for dark mode */
+}
+
+body.dark-mode #about .about-text h2 {
+    color: #f1f1f1;
+}
+
+body.dark-mode #about .about-text a {
+    color: #1abc9c; /* Lighter link color for dark mode */
+}
+
+body.dark-mode #about .about-photo {
+    background-color: #444; /* Darker background for the photo in dark mode */
+}
+
+#about .about-photo:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Blurring background for navbar */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+body.light-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    color: #333;
+}
+
+body.light-mode .navbar .logo a {
+    color: #333;
+}
+
+body.light-mode .navbar .menu li a {
+    color: #333;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+body.light-mode .navbar .menu li a:hover {
+    color: #007bff; /* Blue color for hover effect */
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue background on hover */
+}
+
+/* Dark Mode */
+body.dark-mode .navbar {
+    background-color: rgba(0, 0, 0, 0.8); /* Translucent dark background */
+    color: #f1f1f1;
+}
+
+body.dark-mode .navbar .logo a {
+    color: #f1f1f1;
+}
+
+body.dark-mode .navbar .menu li a {
+    color: #f1f1f1;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+body.dark-mode .navbar .menu li a:hover {
+    color: #1abc9c; /* Light teal color for hover */
+    background-color: rgba(26, 188, 156, 0.1); /* Light teal background on hover */
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none; /* Hide on large screens */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Navbar for smaller screens (Mobile) */
+@media screen and (max-width: 768px) {
+    .navbar .menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Show menu when toggled */
+    .navbar .menu.show {
+        display: flex;
+    }
+
+    /* Show hamburger icon */
+    .menu-icon {
+        display: flex; /* Show on mobile */
+    }
+
+    /* Style bars in hamburger menu for light/dark mode */
+    body.light-mode .menu-icon .bar {
+        background-color: #333;
+    }
+
+    body.dark-mode .menu-icon .bar {
+        background-color: #f1f1f1;
+    }
+
+    .navbar .menu li a {
+        font-size: 1.2rem;
+        color: #070707;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    /* Hover effect for mobile menu items */
+    .navbar .menu li a:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    /* Change color when active on dark mode */
+    body.dark-mode .navbar .menu li a:hover {
+        background-color: #1abc9c;
+        color:#010101;
+        width: 100%;
+    }
+    body.dark-mode .navbar .menu li a {
+        /* background-color: #1abc9c; */
+        color:#010101;
+        width: 100%;
+    }
+}
+
+/* Add active class to the clicked menu item */
+.navbar .menu li a.active {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* For smooth transitions */
+.navbar .menu li a {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Blinking Cursor Effect */
+.blinking-text {
+    font-size: 1.2rem;
+    color: #007bff;
+    font-weight: bold;
+}
+.blink {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #00ff66;
+    color:white;
+    margin-left: 5px;
+    animation: blink-animation 0.8s infinite step-end;
+}
+
+@keyframes blink-animation {
+    50% {
+        opacity: 0;
+    }
+}
+ /* Container for the projects section */
+ .projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Styling for individual project cards */
+.project-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Hover lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.project-actions {
+    text-align: center;
+}
+
+.read-more {
+    background-color: #4a90e2; /* Blue button */
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #357ab7;
+}
+
+/* "See More Projects" Button */
+.see-more-container {
+    grid-column: span 2;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.see-more {
+    background-color: #4a90e2;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.see-more:hover {
+    background-color: #357ab7;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-card p {
+        font-size: 0.95rem;
+    }
+}
+/* Global Styles */
+:root {
+    --bg-color-light: #fff;
+    --text-color-light: #333;
+    --card-bg-light: #fff;
+    --card-border-light: #ddd;
+    --hover-shadow-light: rgba(0, 0, 0, 0.1);
+    --tech-tag-bg-light: #0073e6;
+    --tech-tag-color-light: #fff;
+    --link-color-light: #0073e6;
+    --link-hover-color-light: #005bb5;
+
+    --bg-color-dark: #121212;
+    --text-color-dark: #f0f0f0;
+    --card-bg-dark: #1e1e1e;
+    --card-border-dark: #333;
+    --hover-shadow-dark: rgba(255, 255, 255, 0.1);
+    --tech-tag-bg-dark: #00aaff;
+    --tech-tag-color-dark: #fff;
+    --link-color-dark: #00aaff;
+    --link-hover-color-dark: #0088cc;
+}
+
+/* Body and Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+/* Section: Experience */
+#experience {
+    padding: 2rem;
+    background-color: var(--bg-color-light); /* Default light mode background */
+    color: var(--text-color-light); /* Default light mode text */
+}
+
+/* Experience Cards */
+.experience-cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.experience-card {
+    background-color: var(--card-bg-light); /* Default card background for light mode */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--hover-shadow-light); /* Default shadow for light mode */
+    padding: 20px;
+    width: 22%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--card-border-light); /* Default card border for light mode */
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--hover-shadow-light); /* Hover shadow for light mode */
+}
+
+.experience-card h3 {
+    font-size: 1.2rem;
+    color: var(--link-color-light); /* Default link color */
+}
+
+.company-name a {
+    color: var(--text-color-light); /* Default text color */
+    text-decoration: none;
+}
+
+.company-name a:hover {
+    color: var(--link-hover-color-light); /* Default hover link color */
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    background-color: var(--tech-tag-bg-light); /* Default background for tech tags */
+    color: var(--tech-tag-color-light); /* Default text color for tech tags */
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .experience-card {
+        width: 45%; /* Adjust for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-card {
+        width: 100%; /* Stack vertically on smaller screens */
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode #experience {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .experience-card {
+    background-color: var(--card-bg-dark);
+    border: 1px solid var(--card-border-dark);
+    box-shadow: 0 4px 8px var(--hover-shadow-dark);
+}
+
+body.dark-mode .experience-card:hover {
+    box-shadow: 0 8px 16px var(--hover-shadow-dark);
+}
+
+body.dark-mode .experience-card h3 {
+    color: var(--link-color-dark); /* Link color for dark mode */
+}
+
+body.dark-mode .company-name a {
+    color: var(--text-color-dark); /* Text color for dark mode */
+}
+
+body.dark-mode .company-name a:hover {
+    color: var(--link-hover-color-dark); /* Hover link color for dark mode */
+}
+
+body.dark-mode .tech-tag {
+    background-color: var(--tech-tag-bg-dark);
+    color: var(--tech-tag-color-dark);
+}

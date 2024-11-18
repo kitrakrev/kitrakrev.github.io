@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Light/Dark Mode Toggle Button -->
+  <button id="mode-toggle" class="mode-toggle" aria-label="Toggle Light/Dark Mode">
+    <i class="fas fa-moon"></i> <!-- Moon Icon for Dark Mode -->
+  </button>
+
+  <!-- Go Back Icon -->
+  <button id="go-back-home" class="go-back-icon" aria-label="Go Back to Homepage">
+    <i class="fas fa-arrow-left"></i> <!-- Arrow Left Icon -->
+  </button>
+
+  <!-- Projects Section -->
+  <div id="projects" class="section">
+    <h2>My Projects</h2>
+
+    <!-- Project Cards -->
+    <div class="project-cards">
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>This is a brief description of the first project...</p>
+        <button class="read-more" onclick="window.location.href='project1.html'">Read More</button>
+      </div>
+
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>This is a brief description of the second project...</p>
+        <button class="read-more" onclick="window.location.href='project2.html'">Read More</button>
+      </div>
+
+      <div class="project-card">
+        <h3>Project 3</h3>
+        <p>This is a brief description of the third project...</p>
+        <button class="read-more" onclick="window.location.href='project3.html'">Read More</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
