@@ -1,0 +1,37 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+}
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+.light-mode {
+    background-color: #ffffff;
+    color: #121212;
+}
+.header {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+}
