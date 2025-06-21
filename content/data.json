@@ -1,0 +1,283 @@
+{
+  "profile": {
+    "name": "Karthik Raja Anandan",
+    "title": "AI Researcher & Machine Learning Engineer",
+    "description": "I'm a Machine Learning Engineer specializing in Natural Language Processing (NLP), currently pursuing an M.S. at the University of California, Santa Cruz. My focus areas include deep learning, language models, and machine vision.",
+    "longDescription": "With experience at Citi and MultiOn, I've developed scalable systems, optimized APIs, and deployed ML models for real-world applications. My research focuses on advancing NLP through multimodal models, retrieval techniques, and improving model interpretability.",
+    "researchAreas": [
+      "Multimodal AI Models",
+      "Mechanistic Interpretability", 
+      "Multi-Agent Systems",
+      "Knowledge Retrieval (RAGs)",
+      "Speech Models"
+    ],
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/kitrakrev",
+      "github": "https://github.com/kitrakrev",
+      "githubPages": "https://kitrakrev.github.io",
+      "resume": "assets/resume.pdf"
+    },
+    "profileImage": "assets/profile.jpg"
+  },
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "Multimodal RAG System",
+      "description": "Advanced retrieval-augmented generation system that combines text, image, and audio modalities for enhanced knowledge retrieval and generation.",
+      "longDescription": "Developed a cutting-edge multimodal RAG system that integrates text, image, and audio processing capabilities. The system uses graph-based knowledge representation and advanced retrieval techniques to provide contextually relevant responses across multiple modalities.",
+      "image": "https://via.placeholder.com/400x250/4a90e2/ffffff?text=Multimodal+RAG",
+      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval", "Python", "PyTorch"],
+      "category": "Research",
+      "github": "https://github.com/kitrakrev/multimodal-rag",
+      "demo": "https://demo.example.com",
+      "date": "2024-01"
+    },
+    {
+      "id": "project-2", 
+      "title": "Mechanistic Interpretability Framework",
+      "description": "Framework for analyzing and understanding the internal mechanisms of large language models through interpretability techniques.",
+      "longDescription": "Built a comprehensive framework for mechanistic interpretability of transformer-based language models. Includes tools for attention visualization, neuron analysis, and circuit discovery to understand model behavior and decision-making processes.",
+      "image": "https://via.placeholder.com/400x250/50c878/ffffff?text=Interpretability",
+      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer", "Python", "JAX"],
+      "category": "Research",
+      "github": "https://github.com/kitrakrev/mechanistic-interpretability",
+      "demo": null,
+      "date": "2023-12"
+    },
+    {
+      "id": "project-3",
+      "title": "Multi-Agent Conversation System",
+      "description": "Intelligent multi-agent system for natural conversations with specialized agents handling different domains and tasks.",
+      "longDescription": "Developed a sophisticated multi-agent conversation system where specialized AI agents collaborate to handle complex queries. Each agent has domain expertise and can coordinate with others to provide comprehensive responses.",
+      "image": "https://via.placeholder.com/400x250/ff6b35/ffffff?text=Multi-Agent",
+      "tags": ["Multi-Agent Systems", "Conversation AI", "Coordination", "Python", "LangChain"],
+      "category": "Research",
+      "github": "https://github.com/kitrakrev/multi-agent-system",
+      "demo": "https://demo.example.com",
+      "date": "2023-11"
+    },
+    {
+      "id": "project-4",
+      "title": "Speech-to-Text Enhancement",
+      "description": "Advanced speech recognition system with noise reduction and speaker identification capabilities.",
+      "longDescription": "Implemented an enhanced speech-to-text system that incorporates noise reduction, speaker identification, and domain adaptation. The system achieves state-of-the-art performance on challenging audio datasets.",
+      "image": "https://via.placeholder.com/400x250/9b59b6/ffffff?text=Speech+AI",
+      "tags": ["Speech Models", "Audio Processing", "Noise Reduction", "Python", "TensorFlow"],
+      "category": "Research",
+      "github": "https://github.com/kitrakrev/speech-enhancement",
+      "demo": null,
+      "date": "2023-10"
+    },
+    {
+      "id": "project-5",
+      "title": "Graph-Based Knowledge Retrieval",
+      "description": "Knowledge retrieval system using graph neural networks for complex query understanding and information extraction.",
+      "longDescription": "Built a graph-based knowledge retrieval system that leverages graph neural networks to understand complex queries and extract relevant information from knowledge graphs. The system supports both structured and unstructured data sources.",
+      "image": "https://via.placeholder.com/400x250/e74c3c/ffffff?text=Graph+RAG",
+      "tags": ["Graph RAG", "Knowledge Graphs", "GNN", "Python", "PyTorch Geometric"],
+      "category": "Research",
+      "github": "https://github.com/kitrakrev/graph-rag",
+      "demo": "https://demo.example.com",
+      "date": "2023-09"
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub-1",
+      "title": "Advancing Multimodal Retrieval-Augmented Generation",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "year": "2024",
+      "abstract": "We present a novel approach to multimodal RAG that combines text, image, and audio modalities for enhanced knowledge retrieval and generation capabilities.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/multimodal-rag",
+      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval"],
+      "category": "Conference"
+    },
+    {
+      "id": "pub-2", 
+      "title": "Mechanistic Interpretability in Large Language Models",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "International Conference on Machine Learning (ICML)",
+      "year": "2023",
+      "abstract": "A comprehensive framework for understanding the internal mechanisms of transformer-based language models through interpretability techniques.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/mechanistic-interpretability",
+      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer"],
+      "category": "Conference"
+    }
+  ],
+  "research": [
+    {
+      "id": "research-1",
+      "title": "Multimodal AI Models",
+      "description": "Research on integrating multiple modalities (text, image, audio) in AI systems for enhanced understanding and generation capabilities.",
+      "focus": "Cross-modal learning, modality fusion, multimodal reasoning",
+      "status": "Active",
+      "institution": "UC Santa Cruz",
+      "supervisor": "Dr. Ian Lane"
+    },
+    {
+      "id": "research-2",
+      "title": "Mechanistic Interpretability",
+      "description": "Understanding the internal mechanisms and decision-making processes of large neural networks.",
+      "focus": "Attention analysis, circuit discovery, neuron interpretability",
+      "status": "Active", 
+      "institution": "UC Santa Cruz",
+      "supervisor": "Dr. Ian Lane"
+    },
+    {
+      "id": "research-3",
+      "title": "Multi-Agent Systems",
+      "description": "Development of intelligent multi-agent systems for complex problem-solving and coordination.",
+      "focus": "Agent coordination, conversation systems, task decomposition",
+      "status": "Active",
+      "institution": "UC Santa Cruz", 
+      "supervisor": "Dr. Ian Lane"
+    },
+    {
+      "id": "research-4",
+      "title": "Knowledge Retrieval (RAGs)",
+      "description": "Advanced retrieval-augmented generation systems including graph-based and multimodal approaches.",
+      "focus": "Graph RAG, multimodal RAG, knowledge graphs",
+      "status": "Active",
+      "institution": "UC Santa Cruz",
+      "supervisor": "Dr. Ian Lane"
+    },
+    {
+      "id": "research-5", 
+      "title": "Speech Models",
+      "description": "Research on speech recognition, synthesis, and enhancement using deep learning techniques.",
+      "focus": "Speech recognition, noise reduction, speaker identification",
+      "status": "Active",
+      "institution": "UC Santa Cruz",
+      "supervisor": "Dr. Ian Lane"
+    }
+  ],
+  "blogs": [
+    {
+      "id": "blog-1",
+      "title": "Understanding Multimodal RAG Systems",
+      "excerpt": "A comprehensive guide to building retrieval-augmented generation systems that can handle multiple modalities including text, images, and audio.",
+      "content": "content/blog-posts/multimodal-rag.html",
+      "image": "https://via.placeholder.com/400x250/4a90e2/ffffff?text=Multimodal+RAG",
+      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval", "Tutorial"],
+      "category": "AI Research",
+      "date": "2024-01-15",
+      "readTime": "8 min read"
+    },
+    {
+      "id": "blog-2",
+      "title": "Mechanistic Interpretability: A Deep Dive",
+      "excerpt": "Exploring the internal mechanisms of large language models and how we can understand their decision-making processes.",
+      "content": "content/blog-posts/mechanistic-interpretability.html", 
+      "image": "https://via.placeholder.com/400x250/50c878/ffffff?text=Interpretability",
+      "tags": ["Mechanistic Interpretability", "LLMs", "Analysis", "Research"],
+      "category": "AI Research",
+      "date": "2023-12-20",
+      "readTime": "12 min read"
+    },
+    {
+      "id": "blog-3",
+      "title": "Building Multi-Agent Conversation Systems",
+      "excerpt": "How to design and implement intelligent multi-agent systems that can handle complex conversations and tasks.",
+      "content": "content/blog-posts/multi-agent-systems.html",
+      "image": "https://via.placeholder.com/400x250/ff6b35/ffffff?text=Multi-Agent",
+      "tags": ["Multi-Agent Systems", "Conversation AI", "Architecture", "Design"],
+      "category": "AI Research", 
+      "date": "2023-11-10",
+      "readTime": "10 min read"
+    },
+    {
+      "id": "blog-4",
+      "title": "Graph-Based Knowledge Retrieval: Beyond Traditional RAG",
+      "excerpt": "Exploring advanced knowledge retrieval techniques using graph neural networks and knowledge graphs for enhanced information extraction.",
+      "content": "content/blog-posts/graph-rag.html",
+      "image": "https://via.placeholder.com/400x250/e74c3c/ffffff?text=Graph+RAG",
+      "tags": ["Graph RAG", "Knowledge Graphs", "GNN", "Advanced RAG"],
+      "category": "AI Research",
+      "date": "2023-10-25",
+      "readTime": "15 min read"
+    },
+    {
+      "id": "blog-5",
+      "title": "Speech Models in Modern AI Systems",
+      "excerpt": "A deep dive into speech recognition, synthesis, and enhancement technologies that power modern conversational AI.",
+      "content": "content/blog-posts/speech-models.html",
+      "image": "https://via.placeholder.com/400x250/9b59b6/ffffff?text=Speech+AI",
+      "tags": ["Speech Models", "Audio Processing", "ASR", "TTS"],
+      "category": "AI Research",
+      "date": "2023-09-15",
+      "readTime": "11 min read"
+    },
+    {
+      "id": "blog-6",
+      "title": "The Future of AI Research: Trends and Predictions",
+      "excerpt": "Exploring emerging trends in AI research and making predictions about the future of artificial intelligence.",
+      "content": "content/blog-posts/ai-future-trends.html",
+      "image": "https://via.placeholder.com/400x250/3498db/ffffff?text=AI+Future",
+      "tags": ["AI Trends", "Future of AI", "Research", "Predictions"],
+      "category": "AI Research",
+      "date": "2023-08-30",
+      "readTime": "9 min read"
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "title": "Research Assistant",
+      "company": "Ian Lane's Lab",
+      "location": "UC Santa Cruz",
+      "duration": "Jun 2023 - Present",
+      "description": "Conducting cutting-edge research in Large Language Models (LLMs), focusing on hallucination mitigation and context preservation. Working on enhancing the accuracy and reliability of chatbots.",
+      "technologies": ["Python", "TensorFlow", "PyTorch", "NLP", "LLMs", "Chatbots"],
+      "achievements": [
+        "Developed strategies for reducing hallucinations in LLM outputs",
+        "Improved context preservation in conversational AI systems",
+        "Published research on LLM interpretability"
+      ]
+    },
+    {
+      "id": "exp-2",
+      "title": "Software Development Engineer", 
+      "company": "Citi",
+      "location": "New York, NY",
+      "duration": "Jan 2020 - Present",
+      "description": "Spearheaded the development of scalable back-end applications, optimized performance, and enhanced system security. Led CI/CD pipeline development and improved system reliability.",
+      "technologies": ["Python", "Java", "CI/CD", "Docker", "AWS"],
+      "achievements": [
+        "Reduced deployment time by 30% through CI/CD optimization",
+        "Enhanced system security through secure code reviews",
+        "Improved system reliability through integration testing"
+      ]
+    },
+    {
+      "id": "exp-3",
+      "title": "Software Developer",
+      "company": "MultiOn", 
+      "location": "Remote",
+      "duration": "Jun 2018 - Dec 2019",
+      "description": "Involved in end-to-end software development for cloud-based projects, including API optimization, database management, and real-time data handling.",
+      "technologies": ["JavaScript", "Node.js", "MongoDB", "API Optimization", "Real-time Data"],
+      "achievements": [
+        "Reduced system latency by 40%",
+        "Optimized database schemas for better performance",
+        "Implemented real-time data handling techniques"
+      ]
+    },
+    {
+      "id": "exp-4",
+      "title": "Research Assistant",
+      "company": "Underwater Acoustic Research Lab",
+      "location": "University Lab",
+      "duration": "Sep 2017 - May 2018", 
+      "description": "Developed an inspection-class underwater vehicle with machine learning models for real-time underwater object recognition.",
+      "technologies": ["Python", "Machine Learning", "Computer Vision", "TensorFlow", "Robotics"],
+      "achievements": [
+        "Deployed zero-shot Siamese network model with 73% accuracy",
+        "Developed inspection-class underwater vehicle",
+        "Implemented real-time underwater object recognition"
+      ]
+    }
+  ]
+} 
