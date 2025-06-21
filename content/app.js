@@ -5,6 +5,7 @@ class PortfolioApp {
         this.currentSection = 'home';
         this.searchQuery = '';
         this.currentFilter = 'all';
+        this.currentTag = 'all';
     }
 
     async init() {
@@ -44,13 +45,31 @@ class PortfolioApp {
             publications: [],
             research: [],
             blogs: [],
-            experience: []
+            experience: [],
+            skills: {
+                technical: {
+                    programming_languages: [],
+                    machine_learning: [],
+                    ai_nlp: [],
+                    data_processing: [],
+                    databases: [],
+                    cloud_devops: [],
+                    web_development: []
+                },
+                research_areas: [],
+                soft_skills: [],
+                certifications: []
+            },
+            open_source: {
+                repositories: [],
+                packages: [],
+                contributions: [],
+                community: []
+            }
         };
     }
 
     setupEventListeners() {
-        console.log('Setting up event listeners...');
-        
         // Navigation links
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
@@ -89,6 +108,15 @@ class PortfolioApp {
             });
         });
 
+        // Tag filter buttons (will be added dynamically)
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('tag-filter-btn')) {
+                this.currentTag = e.target.getAttribute('data-tag');
+                this.updateTagFilterButtons();
+                this.filterContent();
+            }
+        });
+
         // Theme toggle
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
@@ -97,15 +125,10 @@ class PortfolioApp {
 
         // Mobile menu toggle
         const menuToggle = document.getElementById('menu-toggle');
-        console.log('Menu toggle element:', menuToggle);
         if (menuToggle) {
-            console.log('Adding click listener to menu toggle');
             menuToggle.addEventListener('click', () => {
-                console.log('Menu toggle clicked!');
                 this.toggleMobileMenu();
             });
-        } else {
-            console.error('Menu toggle element not found!');
         }
 
         // Close mobile menu when clicking outside
@@ -211,6 +234,12 @@ class PortfolioApp {
             case 'home':
                 this.renderHomePage();
                 break;
+            case 'skills':
+                this.renderSkillsPage();
+                break;
+            case 'open_source':
+                this.renderOpenSourcePage();
+                break;
             case 'projects':
                 this.renderProjectsPage();
                 break;
@@ -309,6 +338,99 @@ class PortfolioApp {
                 </div>
             </section>
 
+            <section id="skills-preview" class="skills-preview-section">
+                <div class="container">
+                    <h2>Key Technical Skills</h2>
+                    <div class="skills-preview-grid">
+                        <div class="skill-preview-category">
+                            <h3><i class="fas fa-code"></i> Programming</h3>
+                            <div class="skill-preview-tags">
+                                ${this.data.skills.technical.programming_languages.slice(0, 3).map(skill => 
+                                    `<span class="skill-preview-tag" style="border-color: ${skill.color}; color: ${skill.color}">${skill.name}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        <div class="skill-preview-category">
+                            <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                            <div class="skill-preview-tags">
+                                ${this.data.skills.technical.machine_learning.slice(0, 3).map(skill => 
+                                    `<span class="skill-preview-tag" style="border-color: ${skill.color}; color: ${skill.color}">${skill.name}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        <div class="skill-preview-category">
+                            <h3><i class="fas fa-language"></i> AI & NLP</h3>
+                            <div class="skill-preview-tags">
+                                ${this.data.skills.technical.ai_nlp.slice(0, 3).map(skill => 
+                                    `<span class="skill-preview-tag" style="border-color: ${skill.color}; color: ${skill.color}">${skill.name}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        <div class="skill-preview-category">
+                            <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                            <div class="skill-preview-tags">
+                                ${this.data.skills.technical.cloud_devops.slice(0, 3).map(skill => 
+                                    `<span class="skill-preview-tag" style="border-color: ${skill.color}; color: ${skill.color}">${skill.name}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <a href="#" class="btn btn-outline" data-section="skills">View All Skills</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="open-source-preview" class="open-source-preview-section">
+                <div class="container">
+                    <h2>Open Source Contributions</h2>
+                    <div class="open-source-preview-grid">
+                        <div class="open-source-preview-category">
+                            <h3><i class="fab fa-github"></i> Repositories</h3>
+                            <div class="open-source-preview-stats">
+                                <div class="preview-stat">
+                                    <span class="stat-number">${this.data.open_source.repositories.length}</span>
+                                    <span class="stat-label">Active Repos</span>
+                                </div>
+                                <div class="preview-stat">
+                                    <span class="stat-number">${this.data.open_source.repositories.reduce((sum, repo) => sum + repo.stars, 0)}</span>
+                                    <span class="stat-label">Total Stars</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="open-source-preview-category">
+                            <h3><i class="fas fa-box"></i> Packages</h3>
+                            <div class="open-source-preview-stats">
+                                <div class="preview-stat">
+                                    <span class="stat-number">${this.data.open_source.packages.length}</span>
+                                    <span class="stat-label">Published</span>
+                                </div>
+                                <div class="preview-stat">
+                                    <span class="stat-number">${this.data.open_source.packages.reduce((sum, pkg) => sum + parseInt(pkg.downloads.replace('k', '000')), 0).toLocaleString()}</span>
+                                    <span class="stat-label">Downloads</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="open-source-preview-category">
+                            <h3><i class="fas fa-handshake"></i> Contributions</h3>
+                            <div class="open-source-preview-stats">
+                                <div class="preview-stat">
+                                    <span class="stat-number">${this.data.open_source.contributions.length}</span>
+                                    <span class="stat-label">PRs Merged</span>
+                                </div>
+                                <div class="preview-stat">
+                                    <span class="stat-number">${this.data.open_source.contributions.filter(c => c.organization).length}</span>
+                                    <span class="stat-label">Organizations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <a href="#" class="btn btn-outline" data-section="open_source">View All Contributions</a>
+                    </div>
+                </div>
+            </section>
+
             <section id="featured-projects" class="featured-section">
                 <div class="container">
                     <h2>Featured Projects</h2>
@@ -332,6 +454,26 @@ class PortfolioApp {
                     </div>
                 </div>
             </section>
+
+            <section id="cta" class="cta-section">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2>Ready to Collaborate?</h2>
+                        <p>I'm always interested in new opportunities, research collaborations, and challenging projects in AI and machine learning.</p>
+                        <div class="cta-actions">
+                            <a href="#" class="btn btn-primary" data-section="contact">
+                                <i class="fas fa-envelope"></i> Get In Touch
+                            </a>
+                            <a href="${this.data.profile.links.resume}" class="btn btn-secondary" download>
+                                <i class="fas fa-download"></i> Download Resume
+                            </a>
+                            <a href="${this.data.profile.links.linkedin}" class="btn btn-outline" target="_blank">
+                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         `;
 
         // Add event listeners for the new buttons
@@ -340,62 +482,71 @@ class PortfolioApp {
 
     renderProjectsPage() {
         const mainContent = document.getElementById('main-content');
-        if (!mainContent || !this.data) return;
-
+        const projects = this.data.projects;
+        
+        // Get all unique tags from projects
+        const allTags = [...new Set(projects.flatMap(project => project.tags))];
+        
         mainContent.innerHTML = `
-            <section class="page-header">
-                <div class="container">
-                    <h1>Projects</h1>
-                    <p>Research projects and implementations in AI and Machine Learning</p>
+            <div class="page-header">
+                <h1>Projects</h1>
+                <p>Explore my research projects and implementations in AI and machine learning.</p>
+            </div>
+            
+            <div class="search-filter-section">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search projects..." />
+                    <i class="fas fa-search"></i>
                 </div>
-            </section>
-
-            <section class="search-filter-section">
-                <div class="container">
-                    <div class="search-box">
-                        <input type="text" id="search-input" placeholder="Search projects..." />
-                        <i class="fas fa-search"></i>
-                    </div>
+                
+                <div class="filter-section">
+                    <h4>Filter by Category:</h4>
                     <div class="filter-buttons">
                         <button class="filter-btn active" data-filter="all">All</button>
                         <button class="filter-btn" data-filter="research">Research</button>
-                        <button class="filter-btn" data-filter="implementation">Implementation</button>
-                        <button class="filter-btn" data-filter="multimodal">Multimodal</button>
-                        <button class="filter-btn" data-filter="rag">RAG</button>
+                        <button class="filter-btn" data-filter="development">Development</button>
+                        <button class="filter-btn" data-filter="tutorial">Tutorial</button>
                     </div>
                 </div>
-            </section>
-
-            <section class="projects-section">
-                <div class="container">
-                    <div id="projects-grid" class="projects-grid">
-                        ${this.data.projects.map(project => this.renderProjectCard(project, true)).join('')}
+                
+                <div class="tag-filter-section">
+                    <h4>Filter by Tags:</h4>
+                    <div class="tag-filter-buttons">
+                        <button class="tag-filter-btn active" data-tag="all">All Tags</button>
+                        ${allTags.map(tag => `<button class="tag-filter-btn" data-tag="${tag}">${tag}</button>`).join('')}
                     </div>
                 </div>
-            </section>
+            </div>
+            
+            <div class="projects-grid">
+                ${projects.map(project => this.renderProjectCard(project)).join('')}
+            </div>
         `;
-
+        
         this.setupSearchAndFilter();
     }
 
     renderPublicationsPage() {
         const mainContent = document.getElementById('main-content');
-        if (!mainContent || !this.data) return;
-
+        const publications = this.data.publications;
+        
+        // Get all unique tags from publications
+        const allTags = [...new Set(publications.flatMap(pub => pub.tags))];
+        
         mainContent.innerHTML = `
-            <section class="page-header">
-                <div class="container">
-                    <h1>Publications</h1>
-                    <p>Research papers and publications in AI and Machine Learning</p>
+            <div class="page-header">
+                <h1>Publications</h1>
+                <p>My research publications in conferences and journals.</p>
+            </div>
+            
+            <div class="search-filter-section">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search publications..." />
+                    <i class="fas fa-search"></i>
                 </div>
-            </section>
-
-            <section class="search-filter-section">
-                <div class="container">
-                    <div class="search-box">
-                        <input type="text" id="search-input" placeholder="Search publications..." />
-                        <i class="fas fa-search"></i>
-                    </div>
+                
+                <div class="filter-section">
+                    <h4>Filter by Category:</h4>
                     <div class="filter-buttons">
                         <button class="filter-btn active" data-filter="all">All</button>
                         <button class="filter-btn" data-filter="conference">Conference</button>
@@ -403,37 +554,309 @@ class PortfolioApp {
                         <button class="filter-btn" data-filter="workshop">Workshop</button>
                     </div>
                 </div>
-            </section>
-
-            <section class="publications-section">
-                <div class="container">
-                    <div id="publications-grid" class="publications-grid">
-                        ${this.data.publications.map(pub => this.renderPublicationCard(pub)).join('')}
+                
+                <div class="tag-filter-section">
+                    <h4>Filter by Tags:</h4>
+                    <div class="tag-filter-buttons">
+                        <button class="tag-filter-btn active" data-tag="all">All Tags</button>
+                        ${allTags.map(tag => `<button class="tag-filter-btn" data-tag="${tag}">${tag}</button>`).join('')}
                     </div>
                 </div>
-            </section>
+            </div>
+            
+            <div class="publications-grid">
+                ${publications.map(pub => this.renderPublicationCard(pub)).join('')}
+            </div>
         `;
-
+        
         this.setupSearchAndFilter();
     }
 
     renderResearchPage() {
         const mainContent = document.getElementById('main-content');
-        if (!mainContent || !this.data) return;
-
+        const research = this.data.research;
+        
         mainContent.innerHTML = `
-            <section class="page-header">
+            <div class="page-header">
+                <h1>Research</h1>
+                <p>My current research areas and ongoing projects.</p>
+            </div>
+            
+            <div class="research-grid">
+                ${research.map(research => this.renderResearchCard(research)).join('')}
+            </div>
+        `;
+    }
+
+    renderSkillsPage() {
+        const mainContent = document.getElementById('main-content');
+        const skills = this.data.skills;
+        
+        // Calculate skills statistics
+        const totalSkills = Object.values(skills.technical).flat().length;
+        const expertSkills = Object.values(skills.technical).flat().filter(skill => skill.level === 'Expert').length;
+        const advancedSkills = Object.values(skills.technical).flat().filter(skill => skill.level === 'Advanced').length;
+        const researchAreas = skills.research_areas.length;
+        const certifications = skills.certifications.length;
+        
+        mainContent.innerHTML = `
+            <div class="page-header">
+                <h1>Skills & Expertise</h1>
+                <p>Comprehensive overview of my technical skills, research expertise, and professional competencies.</p>
+            </div>
+            
+            <!-- Skills Summary Section -->
+            <section class="skills-summary-section">
                 <div class="container">
-                    <h1>Research</h1>
-                    <p>Current research areas and ongoing projects</p>
+                    <h2>Skills Overview</h2>
+                    <div class="skills-summary-grid">
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>${totalSkills}</h3>
+                                <p>Technical Skills</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon expert">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>${expertSkills}</h3>
+                                <p>Expert Level</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon advanced">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>${advancedSkills}</h3>
+                                <p>Advanced Level</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon research">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>${researchAreas}</h3>
+                                <p>Research Areas</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon cert">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>${certifications}</h3>
+                                <p>Certifications</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Expertise Areas -->
+                    <div class="key-expertise">
+                        <h3>Key Expertise Areas</h3>
+                        <div class="expertise-tags">
+                            <span class="expertise-tag primary">Python & ML</span>
+                            <span class="expertise-tag secondary">AI & NLP</span>
+                            <span class="expertise-tag accent">Multimodal AI</span>
+                            <span class="expertise-tag success">RAG Systems</span>
+                            <span class="expertise-tag warning">Cloud & DevOps</span>
+                        </div>
+                    </div>
                 </div>
             </section>
-
-            <section class="research-section">
-                <div class="container">
-                    <div class="research-grid">
-                        ${this.data.research.map(research => this.renderResearchCard(research)).join('')}
+            
+            <!-- Technical Skills Section -->
+            <section class="skills-section">
+                <h2>Technical Skills</h2>
+                
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <div class="skills-grid">
+                        ${skills.technical.programming_languages.map(skill => this.renderSkillCard(skill)).join('')}
                     </div>
+                </div>
+                
+                <!-- Machine Learning -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
+                    <div class="skills-grid">
+                        ${skills.technical.machine_learning.map(skill => this.renderSkillCard(skill)).join('')}
+                    </div>
+                </div>
+                
+                <!-- AI & NLP -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-language"></i> AI & Natural Language Processing</h3>
+                    <div class="skills-grid">
+                        ${skills.technical.ai_nlp.map(skill => this.renderSkillCard(skill)).join('')}
+                    </div>
+                </div>
+                
+                <!-- Data Processing -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-bar"></i> Data Processing & Analysis</h3>
+                    <div class="skills-grid">
+                        ${skills.technical.data_processing.map(skill => this.renderSkillCard(skill)).join('')}
+                    </div>
+                </div>
+                
+                <!-- Databases -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Databases & Storage</h3>
+                    <div class="skills-grid">
+                        ${skills.technical.databases.map(skill => this.renderSkillCard(skill)).join('')}
+                    </div>
+                </div>
+                
+                <!-- Cloud & DevOps -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <div class="skills-grid">
+                        ${skills.technical.cloud_devops.map(skill => this.renderSkillCard(skill)).join('')}
+                    </div>
+                </div>
+                
+                <!-- Web Development -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-globe"></i> Web Development</h3>
+                    <div class="skills-grid">
+                        ${skills.technical.web_development.map(skill => this.renderSkillCard(skill)).join('')}
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Research Areas Section -->
+            <section class="skills-section">
+                <h2>Research Expertise</h2>
+                <div class="research-skills-grid">
+                    ${skills.research_areas.map(area => this.renderResearchSkillCard(area)).join('')}
+                </div>
+            </section>
+            
+            <!-- Soft Skills Section -->
+            <section class="skills-section">
+                <h2>Professional Skills</h2>
+                <div class="soft-skills-grid">
+                    ${skills.soft_skills.map(skill => this.renderSoftSkillCard(skill)).join('')}
+                </div>
+            </section>
+            
+            <!-- Certifications Section -->
+            <section class="skills-section">
+                <h2>Certifications</h2>
+                <div class="certifications-grid">
+                    ${skills.certifications.map(cert => this.renderCertificationCard(cert)).join('')}
+                </div>
+            </section>
+        `;
+    }
+
+    renderOpenSourcePage() {
+        const mainContent = document.getElementById('main-content');
+        const openSource = this.data.open_source;
+        
+        // Calculate statistics
+        const totalStars = openSource.repositories.reduce((sum, repo) => sum + repo.stars, 0);
+        const totalForks = openSource.repositories.reduce((sum, repo) => sum + repo.forks, 0);
+        const totalContributions = openSource.contributions.length;
+        const totalPackages = openSource.packages.length;
+        
+        mainContent.innerHTML = `
+            <div class="page-header">
+                <h1>Open Source Contributions</h1>
+                <p>My contributions to the open source community through repositories, packages, and community involvement.</p>
+            </div>
+            
+            <!-- Open Source Summary -->
+            <section class="open-source-summary-section">
+                <div class="container">
+                    <h2>Open Source Impact</h2>
+                    <div class="open-source-summary-grid">
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>${openSource.repositories.length}</h3>
+                                <p>Repositories</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon stars">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>${totalStars}</h3>
+                                <p>Total Stars</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon forks">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>${totalForks}</h3>
+                                <p>Total Forks</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon contributions">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>${totalContributions}</h3>
+                                <p>Contributions</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon packages">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>${totalPackages}</h3>
+                                <p>Packages</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Repositories Section -->
+            <section class="open-source-section">
+                <h2>Featured Repositories</h2>
+                <div class="repositories-grid">
+                    ${openSource.repositories.map(repo => this.renderRepositoryCard(repo)).join('')}
+                </div>
+            </section>
+            
+            <!-- Packages Section -->
+            <section class="open-source-section">
+                <h2>Published Packages</h2>
+                <div class="packages-grid">
+                    ${openSource.packages.map(pkg => this.renderPackageCard(pkg)).join('')}
+                </div>
+            </section>
+            
+            <!-- Contributions Section -->
+            <section class="open-source-section">
+                <h2>Community Contributions</h2>
+                <div class="contributions-grid">
+                    ${openSource.contributions.map(contribution => this.renderContributionCard(contribution)).join('')}
+                </div>
+            </section>
+            
+            <!-- Community Involvement Section -->
+            <section class="open-source-section">
+                <h2>Community Involvement</h2>
+                <div class="community-grid">
+                    ${openSource.community.map(community => this.renderCommunityCard(community)).join('')}
                 </div>
             </section>
         `;
@@ -441,63 +864,84 @@ class PortfolioApp {
 
     renderBlogsPage() {
         const mainContent = document.getElementById('main-content');
-        if (!mainContent || !this.data) return;
-
+        const blogs = this.data.blogs;
+        
+        // Get all unique tags from blogs
+        const allTags = [...new Set(blogs.flatMap(blog => blog.tags))];
+        
         mainContent.innerHTML = `
-            <section class="page-header">
-                <div class="container">
-                    <h1>Blog Posts</h1>
-                    <p>Thoughts, tutorials, and insights on AI research</p>
+            <div class="page-header">
+                <h1>Blog</h1>
+                <p>Thoughts, tutorials, and insights on AI research and development.</p>
+            </div>
+            
+            <div class="search-filter-section">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search blog posts..." />
+                    <i class="fas fa-search"></i>
                 </div>
-            </section>
-
-            <section class="search-filter-section">
-                <div class="container">
-                    <div class="search-box">
-                        <input type="text" id="search-input" placeholder="Search blogs..." />
-                        <i class="fas fa-search"></i>
-                    </div>
+                
+                <div class="filter-section">
+                    <h4>Filter by Category:</h4>
                     <div class="filter-buttons">
                         <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="ai research">AI Research</button>
                         <button class="filter-btn" data-filter="tutorial">Tutorial</button>
                         <button class="filter-btn" data-filter="analysis">Analysis</button>
-                        <button class="filter-btn" data-filter="research">Research</button>
                     </div>
                 </div>
-            </section>
-
-            <section class="blogs-section">
-                <div class="container">
-                    <div id="blogs-grid" class="blogs-grid">
-                        ${this.data.blogs.map(blog => this.renderBlogCard(blog, true)).join('')}
+                
+                <div class="tag-filter-section">
+                    <h4>Filter by Tags:</h4>
+                    <div class="tag-filter-buttons">
+                        <button class="tag-filter-btn active" data-tag="all">All Tags</button>
+                        ${allTags.map(tag => `<button class="tag-filter-btn" data-tag="${tag}">${tag}</button>`).join('')}
                     </div>
                 </div>
-            </section>
+            </div>
+            
+            <div class="blogs-grid">
+                ${blogs.map(blog => this.renderBlogCard(blog)).join('')}
+            </div>
         `;
-
+        
         this.setupSearchAndFilter();
     }
 
     renderExperiencePage() {
         const mainContent = document.getElementById('main-content');
-        if (!mainContent || !this.data) return;
-
+        const experience = this.data.experience;
+        
+        // Get all unique technologies from experience
+        const allTechnologies = [...new Set(experience.flatMap(exp => exp.technologies))];
+        
         mainContent.innerHTML = `
-            <section class="page-header">
-                <div class="container">
-                    <h1>Experience</h1>
-                    <p>Professional experience and research positions</p>
+            <div class="page-header">
+                <h1>Experience</h1>
+                <p>Professional experience and research positions.</p>
+            </div>
+            
+            <div class="search-filter-section">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search experience..." />
+                    <i class="fas fa-search"></i>
                 </div>
-            </section>
-
-            <section class="experience-section">
-                <div class="container">
-                    <div class="timeline">
-                        ${this.data.experience.map(exp => this.renderExperienceCard(exp)).join('')}
+                
+                <div class="tag-filter-section">
+                    <h4>Filter by Technologies:</h4>
+                    <div class="tag-filter-buttons">
+                        <button class="tag-filter-btn active" data-tag="all">All Technologies</button>
+                        ${allTechnologies.map(tech => `<button class="tag-filter-btn" data-tag="${tech}">${tech}</button>`).join('')}
                     </div>
                 </div>
-            </section>
+            </div>
+            
+            <div class="timeline">
+                ${experience.map(exp => this.renderExperienceCard(exp)).join('')}
+            </div>
         `;
+        
+        this.setupSearchAndFilter();
     }
 
     renderContactPage() {
@@ -586,14 +1030,14 @@ class PortfolioApp {
                 </div>
                 <div class="project-content">
                     <h3>${project.title}</h3>
-                    <p>${fullView ? project.longDescription : project.description}</p>
+                    <p>${project.description}</p>
                     <div class="project-tags">
                         ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                     </div>
                     <div class="project-actions">
                         ${project.github ? `<a href="${project.github}" target="_blank" class="btn btn-small"><i class="fab fa-github"></i> Code</a>` : ''}
                         ${project.demo ? `<a href="${project.demo}" target="_blank" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>` : ''}
-                        <button class="btn btn-small btn-outline" onclick="portfolioApp.showProjectDetails('${project.id}')">Details</button>
+                        <button class="btn btn-small" onclick="portfolioApp.showProjectDetails('${project.id}')">Details</button>
                     </div>
                 </div>
             </div>
@@ -661,7 +1105,7 @@ class PortfolioApp {
 
     renderExperienceCard(exp) {
         return `
-            <div class="experience-card">
+            <div class="experience-card" data-tags="${exp.technologies.join(' ').toLowerCase()}">
                 <div class="experience-content">
                     <h3>${exp.title}</h3>
                     <div class="company-info">
@@ -678,6 +1122,192 @@ class PortfolioApp {
                         <ul>
                             ${exp.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
                         </ul>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    renderSkillCard(skill) {
+        const levelClass = skill.level.toLowerCase().replace(' ', '-');
+        return `
+            <div class="skill-card ${levelClass}">
+                <div class="skill-icon" style="color: ${skill.color}">
+                    <i class="${skill.icon}"></i>
+                </div>
+                <div class="skill-content">
+                    <h4>${skill.name}</h4>
+                    <div class="skill-level">
+                        <span class="level-badge ${levelClass}">${skill.level}</span>
+                    </div>
+                    <p>${skill.description}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    renderResearchSkillCard(area) {
+        const expertiseClass = area.expertise.toLowerCase().replace(' ', '-');
+        return `
+            <div class="research-skill-card ${expertiseClass}">
+                <div class="skill-icon" style="color: ${area.color}">
+                    <i class="${area.icon}"></i>
+                </div>
+                <div class="skill-content">
+                    <h4>${area.name}</h4>
+                    <div class="skill-level">
+                        <span class="level-badge ${expertiseClass}">${area.expertise}</span>
+                    </div>
+                    <p>${area.description}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    renderSoftSkillCard(skill) {
+        return `
+            <div class="soft-skill-card">
+                <div class="skill-icon" style="color: ${skill.color}">
+                    <i class="${skill.icon}"></i>
+                </div>
+                <div class="skill-content">
+                    <h4>${skill.name}</h4>
+                    <p>${skill.description}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    renderCertificationCard(cert) {
+        return `
+            <div class="certification-card">
+                <div class="cert-icon" style="color: ${cert.color}">
+                    <i class="${cert.icon}"></i>
+                </div>
+                <div class="cert-content">
+                    <h4>${cert.name}</h4>
+                    <p class="cert-issuer">${cert.issuer}</p>
+                    <p class="cert-date">${cert.date}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    renderRepositoryCard(repo) {
+        return `
+            <div class="repository-card">
+                <div class="repo-header">
+                    <div class="repo-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="repo-stats">
+                        <span class="repo-stat">
+                            <i class="fas fa-star"></i>
+                            ${repo.stars}
+                        </span>
+                        <span class="repo-stat">
+                            <i class="fas fa-code-branch"></i>
+                            ${repo.forks}
+                        </span>
+                    </div>
+                </div>
+                <div class="repo-content">
+                    <h4>${repo.name}</h4>
+                    <p>${repo.description}</p>
+                    <div class="repo-meta">
+                        <span class="repo-language">${repo.language}</span>
+                        <span class="repo-status ${repo.status.toLowerCase()}">${repo.status}</span>
+                    </div>
+                    <div class="repo-topics">
+                        ${repo.topics.map(topic => `<span class="repo-topic">${topic}</span>`).join('')}
+                    </div>
+                    <div class="repo-actions">
+                        <a href="${repo.url}" target="_blank" class="btn btn-small">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    renderPackageCard(pkg) {
+        return `
+            <div class="package-card">
+                <div class="package-header">
+                    <div class="package-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="package-stats">
+                        <span class="package-stat">
+                            <i class="fas fa-download"></i>
+                            ${pkg.downloads}
+                        </span>
+                    </div>
+                </div>
+                <div class="package-content">
+                    <h4>${pkg.name}</h4>
+                    <p>${pkg.description}</p>
+                    <div class="package-meta">
+                        <span class="package-language">${pkg.language}</span>
+                        <span class="package-version">v${pkg.version}</span>
+                        <span class="package-status ${pkg.status.toLowerCase()}">${pkg.status}</span>
+                    </div>
+                    <div class="package-actions">
+                        <a href="${pkg.url}" target="_blank" class="btn btn-small">
+                            <i class="fas fa-external-link-alt"></i> View Package
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    renderContributionCard(contribution) {
+        const typeClass = contribution.type.toLowerCase().replace(' ', '-');
+        return `
+            <div class="contribution-card ${typeClass}">
+                <div class="contribution-header">
+                    <div class="contribution-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contribution-meta">
+                        <span class="contribution-type ${typeClass}">${contribution.type}</span>
+                        <span class="contribution-status ${contribution.status.toLowerCase()}">${contribution.status}</span>
+                    </div>
+                </div>
+                <div class="contribution-content">
+                    <h4>${contribution.repository}</h4>
+                    <p class="contribution-org">${contribution.organization}</p>
+                    <p class="contribution-desc">${contribution.description}</p>
+                    <div class="contribution-date">${contribution.date}</div>
+                    <div class="contribution-actions">
+                        <a href="${contribution.url}" target="_blank" class="btn btn-small">
+                            <i class="fab fa-github"></i> View PR
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    renderCommunityCard(community) {
+        return `
+            <div class="community-card">
+                <div class="community-header">
+                    <div class="community-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="community-role">
+                        <span class="role-badge">${community.role}</span>
+                    </div>
+                </div>
+                <div class="community-content">
+                    <h4>${community.name}</h4>
+                    <p class="community-platform">${community.platform}</p>
+                    <p class="community-desc">${community.description}</p>
+                    <div class="community-impact">
+                        <strong>Impact:</strong> ${community.impact}
                     </div>
                 </div>
             </div>
@@ -713,22 +1343,39 @@ class PortfolioApp {
         });
     }
 
+    updateTagFilterButtons() {
+        document.querySelectorAll('.tag-filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-tag') === this.currentTag) {
+                btn.classList.add('active');
+            }
+        });
+    }
+
     filterContent() {
-        const items = document.querySelectorAll('.project-card, .publication-card, .blog-card');
+        const items = document.querySelectorAll('.project-card, .publication-card, .blog-card, .experience-card');
         
         items.forEach(item => {
             const title = item.querySelector('h3').textContent.toLowerCase();
             const tags = item.getAttribute('data-tags') || '';
             const category = item.getAttribute('data-category') || '';
             
+            // Text search matching
             const matchesSearch = this.searchQuery === '' || 
                 title.includes(this.searchQuery) || 
                 tags.includes(this.searchQuery);
             
+            // Category filter matching (only for items with categories)
             const matchesFilter = this.currentFilter === 'all' || 
-                category.includes(this.currentFilter);
+                category.includes(this.currentFilter) ||
+                !item.hasAttribute('data-category');
             
-            if (matchesSearch && matchesFilter) {
+            // Tag filter matching
+            const matchesTag = this.currentTag === 'all' || 
+                tags.includes(this.currentTag.toLowerCase());
+            
+            // All conditions must be met
+            if (matchesSearch && matchesFilter && matchesTag) {
                 item.style.display = 'block';
             } else {
                 item.style.display = 'none';

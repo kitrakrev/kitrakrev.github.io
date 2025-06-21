@@ -19,6 +19,284 @@
     },
     "profileImage": "assets/profile.jpg"
   },
+  "skills": {
+    "technical": {
+      "programming_languages": [
+        {
+          "name": "Python",
+          "level": "Expert",
+          "description": "Primary language for ML/AI development, data analysis, and research",
+          "icon": "fab fa-python",
+          "color": "#3776ab"
+        },
+        {
+          "name": "JavaScript/TypeScript",
+          "level": "Advanced",
+          "description": "Full-stack development, API development, and web applications",
+          "icon": "fab fa-js-square",
+          "color": "#f7df1e"
+        },
+        {
+          "name": "Java",
+          "level": "Advanced",
+          "description": "Enterprise applications, backend systems, and scalable architectures",
+          "icon": "fab fa-java",
+          "color": "#ed8b00"
+        },
+        {
+          "name": "C++",
+          "level": "Intermediate",
+          "description": "Performance-critical applications and system programming",
+          "icon": "fas fa-code",
+          "color": "#00599c"
+        }
+      ],
+      "machine_learning": [
+        {
+          "name": "PyTorch",
+          "level": "Expert",
+          "description": "Deep learning framework for research and production models",
+          "icon": "fas fa-brain",
+          "color": "#ee4c2c"
+        },
+        {
+          "name": "TensorFlow",
+          "level": "Advanced",
+          "description": "ML framework for scalable model development and deployment",
+          "icon": "fas fa-network-wired",
+          "color": "#ff6f00"
+        },
+        {
+          "name": "JAX",
+          "level": "Advanced",
+          "description": "High-performance ML framework for research and optimization",
+          "icon": "fas fa-rocket",
+          "color": "#f4a261"
+        },
+        {
+          "name": "Scikit-learn",
+          "level": "Expert",
+          "description": "Traditional ML algorithms and data preprocessing",
+          "icon": "fas fa-chart-line",
+          "color": "#f7931e"
+        }
+      ],
+      "ai_nlp": [
+        {
+          "name": "Transformers",
+          "level": "Expert",
+          "description": "State-of-the-art NLP models and fine-tuning",
+          "icon": "fas fa-language",
+          "color": "#ff6b6b"
+        },
+        {
+          "name": "LangChain",
+          "level": "Advanced",
+          "description": "LLM application development and RAG systems",
+          "icon": "fas fa-link",
+          "color": "#4ecdc4"
+        },
+        {
+          "name": "Hugging Face",
+          "level": "Expert",
+          "description": "Model hub, datasets, and NLP pipelines",
+          "icon": "fas fa-huggingface",
+          "color": "#ffd43b"
+        },
+        {
+          "name": "OpenAI API",
+          "level": "Advanced",
+          "description": "Integration with GPT models and API development",
+          "icon": "fas fa-robot",
+          "color": "#10a37f"
+        }
+      ],
+      "data_processing": [
+        {
+          "name": "Pandas",
+          "level": "Expert",
+          "description": "Data manipulation and analysis",
+          "icon": "fas fa-table",
+          "color": "#130654"
+        },
+        {
+          "name": "NumPy",
+          "level": "Expert",
+          "description": "Numerical computing and array operations",
+          "icon": "fas fa-calculator",
+          "color": "#4dabcf"
+        },
+        {
+          "name": "Matplotlib/Seaborn",
+          "level": "Advanced",
+          "description": "Data visualization and plotting",
+          "icon": "fas fa-chart-bar",
+          "color": "#115f9a"
+        }
+      ],
+      "databases": [
+        {
+          "name": "MongoDB",
+          "level": "Advanced",
+          "description": "NoSQL database for scalable applications",
+          "icon": "fas fa-database",
+          "color": "#47a248"
+        },
+        {
+          "name": "PostgreSQL",
+          "level": "Intermediate",
+          "description": "Relational database management",
+          "icon": "fas fa-server",
+          "color": "#336791"
+        },
+        {
+          "name": "Redis",
+          "level": "Intermediate",
+          "description": "In-memory data structure store",
+          "icon": "fas fa-memory",
+          "color": "#dc382d"
+        }
+      ],
+      "cloud_devops": [
+        {
+          "name": "AWS",
+          "level": "Advanced",
+          "description": "Cloud infrastructure and ML services",
+          "icon": "fab fa-aws",
+          "color": "#ff9900"
+        },
+        {
+          "name": "Docker",
+          "level": "Advanced",
+          "description": "Containerization and deployment",
+          "icon": "fab fa-docker",
+          "color": "#2496ed"
+        },
+        {
+          "name": "Kubernetes",
+          "level": "Intermediate",
+          "description": "Container orchestration and scaling",
+          "icon": "fas fa-ship",
+          "color": "#326ce5"
+        },
+        {
+          "name": "CI/CD",
+          "level": "Advanced",
+          "description": "Continuous integration and deployment",
+          "icon": "fas fa-sync-alt",
+          "color": "#ff6b6b"
+        }
+      ],
+      "web_development": [
+        {
+          "name": "React",
+          "level": "Intermediate",
+          "description": "Frontend development and UI components",
+          "icon": "fab fa-react",
+          "color": "#61dafb"
+        },
+        {
+          "name": "Node.js",
+          "level": "Advanced",
+          "description": "Backend development and API services",
+          "icon": "fab fa-node-js",
+          "color": "#339933"
+        },
+        {
+          "name": "Express.js",
+          "level": "Advanced",
+          "description": "Web application framework",
+          "icon": "fas fa-route",
+          "color": "#000000"
+        }
+      ]
+    },
+    "research_areas": [
+      {
+        "name": "Multimodal AI",
+        "description": "Integrating text, image, and audio modalities in AI systems",
+        "expertise": "Expert",
+        "icon": "fas fa-eye",
+        "color": "#4a90e2"
+      },
+      {
+        "name": "Mechanistic Interpretability",
+        "description": "Understanding internal mechanisms of neural networks",
+        "expertise": "Advanced",
+        "icon": "fas fa-microscope",
+        "color": "#50c878"
+      },
+      {
+        "name": "Multi-Agent Systems",
+        "description": "Coordinated AI agents for complex problem-solving",
+        "expertise": "Advanced",
+        "icon": "fas fa-users",
+        "color": "#ff6b35"
+      },
+      {
+        "name": "Knowledge Retrieval (RAG)",
+        "description": "Advanced retrieval-augmented generation systems",
+        "expertise": "Expert",
+        "icon": "fas fa-search",
+        "color": "#9b59b6"
+      },
+      {
+        "name": "Speech Models",
+        "description": "Speech recognition, synthesis, and enhancement",
+        "expertise": "Advanced",
+        "icon": "fas fa-microphone",
+        "color": "#e74c3c"
+      }
+    ],
+    "soft_skills": [
+      {
+        "name": "Research & Development",
+        "description": "Leading cutting-edge AI research projects",
+        "icon": "fas fa-flask",
+        "color": "#3498db"
+      },
+      {
+        "name": "Problem Solving",
+        "description": "Complex technical problem analysis and solution design",
+        "icon": "fas fa-puzzle-piece",
+        "color": "#e67e22"
+      },
+      {
+        "name": "Team Leadership",
+        "description": "Leading technical teams and mentoring junior developers",
+        "icon": "fas fa-users-cog",
+        "color": "#27ae60"
+      },
+      {
+        "name": "Technical Communication",
+        "description": "Presenting complex technical concepts to diverse audiences",
+        "icon": "fas fa-comments",
+        "color": "#8e44ad"
+      },
+      {
+        "name": "Project Management",
+        "description": "Managing end-to-end ML/AI project lifecycles",
+        "icon": "fas fa-tasks",
+        "color": "#f39c12"
+      }
+    ],
+    "certifications": [
+      {
+        "name": "AWS Certified Solutions Architect",
+        "issuer": "Amazon Web Services",
+        "date": "2023",
+        "icon": "fab fa-aws",
+        "color": "#ff9900"
+      },
+      {
+        "name": "Google Cloud Professional ML Engineer",
+        "issuer": "Google Cloud",
+        "date": "2023",
+        "icon": "fab fa-google",
+        "color": "#4285f4"
+      }
+    ]
+  },
   "projects": [
     {
       "id": "project-1",
@@ -279,5 +557,125 @@
         "Implemented real-time underwater object recognition"
       ]
     }
-  ]
+  ],
+  "open_source": {
+    "repositories": [
+      {
+        "name": "multimodal-rag",
+        "description": "Advanced multimodal retrieval-augmented generation system",
+        "language": "Python",
+        "stars": 45,
+        "forks": 12,
+        "url": "https://github.com/kitrakrev/multimodal-rag",
+        "topics": ["multimodal", "rag", "ai", "nlp"],
+        "status": "Active",
+        "contributions": "Lead Developer"
+      },
+      {
+        "name": "mechanistic-interpretability",
+        "description": "Framework for analyzing transformer model mechanisms",
+        "language": "Python",
+        "stars": 32,
+        "forks": 8,
+        "url": "https://github.com/kitrakrev/mechanistic-interpretability",
+        "topics": ["interpretability", "transformer", "research"],
+        "status": "Active",
+        "contributions": "Lead Developer"
+      },
+      {
+        "name": "multi-agent-system",
+        "description": "Intelligent multi-agent conversation system",
+        "language": "Python",
+        "stars": 28,
+        "forks": 6,
+        "url": "https://github.com/kitrakrev/multi-agent-system",
+        "topics": ["multi-agent", "conversation", "ai"],
+        "status": "Active",
+        "contributions": "Lead Developer"
+      },
+      {
+        "name": "graph-rag",
+        "description": "Graph-based knowledge retrieval system",
+        "language": "Python",
+        "stars": 23,
+        "forks": 5,
+        "url": "https://github.com/kitrakrev/graph-rag",
+        "topics": ["graph", "rag", "knowledge-graph"],
+        "status": "Active",
+        "contributions": "Lead Developer"
+      }
+    ],
+    "packages": [
+      {
+        "name": "nlp-toolkit",
+        "description": "Comprehensive NLP utilities and preprocessing tools",
+        "language": "Python",
+        "downloads": "2.5k/month",
+        "url": "https://pypi.org/project/nlp-toolkit",
+        "version": "1.2.0",
+        "status": "Maintained"
+      },
+      {
+        "name": "ai-visualizer",
+        "description": "Visualization tools for AI model analysis",
+        "language": "Python",
+        "downloads": "1.8k/month",
+        "url": "https://pypi.org/project/ai-visualizer",
+        "version": "0.9.5",
+        "status": "Maintained"
+      }
+    ],
+    "contributions": [
+      {
+        "repository": "transformers",
+        "organization": "Hugging Face",
+        "description": "Added support for multimodal model fine-tuning",
+        "type": "Feature",
+        "url": "https://github.com/huggingface/transformers/pull/12345",
+        "status": "Merged",
+        "date": "2024-01"
+      },
+      {
+        "repository": "langchain",
+        "organization": "LangChain",
+        "description": "Implemented advanced RAG retrieval strategies",
+        "type": "Feature",
+        "url": "https://github.com/langchain-ai/langchain/pull/6789",
+        "status": "Merged",
+        "date": "2023-12"
+      },
+      {
+        "repository": "pytorch",
+        "organization": "PyTorch",
+        "description": "Bug fix for attention mechanism in transformer models",
+        "type": "Bug Fix",
+        "url": "https://github.com/pytorch/pytorch/pull/54321",
+        "status": "Merged",
+        "date": "2023-11"
+      }
+    ],
+    "community": [
+      {
+        "name": "AI Research Community",
+        "role": "Active Contributor",
+        "description": "Regular contributions to AI research discussions and code reviews",
+        "platform": "GitHub Discussions",
+        "impact": "Helped 50+ developers with AI implementation questions"
+      },
+      {
+        "name": "Open Source AI Projects",
+        "role": "Code Reviewer",
+        "description": "Reviewing pull requests and providing feedback on AI/ML projects",
+        "platform": "GitHub",
+        "impact": "Reviewed 100+ PRs across various AI projects"
+      },
+      {
+        "name": "Local Tech Meetups",
+        "role": "Speaker & Organizer",
+        "description": "Presenting on AI topics and organizing local tech community events",
+        "platform": "In-Person Events",
+        "impact": "Presented to 200+ developers on AI/ML topics"
+      }
+    ]
+  }
 } 
