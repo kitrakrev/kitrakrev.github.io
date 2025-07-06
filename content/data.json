@@ -613,28 +613,28 @@
       "id": "exp-2",
       "title": "Software Development Engineer", 
       "company": "Citi",
-      "location": "New York, NY",
-      "duration": "Jan 2020 - Present",
-      "description": "Spearheaded the development of scalable back-end applications, optimized performance, and enhanced system security. Led CI/CD pipeline development and improved system reliability.",
-      "technologies": ["Python", "Java", "CI/CD", "Docker", "AWS"],
+      "location": "Chennai, India",
+      "duration": "Aug 2023 - Sep 2024",
+      "description": "Designed and implemented microservices using Kafka, Solace, and Spring Boot to automate notification systems, reducing testing times by 30%. Integrated scalable data processing solutions with Hadoop and Spark to manage large-scale transactional data, improving processing time by 25%. Developed custom tools integrated with Bitbucket API, Jenkins, and Docker to streamline workflows, increasing team productivity by 20%.",
+      "technologies": ["Java", "Spring Boot", "Kafka", "Solace", "Hadoop", "Spark", "Bitbucket API", "Jenkins", "Docker", "Microservices"],
       "achievements": [
-        "Reduced deployment time by 30% through CI/CD optimization",
-        "Enhanced system security through secure code reviews",
-        "Improved system reliability through integration testing"
+        "Reduced testing times by 30% through automated notification systems",
+        "Improved data processing time by 25% using Hadoop and Spark",
+        "Increased team productivity by 20% through custom workflow tools"
       ]
     },
     {
       "id": "exp-3",
-      "title": "Software Developer",
-      "company": "MultiOn", 
+      "title": "NLP Intern",
+      "company": "MultiOn, Stanford Startup", 
       "location": "Remote",
-      "duration": "Jun 2018 - Dec 2019",
-      "description": "Involved in end-to-end software development for cloud-based projects, including API optimization, database management, and real-time data handling.",
-      "technologies": ["JavaScript", "Node.js", "MongoDB", "API Optimization", "Real-time Data"],
+      "duration": "Jun 2023 - Aug 2023",
+      "description": "Enhanced the MultiOn browser agent with RAG and vector database integration, significantly improving user query accuracy and automated support processes through Discord bot development.",
+      "technologies": ["Python", "RAG", "Vector Database", "Discord Bot", "NLP", "Browser Automation"],
       "achievements": [
-        "Reduced system latency by 40%",
-        "Optimized database schemas for better performance",
-        "Implemented real-time data handling techniques"
+        "Boosted user query accuracy by over 40% through RAG and vector DB integration",
+        "Automated support processes with Discord bot, reducing team workload by 30%",
+        "Enhanced browser agent capabilities for improved user experience"
       ]
     },
     {
