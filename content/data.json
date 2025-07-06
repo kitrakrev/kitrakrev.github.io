@@ -7,9 +7,11 @@
     "researchAreas": [
       "Multimodal AI Models",
       "Mechanistic Interpretability", 
-      "Multi-Agent Systems",
+      "Multi-Agent Systems and Tool Calling",
       "Knowledge Retrieval (RAGs)",
-      "Speech Models"
+      "Speech Models", 
+      "Diffusion Models",
+      "State Space Models"
     ],
     "links": {
       "linkedin": "https://www.linkedin.com/in/kitrakrev",
@@ -361,6 +363,98 @@
   ],
   "publications": [
     {
+      "id": "pub-1",
+      "title": "Advancing Multimodal Retrieval-Augmented Generation",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "year": "2024",
+      "abstract": "We present a novel approach to multimodal RAG that combines text, image, and audio modalities for enhanced knowledge retrieval and generation capabilities.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/multimodal-rag",
+      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval"],
+      "category": "Conference"
+    },
+    {
+      "id": "pub-2", 
+      "title": "Mechanistic Interpretability in Large Language Models",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "International Conference on Machine Learning (ICML)",
+      "year": "2023",
+      "abstract": "A comprehensive framework for understanding the internal mechanisms of transformer-based language models through interpretability techniques.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/mechanistic-interpretability",
+      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer"],
+      "category": "Conference"
+    },  {
+      "id": "pub-1",
+      "title": "Advancing Multimodal Retrieval-Augmented Generation",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "year": "2024",
+      "abstract": "We present a novel approach to multimodal RAG that combines text, image, and audio modalities for enhanced knowledge retrieval and generation capabilities.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/multimodal-rag",
+      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval"],
+      "category": "Conference"
+    },
+    {
+      "id": "pub-2", 
+      "title": "Mechanistic Interpretability in Large Language Models",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "International Conference on Machine Learning (ICML)",
+      "year": "2023",
+      "abstract": "A comprehensive framework for understanding the internal mechanisms of transformer-based language models through interpretability techniques.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/mechanistic-interpretability",
+      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer"],
+      "category": "Conference"
+    },  {
+      "id": "pub-1",
+      "title": "Advancing Multimodal Retrieval-Augmented Generation",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "year": "2024",
+      "abstract": "We present a novel approach to multimodal RAG that combines text, image, and audio modalities for enhanced knowledge retrieval and generation capabilities.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/multimodal-rag",
+      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval"],
+      "category": "Conference"
+    },
+    {
+      "id": "pub-2", 
+      "title": "Mechanistic Interpretability in Large Language Models",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "International Conference on Machine Learning (ICML)",
+      "year": "2023",
+      "abstract": "A comprehensive framework for understanding the internal mechanisms of transformer-based language models through interpretability techniques.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/mechanistic-interpretability",
+      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer"],
+      "category": "Conference"
+    },  {
+      "id": "pub-1",
+      "title": "Advancing Multimodal Retrieval-Augmented Generation",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "year": "2024",
+      "abstract": "We present a novel approach to multimodal RAG that combines text, image, and audio modalities for enhanced knowledge retrieval and generation capabilities.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/multimodal-rag",
+      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval"],
+      "category": "Conference"
+    },
+    {
+      "id": "pub-2", 
+      "title": "Mechanistic Interpretability in Large Language Models",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "International Conference on Machine Learning (ICML)",
+      "year": "2023",
+      "abstract": "A comprehensive framework for understanding the internal mechanisms of transformer-based language models through interpretability techniques.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/mechanistic-interpretability",
+      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer"],
+      "category": "Conference"
+    },  {
       "id": "pub-1",
       "title": "Advancing Multimodal Retrieval-Augmented Generation",
       "authors": "Karthik Raja Anandan, et al.",

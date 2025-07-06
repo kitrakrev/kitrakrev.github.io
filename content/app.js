@@ -332,7 +332,7 @@ class PortfolioApp {
                         <div class="highlight-card">
                             <i class="fas fa-briefcase"></i>
                             <h3>${this.data.experience.length}</h3>
-                            <p>Years Experience</p>
+                            <p>Domain year Experience</p>
                         </div>
                     </div>
                 </div>
@@ -380,81 +380,81 @@ class PortfolioApp {
                     </div>
                 </div>
             </section>
+                            `+
+            // <section id="open-source-preview" class="open-source-preview-section">
+            //     <div class="container">
+            //         <h2>Open Source Contributions</h2>
+            //         <div class="open-source-preview-grid">
+            //             <div class="open-source-preview-category">
+            //                 <h3><i class="fab fa-github"></i> Repositories</h3>
+            //                 <div class="open-source-preview-stats">
+            //                     <div class="preview-stat">
+            //                         <span class="stat-number">${this.data.open_source.repositories.length}</span>
+            //                         <span class="stat-label">Active Repos</span>
+            //                     </div>
+            //                     <div class="preview-stat">
+            //                         <span class="stat-number">${this.data.open_source.repositories.reduce((sum, repo) => sum + repo.stars, 0)}</span>
+            //                         <span class="stat-label">Total Stars</span>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //             <div class="open-source-preview-category">
+            //                 <h3><i class="fas fa-box"></i> Packages</h3>
+            //                 <div class="open-source-preview-stats">
+            //                     <div class="preview-stat">
+            //                         <span class="stat-number">${this.data.open_source.packages.length}</span>
+            //                         <span class="stat-label">Published</span>
+            //                     </div>
+            //                     <div class="preview-stat">
+            //                         <span class="stat-number">${this.data.open_source.packages.reduce((sum, pkg) => sum + parseInt(pkg.downloads.replace('k', '000')), 0).toLocaleString()}</span>
+            //                         <span class="stat-label">Downloads</span>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //             <div class="open-source-preview-category">
+            //                 <h3><i class="fas fa-handshake"></i> Contributions</h3>
+            //                 <div class="open-source-preview-stats">
+            //                     <div class="preview-stat">
+            //                         <span class="stat-number">${this.data.open_source.contributions.length}</span>
+            //                         <span class="stat-label">PRs Merged</span>
+            //                     </div>
+            //                     <div class="preview-stat">
+            //                         <span class="stat-number">${this.data.open_source.contributions.filter(c => c.organization).length}</span>
+            //                         <span class="stat-label">Organizations</span>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //         </div>
+            //         <div class="section-footer">
+            //             <a href="#" class="btn btn-outline" data-section="open_source">View All Contributions</a>
+            //         </div>
+            //     </div>
+            // </section>
 
-            <section id="open-source-preview" class="open-source-preview-section">
-                <div class="container">
-                    <h2>Open Source Contributions</h2>
-                    <div class="open-source-preview-grid">
-                        <div class="open-source-preview-category">
-                            <h3><i class="fab fa-github"></i> Repositories</h3>
-                            <div class="open-source-preview-stats">
-                                <div class="preview-stat">
-                                    <span class="stat-number">${this.data.open_source.repositories.length}</span>
-                                    <span class="stat-label">Active Repos</span>
-                                </div>
-                                <div class="preview-stat">
-                                    <span class="stat-number">${this.data.open_source.repositories.reduce((sum, repo) => sum + repo.stars, 0)}</span>
-                                    <span class="stat-label">Total Stars</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="open-source-preview-category">
-                            <h3><i class="fas fa-box"></i> Packages</h3>
-                            <div class="open-source-preview-stats">
-                                <div class="preview-stat">
-                                    <span class="stat-number">${this.data.open_source.packages.length}</span>
-                                    <span class="stat-label">Published</span>
-                                </div>
-                                <div class="preview-stat">
-                                    <span class="stat-number">${this.data.open_source.packages.reduce((sum, pkg) => sum + parseInt(pkg.downloads.replace('k', '000')), 0).toLocaleString()}</span>
-                                    <span class="stat-label">Downloads</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="open-source-preview-category">
-                            <h3><i class="fas fa-handshake"></i> Contributions</h3>
-                            <div class="open-source-preview-stats">
-                                <div class="preview-stat">
-                                    <span class="stat-number">${this.data.open_source.contributions.length}</span>
-                                    <span class="stat-label">PRs Merged</span>
-                                </div>
-                                <div class="preview-stat">
-                                    <span class="stat-number">${this.data.open_source.contributions.filter(c => c.organization).length}</span>
-                                    <span class="stat-label">Organizations</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-footer">
-                        <a href="#" class="btn btn-outline" data-section="open_source">View All Contributions</a>
-                    </div>
-                </div>
-            </section>
+            // <section id="featured-projects" class="featured-section">
+            //     <div class="container">
+            //         <h2>Featured Projects</h2>
+            //         <div class="projects-grid">
+            //             ${this.data.projects.slice(0, 3).map(project => this.renderProjectCard(project)).join('')}
+            //         </div>
+            //         <div class="section-footer">
+            //             <a href="#" class="btn btn-outline" data-section="projects">View All Projects</a>
+            //         </div>
+            //     </div>
+            // </section>
 
-            <section id="featured-projects" class="featured-section">
-                <div class="container">
-                    <h2>Featured Projects</h2>
-                    <div class="projects-grid">
-                        ${this.data.projects.slice(0, 3).map(project => this.renderProjectCard(project)).join('')}
-                    </div>
-                    <div class="section-footer">
-                        <a href="#" class="btn btn-outline" data-section="projects">View All Projects</a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="latest-blogs" class="featured-section">
-                <div class="container">
-                    <h2>Latest Blog Posts</h2>
-                    <div class="blogs-grid">
-                        ${this.data.blogs.slice(0, 3).map(blog => this.renderBlogCard(blog)).join('')}
-                    </div>
-                    <div class="section-footer">
-                        <a href="#" class="btn btn-outline" data-section="blogs">View All Blogs</a>
-                    </div>
-                </div>
-            </section>
-
+            // <section id="latest-blogs" class="featured-section">
+            //     <div class="container">
+            //         <h2>Latest Blog Posts</h2>
+            //         <div class="blogs-grid">
+            //             ${this.data.blogs.slice(0, 3).map(blog => this.renderBlogCard(blog)).join('')}
+            //         </div>
+            //         <div class="section-footer">
+            //             <a href="#" class="btn btn-outline" data-section="blogs">View All Blogs</a>
+            //         </div>
+            //     </div>
+            // </section>
+`
             <section id="cta" class="cta-section">
                 <div class="container">
                     <div class="cta-content">
