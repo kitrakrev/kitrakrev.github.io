@@ -50,11 +50,10 @@ class PortfolioApp {
                 technical: {
                     programming_languages: [],
                     machine_learning: [],
-                    ai_nlp: [],
-                    data_processing: [],
-                    databases: [],
-                    cloud_devops: [],
-                    web_development: []
+                    frameworks: [],
+                    libraries: [],
+                    tools: [],
+                    distributed_computing: []
                 },
                 research_areas: [],
                 soft_skills: [],
@@ -326,7 +325,7 @@ class PortfolioApp {
                         </div>
                         <div class="highlight-card">
                             <i class="fas fa-microscope"></i>
-                            <h3>${this.data.research.length}</h3>
+                            <h3>${this.data.skills.research_areas.length}</h3>
                             <p>Research Areas</p>
                         </div>
                         <div class="highlight-card">
@@ -359,17 +358,17 @@ class PortfolioApp {
                             </div>
                         </div>
                         <div class="skill-preview-category">
-                            <h3><i class="fas fa-language"></i> AI & NLP</h3>
+                            <h3><i class="fas fa-language"></i> Frameworks</h3>
                             <div class="skill-preview-tags">
-                                ${this.data.skills.technical.ai_nlp.slice(0, 3).map(skill => 
+                                ${this.data.skills.technical.frameworks.slice(0, 3).map(skill => 
                                     `<span class="skill-preview-tag" style="border-color: ${skill.color}; color: ${skill.color}">${skill.name}</span>`
                                 ).join('')}
                             </div>
                         </div>
                         <div class="skill-preview-category">
-                            <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                            <h3><i class="fas fa-cloud"></i> Distributed Computing</h3>
                             <div class="skill-preview-tags">
-                                ${this.data.skills.technical.cloud_devops.slice(0, 3).map(skill => 
+                                ${this.data.skills.technical.distributed_computing.slice(0, 3).map(skill => 
                                     `<span class="skill-preview-tag" style="border-color: ${skill.color}; color: ${skill.color}">${skill.name}</span>`
                                 ).join('')}
                             </div>
@@ -574,16 +573,16 @@ class PortfolioApp {
 
     renderResearchPage() {
         const mainContent = document.getElementById('main-content');
-        const research = this.data.research;
+        const researchAreas = this.data.skills.research_areas;
         
         mainContent.innerHTML = `
             <div class="page-header">
-                <h1>Research</h1>
-                <p>My current research areas and ongoing projects.</p>
+                <h1>Research Areas</h1>
+                <p>My current research areas and expertise domains.</p>
             </div>
             
             <div class="research-grid">
-                ${research.map(research => this.renderResearchCard(research)).join('')}
+                ${researchAreas.map(area => this.renderResearchSkillCard(area)).join('')}
             </div>
         `;
     }
@@ -691,45 +690,39 @@ class PortfolioApp {
                     </div>
                 </div>
                 
-                <!-- AI & NLP -->
+                <!-- Frameworks -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-language"></i> AI & Natural Language Processing</h3>
+                    <h3><i class="fas fa-language"></i> Frameworks & Libraries</h3>
                     <div class="skills-grid">
-                        ${skills.technical.ai_nlp.map(skill => this.renderSkillCard(skill)).join('')}
+                        ${skills.technical.frameworks.map(skill => this.renderSkillCard(skill)).join('')}
                     </div>
                 </div>
                 
-                <!-- Data Processing -->
+                <!-- Libraries -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-chart-bar"></i> Data Processing & Analysis</h3>
+                    <h3><i class="fas fa-chart-bar"></i> Libraries & Tools</h3>
                     <div class="skills-grid">
-                        ${skills.technical.data_processing.map(skill => this.renderSkillCard(skill)).join('')}
+                        ${skills.technical.libraries.map(skill => this.renderSkillCard(skill)).join('')}
                     </div>
                 </div>
                 
-                <!-- Databases -->
+                <!-- Tools -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Databases & Storage</h3>
+                    <h3><i class="fas fa-database"></i> Development Tools</h3>
                     <div class="skills-grid">
-                        ${skills.technical.databases.map(skill => this.renderSkillCard(skill)).join('')}
+                        ${skills.technical.tools.map(skill => this.renderSkillCard(skill)).join('')}
                     </div>
                 </div>
                 
-                <!-- Cloud & DevOps -->
+                <!-- Distributed Computing -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <h3><i class="fas fa-cloud"></i> Distributed Computing</h3>
                     <div class="skills-grid">
-                        ${skills.technical.cloud_devops.map(skill => this.renderSkillCard(skill)).join('')}
+                        ${skills.technical.distributed_computing.map(skill => this.renderSkillCard(skill)).join('')}
                     </div>
                 </div>
                 
-                <!-- Web Development -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-globe"></i> Web Development</h3>
-                    <div class="skills-grid">
-                        ${skills.technical.web_development.map(skill => this.renderSkillCard(skill)).join('')}
-                    </div>
-                </div>
+
             </section>
             
             <!-- Research Areas Section -->

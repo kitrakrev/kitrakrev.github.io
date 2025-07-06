@@ -1,17 +1,23 @@
 {
   "profile": {
     "name": "Karthik Raja Anandan",
-    "title": "AI Researcher & Machine Learning Engineer",
-    "description": "I'm a Machine Learning Engineer specializing in Natural Language Processing (NLP), currently pursuing an M.S. at the University of California, Santa Cruz. My focus areas include deep learning, language models, and machine vision.",
-    "longDescription": "With experience at Citi and MultiOn, I've developed scalable systems, optimized APIs, and deployed ML models for real-world applications. My research focuses on advancing NLP through multimodal models, retrieval techniques, and improving model interpretability.",
+    "title": "M.S. Student in Artificial Intelligence",
+    "description": "Motivated M.S. student in Artificial Intelligence with hands-on experience in Python, Java, and C++, specializing in machine learning and data science. Skilled in developing predictive models, statistical analysis, and working with large-scale datasets. Proficient in distributed systems and AI/ML frameworks such as TensorFlow, PyTorch, and PySpark.",
+    "longDescription": "Eager to apply my skills in machine learning and data analytics to help companies optimize customer experiences and solve complex, real-world challenges. Currently pursuing M.S. in Artificial Intelligence (Major: NLP) at UC Santa Cruz with experience at Citi, MultiOn, and various research labs.",
+    "contact": {
+      "email": "kanandan@ucsc.edu",
+      "phone": "+1-669-325-0235",
+      "location": "Santa Clara, CA",
+      "googleScholar": "https://scholar.google.com/"
+    },
     "researchAreas": [
-      "Multimodal AI Models",
-      "Mechanistic Interpretability", 
-      "Multi-Agent Systems and Tool Calling",
-      "Knowledge Retrieval (RAGs)",
-      "Speech Models", 
-      "Diffusion Models",
-      "State Space Models"
+      "Natural Language Processing",
+      "Machine Learning",
+      "Data Science",
+      "Distributed Systems",
+      "AI/ML Frameworks",
+      "Computer Vision",
+      "Robotics"
     ],
     "links": {
       "linkedin": "https://www.linkedin.com/in/kitrakrev",
@@ -32,13 +38,6 @@
           "color": "#3776ab"
         },
         {
-          "name": "JavaScript/TypeScript",
-          "level": "Advanced",
-          "description": "Full-stack development, API development, and web applications",
-          "icon": "fab fa-js-square",
-          "color": "#f7df1e"
-        },
-        {
           "name": "Java",
           "level": "Advanced",
           "description": "Enterprise applications, backend systems, and scalable architectures",
@@ -46,11 +45,46 @@
           "color": "#ed8b00"
         },
         {
+          "name": "JavaScript",
+          "level": "Advanced",
+          "description": "Full-stack development, API development, and web applications",
+          "icon": "fab fa-js-square",
+          "color": "#f7df1e"
+        },
+        {
           "name": "C++",
-          "level": "Intermediate",
+          "level": "Advanced",
           "description": "Performance-critical applications and system programming",
           "icon": "fas fa-code",
           "color": "#00599c"
+        },
+        {
+          "name": "Rust",
+          "level": "Intermediate",
+          "description": "Systems programming and performance-critical applications",
+          "icon": "fas fa-rust",
+          "color": "#ce422b"
+        },
+        {
+          "name": "CUDA",
+          "level": "Intermediate",
+          "description": "GPU computing and parallel processing",
+          "icon": "fas fa-microchip",
+          "color": "#76b900"
+        },
+        {
+          "name": "SQL",
+          "level": "Advanced",
+          "description": "Database querying and data manipulation",
+          "icon": "fas fa-database",
+          "color": "#336791"
+        },
+        {
+          "name": "Bash",
+          "level": "Advanced",
+          "description": "Shell scripting and system administration",
+          "icon": "fas fa-terminal",
+          "color": "#4eaa25"
         }
       ],
       "machine_learning": [
@@ -69,11 +103,11 @@
           "color": "#ff6f00"
         },
         {
-          "name": "JAX",
+          "name": "HuggingFace",
           "level": "Advanced",
-          "description": "High-performance ML framework for research and optimization",
-          "icon": "fas fa-rocket",
-          "color": "#f4a261"
+          "description": "Transformers library and model hub",
+          "icon": "fas fa-huggingface",
+          "color": "#ffd43b"
         },
         {
           "name": "Scikit-learn",
@@ -81,39 +115,81 @@
           "description": "Traditional ML algorithms and data preprocessing",
           "icon": "fas fa-chart-line",
           "color": "#f7931e"
-        }
-      ],
-      "ai_nlp": [
+        },
         {
-          "name": "Transformers",
-          "level": "Expert",
-          "description": "State-of-the-art NLP models and fine-tuning",
+          "name": "FastAI",
+          "level": "Advanced",
+          "description": "High-level deep learning library",
+          "icon": "fas fa-rocket",
+          "color": "#f4a261"
+        },
+        {
+          "name": "SBERT",
+          "level": "Advanced",
+          "description": "Sentence transformers for semantic similarity",
           "icon": "fas fa-language",
           "color": "#ff6b6b"
         },
         {
-          "name": "LangChain",
-          "level": "Advanced",
-          "description": "LLM application development and RAG systems",
-          "icon": "fas fa-link",
-          "color": "#4ecdc4"
-        },
-        {
-          "name": "Hugging Face",
-          "level": "Expert",
-          "description": "Model hub, datasets, and NLP pipelines",
-          "icon": "fas fa-huggingface",
-          "color": "#ffd43b"
-        },
-        {
-          "name": "OpenAI API",
-          "level": "Advanced",
-          "description": "Integration with GPT models and API development",
-          "icon": "fas fa-robot",
-          "color": "#10a37f"
+          "name": "SetFit",
+          "level": "Intermediate",
+          "description": "Few-shot learning framework",
+          "icon": "fas fa-bullseye",
+          "color": "#9b59b6"
         }
       ],
-      "data_processing": [
+      "frameworks": [
+        {
+          "name": "FastAPI",
+          "level": "Advanced",
+          "description": "Modern web framework for building APIs",
+          "icon": "fas fa-bolt",
+          "color": "#05998b"
+        },
+        {
+          "name": "Django",
+          "level": "Intermediate",
+          "description": "Full-stack web framework",
+          "icon": "fab fa-python",
+          "color": "#092e20"
+        },
+        {
+          "name": "Spring Boot",
+          "level": "Advanced",
+          "description": "Java-based application framework",
+          "icon": "fab fa-java",
+          "color": "#6db33f"
+        },
+        {
+          "name": "React",
+          "level": "Intermediate",
+          "description": "Frontend development and UI components",
+          "icon": "fab fa-react",
+          "color": "#61dafb"
+        },
+        {
+          "name": "Node.js",
+          "level": "Advanced",
+          "description": "Backend development and API services",
+          "icon": "fab fa-node-js",
+          "color": "#339933"
+        },
+        {
+          "name": "NLTK",
+          "level": "Advanced",
+          "description": "Natural language processing toolkit",
+          "icon": "fas fa-language",
+          "color": "#ff6b6b"
+        },
+        {
+          "name": "SciPy",
+          "level": "Advanced",
+          "description": "Scientific computing library",
+          "icon": "fas fa-flask",
+          "color": "#00599c"
+        }
+      ],
+      "libraries": [
         {
           "name": "Pandas",
           "level": "Expert",
@@ -129,43 +205,48 @@
           "color": "#4dabcf"
         },
         {
-          "name": "Matplotlib/Seaborn",
+          "name": "Matplotlib",
           "level": "Advanced",
           "description": "Data visualization and plotting",
           "icon": "fas fa-chart-bar",
           "color": "#115f9a"
-        }
-      ],
-      "databases": [
-        {
-          "name": "MongoDB",
-          "level": "Advanced",
-          "description": "NoSQL database for scalable applications",
-          "icon": "fas fa-database",
-          "color": "#47a248"
         },
         {
-          "name": "PostgreSQL",
-          "level": "Intermediate",
-          "description": "Relational database management",
-          "icon": "fas fa-server",
-          "color": "#336791"
+          "name": "Seaborn",
+          "level": "Advanced",
+          "description": "Statistical data visualization",
+          "icon": "fas fa-chart-line",
+          "color": "#7a9cc6"
         },
         {
-          "name": "Redis",
+          "name": "Transformers",
+          "level": "Expert",
+          "description": "State-of-the-art NLP models and fine-tuning",
+          "icon": "fas fa-language",
+          "color": "#ff6b6b"
+        },
+        {
+          "name": "LangChain",
+          "level": "Advanced",
+          "description": "LLM application development and RAG systems",
+          "icon": "fas fa-link",
+          "color": "#4ecdc4"
+        },
+        {
+          "name": "Gradio",
           "level": "Intermediate",
-          "description": "In-memory data structure store",
-          "icon": "fas fa-memory",
-          "color": "#dc382d"
+          "description": "Web interfaces for machine learning models",
+          "icon": "fas fa-window-maximize",
+          "color": "#ff6b6b"
         }
       ],
-      "cloud_devops": [
+      "tools": [
         {
-          "name": "AWS",
-          "level": "Advanced",
-          "description": "Cloud infrastructure and ML services",
-          "icon": "fab fa-aws",
-          "color": "#ff9900"
+          "name": "Git",
+          "level": "Expert",
+          "description": "Version control and collaboration",
+          "icon": "fab fa-git-alt",
+          "color": "#f05032"
         },
         {
           "name": "Docker",
@@ -175,18 +256,69 @@
           "color": "#2496ed"
         },
         {
-          "name": "Kubernetes",
-          "level": "Intermediate",
-          "description": "Container orchestration and scaling",
-          "icon": "fas fa-ship",
-          "color": "#326ce5"
-        },
-        {
-          "name": "CI/CD",
+          "name": "Jenkins",
           "level": "Advanced",
           "description": "Continuous integration and deployment",
           "icon": "fas fa-sync-alt",
-          "color": "#ff6b6b"
+          "color": "#d33833"
+        },
+        {
+          "name": "Bitbucket",
+          "level": "Advanced",
+          "description": "Code repository and collaboration",
+          "icon": "fab fa-bitbucket",
+          "color": "#0052cc"
+        },
+        {
+          "name": "Jupyter",
+          "level": "Expert",
+          "description": "Interactive computing and data analysis",
+          "icon": "fas fa-book",
+          "color": "#f37626"
+        },
+        {
+          "name": "VS Code",
+          "level": "Expert",
+          "description": "Code editor and development environment",
+          "icon": "fas fa-code",
+          "color": "#007acc"
+        },
+        {
+          "name": "Postman",
+          "level": "Advanced",
+          "description": "API testing and development",
+          "icon": "fas fa-paper-plane",
+          "color": "#ff6c37"
+        }
+      ],
+      "distributed_computing": [
+        {
+          "name": "MapReduce",
+          "level": "Advanced",
+          "description": "Distributed data processing framework",
+          "icon": "fas fa-network-wired",
+          "color": "#ff6f00"
+        },
+        {
+          "name": "Hadoop",
+          "level": "Advanced",
+          "description": "Distributed storage and processing",
+          "icon": "fas fa-database",
+          "color": "#ffcc02"
+        },
+        {
+          "name": "PySpark",
+          "level": "Advanced",
+          "description": "Distributed computing with Python",
+          "icon": "fas fa-fire",
+          "color": "#e25a1c"
+        },
+        {
+          "name": "Distributed LLM",
+          "level": "Intermediate",
+          "description": "Distributed LLM hosting and training",
+          "icon": "fas fa-brain",
+          "color": "#4a90e2"
         }
       ],
       "web_development": [
@@ -215,38 +347,38 @@
     },
     "research_areas": [
       {
-        "name": "Multimodal AI",
-        "description": "Integrating text, image, and audio modalities in AI systems",
+        "name": "Natural Language Processing",
+        "description": "Text processing, sentiment analysis, and language understanding",
         "expertise": "Expert",
-        "icon": "fas fa-eye",
+        "icon": "fas fa-language",
         "color": "#4a90e2"
       },
       {
-        "name": "Mechanistic Interpretability",
-        "description": "Understanding internal mechanisms of neural networks",
-        "expertise": "Advanced",
-        "icon": "fas fa-microscope",
+        "name": "Machine Learning",
+        "description": "Predictive modeling, statistical analysis, and large-scale datasets",
+        "expertise": "Expert",
+        "icon": "fas fa-brain",
         "color": "#50c878"
       },
       {
-        "name": "Multi-Agent Systems",
-        "description": "Coordinated AI agents for complex problem-solving",
+        "name": "Computer Vision",
+        "description": "Image processing, object recognition, and visual AI",
         "expertise": "Advanced",
-        "icon": "fas fa-users",
+        "icon": "fas fa-eye",
         "color": "#ff6b35"
       },
       {
-        "name": "Knowledge Retrieval (RAG)",
-        "description": "Advanced retrieval-augmented generation systems",
-        "expertise": "Expert",
-        "icon": "fas fa-search",
+        "name": "Distributed Systems",
+        "description": "Scalable computing, distributed LLM hosting and training",
+        "expertise": "Advanced",
+        "icon": "fas fa-network-wired",
         "color": "#9b59b6"
       },
       {
-        "name": "Speech Models",
-        "description": "Speech recognition, synthesis, and enhancement",
-        "expertise": "Advanced",
-        "icon": "fas fa-microphone",
+        "name": "Robotics",
+        "description": "Autonomous systems, underwater vehicles, and robotic arms",
+        "expertise": "Intermediate",
+        "icon": "fas fa-robot",
         "color": "#e74c3c"
       }
     ],
@@ -284,21 +416,37 @@
     ],
     "certifications": [
       {
-        "name": "AWS Certified Solutions Architect",
-        "issuer": "Amazon Web Services",
-        "date": "2023",
-        "icon": "fab fa-aws",
-        "color": "#ff9900"
-      },
-      {
-        "name": "Google Cloud Professional ML Engineer",
-        "issuer": "Google Cloud",
-        "date": "2023",
-        "icon": "fab fa-google",
-        "color": "#4285f4"
+        "name": "Fundamentals of Deep Learning",
+        "issuer": "NVIDIA",
+        "date": "Aug 2021",
+        "credentialId": "6c21913394d04140af813649b2cf3b12",
+        "icon": "fas fa-brain",
+        "color": "#76b900"
       }
     ]
   },
+  "education": [
+    {
+      "id": "edu-1",
+      "degree": "M.S. in Artificial Intelligence",
+      "major": "NLP",
+      "institution": "University of California, Santa Cruz",
+      "location": "Santa Clara, CA",
+      "duration": "Sep 2024 - Present",
+      "gpa": null,
+      "description": "Currently pursuing Master's degree in Artificial Intelligence with focus on Natural Language Processing"
+    },
+    {
+      "id": "edu-2",
+      "degree": "B.E. in Computer Science",
+      "major": "Computer Science",
+      "institution": "SSN College Of Engineering",
+      "location": "Chennai, India",
+      "duration": "Aug 2019 - May 2023",
+      "gpa": "3.86/4",
+      "description": "Bachelor's degree in Computer Science with strong foundation in programming and algorithms"
+    }
+  ],
   "projects": [
     {
       "id": "project-1",
@@ -364,166 +512,89 @@
   "publications": [
     {
       "id": "pub-1",
-      "title": "Advancing Multimodal Retrieval-Augmented Generation",
+      "title": "A Novel Dataset for Fake News in Tamil",
       "authors": "Karthik Raja Anandan, et al.",
-      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
-      "year": "2024",
-      "abstract": "We present a novel approach to multimodal RAG that combines text, image, and audio modalities for enhanced knowledge retrieval and generation capabilities.",
+      "venue": "SPELLL 2022",
+      "year": "2022",
+      "abstract": "Using Sentence transformers and web scraping for Tamil fake news detection.",
       "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/multimodal-rag",
-      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval"],
+      "code": "https://github.com/kitrakrev/tamil-fake-news",
+      "tags": ["Fake News Detection", "Tamil NLP", "Sentence Transformers"],
       "category": "Conference"
     },
     {
       "id": "pub-2", 
-      "title": "Mechanistic Interpretability in Large Language Models",
+      "title": "Abusive and Threatening Language Detection in Native Urdu Tweets",
       "authors": "Karthik Raja Anandan, et al.",
-      "venue": "International Conference on Machine Learning (ICML)",
-      "year": "2023",
-      "abstract": "A comprehensive framework for understanding the internal mechanisms of transformer-based language models through interpretability techniques.",
+      "venue": "FIRE 2021",
+      "year": "2021",
+      "abstract": "Using BERT, BiLSTM models for detecting abusive and threatening language in Urdu tweets.",
       "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/mechanistic-interpretability",
-      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer"],
-      "category": "Conference"
-    },  {
-      "id": "pub-1",
-      "title": "Advancing Multimodal Retrieval-Augmented Generation",
-      "authors": "Karthik Raja Anandan, et al.",
-      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
-      "year": "2024",
-      "abstract": "We present a novel approach to multimodal RAG that combines text, image, and audio modalities for enhanced knowledge retrieval and generation capabilities.",
-      "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/multimodal-rag",
-      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval"],
+      "code": "https://github.com/kitrakrev/urdu-abuse-detection",
+      "tags": ["Urdu NLP", "Abuse Detection", "BERT", "BiLSTM"],
       "category": "Conference"
     },
     {
-      "id": "pub-2", 
-      "title": "Mechanistic Interpretability in Large Language Models",
+      "id": "pub-3",
+      "title": "Detecting Malicious IoT Traffic Using Machine Learning Techniques",
       "authors": "Karthik Raja Anandan, et al.",
-      "venue": "International Conference on Machine Learning (ICML)",
+      "venue": "Romanian Journal of Information Technology and Automatic Control",
       "year": "2023",
-      "abstract": "A comprehensive framework for understanding the internal mechanisms of transformer-based language models through interpretability techniques.",
+      "abstract": "Using ML models like RandomForest, XGBoost for detecting malicious IoT traffic.",
       "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/mechanistic-interpretability",
-      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer"],
-      "category": "Conference"
-    },  {
-      "id": "pub-1",
-      "title": "Advancing Multimodal Retrieval-Augmented Generation",
-      "authors": "Karthik Raja Anandan, et al.",
-      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
-      "year": "2024",
-      "abstract": "We present a novel approach to multimodal RAG that combines text, image, and audio modalities for enhanced knowledge retrieval and generation capabilities.",
-      "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/multimodal-rag",
-      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval"],
-      "category": "Conference"
+      "code": "https://github.com/kitrakrev/iot-malware-detection",
+      "tags": ["IoT Security", "Machine Learning", "RandomForest", "XGBoost"],
+      "category": "Journal"
     },
     {
-      "id": "pub-2", 
-      "title": "Mechanistic Interpretability in Large Language Models",
+      "id": "pub-4",
+      "title": "LeSS Agile Projects: A Machine Learning-Driven Empirical Model to Predict Human Resource Allocation",
       "authors": "Karthik Raja Anandan, et al.",
-      "venue": "International Conference on Machine Learning (ICML)",
-      "year": "2023",
-      "abstract": "A comprehensive framework for understanding the internal mechanisms of transformer-based language models through interpretability techniques.",
+      "venue": "International Journal of Information Technology",
+      "year": "2021",
+      "abstract": "Using SVM-based models to predict human resource allocation in LeSS Agile projects.",
       "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/mechanistic-interpretability",
-      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer"],
-      "category": "Conference"
-    },  {
-      "id": "pub-1",
-      "title": "Advancing Multimodal Retrieval-Augmented Generation",
-      "authors": "Karthik Raja Anandan, et al.",
-      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
-      "year": "2024",
-      "abstract": "We present a novel approach to multimodal RAG that combines text, image, and audio modalities for enhanced knowledge retrieval and generation capabilities.",
-      "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/multimodal-rag",
-      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval"],
-      "category": "Conference"
-    },
-    {
-      "id": "pub-2", 
-      "title": "Mechanistic Interpretability in Large Language Models",
-      "authors": "Karthik Raja Anandan, et al.",
-      "venue": "International Conference on Machine Learning (ICML)",
-      "year": "2023",
-      "abstract": "A comprehensive framework for understanding the internal mechanisms of transformer-based language models through interpretability techniques.",
-      "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/mechanistic-interpretability",
-      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer"],
-      "category": "Conference"
-    },  {
-      "id": "pub-1",
-      "title": "Advancing Multimodal Retrieval-Augmented Generation",
-      "authors": "Karthik Raja Anandan, et al.",
-      "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
-      "year": "2024",
-      "abstract": "We present a novel approach to multimodal RAG that combines text, image, and audio modalities for enhanced knowledge retrieval and generation capabilities.",
-      "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/multimodal-rag",
-      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval"],
-      "category": "Conference"
-    },
-    {
-      "id": "pub-2", 
-      "title": "Mechanistic Interpretability in Large Language Models",
-      "authors": "Karthik Raja Anandan, et al.",
-      "venue": "International Conference on Machine Learning (ICML)",
-      "year": "2023",
-      "abstract": "A comprehensive framework for understanding the internal mechanisms of transformer-based language models through interpretability techniques.",
-      "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/mechanistic-interpretability",
-      "tags": ["Mechanistic Interpretability", "LLMs", "Transformer"],
-      "category": "Conference"
+      "code": "https://github.com/kitrakrev/less-agile-hr",
+      "tags": ["Agile", "HR Prediction", "SVM", "Machine Learning"],
+      "category": "Journal"
     }
   ],
-  "research": [
+  "projects": [
     {
-      "id": "research-1",
-      "title": "Multimodal AI Models",
-      "description": "Research on integrating multiple modalities (text, image, audio) in AI systems for enhanced understanding and generation capabilities.",
-      "focus": "Cross-modal learning, modality fusion, multimodal reasoning",
-      "status": "Active",
-      "institution": "UC Santa Cruz",
-      "supervisor": "Dr. Ian Lane"
+      "id": "project-1",
+      "title": "Personal Expense Tracker",
+      "description": "Created a cloud-based expense analytics tool using IBM Cloud, Docker, and Kubernetes, integrating CI/CD practices and scaling with Kubernetes.",
+      "technologies": ["IBM Cloud", "Docker", "Kubernetes", "CI/CD", "Cloud Computing"],
+      "category": "Personal Project",
+      "github": "https://github.com/kitrakrev/expense-tracker",
+      "demo": null,
+      "date": "2023"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "title": "ICPC Regionals - Top 300",
+      "description": "Ranked in the top 300 at ICPC Regionals, competing against thousands of teams across the region in algorithmic problem-solving and coding challenges.",
+      "category": "Competition",
+      "date": "2023",
+      "organization": "ICPC"
     },
     {
-      "id": "research-2",
-      "title": "Mechanistic Interpretability",
-      "description": "Understanding the internal mechanisms and decision-making processes of large neural networks.",
-      "focus": "Attention analysis, circuit discovery, neuron interpretability",
-      "status": "Active", 
-      "institution": "UC Santa Cruz",
-      "supervisor": "Dr. Ian Lane"
+      "id": "achievement-2",
+      "title": "SemEval Task-4 Winner (2025)",
+      "description": "Winner of SemEval Task-4 for building a Hallucination detection pipeline, a prestigious competition focused on evaluating models for sentiment analysis and natural language understanding, demonstrating expertise in NLP.",
+      "category": "Competition",
+      "date": "2025",
+      "organization": "SemEval"
     },
     {
-      "id": "research-3",
-      "title": "Multi-Agent Systems",
-      "description": "Development of intelligent multi-agent systems for complex problem-solving and coordination.",
-      "focus": "Agent coordination, conversation systems, task decomposition",
-      "status": "Active",
-      "institution": "UC Santa Cruz", 
-      "supervisor": "Dr. Ian Lane"
-    },
-    {
-      "id": "research-4",
-      "title": "Knowledge Retrieval (RAGs)",
-      "description": "Advanced retrieval-augmented generation systems including graph-based and multimodal approaches.",
-      "focus": "Graph RAG, multimodal RAG, knowledge graphs",
-      "status": "Active",
-      "institution": "UC Santa Cruz",
-      "supervisor": "Dr. Ian Lane"
-    },
-    {
-      "id": "research-5", 
-      "title": "Speech Models",
-      "description": "Research on speech recognition, synthesis, and enhancement using deep learning techniques.",
-      "focus": "Speech recognition, noise reduction, speaker identification",
-      "status": "Active",
-      "institution": "UC Santa Cruz",
-      "supervisor": "Dr. Ian Lane"
+      "id": "achievement-3",
+      "title": "Smart India Hackathon Winner (2023)",
+      "description": "Secured first place in Smart India Hackathon by developing an innovative segmentation model for detecting urban areas in medium-resolution satellite images, solving a critical challenge in remote sensing and urban planning.",
+      "category": "Hackathon",
+      "date": "2023",
+      "organization": "Smart India Hackathon"
     }
   ],
   "blogs": [
@@ -597,29 +668,29 @@
   "experience": [
     {
       "id": "exp-1",
-      "title": "Research Assistant",
-      "company": "Ian Lane's Lab",
-      "location": "UC Santa Cruz",
-      "duration": "Jun 2023 - Present",
-      "description": "Conducting cutting-edge research in Large Language Models (LLMs), focusing on hallucination mitigation and context preservation. Working on enhancing the accuracy and reliability of chatbots.",
-      "technologies": ["Python", "TensorFlow", "PyTorch", "NLP", "LLMs", "Chatbots"],
+      "title": "AI Research Intern",
+      "company": "University of California, Santa Cruz",
+      "location": "Santa Clara, CA",
+      "duration": "Sep 2024 - Present",
+      "description": "Leading the development of CruzChat, an internal AI chat platform, optimizing model alignment and reducing hallucinations in machine learning systems by 5%. Optimizing model performance, achieving a 15% boost in prediction accuracy through collaboration with tools and fine-tuning.",
+      "technologies": ["Python", "TensorFlow", "PyTorch", "NLP", "LLMs", "Chatbots", "Model Alignment"],
       "achievements": [
-        "Developed strategies for reducing hallucinations in LLM outputs",
-        "Improved context preservation in conversational AI systems",
-        "Published research on LLM interpretability"
+        "Led development of CruzChat, an internal AI chat platform",
+        "Reduced hallucinations in machine learning systems by 5%",
+        "Achieved 15% boost in prediction accuracy through model optimization"
       ]
     },
     {
       "id": "exp-2",
-      "title": "Software Development Engineer", 
-      "company": "Citi",
+      "title": "Software Engineer", 
+      "company": "Citi Corp",
       "location": "Chennai, India",
       "duration": "Aug 2023 - Sep 2024",
-      "description": "Designed and implemented microservices using Kafka, Solace, and Spring Boot to automate notification systems, reducing testing times by 30%. Integrated scalable data processing solutions with Hadoop and Spark to manage large-scale transactional data, improving processing time by 25%. Developed custom tools integrated with Bitbucket API, Jenkins, and Docker to streamline workflows, increasing team productivity by 20%.",
+      "description": "Architected microservices using Kafka, Solace, and Spring Boot to automate notification systems, cutting testing times by 30%. Integrated scalable data processing solutions (Hadoop and Spark) to manage large-scale transactional data, reducing processing time by 25%. Increased team productivity by 20% by creating custom tools integrated with Bitbucket API, Jenkins, Docker for streamlined workflows.",
       "technologies": ["Java", "Spring Boot", "Kafka", "Solace", "Hadoop", "Spark", "Bitbucket API", "Jenkins", "Docker", "Microservices"],
       "achievements": [
-        "Reduced testing times by 30% through automated notification systems",
-        "Improved data processing time by 25% using Hadoop and Spark",
+        "Cut testing times by 30% through automated notification systems",
+        "Reduced processing time by 25% using Hadoop and Spark",
         "Increased team productivity by 20% through custom workflow tools"
       ]
     },
@@ -629,26 +700,39 @@
       "company": "MultiOn, Stanford Startup", 
       "location": "Remote",
       "duration": "Jun 2023 - Aug 2023",
-      "description": "Enhanced the MultiOn browser agent with RAG and vector database integration, significantly improving user query accuracy and automated support processes through Discord bot development.",
+      "description": "Enhanced the MultiOn browser agent with RAG and vector DB, boosting user query accuracy by over 40%. Automated support processes with a Discord bot, reducing team workload by 30%.",
       "technologies": ["Python", "RAG", "Vector Database", "Discord Bot", "NLP", "Browser Automation"],
       "achievements": [
         "Boosted user query accuracy by over 40% through RAG and vector DB integration",
-        "Automated support processes with Discord bot, reducing team workload by 30%",
-        "Enhanced browser agent capabilities for improved user experience"
+        "Automated support processes with Discord bot, reducing team workload by 30%"
       ]
     },
     {
       "id": "exp-4",
+      "title": "ML Research Assistant",
+      "company": "High Performance Lab",
+      "location": "University Lab",
+      "duration": "May 2021 - Apr 2023",
+      "description": "Created a Tamil fake news detection dataset, achieving 86% accuracy, and contributing to ethical AI and misinformation detection. Contributed to a disease classification framework for the National Institute of Siddha, enhancing healthcare outcomes by 20%.",
+      "technologies": ["Python", "Machine Learning", "NLP", "BERT", "BiLSTM", "Healthcare AI"],
+      "achievements": [
+        "Created Tamil fake news detection dataset with 86% accuracy",
+        "Contributed to disease classification framework for National Institute of Siddha",
+        "Enhanced healthcare outcomes by 20% through AI implementation"
+      ]
+    },
+    {
+      "id": "exp-5",
       "title": "Research Assistant",
       "company": "Underwater Acoustic Research Lab",
       "location": "University Lab",
-      "duration": "Sep 2017 - May 2018", 
-      "description": "Developed an inspection-class underwater vehicle with machine learning models for real-time underwater object recognition.",
-      "technologies": ["Python", "Machine Learning", "Computer Vision", "TensorFlow", "Robotics"],
+      "duration": "May 2021 - Apr 2023",
+      "description": "Contributed to the design of an autonomous underwater vehicle, enabling navigation in dynamic environments. Engineered a 6-DOF robotic arm for ROV with object grasping and 73% underwater object recognition accuracy, improving operational efficiency.",
+      "technologies": ["Python", "Machine Learning", "Computer Vision", "TensorFlow", "Robotics", "Autonomous Systems"],
       "achievements": [
-        "Deployed zero-shot Siamese network model with 73% accuracy",
-        "Developed inspection-class underwater vehicle",
-        "Implemented real-time underwater object recognition"
+        "Contributed to autonomous underwater vehicle design",
+        "Engineered 6-DOF robotic arm for ROV with object grasping",
+        "Achieved 73% underwater object recognition accuracy"
       ]
     }
   ],
