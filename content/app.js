@@ -314,25 +314,119 @@ class PortfolioApp {
                     <h2>Highlights</h2>
                     <div class="highlights-grid">
                         <div class="highlight-card">
-                            <i class="fas fa-project-diagram"></i>
-                            <h3>${this.data.projects.length}</h3>
-                            <p>Research Projects</p>
+                            <i class="fas fa-briefcase"></i>
+                            <h3>4+</h3>
+                            <p>Years Experience</p>
                         </div>
                         <div class="highlight-card">
                             <i class="fas fa-book"></i>
-                            <h3>${this.data.publications.length}</h3>
+                            <h3>13</h3>
                             <p>Publications</p>
                         </div>
                         <div class="highlight-card">
-                            <i class="fas fa-microscope"></i>
-                            <h3>${this.data.skills.research_areas.length}</h3>
-                            <p>Research Areas</p>
+                            <i class="fas fa-building"></i>
+                            <h3>${(this.data.career_experience || []).length + (this.data.research_experience || []).length}</h3>
+                            <p>Roles & Positions</p>
                         </div>
                         <div class="highlight-card">
-                            <i class="fas fa-briefcase"></i>
-                            <h3>${this.data.experience.length}</h3>
-                            <p>Domain year Experience</p>
+                            <i class="fas fa-trophy"></i>
+                            <h3>${this.data.achievements ? this.data.achievements.length : 0}</h3>
+                            <p>Awards & Honors</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="career-experience" class="experience-section career">
+                <div class="container">
+                    <div class="section-header">
+                        <h2><i class="fas fa-briefcase"></i> Career Experience</h2>
+                        <p class="section-subtitle">Industry & Professional Roles</p>
+                    </div>
+                    <div class="experience-grid">
+                        ${(this.data.career_experience || []).map(exp => `
+                            <div class="exp-card">
+                                <div class="exp-card-header">
+                                    <div class="exp-main-info">
+                                        <h3 class="exp-title">${exp.title}</h3>
+                                        <h4 class="exp-company">${exp.company}</h4>
+                                    </div>
+                                    <div class="exp-meta-info">
+                                        <span class="exp-duration"><i class="far fa-calendar-alt"></i> ${exp.duration}</span>
+                                        <span class="exp-location"><i class="fas fa-map-marker-alt"></i> ${exp.location}</span>
+                                    </div>
+                                </div>
+                                
+                                ${exp.impact ? `
+                                <div class="exp-impact">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>${exp.impact}</span>
+                                </div>
+                                ` : ''}
+                                
+                                <div class="exp-achievements">
+                                    ${exp.achievements.slice(0, 3).map(achievement => `
+                                        <div class="achievement-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>${achievement}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                
+                                <div class="exp-tech-stack">
+                                    ${exp.technologies.slice(0, 8).map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+                                    ${exp.technologies.length > 8 ? `<span class="tech-badge tech-more">+${exp.technologies.length - 8}</span>` : ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </section>
+
+            <section id="research-experience" class="experience-section research">
+                <div class="container">
+                    <div class="section-header">
+                        <h2><i class="fas fa-flask"></i> Research Experience</h2>
+                        <p class="section-subtitle">Academic Research & Publications</p>
+                    </div>
+                    <div class="experience-grid">
+                        ${(this.data.research_experience || []).map(exp => `
+                            <div class="exp-card ${exp.award ? 'has-award' : ''}">
+                                ${exp.award ? `
+                                <div class="award-ribbon">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>${exp.award}</span>
+                                </div>
+                                ` : ''}
+                                
+                                <div class="exp-card-header">
+                                    <div class="exp-main-info">
+                                        <h3 class="exp-title">${exp.title}</h3>
+                                        <h4 class="exp-company">${exp.company}</h4>
+                                        ${exp.focus ? `<p class="research-focus"><i class="fas fa-bullseye"></i> ${exp.focus}</p>` : ''}
+                                    </div>
+                                    <div class="exp-meta-info">
+                                        <span class="exp-duration"><i class="far fa-calendar-alt"></i> ${exp.duration}</span>
+                                        <span class="exp-location"><i class="fas fa-map-marker-alt"></i> ${exp.location}</span>
+                                        ${exp.publications ? `<span class="pub-count"><i class="fas fa-book"></i> ${exp.publications} Publications</span>` : ''}
+                                    </div>
+                                </div>
+                                
+                                <div class="exp-achievements">
+                                    ${exp.achievements.slice(0, 3).map(achievement => `
+                                        <div class="achievement-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>${achievement}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                
+                                <div class="exp-tech-stack">
+                                    ${exp.technologies.slice(0, 8).map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+                                    ${exp.technologies.length > 8 ? `<span class="tech-badge tech-more">+${exp.technologies.length - 8}</span>` : ''}
+                                </div>
+                            </div>
+                        `).join('')}
                     </div>
                 </div>
             </section>

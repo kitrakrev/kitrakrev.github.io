@@ -2,20 +2,21 @@
   "profile": {
     "name": "Karthik Raja Anandan",
     "title": "M.S. Student in Artificial Intelligence",
-    "description": "Motivated M.S. student in Artificial Intelligence with hands-on experience in Python, Java, and C++, specializing in machine learning and data science. Skilled in developing predictive models, statistical analysis, and working with large-scale datasets. Proficient in distributed systems and AI/ML frameworks such as TensorFlow, PyTorch, and PySpark.",
-    "longDescription": "Eager to apply my skills in machine learning and data analytics to help companies optimize customer experiences and solve complex, real-world challenges. Currently pursuing M.S. in Artificial Intelligence (Major: NLP) at UC Santa Cruz with experience at Citi, MultiOn, and various research labs.",
+    "description": "Graduate student in Artificial Intelligence with hands-on experience in Python, Java, C++, and Rust, specializing in machine learning, deep learning, and NLP. Skilled in developing predictive models, multi-agent systems, and working with large-scale datasets. Proficient in distributed systems, AI/ML frameworks (PyTorch, TensorFlow, JAX), and cloud technologies (AWS, Docker, Kubernetes).",
+    "longDescription": "Passionate about AI inference/training architectures, robotics, and competitive programming. Currently pursuing M.S. in Artificial Intelligence at UC Santa Cruz (GPA: 4.0/4.0) with experience at Elas, Citi Corp, MultiOn, and various research labs. Winner of SemEval 2025 Task 4 with best paper award for hallucination detection.",
     "contact": {
       "email": "kanandan@ucsc.edu",
       "phone": "+1-669-325-0235",
       "location": "Santa Clara, CA",
-      "googleScholar": "https://scholar.google.com/"
+      "googleScholar": "https://scholar.google.com/citations?user=fK1cR-8AAAAJ&hl=en"
     },
     "researchAreas": [
+      "Multi-Agent Systems",
       "Natural Language Processing",
       "Machine Learning",
-      "Data Science",
-      "Distributed Systems",
-      "AI/ML Frameworks",
+      "Deep Learning",
+      "Mechanistic Interpretability",
+      "Reinforcement Learning",
       "Computer Vision",
       "Robotics"
     ],
@@ -23,7 +24,7 @@
       "linkedin": "https://www.linkedin.com/in/kitrakrev",
       "github": "https://github.com/kitrakrev",
       "githubPages": "https://kitrakrev.github.io",
-      "resume": "assets/resume.pdf"
+      "resume": "assets/karthik_F25.pdf"
     },
     "profileImage": "assets/profile.jpg"
   },
@@ -256,6 +257,13 @@
           "color": "#2496ed"
         },
         {
+          "name": "Kubernetes",
+          "level": "Advanced",
+          "description": "Container orchestration and management",
+          "icon": "fas fa-dharmachakra",
+          "color": "#326ce5"
+        },
+        {
           "name": "Jenkins",
           "level": "Advanced",
           "description": "Continuous integration and deployment",
@@ -289,6 +297,43 @@
           "description": "API testing and development",
           "icon": "fas fa-paper-plane",
           "color": "#ff6c37"
+        }
+      ],
+      "cloud_technologies": [
+        {
+          "name": "AWS",
+          "level": "Advanced",
+          "description": "Cloud computing platform and services",
+          "icon": "fab fa-aws",
+          "color": "#ff9900"
+        },
+        {
+          "name": "AWS ECS",
+          "level": "Advanced",
+          "description": "Elastic Container Service for scalable deployments",
+          "icon": "fas fa-server",
+          "color": "#ff9900"
+        },
+        {
+          "name": "AWS Glue",
+          "level": "Advanced",
+          "description": "ETL service for data pipelines",
+          "icon": "fas fa-database",
+          "color": "#ff9900"
+        },
+        {
+          "name": "AWS Lambda",
+          "level": "Advanced",
+          "description": "Serverless computing service",
+          "icon": "fas fa-bolt",
+          "color": "#ff9900"
+        },
+        {
+          "name": "vLLM",
+          "level": "Intermediate",
+          "description": "High-performance LLM inference engine",
+          "icon": "fas fa-rocket",
+          "color": "#4a90e2"
         }
       ],
       "distributed_computing": [
@@ -429,12 +474,12 @@
     {
       "id": "edu-1",
       "degree": "M.S. in Artificial Intelligence",
-      "major": "NLP",
+      "major": "NLP Concentration",
       "institution": "University of California, Santa Cruz",
       "location": "Santa Clara, CA",
-      "duration": "Sep 2024 - Present",
-      "gpa": null,
-      "description": "Currently pursuing Master's degree in Artificial Intelligence with focus on Natural Language Processing"
+      "duration": "Sep 2024 - Dec 2025",
+      "gpa": "4.0/4.0",
+      "description": "Master's degree in Artificial Intelligence with concentration in NLP. Relevant Coursework: Machine Learning, Deep Learning, Natural Language Processing, Reinforcement Learning. Awards: SemEval top 5 teams for hallucination detection with best paper award."
     },
     {
       "id": "edu-2",
@@ -442,9 +487,9 @@
       "major": "Computer Science",
       "institution": "SSN College Of Engineering",
       "location": "Chennai, India",
-      "duration": "Aug 2019 - May 2023",
-      "gpa": "3.86/4",
-      "description": "Bachelor's degree in Computer Science with strong foundation in programming and algorithms"
+      "duration": "Aug 2019 - Aug 2023",
+      "gpa": "3.86/4.0",
+      "description": "Bachelor's degree in Computer Science with strong foundation in programming and algorithms. Awards: Winner, Smart India Hackathon (2023); Ranked Top 300, ICPC Regionals"
     }
   ],
   "projects": [
@@ -574,27 +619,27 @@
   "achievements": [
     {
       "id": "achievement-1",
-      "title": "ICPC Regionals - Top 300",
-      "description": "Ranked in the top 300 at ICPC Regionals, competing against thousands of teams across the region in algorithmic problem-solving and coding challenges.",
-      "category": "Competition",
-      "date": "2023",
-      "organization": "ICPC"
-    },
-    {
-      "id": "achievement-2",
-      "title": "SemEval Task-4 Winner (2025)",
-      "description": "Winner of SemEval Task-4 for building a Hallucination detection pipeline, a prestigious competition focused on evaluating models for sentiment analysis and natural language understanding, demonstrating expertise in NLP.",
+      "title": "SemEval 2025 Task 4 Winner - Best Paper Award",
+      "description": "Top 5 team and 1st place winner of SemEval 2025 Task 4 for building a hallucination detection pipeline, along with receiving the best paper award. This prestigious competition focused on evaluating models for detecting hallucinations in LLMs and natural language understanding, demonstrating expertise in NLP and model evaluation.",
       "category": "Competition",
       "date": "2025",
       "organization": "SemEval"
     },
     {
-      "id": "achievement-3",
+      "id": "achievement-2",
       "title": "Smart India Hackathon Winner (2023)",
-      "description": "Secured first place in Smart India Hackathon by developing an innovative segmentation model for detecting urban areas in medium-resolution satellite images, solving a critical challenge in remote sensing and urban planning.",
+      "description": "Secured 1st place nationally in Smart India Hackathon by developing an innovative segmentation model for detecting urban areas in medium-resolution satellite images, solving a critical challenge in remote sensing and urban planning as part of a 6-member collaborative team.",
       "category": "Hackathon",
       "date": "2023",
       "organization": "Smart India Hackathon"
+    },
+    {
+      "id": "achievement-3",
+      "title": "ICPC Regionals - Top 300",
+      "description": "Ranked in the top 300 at ICPC Regionals, competing against thousands of teams across the region in algorithmic problem-solving and coding challenges, demonstrating strong competitive programming skills.",
+      "category": "Competition",
+      "date": "2023",
+      "organization": "ICPC"
     }
   ],
   "blogs": [
@@ -665,75 +710,128 @@
       "readTime": "9 min read"
     }
   ],
-  "experience": [
+  "career_experience": [
     {
-      "id": "exp-1",
-      "title": "AI Research Intern",
-      "company": "University of California, Santa Cruz",
-      "location": "Santa Clara, CA",
-      "duration": "Sep 2024 - Present",
-      "description": "Leading the development of CruzChat, an internal AI chat platform, optimizing model alignment and reducing hallucinations in machine learning systems by 5%. Optimizing model performance, achieving a 15% boost in prediction accuracy through collaboration with tools and fine-tuning.",
-      "technologies": ["Python", "TensorFlow", "PyTorch", "NLP", "LLMs", "Chatbots", "Model Alignment"],
+      "id": "career-1",
+      "title": "DS & ML Intern",
+      "company": "Elas",
+      "location": "Pleasanton, CA",
+      "duration": "Jun 2025 - Sep 2025",
+      "type": "Internship",
+      "description": "Developed and trained predictive models for intent classification on synthetic datasets (~50K samples), improving accuracy by ~15% relative to baseline. Post-trained LLMs using GRPO on distributed (DDP) and single-GPU setups; deployed via AWS ECS for scalable inference. Engineered data pipelines (ETL, cleaning, feature engineering) using AWS Glue and Lambda.",
+      "technologies": ["Python", "PyTorch", "AWS ECS", "AWS Glue", "AWS Lambda", "GRPO", "LLMs", "Multi-Agent Systems"],
       "achievements": [
-        "Led development of CruzChat, an internal AI chat platform",
-        "Reduced hallucinations in machine learning systems by 5%",
-        "Achieved 15% boost in prediction accuracy through model optimization"
-      ]
+        "Improved intent classification accuracy by ~15% using predictive models",
+        "Post-trained LLM using GRPO and deployed via AWS ECS",
+        "Implemented agent evaluation benchmarks with multi-agent consensus metrics",
+        "Engineered ETL pipelines using AWS Glue and Lambda"
+      ],
+      "impact": "15% accuracy improvement, scalable AWS deployment"
     },
     {
-      "id": "exp-2",
-      "title": "Software Engineer", 
+      "id": "career-2",
+      "title": "Software Development Engineer", 
       "company": "Citi Corp",
       "location": "Chennai, India",
       "duration": "Aug 2023 - Sep 2024",
-      "description": "Architected microservices using Kafka, Solace, and Spring Boot to automate notification systems, cutting testing times by 30%. Integrated scalable data processing solutions (Hadoop and Spark) to manage large-scale transactional data, reducing processing time by 25%. Increased team productivity by 20% by creating custom tools integrated with Bitbucket API, Jenkins, Docker for streamlined workflows.",
-      "technologies": ["Java", "Spring Boot", "Kafka", "Solace", "Hadoop", "Spark", "Bitbucket API", "Jenkins", "Docker", "Microservices"],
+      "type": "Full-time",
+      "description": "Architected microservices using Kafka, Solace, and Spring Boot to automate notification systems, reducing testing time by 30%. Integrated scalable data pipelines using Hadoop and Spark to process transactional data, cutting processing time by 25%. Designed a hybrid SVM + XGBoost model for productivity scoring with automated weekly reports. Developed CI/CD tools integrated with Bitbucket, Jenkins, and Docker, improving team productivity by 20%. Designed an internal DSL for UI validation within Spring Boot, improving development speed by 5-10%.",
+      "technologies": ["Java", "Spring Boot", "Kafka", "Solace", "Hadoop", "Spark", "SVM", "XGBoost", "Bitbucket", "Jenkins", "Docker"],
       "achievements": [
-        "Cut testing times by 30% through automated notification systems",
-        "Reduced processing time by 25% using Hadoop and Spark",
-        "Increased team productivity by 20% through custom workflow tools"
-      ]
+        "Reduced testing time by 30% through microservices automation",
+        "Cut data processing time by 25% using Hadoop and Spark",
+        "Improved team productivity by 20% with CI/CD tools",
+        "Designed hybrid SVM + XGBoost model for productivity scoring"
+      ],
+      "impact": "30% faster testing, 25% faster data processing, 20% productivity gain"
     },
     {
-      "id": "exp-3",
+      "id": "career-3",
       "title": "NLP Intern",
-      "company": "MultiOn, Stanford Startup", 
+      "company": "MultiOn (Stanford Startup)", 
       "location": "Remote",
       "duration": "Jun 2023 - Aug 2023",
-      "description": "Enhanced the MultiOn browser agent with RAG and vector DB, boosting user query accuracy by over 40%. Automated support processes with a Discord bot, reducing team workload by 30%.",
-      "technologies": ["Python", "RAG", "Vector Database", "Discord Bot", "NLP", "Browser Automation"],
+      "type": "Internship",
+      "description": "Enhanced MultiOn browser agent with retrieval-augmented generation and vector databases, boosting query accuracy by 40%. Automated customer support workflows with a Discord bot, reducing team workload by 30%. Trained and integrated vision-language models (VLMs) to enhance contextual reasoning in browser automation. Implemented the MultiOn package for usage in LangChain (Open Source).",
+      "technologies": ["Python", "RAG", "Vector Databases", "VLMs", "Discord Bot", "LangChain", "Browser Automation"],
       "achievements": [
-        "Boosted user query accuracy by over 40% through RAG and vector DB integration",
-        "Automated support processes with Discord bot, reducing team workload by 30%"
-      ]
+        "Boosted query accuracy by 40% with RAG and vector databases",
+        "Reduced team workload by 30% with automated Discord bot",
+        "Integrated VLMs for enhanced contextual reasoning",
+        "Implemented MultiOn package for LangChain (Open Source)"
+      ],
+      "impact": "40% query accuracy improvement, 30% workload reduction"
+    }
+  ],
+  "research_experience": [
+    {
+      "id": "research-1",
+      "title": "Grad Research Lab Assistant",
+      "company": "Chenguang's Lab - UC Santa Cruz",
+      "location": "Santa Clara, CA",
+      "duration": "Sep 2025 - Present",
+      "type": "Graduate Research",
+      "description": "Researching multi-agent interpretability and behavioral tracing within consensus-based frameworks. Working on massgen, a consensus-based multi-agent framework led by founder of autogen (Chi Wang - Deepmind). Contributing to rllm, a training framework for multi-agent systems.",
+      "technologies": ["Python", "Multi-Agent Systems", "Mechanistic Interpretability", "PyTorch", "Massgen", "RLLM"],
+      "achievements": [
+        "Research on multi-agent interpretability and behavioral tracing",
+        "Contributing to massgen framework (Open Source)",
+        "Working on rllm multi-agent training framework (Open Source)"
+      ],
+      "focus": "Multi-Agent Systems, Mechanistic Interpretability"
     },
     {
-      "id": "exp-4",
-      "title": "ML Research Assistant",
-      "company": "High Performance Lab",
-      "location": "University Lab",
-      "duration": "May 2021 - Apr 2023",
-      "description": "Created a Tamil fake news detection dataset, achieving 86% accuracy, and contributing to ethical AI and misinformation detection. Contributed to a disease classification framework for the National Institute of Siddha, enhancing healthcare outcomes by 20%.",
-      "technologies": ["Python", "Machine Learning", "NLP", "BERT", "BiLSTM", "Healthcare AI"],
+      "id": "research-2",
+      "title": "Grad Research Lab Assistant",
+      "company": "Ian Lane's Lab - UC Santa Cruz",
+      "location": "Santa Clara, CA",
+      "duration": "Sep 2024 - Mar 2025",
+      "type": "Graduate Research",
+      "description": "Led development of CruzChat, an internal AI chat platform, optimizing model alignment and reducing hallucination rate by 5%. Implemented document-processing modules for CruzChat, enabling multimodal input and improving agent usability by 20%. Worked on SemEval 2025 Task 4 on hallucination detection - team ranked 1st with best paper award.",
+      "technologies": ["Python", "PyTorch", "NLP", "LLMs", "Multimodal AI", "Hallucination Detection"],
       "achievements": [
-        "Created Tamil fake news detection dataset with 86% accuracy",
-        "Contributed to disease classification framework for National Institute of Siddha",
-        "Enhanced healthcare outcomes by 20% through AI implementation"
-      ]
+        "Led development of CruzChat AI chat platform",
+        "Reduced hallucination rate by 5% through model alignment",
+        "Improved agent usability by 20% with multimodal document processing",
+        "Won SemEval 2025 Task 4 with best paper award for hallucination detection"
+      ],
+      "focus": "LLM Hallucination Detection, Multimodal AI",
+      "award": "SemEval 2025 Task 4 Winner - Best Paper Award"
     },
     {
-      "id": "exp-5",
+      "id": "research-3",
+      "title": "Research Lab Assistant",
+      "company": "HPC Lab - SSN College of Engineering",
+      "location": "Chennai, India",
+      "duration": "May 2021 - Sep 2023",
+      "type": "Undergraduate Research",
+      "description": "Developed Tamil fake news detection models achieving 86% accuracy using transformer architectures. Published research on abusive and threatening language detection in native Urdu tweets (FIRE 2021) using BERT and BiLSTM models. Published work on detecting malicious IoT traffic using ML techniques (Romanian Journal of Information Technology and Automatic Control 2023). Research on LeSS Agile Projects using SVM-based models for HR resource allocation prediction (International Journal of Information Technology, 2021).",
+      "technologies": ["Python", "BERT", "BiLSTM", "Transformers", "RandomForest", "XGBoost", "SVM", "NLP"],
+      "achievements": [
+        "Achieved 86% accuracy in Tamil fake news detection",
+        "Published in FIRE 2021 on Urdu abuse detection",
+        "Published in Romanian Journal on IoT malware detection",
+        "Published in Int'l Journal of IT on Agile HR prediction"
+      ],
+      "focus": "NLP for Low-Resource Languages, Fake News Detection",
+      "publications": 3
+    },
+    {
+      "id": "research-4",
       "title": "Research Assistant",
-      "company": "Underwater Acoustic Research Lab",
-      "location": "University Lab",
-      "duration": "May 2021 - Apr 2023",
-      "description": "Contributed to the design of an autonomous underwater vehicle, enabling navigation in dynamic environments. Engineered a 6-DOF robotic arm for ROV with object grasping and 73% underwater object recognition accuracy, improving operational efficiency.",
-      "technologies": ["Python", "Machine Learning", "Computer Vision", "TensorFlow", "Robotics", "Autonomous Systems"],
+      "company": "Underwater Research Lab - SSN College",
+      "location": "Chennai, India",
+      "duration": "Aug 2021 - Apr 2023",
+      "type": "Undergraduate Research",
+      "description": "Designed an autonomous underwater vehicle capable of navigating dynamic environments. Built a 6-DOF robotic arm achieving 73% underwater object recognition accuracy for fish and marine debris detection. Collaborated in a 6-member team on urban area segmentation for satellite imagery, securing 1st place nationally in Smart India Hackathon.",
+      "technologies": ["Python", "Computer Vision", "TensorFlow", "Robotics", "Autonomous Systems", "Object Recognition"],
       "achievements": [
-        "Contributed to autonomous underwater vehicle design",
-        "Engineered 6-DOF robotic arm for ROV with object grasping",
-        "Achieved 73% underwater object recognition accuracy"
-      ]
+        "Designed autonomous underwater vehicle for dynamic navigation",
+        "Achieved 73% underwater object recognition accuracy with 6-DOF robotic arm",
+        "Secured 1st place nationally in Smart India Hackathon 2023"
+      ],
+      "focus": "Computer Vision, Robotics, Autonomous Systems",
+      "award": "Smart India Hackathon 2023 - 1st Place"
     }
   ],
   "open_source": {
