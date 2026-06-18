@@ -2,8 +2,8 @@
   "profile": {
     "name": "Karthik Raja Anandan",
     "title": "AI/Software Engineer",
-    "description": "AI/Software Engineer with experience building production AI agent systems, Hybrid RAG pipelines, and distributed backend services. Shipped agentic frameworks to 100+ DAU; open-source contributor to LangChain; demoed at NVIDIA GTC 2026. M.S. AI @ UC Santa Cruz (GPA 4.0). Strong in LLM systems, Generative AI, distributed systems, and full-stack AI engineering.",
-    "longDescription": "Passionate about building scalable systems at the intersection of AI and distributed computing. Currently pursuing M.S. in Artificial Intelligence at UC Santa Cruz (GPA: 4.0/4.0) with experience at Elas, Citi Corp, MultiOn, and various research labs. Winner of SemEval 2025 Task 4 with best paper award for hallucination detection.",
+    "description": "AI/Software Engineer with experience building production AI agent systems, Hybrid RAG pipelines, and distributed backend services. Shipped agentic frameworks to 100+ DAU; open-source contributor to LangChain; demoed at NVIDIA GTC 2026. M.S. AI @ UC Santa Cruz (GPA 3.9). Strong in LLM systems, Generative AI, distributed systems, and full-stack AI engineering.",
+    "longDescription": "Passionate about building scalable systems at the intersection of AI and distributed computing. Currently pursuing M.S. in Artificial Intelligence at UC Santa Cruz (GPA: 3.9/4.0) with experience at Elas, Citi Corp, MultiOn, and various research labs. Winner of SemEval 2025 Task 4 with best paper award for hallucination detection.",
     "contact": {
       "email": "kanandan@ucsc.edu",
       "phone": "+1-669-325-0235",
@@ -104,7 +104,7 @@
       "institution": "University of California, Santa Cruz",
       "location": "Santa Cruz, CA",
       "duration": "Sep 2024 - Dec 2025",
-      "gpa": "4.0/4.0",
+      "gpa": "3.9/4.0",
       "description": "Coursework: Distributed Systems, Machine Learning Systems, NLP, Reinforcement Learning"
     },
     {
@@ -291,7 +291,7 @@
     }
   ],
   "qualifications_sde": [
-    {"t": "M.S. in AI", "d": "UC Santa Cruz — 4.0 GPA"},
+    {"t": "M.S. in AI", "d": "UC Santa Cruz — 3.9 GPA"},
     {"t": "1+ Year Industry Experience", "d": "Citi Corp (full-time) + Elas, MultiOn"},
     {"t": "Distributed Systems", "d": "Kafka, Spark, SQS — millions of events/day"},
     {"t": "Python, C++, Java, Go", "d": "Production systems across all four"},
@@ -455,8 +455,8 @@
   ],
   "open_source": {
     "repositories": [
-      { "name": "multimodal-rag", "description": "Advanced multimodal retrieval-augmented generation system", "language": "Python", "stars": 45, "forks": 12, "url": "https://github.com/kitrakrev/multimodal-rag", "topics": ["multimodal", "rag", "ai", "nlp"], "status": "Active", "contributions": "Lead Developer" },
-      { "name": "distributed-url-shortener", "description": "Scalable URL shortener with consistent hashing", "language": "Go", "stars": 32, "forks": 8, "url": "https://github.com/kitrakrev/distributed-url-shortener", "topics": ["distributed-systems", "go", "redis"], "status": "Active", "contributions": "Lead Developer" }
+      { "name": "multimodal-rag", "description": "Advanced multimodal retrieval-augmented generation system", "language": "Python", "stars": 0, "forks": 0, "url": "https://github.com/kitrakrev/multimodal-rag", "topics": ["multimodal", "rag", "ai", "nlp"], "status": "Active", "contributions": "Lead Developer" },
+      { "name": "distributed-url-shortener", "description": "Scalable URL shortener with consistent hashing", "language": "Go", "stars": 0, "forks": 0, "url": "https://github.com/kitrakrev/distributed-url-shortener", "topics": ["distributed-systems", "go", "redis"], "status": "Active", "contributions": "Lead Developer" }
     ],
     "packages": [],
     "contributions": [
