@@ -1,0 +1,467 @@
+{
+  "profile": {
+    "name": "Karthik Raja Anandan",
+    "title": "AI/Software Engineer",
+    "description": "AI/Software Engineer with experience building production AI agent systems, Hybrid RAG pipelines, and distributed backend services. Shipped agentic frameworks to 100+ DAU; open-source contributor to LangChain; demoed at NVIDIA GTC 2026. M.S. AI @ UC Santa Cruz (GPA 3.9). Strong in LLM systems, Generative AI, distributed systems, and full-stack AI engineering.",
+    "longDescription": "Passionate about building scalable systems at the intersection of AI and distributed computing. Currently pursuing M.S. in Artificial Intelligence at UC Santa Cruz (GPA: 3.9/4.0) with experience at Elas, Citi Corp, MultiOn, and various research labs. Winner of SemEval 2025 Task 4 with best paper award for hallucination detection.",
+    "contact": {
+      "email": "kanandan@ucsc.edu",
+      "phone": "+1-669-325-0235",
+      "location": "Pleasanton, CA",
+      "googleScholar": "https://scholar.google.com/citations?user=fK1cR-8AAAAJ&hl=en"
+    },
+    "researchAreas": [
+      "LLM Systems",
+      "Generative AI",
+      "Agent Architectures",
+      "Distributed Systems",
+      "RAG Systems",
+      "NLP",
+      "Reinforcement Learning"
+    ],
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/karthikrajaanandan",
+      "github": "https://github.com/kitrakrev",
+      "githubPages": "https://kitrakrev.github.io",
+      "resume": "assets/karthik_F25.pdf"
+    },
+    "profileImage": "assets/profile.jpg"
+  },
+  "skills": {
+    "technical": {
+      "programming_languages": [
+        { "name": "Python", "level": "Expert", "description": "Primary language for ML/AI and backend development", "icon": "fab fa-python", "color": "#3776ab" },
+        { "name": "Java", "level": "Advanced", "description": "Enterprise applications, Spring Boot microservices", "icon": "fab fa-java", "color": "#ed8b00" },
+        { "name": "C++", "level": "Advanced", "description": "Performance-critical applications and system programming", "icon": "fas fa-code", "color": "#00599c" },
+        { "name": "Go", "level": "Advanced", "description": "Distributed systems and high-performance services", "icon": "fas fa-code", "color": "#00add8" },
+        { "name": "Rust", "level": "Intermediate", "description": "Systems programming and performance-critical applications", "icon": "fas fa-cog", "color": "#ce422b" },
+        { "name": "SQL", "level": "Advanced", "description": "Database querying and data manipulation", "icon": "fas fa-database", "color": "#336791" }
+      ],
+      "machine_learning": [
+        { "name": "PyTorch", "level": "Expert", "description": "Deep learning framework for research and production", "icon": "fas fa-brain", "color": "#ee4c2c" },
+        { "name": "TensorFlow", "level": "Advanced", "description": "ML framework for scalable model development", "icon": "fas fa-network-wired", "color": "#ff6f00" },
+        { "name": "JAX", "level": "Advanced", "description": "High-performance ML research framework", "icon": "fas fa-bolt", "color": "#5c6bc0" },
+        { "name": "HuggingFace", "level": "Advanced", "description": "Transformers library and model hub", "icon": "fas fa-robot", "color": "#ffd43b" },
+        { "name": "Scikit-learn", "level": "Expert", "description": "Traditional ML algorithms and preprocessing", "icon": "fas fa-chart-line", "color": "#f7931e" },
+        { "name": "LangChain", "level": "Advanced", "description": "LLM application development and RAG systems", "icon": "fas fa-link", "color": "#4ecdc4" }
+      ],
+      "frameworks": [
+        { "name": "FastAPI", "level": "Advanced", "description": "Modern web framework for building APIs", "icon": "fas fa-bolt", "color": "#05998b" },
+        { "name": "Spring Boot", "level": "Advanced", "description": "Java-based microservices framework", "icon": "fab fa-java", "color": "#6db33f" },
+        { "name": "React", "level": "Intermediate", "description": "Frontend development and UI components", "icon": "fab fa-react", "color": "#61dafb" },
+        { "name": "Node.js", "level": "Advanced", "description": "Backend development and API services", "icon": "fab fa-node-js", "color": "#339933" }
+      ],
+      "libraries": [
+        { "name": "Pandas", "level": "Expert", "description": "Data manipulation and analysis", "icon": "fas fa-table", "color": "#130654" },
+        { "name": "NumPy", "level": "Expert", "description": "Numerical computing and array operations", "icon": "fas fa-calculator", "color": "#4dabcf" },
+        { "name": "Transformers", "level": "Expert", "description": "State-of-the-art NLP models and fine-tuning", "icon": "fas fa-language", "color": "#ff6b6b" }
+      ],
+      "tools": [
+        { "name": "Git", "level": "Expert", "description": "Version control and collaboration", "icon": "fab fa-git-alt", "color": "#f05032" },
+        { "name": "Docker", "level": "Advanced", "description": "Containerization and deployment", "icon": "fab fa-docker", "color": "#2496ed" },
+        { "name": "Kubernetes", "level": "Advanced", "description": "Container orchestration and management", "icon": "fas fa-dharmachakra", "color": "#326ce5" },
+        { "name": "Jenkins", "level": "Advanced", "description": "CI/CD pipelines", "icon": "fas fa-sync-alt", "color": "#d33833" }
+      ],
+      "cloud_technologies": [
+        { "name": "AWS", "level": "Advanced", "description": "EKS, EC2, S3, SQS, Lambda, CloudWatch", "icon": "fab fa-aws", "color": "#ff9900" },
+        { "name": "AWS ECS/EKS", "level": "Advanced", "description": "Container orchestration on AWS", "icon": "fas fa-server", "color": "#ff9900" }
+      ],
+      "distributed_computing": [
+        { "name": "Kafka", "level": "Advanced", "description": "Distributed event streaming platform", "icon": "fas fa-stream", "color": "#231f20" },
+        { "name": "Spark", "level": "Advanced", "description": "Distributed data processing", "icon": "fas fa-fire", "color": "#e25a1c" },
+        { "name": "Hadoop", "level": "Advanced", "description": "Distributed storage and processing", "icon": "fas fa-database", "color": "#ffcc02" },
+        { "name": "Redis", "level": "Advanced", "description": "In-memory caching and data store", "icon": "fas fa-bolt", "color": "#dc382d" }
+      ],
+      "observability": [
+        { "name": "Prometheus", "level": "Advanced", "description": "Metrics collection and monitoring", "icon": "fas fa-chart-area", "color": "#e6522c" },
+        { "name": "Grafana", "level": "Advanced", "description": "Observability dashboards", "icon": "fas fa-tachometer-alt", "color": "#f46800" },
+        { "name": "Langfuse", "level": "Advanced", "description": "LLM observability and tracing", "icon": "fas fa-eye", "color": "#4a90e2" }
+      ]
+    },
+    "research_areas": [
+      { "name": "LLM Systems", "description": "Large language model architectures, fine-tuning, and deployment", "expertise": "Expert", "icon": "fas fa-brain", "color": "#4a90e2" },
+      { "name": "Generative AI", "description": "Agent architectures, RAG systems, and generative pipelines", "expertise": "Expert", "icon": "fas fa-robot", "color": "#50c878" },
+      { "name": "Distributed Systems", "description": "Scalable computing, event-driven architecture, microservices", "expertise": "Advanced", "icon": "fas fa-network-wired", "color": "#9b59b6" },
+      { "name": "Natural Language Processing", "description": "Text processing, sentiment analysis, and language understanding", "expertise": "Expert", "icon": "fas fa-language", "color": "#ff6b35" },
+      { "name": "Machine Learning", "description": "Predictive modeling, model evaluation, and ML systems", "expertise": "Expert", "icon": "fas fa-chart-line", "color": "#e74c3c" }
+    ],
+    "soft_skills": [
+      { "name": "Research & Development", "description": "Leading cutting-edge AI research projects", "icon": "fas fa-flask", "color": "#3498db" },
+      { "name": "Problem Solving", "description": "Complex technical problem analysis and solution design", "icon": "fas fa-puzzle-piece", "color": "#e67e22" },
+      { "name": "Team Leadership", "description": "Leading technical teams and mentoring junior developers", "icon": "fas fa-users-cog", "color": "#27ae60" },
+      { "name": "Technical Communication", "description": "Presenting complex technical concepts to diverse audiences", "icon": "fas fa-comments", "color": "#8e44ad" },
+      { "name": "Project Management", "description": "Managing end-to-end ML/AI project lifecycles", "icon": "fas fa-tasks", "color": "#f39c12" }
+    ],
+    "certifications": [
+      { "name": "Fundamentals of Deep Learning", "issuer": "NVIDIA", "date": "Aug 2021", "credentialId": "6c21913394d04140af813649b2cf3b12", "icon": "fas fa-brain", "color": "#76b900" }
+    ]
+  },
+  "education": [
+    {
+      "id": "edu-1",
+      "degree": "M.S. in Artificial Intelligence",
+      "major": "Distributed & ML Systems",
+      "institution": "University of California, Santa Cruz",
+      "location": "Santa Cruz, CA",
+      "duration": "Sep 2024 - Dec 2025",
+      "gpa": "3.9/4.0",
+      "description": "Coursework: Distributed Systems, Machine Learning Systems, NLP, Reinforcement Learning"
+    },
+    {
+      "id": "edu-2",
+      "degree": "B.E. in Computer Science",
+      "major": "Computer Science",
+      "institution": "SSN College of Engineering",
+      "location": "Chennai, India",
+      "duration": "Aug 2019 - Aug 2023",
+      "gpa": "3.86/4.0",
+      "description": "Winner — Smart India Hackathon. ICPC Regionals Top 300."
+    }
+  ],
+  "career_experience": [
+    {
+      "id": "career-1",
+      "title": "Software Engineer / AI Engineer Intern",
+      "company": "Elas",
+      "location": "Pleasanton, CA",
+      "duration": "Jun 2025 - Sep 2025",
+      "type": "Internship",
+      "description": "Architected and shipped end-to-end AI Agent framework with SQS-backed task pipelines, Hybrid RAG (pgvector), MCP tool orchestration, and agent eval suite; production serving 100+ DAU.",
+      "technologies": ["Python", "AWS", "EKS", "SQS", "pgvector", "LiveKit", "Prometheus", "Grafana", "Langfuse", "REST APIs"],
+      "achievements": [
+        "Shipped AI Agent framework with SQS pipelines, Hybrid RAG, MCP orchestration — 100+ DAU",
+        "Production backend on AWS (EKS, EC2, S3) with REST APIs and observability",
+        "Demoed at NVIDIA GTC 2026, Meta Booth"
+      ],
+      "sde_bullets": [
+        "Shipped AI Agent framework with <strong>SQS pipelines</strong>, Hybrid RAG, MCP orchestration — <strong>100+ DAU</strong>",
+        "Production backend on <strong>AWS (EKS, EC2, S3)</strong>; observability with <strong>Prometheus, Grafana, Langfuse</strong>",
+        "Demoed at <strong>NVIDIA GTC 2026, Meta Booth</strong>"
+      ],
+      "sde_techs": ["Python", "AWS (EKS/EC2/S3/SQS)", "REST APIs", "Prometheus", "Grafana", "pgvector", "LiveKit"],
+      "ds_bullets": [
+        "Shipped <strong>AI Agent framework</strong> with <strong>Hybrid RAG</strong>, MCP orchestration, agent eval — <strong>100+ DAU</strong>",
+        "Trained <strong>task-specific ML models</strong>; reusable Agent Template for new modalities",
+        "Demoed at <strong>NVIDIA GTC 2026</strong>"
+      ],
+      "ds_techs": ["AI Agents", "Hybrid RAG", "pgvector", "MCP", "LiveKit", "Langfuse", "AWS"],
+      "impact": "100+ DAU, NVIDIA GTC 2026 demo",
+      "view_tags": ["sde", "datascience"]
+    },
+    {
+      "id": "career-2",
+      "title": "Software Development Engineer",
+      "company": "Citi Corp",
+      "location": "Chennai, India",
+      "duration": "Aug 2023 - Sep 2024",
+      "type": "Full-time",
+      "description": "Designed distributed notification platform using Kafka, Solace, Spring Boot; processed millions of financial events daily with retry logic and async patterns.",
+      "technologies": ["Java", "Spring Boot", "Kafka", "Solace", "Spark", "REST APIs", "Jenkins", "Docker", "Kubernetes", "Bitbucket"],
+      "achievements": [
+        "Distributed notification platform with Kafka, Solace, Spring Boot — millions of events/day",
+        "Optimized Spark pipelines (25% faster); scalable REST APIs",
+        "Owned CI/CD; Jenkins → Tekton migration on Kubernetes"
+      ],
+      "sde_bullets": [
+        "<strong>Distributed notification platform</strong> with <strong>Kafka, Solace, Spring Boot</strong> — <strong>millions of events/day</strong>",
+        "Optimized <strong>Spark pipelines (25% faster)</strong>; built scalable <strong>REST APIs</strong>",
+        "Owned <strong>CI/CD</strong>; drove <strong>Jenkins → Tekton migration on Kubernetes</strong>"
+      ],
+      "sde_techs": ["Java", "Spring Boot", "Kafka", "Solace", "Spark", "REST APIs", "Jenkins", "Docker", "Kubernetes"],
+      "ds_bullets": [
+        "<strong>ML productivity tracker</strong> with sentence transformers — adopted <strong>org-wide</strong>",
+        "Optimized <strong>Spark pipelines (25% faster)</strong>"
+      ],
+      "ds_techs": ["Sentence Transformers", "ML Models", "Spark", "Classification"],
+      "impact": "25% faster processing, millions of events/day",
+      "view_tags": ["sde", "datascience"]
+    },
+    {
+      "id": "career-3",
+      "title": "Software / NLP Intern",
+      "company": "MultiOn",
+      "location": "Remote",
+      "duration": "Jun 2023 - Aug 2023",
+      "type": "Internship",
+      "description": "Built backend for LLM-powered browser automation; improved vector search latency by 40%; integrated LangChain for NLP-driven automation.",
+      "technologies": ["Python", "LangChain", "Vector Databases", "NLP", "Browser Automation"],
+      "achievements": [
+        "Built LLM browser automation backend; 40% faster vector search",
+        "Merged PR #12392 to langchain-ai/langchain (open source)"
+      ],
+      "sde_bullets": [
+        "Built LLM browser automation backend; <strong>40% faster</strong> vector search",
+        "Merged <strong>PR #12392</strong> to <strong>langchain-ai/langchain</strong> (open source)"
+      ],
+      "sde_techs": ["Python", "LangChain", "Vector Databases", "Open Source"],
+      "ds_bullets": [
+        "LLM browser automation; <strong>40% faster</strong> vector search with <strong>LangChain</strong>",
+        "Merged <strong>PR #12392</strong> to <strong>langchain-ai/langchain</strong> (open source)"
+      ],
+      "ds_techs": ["LangChain", "LLMs", "Vector Search", "NLP", "Open Source"],
+      "impact": "40% faster search, LangChain contributor",
+      "view_tags": ["sde", "datascience"]
+    }
+  ],
+  "research_experience": [
+    {
+      "id": "research-1",
+      "title": "Grad Research Lab Assistant",
+      "company": "Chenguang's Lab - UC Santa Cruz",
+      "location": "Santa Cruz, CA",
+      "duration": "Sep 2025 - Present",
+      "type": "Graduate Research",
+      "description": "Researching multi-agent interpretability and behavioral tracing within consensus-based frameworks.",
+      "technologies": ["Python", "Multi-Agent Systems", "Mechanistic Interpretability", "PyTorch"],
+      "achievements": [
+        "Research on multi-agent interpretability and behavioral tracing",
+        "Contributing to massgen framework (Open Source)",
+        "Working on rllm multi-agent training framework (Open Source)"
+      ],
+      "focus": "Multi-Agent Systems, Mechanistic Interpretability"
+    },
+    {
+      "id": "research-2",
+      "title": "Grad Research Lab Assistant",
+      "company": "Ian Lane's Lab - UC Santa Cruz",
+      "location": "Santa Cruz, CA",
+      "duration": "Sep 2024 - Mar 2025",
+      "type": "Graduate Research",
+      "description": "Led development of CruzChat, an internal AI chat platform.",
+      "technologies": ["Python", "PyTorch", "NLP", "LLMs", "Multimodal AI"],
+      "achievements": [
+        "Led development of CruzChat AI chat platform",
+        "Reduced hallucination rate by 5% through model alignment",
+        "Won SemEval 2025 Task 4 with best paper award for hallucination detection"
+      ],
+      "focus": "LLM Hallucination Detection, Multimodal AI",
+      "award": "SemEval 2025 Task 4 Winner - Best Paper Award"
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-sde-1",
+      "title": "Distributed URL Shortener",
+      "description": "Scalable URL service with consistent hashing, Redis caching, and AWS auto-scaling; designed for high read/write throughput with load balancing and health monitoring.",
+      "technologies": ["Go", "Redis", "AWS", "Docker", "Kubernetes"],
+      "category": "SDE",
+      "github": "https://github.com/kitrakrev/distributed-url-shortener",
+      "tags": ["Go", "Redis", "AWS", "Distributed Systems", "Docker", "Kubernetes"],
+      "date": "2025"
+    },
+    {
+      "id": "project-sde-2",
+      "title": "Real-Time Log Processing Pipeline",
+      "description": "Fault-tolerant distributed log ingestion using Kafka + Spark Structured Streaming; aggregated metrics stored in PostgreSQL with REST querying layer for analysis.",
+      "technologies": ["Kafka", "Spark", "PostgreSQL", "REST APIs"],
+      "category": "SDE",
+      "github": "https://github.com/kitrakrev/log-pipeline",
+      "tags": ["Kafka", "Spark", "PostgreSQL", "Distributed Systems", "Streaming"],
+      "date": "2025"
+    },
+    {
+      "id": "project-ds-1",
+      "title": "LLM Evaluation Framework",
+      "description": "Built automated eval pipeline for RAG systems measuring faithfulness, relevance, and hallucination rate across model versions; supports regression detection and multi-model comparison.",
+      "technologies": ["Python", "PyTorch", "RAG", "OpenAI API", "PostgreSQL"],
+      "category": "Data Science",
+      "github": "https://github.com/kitrakrev/llm-eval",
+      "tags": ["Python", "PyTorch", "RAG", "LLM", "Evaluation"],
+      "date": "2025"
+    },
+    {
+      "id": "project-ds-2",
+      "title": "AI Agent Framework",
+      "description": "End-to-end agentic framework with SQS-backed task pipelines, Hybrid RAG with pgvector, MCP tool orchestration, and comprehensive agent evaluation suite.",
+      "technologies": ["Python", "AWS SQS", "pgvector", "MCP", "LiveKit"],
+      "category": "Data Science",
+      "github": "https://github.com/kitrakrev/ai-agent-framework",
+      "tags": ["Python", "AI Agents", "RAG", "MCP", "Production ML"],
+      "date": "2025"
+    },
+    {
+      "id": "project-ds-3",
+      "title": "Multimodal RAG System",
+      "description": "Advanced retrieval-augmented generation system combining text, image, and audio modalities for enhanced knowledge retrieval.",
+      "technologies": ["Python", "PyTorch", "RAG", "Multimodal AI"],
+      "category": "Data Science",
+      "github": "https://github.com/kitrakrev/multimodal-rag",
+      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval", "Python", "PyTorch"],
+      "date": "2024"
+    }
+  ],
+  "qualifications_sde": [
+    {"t": "M.S. in AI", "d": "UC Santa Cruz — 3.9 GPA"},
+    {"t": "1+ Year Industry Experience", "d": "Citi Corp (full-time) + Elas, MultiOn"},
+    {"t": "Distributed Systems", "d": "Kafka, Spark, SQS — millions of events/day"},
+    {"t": "Python, C++, Java, Go", "d": "Production systems across all four"},
+    {"t": "ML & AI", "d": "LLM systems, RAG, agents — GTC 2026 demo"},
+    {"t": "System Design & Cloud", "d": "AWS (EKS, EC2, S3, SQS), K8s, CI/CD"}
+  ],
+  "sde_skills": {
+    "languages": ["Python", "Java", "C++", "Go", "Rust", "SQL"],
+    "backend": ["REST APIs", "Microservices", "Distributed Systems", "Event-driven Architecture", "MCP", "System Design"],
+    "cloud": ["AWS (EKS, EC2, S3, SQS, Lambda, CloudWatch)", "Docker", "Kubernetes", "CI/CD"],
+    "databases": ["PostgreSQL", "pgvector", "Redis", "MySQL", "MongoDB"],
+    "messaging": ["Kafka", "Spark", "SQS", "Solace", "Hadoop"],
+    "observability": ["Prometheus", "Grafana", "Langfuse", "Logging", "Alerting"],
+    "streaming": ["LiveKit", "Real-time Pipelines", "Multimodal Systems"]
+  },
+  "ds_skills": {
+    "ai_ml": ["LLM Systems", "Generative AI", "Agent Architectures", "RAG", "NLP", "PyTorch", "TensorFlow", "JAX", "Model Fine-tuning", "Evals"],
+    "languages": ["Python", "Java", "C++", "Go", "Rust", "SQL"],
+    "backend": ["REST APIs", "Microservices", "Distributed Systems", "Event-driven Architecture"],
+    "cloud": ["AWS (EKS, EC2, S3, SQS, Lambda)", "Docker", "Kubernetes"],
+    "databases": ["PostgreSQL", "pgvector", "Redis", "MongoDB"],
+    "observability": ["Prometheus", "Grafana", "Langfuse"]
+  },
+  "achievements": [
+    {
+      "id": "achievement-1",
+      "title": "NVIDIA GTC 2026 Demo — Meta Booth",
+      "category": "Industry",
+      "date": "2026",
+      "organization": "NVIDIA / Meta",
+      "link": "https://www.nvidia.com/gtc/"
+    },
+    {
+      "id": "achievement-2",
+      "title": "SemEval 2025 Task 4 Winner - Best Paper Award",
+      "category": "Competition",
+      "date": "2025",
+      "organization": "SemEval",
+      "link": "https://semeval.github.io/SemEval2025/"
+    },
+    {
+      "id": "achievement-3",
+      "title": "Open-Source Contributor — LangChain",
+      "category": "Open Source",
+      "date": "2023",
+      "organization": "LangChain",
+      "link": "https://github.com/langchain-ai/langchain/pull/12392"
+    },
+    {
+      "id": "achievement-4",
+      "title": "Smart India Hackathon Winner (2023)",
+      "category": "Hackathon",
+      "date": "2023",
+      "organization": "Smart India Hackathon",
+      "link": "https://www.sih.gov.in/"
+    },
+    {
+      "id": "achievement-5",
+      "title": "ICPC Regionals - Top 300",
+      "category": "Competition",
+      "date": "2023",
+      "organization": "ICPC",
+      "link": "https://icpc.global/"
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub-1",
+      "title": "A Novel Dataset for Fake News in Tamil",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "SPELLL 2022",
+      "year": "2022",
+      "abstract": "Using Sentence transformers and web scraping for Tamil fake news detection.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/tamil-fake-news",
+      "tags": ["Fake News Detection", "Tamil NLP", "Sentence Transformers"],
+      "category": "Conference"
+    },
+    {
+      "id": "pub-2",
+      "title": "Abusive and Threatening Language Detection in Native Urdu Tweets",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "FIRE 2021",
+      "year": "2021",
+      "abstract": "Using BERT, BiLSTM models for detecting abusive and threatening language in Urdu tweets.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/urdu-abuse-detection",
+      "tags": ["Urdu NLP", "Abuse Detection", "BERT", "BiLSTM"],
+      "category": "Conference"
+    },
+    {
+      "id": "pub-3",
+      "title": "Detecting Malicious IoT Traffic Using Machine Learning Techniques",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "Romanian Journal of Information Technology and Automatic Control",
+      "year": "2023",
+      "abstract": "Using ML models like RandomForest, XGBoost for detecting malicious IoT traffic.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/iot-malware-detection",
+      "tags": ["IoT Security", "Machine Learning", "RandomForest", "XGBoost"],
+      "category": "Journal"
+    },
+    {
+      "id": "pub-4",
+      "title": "LeSS Agile Projects: A Machine Learning-Driven Empirical Model",
+      "authors": "Karthik Raja Anandan, et al.",
+      "venue": "International Journal of Information Technology",
+      "year": "2021",
+      "abstract": "Using SVM-based models to predict human resource allocation in LeSS Agile projects.",
+      "pdf": "https://arxiv.org/abs/example",
+      "code": "https://github.com/kitrakrev/less-agile-hr",
+      "tags": ["Agile", "HR Prediction", "SVM", "Machine Learning"],
+      "category": "Journal"
+    }
+  ],
+  "blogs": [
+    {
+      "id": "blog-1",
+      "title": "Understanding Multimodal RAG Systems",
+      "excerpt": "A comprehensive guide to building retrieval-augmented generation systems that can handle multiple modalities.",
+      "content": "content/blog-posts/multimodal-rag.html",
+      "image": "https://via.placeholder.com/400x250/4a90e2/ffffff?text=Multimodal+RAG",
+      "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval", "Tutorial"],
+      "category": "AI Research",
+      "date": "2024-01-15",
+      "readTime": "8 min read"
+    },
+    {
+      "id": "blog-2",
+      "title": "Mechanistic Interpretability: A Deep Dive",
+      "excerpt": "Exploring the internal mechanisms of large language models.",
+      "content": "content/blog-posts/mechanistic-interpretability.html",
+      "image": "https://via.placeholder.com/400x250/50c878/ffffff?text=Interpretability",
+      "tags": ["Mechanistic Interpretability", "LLMs", "Analysis", "Research"],
+      "category": "AI Research",
+      "date": "2023-12-20",
+      "readTime": "12 min read"
+    },
+    {
+      "id": "blog-3",
+      "title": "Building Multi-Agent Conversation Systems",
+      "excerpt": "How to design and implement intelligent multi-agent systems.",
+      "content": "content/blog-posts/multi-agent-systems.html",
+      "image": "https://via.placeholder.com/400x250/ff6b35/ffffff?text=Multi-Agent",
+      "tags": ["Multi-Agent Systems", "Conversation AI", "Architecture", "Design"],
+      "category": "AI Research",
+      "date": "2023-11-10",
+      "readTime": "10 min read"
+    },
+    {
+      "id": "blog-4",
+      "title": "Graph-Based Knowledge Retrieval: Beyond Traditional RAG",
+      "excerpt": "Exploring advanced knowledge retrieval techniques using graph neural networks.",
+      "content": "content/blog-posts/graph-rag.html",
+      "image": "https://via.placeholder.com/400x250/e74c3c/ffffff?text=Graph+RAG",
+      "tags": ["Graph RAG", "Knowledge Graphs", "GNN", "Advanced RAG"],
+      "category": "AI Research",
+      "date": "2023-10-25",
+      "readTime": "15 min read"
+    }
+  ],
+  "open_source": {
+    "repositories": [
+      { "name": "multimodal-rag", "description": "Advanced multimodal retrieval-augmented generation system", "language": "Python", "stars": 0, "forks": 0, "url": "https://github.com/kitrakrev/multimodal-rag", "topics": ["multimodal", "rag", "ai", "nlp"], "status": "Active", "contributions": "Lead Developer" },
+      { "name": "distributed-url-shortener", "description": "Scalable URL shortener with consistent hashing", "language": "Go", "stars": 0, "forks": 0, "url": "https://github.com/kitrakrev/distributed-url-shortener", "topics": ["distributed-systems", "go", "redis"], "status": "Active", "contributions": "Lead Developer" }
+    ],
+    "packages": [],
+    "contributions": [
+      { "repository": "langchain", "organization": "LangChain", "description": "Merged PR #12392 — MultiOn client toolkit with async support", "type": "Feature", "url": "https://github.com/langchain-ai/langchain/pull/12392", "status": "Merged", "date": "2023-08" }
+    ],
+    "community": []
+  }
+}
