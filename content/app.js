@@ -25,7 +25,7 @@ class PortfolioApp {
 
     async loadData() {
         try {
-            const response = await fetch('content/data.json');
+            const response = await fetch('content/data.json?v=20260618c');
             this.data = await response.json();
         } catch (error) {
             console.error('Error loading data:', error);
