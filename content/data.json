@@ -21,7 +21,7 @@
     ],
     "links": {
       "linkedin": "https://www.linkedin.com/in/karthikrajaanandan",
-      "github": "https://github.com/karthikraja",
+      "github": "https://github.com/kitrakrev",
       "githubPages": "https://kitrakrev.github.io",
       "resume": "assets/karthik_F25.pdf"
     },
@@ -245,7 +245,7 @@
       "description": "Scalable URL service with consistent hashing, Redis caching, and AWS auto-scaling; designed for high read/write throughput with load balancing and health monitoring.",
       "technologies": ["Go", "Redis", "AWS", "Docker", "Kubernetes"],
       "category": "SDE",
-      "github": "https://github.com/karthikraja/distributed-url-shortener",
+      "github": "https://github.com/kitrakrev/distributed-url-shortener",
       "tags": ["Go", "Redis", "AWS", "Distributed Systems", "Docker", "Kubernetes"],
       "date": "2025"
     },
@@ -255,7 +255,7 @@
       "description": "Fault-tolerant distributed log ingestion using Kafka + Spark Structured Streaming; aggregated metrics stored in PostgreSQL with REST querying layer for analysis.",
       "technologies": ["Kafka", "Spark", "PostgreSQL", "REST APIs"],
       "category": "SDE",
-      "github": "https://github.com/karthikraja/log-pipeline",
+      "github": "https://github.com/kitrakrev/log-pipeline",
       "tags": ["Kafka", "Spark", "PostgreSQL", "Distributed Systems", "Streaming"],
       "date": "2025"
     },
@@ -265,7 +265,7 @@
       "description": "Built automated eval pipeline for RAG systems measuring faithfulness, relevance, and hallucination rate across model versions; supports regression detection and multi-model comparison.",
       "technologies": ["Python", "PyTorch", "RAG", "OpenAI API", "PostgreSQL"],
       "category": "Data Science",
-      "github": "https://github.com/karthikraja/llm-eval",
+      "github": "https://github.com/kitrakrev/llm-eval",
       "tags": ["Python", "PyTorch", "RAG", "LLM", "Evaluation"],
       "date": "2025"
     },
@@ -275,7 +275,7 @@
       "description": "End-to-end agentic framework with SQS-backed task pipelines, Hybrid RAG with pgvector, MCP tool orchestration, and comprehensive agent evaluation suite.",
       "technologies": ["Python", "AWS SQS", "pgvector", "MCP", "LiveKit"],
       "category": "Data Science",
-      "github": "https://github.com/karthikraja/ai-agent-framework",
+      "github": "https://github.com/kitrakrev/ai-agent-framework",
       "tags": ["Python", "AI Agents", "RAG", "MCP", "Production ML"],
       "date": "2025"
     },
@@ -285,7 +285,7 @@
       "description": "Advanced retrieval-augmented generation system combining text, image, and audio modalities for enhanced knowledge retrieval.",
       "technologies": ["Python", "PyTorch", "RAG", "Multimodal AI"],
       "category": "Data Science",
-      "github": "https://github.com/karthikraja/multimodal-rag",
+      "github": "https://github.com/kitrakrev/multimodal-rag",
       "tags": ["Multimodal AI", "RAG", "Knowledge Retrieval", "Python", "PyTorch"],
       "date": "2024"
     }
@@ -366,7 +366,7 @@
       "year": "2022",
       "abstract": "Using Sentence transformers and web scraping for Tamil fake news detection.",
       "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/karthikraja/tamil-fake-news",
+      "code": "https://github.com/kitrakrev/tamil-fake-news",
       "tags": ["Fake News Detection", "Tamil NLP", "Sentence Transformers"],
       "category": "Conference"
     },
@@ -378,7 +378,7 @@
       "year": "2021",
       "abstract": "Using BERT, BiLSTM models for detecting abusive and threatening language in Urdu tweets.",
       "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/karthikraja/urdu-abuse-detection",
+      "code": "https://github.com/kitrakrev/urdu-abuse-detection",
       "tags": ["Urdu NLP", "Abuse Detection", "BERT", "BiLSTM"],
       "category": "Conference"
     },
@@ -390,7 +390,7 @@
       "year": "2023",
       "abstract": "Using ML models like RandomForest, XGBoost for detecting malicious IoT traffic.",
       "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/karthikraja/iot-malware-detection",
+      "code": "https://github.com/kitrakrev/iot-malware-detection",
       "tags": ["IoT Security", "Machine Learning", "RandomForest", "XGBoost"],
       "category": "Journal"
     },
@@ -402,7 +402,7 @@
       "year": "2021",
       "abstract": "Using SVM-based models to predict human resource allocation in LeSS Agile projects.",
       "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/karthikraja/less-agile-hr",
+      "code": "https://github.com/kitrakrev/less-agile-hr",
       "tags": ["Agile", "HR Prediction", "SVM", "Machine Learning"],
       "category": "Journal"
     }
@@ -455,8 +455,8 @@
   ],
   "open_source": {
     "repositories": [
-      { "name": "multimodal-rag", "description": "Advanced multimodal retrieval-augmented generation system", "language": "Python", "stars": 45, "forks": 12, "url": "https://github.com/karthikraja/multimodal-rag", "topics": ["multimodal", "rag", "ai", "nlp"], "status": "Active", "contributions": "Lead Developer" },
-      { "name": "distributed-url-shortener", "description": "Scalable URL shortener with consistent hashing", "language": "Go", "stars": 32, "forks": 8, "url": "https://github.com/karthikraja/distributed-url-shortener", "topics": ["distributed-systems", "go", "redis"], "status": "Active", "contributions": "Lead Developer" }
+      { "name": "multimodal-rag", "description": "Advanced multimodal retrieval-augmented generation system", "language": "Python", "stars": 45, "forks": 12, "url": "https://github.com/kitrakrev/multimodal-rag", "topics": ["multimodal", "rag", "ai", "nlp"], "status": "Active", "contributions": "Lead Developer" },
+      { "name": "distributed-url-shortener", "description": "Scalable URL shortener with consistent hashing", "language": "Go", "stars": 32, "forks": 8, "url": "https://github.com/kitrakrev/distributed-url-shortener", "topics": ["distributed-systems", "go", "redis"], "status": "Active", "contributions": "Lead Developer" }
     ],
     "packages": [],
     "contributions": [
