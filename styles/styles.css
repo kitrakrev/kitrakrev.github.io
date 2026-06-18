@@ -762,3 +762,39 @@ body { background: var(--page); font-size: 1.0625rem; }
 .footer-name { color: var(--ink); }
 .footer-sub, .footer-links a, .footer-social a, .footer-bottom p { color: var(--ink-muted); }
 .footer-links a:hover, .footer-social a:hover { color: var(--ink); }
+
+/* ===================================================================
+   COMPACT / FAST-SCAN — minimize scrolling, everything in a glance.
+   (appended — wins by source order)
+   =================================================================== */
+section, .section-block,
+.education-section, .experience-section, .qualifications-section,
+.projects-section, .skills-section-compact, .publications-compact-section,
+.achievements-section, .highlights-section, .cta-section { padding: var(--sp-6) 0; }
+.view-switcher { padding: var(--sp-4) var(--sp-6) 0; }
+.hero-section { padding: var(--sp-6) 0 var(--sp-5); }
+
+h2 { margin-bottom: var(--sp-3); }
+.section-label { margin-bottom: var(--sp-3); }
+
+/* hero tighter */
+.hero-container { gap: var(--sp-8); }
+.hero-image img { width: 132px; height: 132px; }
+.hero-content h1 { font-size: clamp(2.2rem, 4.5vw, 3.1rem); }
+.hero-content h2 { font-size: 1.1rem; margin-bottom: var(--sp-3); }
+.hero-summary { font-size: 1rem; margin-bottom: var(--sp-3); }
+.contact-bar { padding: var(--sp-2) 0; margin-bottom: var(--sp-3); }
+
+/* tighter grids + cards */
+.experience-grid { gap: var(--sp-3); margin-top: var(--sp-4); }
+.education-grid, .sde-projects-grid, .qual-grid, .competency-grid,
+.achievements-grid { gap: var(--sp-3); margin-top: var(--sp-4); }
+.exp-card { padding: var(--sp-4) var(--sp-5); }
+.exp-card-header { margin-bottom: var(--sp-2); }
+.exp-achievements { gap: var(--sp-1); margin-bottom: var(--sp-3); }
+.exp-impact { margin-bottom: var(--sp-3); padding: var(--sp-1) var(--sp-3); }
+.edu-card, .qual-card, .competency-card, .project-card-compact, .achievement-card { padding: var(--sp-4); }
+.competency-card h3 { margin-bottom: var(--sp-3); }
+.highlights-grid { margin-top: 0; gap: var(--sp-4); }
+.highlight-card { padding: var(--sp-2) var(--sp-3); }
+.highlight-card i { width: 38px; height: 38px; margin-bottom: var(--sp-2); font-size: 1rem; }
