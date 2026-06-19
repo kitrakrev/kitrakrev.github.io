@@ -283,16 +283,16 @@ class PortfolioApp {
             ${this.viewSwitcher()}
             ${this.heroBlock(
                 'AI / Software Engineer',
-                'Building production AI systems and distributed backends. M.S. AI @ UC Santa Cruz (3.9). Shipped agentic frameworks to 100+ DAU. Demoed at NVIDIA GTC 2026.'
+                'Founding engineer building and validating production agentic AI systems — test automation, multi-agent routing, and dev infrastructure. M.S. AI @ UC Santa Cruz (3.9). Open-source: Google Tunix, LangChain, Ivy. NVIDIA GTC 2026 · SemEval 2025 Task 4 Winner.'
             )}
 
             <section class="highlights-section">
                 <div class="container">
                     <div class="highlights-grid">
                         <div class="highlight-card"><i class="fas fa-graduation-cap"></i><h3>M.S. AI</h3><p>UC Santa Cruz &mdash; 3.9 GPA</p></div>
-                        <div class="highlight-card"><i class="fas fa-briefcase"></i><h3>3 Roles</h3><p>Elas &middot; Citi Corp &middot; MultiOn</p></div>
+                        <div class="highlight-card"><i class="fas fa-briefcase"></i><h3>4 Roles</h3><p>Elas &middot; Samsung &middot; Citi &middot; MultiOn</p></div>
                         <div class="highlight-card"><i class="fas fa-microphone-alt"></i><h3>GTC 2026</h3><p>NVIDIA Demo &mdash; Meta Booth</p></div>
-                        <div class="highlight-card"><i class="fas fa-code-branch"></i><h3>Open Source</h3><p>LangChain Contributor</p></div>
+                        <div class="highlight-card"><i class="fas fa-code-branch"></i><h3>Open Source</h3><p>Tunix &middot; LangChain &middot; Ivy</p></div>
                     </div>
                 </div>
             </section>
@@ -388,7 +388,7 @@ class PortfolioApp {
                         <div class="role-target-badge"><i class="fas fa-bullseye"></i> Tailored for Software Engineer roles</div>
                         <h1>${this.data.profile.name}</h1>
                         <h2>Software Engineer</h2>
-                        <p class="hero-summary"><strong>Distributed systems, large-scale backends, production infrastructure.</strong> Shipped to 100+ DAU on AWS. M.S. AI @ UC Santa Cruz (3.9). Python, Java, C++, Go.</p>
+                        <p class="hero-summary"><strong>Agentic systems, test automation, distributed backends.</strong> Founding engineer at Elas — eval frameworks, multi-agent routing, CI/CD. M.S. AI @ UC Santa Cruz (3.9). Python, C++, Java, Go.</p>
                         <div class="contact-bar">
                             <span><i class="fas fa-map-marker-alt"></i> ${this.data.profile.contact.location}</span>
                             <span><i class="fas fa-envelope"></i> ${this.data.profile.contact.email}</span>
@@ -506,7 +506,7 @@ class PortfolioApp {
                         <div class="role-target-badge ds"><i class="fas fa-bullseye"></i> Tailored for AI / ML roles</div>
                         <h1>${this.data.profile.name}</h1>
                         <h2>AI / ML Engineer</h2>
-                        <p class="hero-summary"><strong>Production AI agents, Hybrid RAG, LLM systems.</strong> 100+ DAU. LangChain contributor. NVIDIA GTC 2026. M.S. AI @ UC Santa Cruz (3.9).</p>
+                        <p class="hero-summary"><strong>Production AI agents, evals, multi-agent systems.</strong> Founding engineer; open-source Google Tunix, LangChain, Ivy. NVIDIA GTC 2026 · SemEval 2025 Task 4 Winner. M.S. AI @ UC Santa Cruz (3.9).</p>
                         <div class="contact-bar">
                             <span><i class="fas fa-map-marker-alt"></i> ${this.data.profile.contact.location}</span>
                             <span><i class="fas fa-envelope"></i> ${this.data.profile.contact.email}</span>
