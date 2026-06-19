@@ -280,7 +280,6 @@ class PortfolioApp {
     renderOverviewPage() {
         const main = document.getElementById('main-content');
         main.innerHTML = `
-            ${this.viewSwitcher()}
             ${this.heroBlock(
                 'AI / Software Engineer',
                 'Founding engineer building and validating production agentic AI systems — test automation, multi-agent routing, and dev infrastructure. M.S. AI @ UC Santa Cruz (3.9). Open-source: Google Tunix, LangChain, Ivy. NVIDIA GTC 2026 · SemEval 2025 Task 4 Winner.'
@@ -362,9 +361,9 @@ class PortfolioApp {
             <section class="cta-section">
                 <div class="container">
                     <div class="cta-actions">
-                        <button class="btn btn-primary" data-view="sde"><i class="fas fa-code"></i> View as SDE</button>
-                        <button class="btn btn-accent" data-view="datascience"><i class="fas fa-brain"></i> View as AI/ML</button>
-                        <a href="mailto:${this.data.profile.contact.email}" class="btn btn-outline"><i class="fas fa-envelope"></i> Email Me</a>
+                        <a href="mailto:${this.data.profile.contact.email}" class="btn btn-primary"><i class="fas fa-envelope"></i> Email Me</a>
+                        <a href="${this.data.profile.links.resume}" class="btn btn-secondary" download><i class="fas fa-download"></i> Download Resume</a>
+                        <a href="${this.data.profile.links.linkedin}" class="btn btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
                     </div>
                 </div>
             </section>
