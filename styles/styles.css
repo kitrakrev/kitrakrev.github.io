@@ -798,3 +798,95 @@ h2 { margin-bottom: var(--sp-3); }
 .highlights-grid { margin-top: 0; gap: var(--sp-4); }
 .highlight-card { padding: var(--sp-2) var(--sp-3); }
 .highlight-card i { width: 38px; height: 38px; margin-bottom: var(--sp-2); font-size: 1rem; }
+
+/* ===================================================================
+   FAST-SCAN v2 — less scroll, multi-column, fewer interactions
+   =================================================================== */
+section, .section-block, .education-section, .experience-section,
+.qualifications-section, .projects-section, .skills-section-compact,
+.publications-compact-section, .achievements-section, .highlights-section,
+.cta-section { padding: var(--sp-5) 0; }
+.hero-section { padding: var(--sp-5) 0 var(--sp-4); }
+.view-switcher { padding: var(--sp-4) var(--sp-6) 0; }
+/* experience side-by-side so all roles fit in ~one screen */
+.experience-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); }
+.exp-card { padding: var(--sp-4); }
+.exp-achievements { gap: var(--sp-1); margin-bottom: var(--sp-2); }
+@media (max-width: 768px) { .experience-grid { grid-template-columns: 1fr; } }
+
+/* ===================================================================
+   ACCENT — Royal Blue (professional)
+   =================================================================== */
+:root{
+  --accent:#2563eb;
+  --accent-text:#1d4ed8;
+  --accent-soft:#dbeafe;
+  --page:#fbfcfe;
+}
+
+/* ===================================================================
+   REDESIGN v3 — DARK HERO BAND on a light page
+   A single bold dark block anchors the page; everything else stays light.
+   =================================================================== */
+:root{ --hero-ink:#eaf0fb; --hero-accent:#5eb1ff; }
+
+/* the dark band */
+.hero-section{
+  background:
+    radial-gradient(900px 380px at 12% -20%, rgba(59,130,246,0.28) 0%, transparent 60%),
+    radial-gradient(700px 300px at 95% 0%, rgba(37,99,235,0.20) 0%, transparent 55%),
+    linear-gradient(140deg, #0a1324 0%, #0f1d38 55%, #0b1426 100%);
+  color: var(--hero-ink);
+  padding: var(--sp-12) 0 var(--sp-12);
+  margin-bottom: var(--sp-8);
+  border-radius: 0 0 30px 30px;
+  border: none;
+  box-shadow: 0 24px 60px -28px rgba(8,16,33,0.55);
+  position: relative;
+  overflow: hidden;
+}
+.hero-section::after{           /* subtle grid texture */
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(700px 300px at 70% 10%, #000 0%, transparent 80%);
+          mask-image: radial-gradient(700px 300px at 70% 10%, #000 0%, transparent 80%);
+}
+.hero-section .hero-container{ position:relative; z-index:1; }
+
+/* text on dark */
+.hero-section .hero-content h1{ color:#ffffff; }
+.hero-section .hero-content h2{ color: var(--hero-accent); -webkit-text-fill-color: currentColor; }
+.hero-section .hero-summary{ color:#c2cde0; }
+.hero-section .contact-bar{ border-top-color: rgba(255,255,255,.14); border-bottom-color: rgba(255,255,255,.14); }
+.hero-section .contact-bar span{ color:#cdd7e8; }
+.hero-section .contact-bar i{ color: var(--hero-accent); }
+
+/* photo */
+.hero-section .hero-image img{
+  border: 3px solid rgba(255,255,255,.16);
+  box-shadow: 0 18px 48px rgba(0,0,0,.45);
+  border-radius: 18px;
+}
+
+/* buttons on dark */
+.hero-section .hero-actions .btn-primary{
+  background:#2f74ff; color:#fff; border:1px solid #2f74ff;
+  box-shadow: 0 8px 22px -8px rgba(47,116,255,.8);
+}
+.hero-section .hero-actions .btn-primary:hover{ background:#1c63f0; border-color:#1c63f0; }
+.hero-section .hero-actions .btn-secondary{
+  background: rgba(255,255,255,.07); color:#eaf0fb; border:1px solid rgba(255,255,255,.22);
+}
+.hero-section .hero-actions .btn-secondary:hover{ background: rgba(255,255,255,.14); color:#fff; border-color: rgba(255,255,255,.4); }
+
+/* stats row sits on light, slightly lifted under the dark band */
+.highlights-section{ background: transparent; border:none; padding: 0 0 var(--sp-6); }
+.highlights-section .container{ max-width: 1080px; }
+.highlights-grid{ background:#fff; border:1px solid var(--border); border-radius:16px; box-shadow: var(--shadow-md); overflow:hidden; }
+.highlight-card{ border-right:1px solid var(--border); }
+
+/* view-switcher: quiet strip above the dark band */
+.view-switcher{ padding: var(--sp-5) var(--sp-6) var(--sp-4); }
