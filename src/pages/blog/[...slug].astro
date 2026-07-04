@@ -17,7 +17,11 @@ const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 ---
 
-<Base title={`${post.data.title} - Karthik Raja Anandan`} description={post.data.excerpt}>
+<Base
+  title={`${post.data.title} - Karthik Raja Anandan`}
+  description={post.data.excerpt}
+  ogType="article"
+>
   <div class="blog-post">
     <a href="/blog/" class="back-to-blogs"><i class="fas fa-arrow-left"></i> Back to Blog</a>
 

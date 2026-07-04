@@ -5,13 +5,18 @@ import data from '../data/data.json';
 interface Props {
   title?: string;
   description?: string;
+  ogType?: string;
 }
 
 const p = data.profile;
 const {
   title = 'Karthik Raja Anandan - AI/Software Engineer',
   description = 'Karthik Raja Anandan - AI/Software Engineer. M.S. AI @ UC Santa Cruz (GPA 3.9). Production AI agent systems, distributed backend services, Hybrid RAG pipelines. Python, Java, C++, Go. NVIDIA GTC 2026. Open-source LangChain contributor.',
+  ogType = 'website',
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(p.profileImage, Astro.site);
 
 const path = Astro.url.pathname;
 const isActive = (href: string) =>
@@ -38,6 +43,21 @@ const navLinks = [
       content="Software Engineer, AI Engineer, Machine Learning, Distributed Systems, Python, Java, C++, Go, AWS, Kubernetes, Docker, LLM Systems, RAG, Kafka, Spring Boot, System Design, Backend Engineer, NLP, PyTorch, NVIDIA GTC"
     />
     <title>{title}</title>
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Karthik Raja Anandan" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Fonts: DM Sans for body (high x-height, great readability), Instrument Serif for display -->
     <link
