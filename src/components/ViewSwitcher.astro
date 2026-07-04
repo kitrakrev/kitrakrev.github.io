@@ -1,0 +1,28 @@
+---
+interface Props {
+  current: 'overview' | 'sde' | 'datascience' | 'none';
+}
+const { current } = Astro.props;
+const views = [
+  { key: 'overview', href: '/', icon: 'fas fa-user', label: 'Overview' },
+  { key: 'sde', href: '/sde/', icon: 'fas fa-code', label: 'Software Engineer' },
+  { key: 'datascience', href: '/datascience/', icon: 'fas fa-brain', label: 'AI / ML' },
+];
+---
+
+<div class="view-switcher">
+  <p class="view-switcher-label">View portfolio as</p>
+  <div class="view-switcher-inner">
+    {
+      views.map((v) => (
+        <a
+          class:list={['view-switcher-btn', { active: current === v.key }]}
+          data-view={v.key}
+          href={v.href}
+        >
+          <i class={v.icon} /> {v.label}
+        </a>
+      ))
+    }
+  </div>
+</div>

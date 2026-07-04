@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import ViewSwitcher from '../components/ViewSwitcher.astro';
+import data from '../data/data.json';
+
+const p = data.profile;
+---
+
+<Base title="Contact - Karthik Raja Anandan">
+  <ViewSwitcher current="none" />
+  <div class="page-header">
+    <div class="container">
+      <h1>Get in Touch</h1>
+    </div>
+  </div>
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div><h3>Email</h3><p>{p.contact.email}</p></div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div><h3>Phone</h3><p>{p.contact.phone}</p></div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div><h3>Location</h3><p>{p.contact.location}</p></div>
+          </div>
+          <div class="social-links">
+            <a href={p.links.linkedin} target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href={p.links.github} target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+            <a href={p.contact.googleScholar} target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h2>Send a Message</h2>
+          <form
+            id="contact-form"
+            action={`mailto:${p.contact.email}`}
+            method="get"
+            enctype="text/plain"
+          >
+            <div class="form-group"><input type="text" name="name" placeholder="Your Name" required /></div>
+            <div class="form-group"><input type="email" name="email" placeholder="Your Email" required /></div>
+            <div class="form-group"><input type="text" name="subject" placeholder="Subject" required /></div>
+            <div class="form-group"><textarea name="message" placeholder="Your Message" rows="5" required></textarea></div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ email: p.contact.email }}>
+    // Open the visitor's mail client with the form contents pre-filled.
+    document.getElementById('contact-form')?.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = e.target;
+      var subject = encodeURIComponent(f.subject.value);
+      var body = encodeURIComponent(
+        f.message.value + '\n\n— ' + f.name.value + ' (' + f.email.value + ')'
+      );
+      window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</Base>

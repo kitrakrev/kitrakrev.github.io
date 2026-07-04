@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import EducationBlock from '../components/EducationBlock.astro';
+import AchievementsBlock from '../components/AchievementsBlock.astro';
+import data from '../data/data.json';
+
+const p = data.profile;
+const competencies = [
+  { icon: 'fas fa-server', title: 'Backend & Systems', tags: ['Distributed Systems', 'Microservices', 'REST APIs', 'Event-Driven', 'System Design'] },
+  { icon: 'fas fa-brain', title: 'AI / ML', tags: ['LLM Systems', 'RAG Pipelines', 'Agent Architectures', 'PyTorch', 'NLP'] },
+  { icon: 'fas fa-cloud', title: 'Cloud & DevOps', tags: ['AWS (EKS, EC2, S3, SQS)', 'Docker', 'Kubernetes', 'CI/CD'] },
+  { icon: 'fas fa-code', title: 'Languages', tags: ['Python', 'Java', 'C++', 'Go', 'Rust', 'SQL'] },
+];
+---
+
+<Base>
+  <!-- Redirect legacy hash URLs (#sde / #datascience) to their static pages -->
+  <script is:inline>
+    (function () {
+      var h = window.location.hash.replace('#', '');
+      if (h === 'sde' || h === 'datascience') window.location.replace('/' + h + '/');
+    })();
+  </script>
+
+  <Hero
+    subtitle="AI / Software Engineer"
+    summary="Founding engineer building and validating production agentic AI systems — test automation, multi-agent routing, and dev infrastructure. M.S. AI @ UC Santa Cruz (3.9). Open-source: Google Tunix, LangChain, Ivy. NVIDIA GTC 2026 &middot; SemEval 2025 Task 4 Winner."
+  />
+
+  <section class="highlights-section">
+    <div class="container">
+      <div class="highlights-grid">
+        <div class="highlight-card"><i class="fas fa-graduation-cap"></i><h3>M.S. AI</h3><p>UC Santa Cruz &mdash; 3.9 GPA</p></div>
+        <div class="highlight-card"><i class="fas fa-briefcase"></i><h3>4 Roles</h3><p>Elas &middot; Samsung &middot; Citi &middot; MultiOn</p></div>
+        <div class="highlight-card"><i class="fas fa-microphone-alt"></i><h3>GTC 2026</h3><p>NVIDIA Demo &mdash; Meta Booth</p></div>
+        <div class="highlight-card"><i class="fas fa-code-branch"></i><h3>Open Source</h3><p>Tunix &middot; LangChain &middot; Ivy</p></div>
+      </div>
+    </div>
+  </section>
+
+  <EducationBlock />
+
+  <section class="experience-section">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-briefcase"></i> Experience</p>
+      <div class="experience-grid">
+        {
+          data.career_experience.map((e) => (
+            <div class="exp-card">
+              <div class="exp-card-header">
+                <div class="exp-main-info">
+                  <h3 class="exp-title">{e.title}</h3>
+                  <h4 class="exp-company">{e.company}</h4>
+                </div>
+                <div class="exp-meta-info">
+                  <span class="exp-duration">{e.duration}</span>
+                  <span class="exp-location">{e.location}</span>
+                </div>
+              </div>
+              {e.impact && (
+                <div class="exp-impact">
+                  <i class="fas fa-chart-line" /> {e.impact}
+                </div>
+              )}
+              <div class="exp-tech-stack">
+                {e.technologies.slice(0, 6).map((t) => (
+                  <span class="tech-badge">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-tools"></i> Skills</p>
+      <h2>Core Competencies</h2>
+      <div class="competency-grid">
+        {
+          competencies.map((c) => (
+            <div class="competency-card">
+              <h3>
+                <i class={c.icon} /> {c.title}
+              </h3>
+              <div class="competency-tags">
+                {c.tags.map((t) => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <AchievementsBlock />
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-actions">
+        <a href={`mailto:${p.contact.email}`} class="btn btn-primary"><i class="fas fa-envelope"></i> Email Me</a>
+        <a href={p.links.resume} class="btn btn-secondary" download><i class="fas fa-download"></i> Download Resume</a>
+        <a href={p.links.linkedin} class="btn btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</Base>

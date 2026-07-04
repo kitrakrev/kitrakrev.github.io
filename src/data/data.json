@@ -23,9 +23,9 @@
       "linkedin": "https://www.linkedin.com/in/karthikrajaanandan",
       "github": "https://github.com/kitrakrev",
       "githubPages": "https://kitrakrev.github.io",
-      "resume": "assets/karthik_F25.pdf"
+      "resume": "/assets/karthik_F25.pdf"
     },
-    "profileImage": "assets/profile.jpg"
+    "profileImage": "/assets/profile.jpg"
   },
   "skills": {
     "technical": {

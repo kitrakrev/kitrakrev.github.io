@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+---
+
+<Base
+  title="Blog - Karthik Raja Anandan"
+  description="Writing on AI agents, RAG systems, interpretability, and ML engineering by Karthik Raja Anandan."
+>
+  <div class="page-header">
+    <div class="container">
+      <h1>Blog</h1>
+    </div>
+  </div>
+
+  <section class="section-block">
+    <div class="container">
+      <div class="blog-grid">
+        {
+          posts.map((post) => (
+            <a class="blog-card" href={`/blog/${post.id}/`}>
+              <h3>{post.data.title}</h3>
+              <p class="blog-card-excerpt">{post.data.excerpt}</p>
+              <div class="blog-card-tags">
+                {post.data.tags.slice(0, 3).map((t) => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+              <div class="blog-card-meta">
+                <span>
+                  <i class="fas fa-calendar" /> {fmt(post.data.date)}
+                </span>
+                <span>
+                  <i class="fas fa-clock" /> {post.data.readTime}
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

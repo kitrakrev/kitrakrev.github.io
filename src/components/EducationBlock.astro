@@ -1,0 +1,23 @@
+---
+import data from '../data/data.json';
+---
+
+<section class="education-section">
+  <div class="container">
+    <p class="section-label"><i class="fas fa-graduation-cap"></i> Education</p>
+    <div class="education-grid">
+      {
+        data.education.map((edu) => (
+          <div class="edu-card">
+            <h3>{edu.degree}</h3>
+            <h4>{edu.institution}</h4>
+            <div class="edu-meta">
+              <span>{edu.duration}</span>
+              <span class="gpa-badge">GPA: {edu.gpa}</span>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

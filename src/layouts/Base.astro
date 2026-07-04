@@ -1,0 +1,166 @@
+---
+import '../styles/styles.css';
+import data from '../data/data.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const p = data.profile;
+const {
+  title = 'Karthik Raja Anandan - AI/Software Engineer',
+  description = 'Karthik Raja Anandan - AI/Software Engineer. M.S. AI @ UC Santa Cruz (GPA 3.9). Production AI agent systems, distributed backend services, Hybrid RAG pipelines. Python, Java, C++, Go. NVIDIA GTC 2026. Open-source LangChain contributor.',
+} = Astro.props;
+
+const path = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? path === '/' : path.startsWith(href);
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/skills/', label: 'Skills' },
+  { href: '/blog/', label: 'Blog' },
+  { href: p.contact.googleScholar, label: 'Publications', external: true },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Karthik Raja Anandan" />
+    <meta
+      name="keywords"
+      content="Software Engineer, AI Engineer, Machine Learning, Distributed Systems, Python, Java, C++, Go, AWS, Kubernetes, Docker, LLM Systems, RAG, Kafka, Spring Boot, System Design, Backend Engineer, NLP, PyTorch, NVIDIA GTC"
+    />
+    <title>{title}</title>
+
+    <!-- Fonts: DM Sans for body (high x-height, great readability), Instrument Serif for display -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/profile.jpg" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">
+          Karthik<span class="logo-accent">.</span>
+        </a>
+
+        <div class="nav-menu" id="nav-menu">
+          {
+            navLinks.map((l) =>
+              l.external ? (
+                <a href={l.href} class="nav-link" target="_blank" rel="noopener noreferrer">
+                  {l.label}
+                </a>
+              ) : (
+                <a href={l.href} class:list={['nav-link', { active: isActive(l.href) }]}>
+                  {l.label}
+                </a>
+              )
+            )
+          }
+        </div>
+
+        <div class="nav-actions">
+          <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      {
+        navLinks.map((l) =>
+          l.external ? (
+            <a href={l.href} class="mobile-nav-link" target="_blank" rel="noopener noreferrer">
+              {l.label}
+            </a>
+          ) : (
+            <a href={l.href} class:list={['mobile-nav-link', { active: isActive(l.href) }]}>
+              {l.label}
+            </a>
+          )
+        )
+      }
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <p class="footer-name">{p.name}</p>
+            <p class="footer-sub">AI/Software Engineer &middot; {p.contact.location}</p>
+          </div>
+          <div class="footer-links">
+            <a href="/">Overview</a>
+            <a href="/blog/">Blog</a>
+            <a href={p.links.resume} download>Resume</a>
+            <a href="/contact/">Contact</a>
+          </div>
+          <div class="footer-social">
+            <a href={p.links.linkedin} target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href={p.links.github} target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href={`mailto:${p.contact.email}`} aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 {p.name}</p>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function () {
+        var menuToggle = document.getElementById('menu-toggle');
+        var mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle) {
+          menuToggle.addEventListener('click', function () {
+            mobileMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+          });
+        }
+
+        document.addEventListener('click', function (e) {
+          if (
+            mobileMenu &&
+            mobileMenu.classList.contains('active') &&
+            !mobileMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)
+          ) {
+            mobileMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

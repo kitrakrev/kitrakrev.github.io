@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import ViewSwitcher from '../components/ViewSwitcher.astro';
+import EducationBlock from '../components/EducationBlock.astro';
+import AchievementsBlock from '../components/AchievementsBlock.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+import ExpCard from '../components/ExpCard.astro';
+import data from '../data/data.json';
+
+const label = (key: string) =>
+  key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+const skillRows = Object.entries(data.sde_skills).map(([key, vals]) => ({
+  label: label(key),
+  values: (vals as string[]).join('  ·  '),
+}));
+---
+
+<Base title="Karthik Raja Anandan - Software Engineer">
+  <ViewSwitcher current="sde" />
+
+  <Hero
+    badge="Tailored for Software Engineer roles"
+    subtitle="Software Engineer"
+    summary="<strong>Agentic systems, test automation, distributed backends.</strong> Founding engineer at Elas — eval frameworks, multi-agent routing, CI/CD. M.S. AI @ UC Santa Cruz (3.9). Python, C++, Java, Go."
+  />
+
+  <section class="qualifications-section">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-check-double"></i> Qualifications</p>
+      <div class="qual-grid">
+        {
+          (data.qualifications_sde || []).map((q) => (
+            <div class="qual-card">
+              <div class="qual-icon">
+                <i class="fas fa-check-circle" />
+              </div>
+              <div class="qual-content">
+                <h4>{q.t}</h4>
+                <p>{q.d}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <EducationBlock />
+
+  <section class="experience-section">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-briefcase"></i> Experience</p>
+      <div class="experience-grid">
+        {data.career_experience.map((e) => <ExpCard exp={e} view="sde" />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-project-diagram"></i> Projects</p>
+      <div class="sde-projects-grid">
+        <div class="project-card-compact">
+          <h3>Distributed URL Shortener</h3>
+          <p>Consistent hashing, Redis caching, AWS auto-scaling for high throughput.</p>
+          <div class="project-tags">
+            {['Go', 'Redis', 'AWS', 'Docker', 'Kubernetes'].map((t) => <span class="tag">{t}</span>)}
+          </div>
+        </div>
+        <div class="project-card-compact">
+          <h3>Real-Time Log Pipeline</h3>
+          <p>Fault-tolerant ingestion with Kafka + Spark Streaming, PostgreSQL metrics.</p>
+          <div class="project-tags">
+            {['Kafka', 'Spark Streaming', 'PostgreSQL', 'REST APIs'].map((t) => <span class="tag">{t}</span>)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-section-compact">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-tools"></i> Technical Skills</p>
+      <div class="skills-table">
+        {
+          skillRows.map((r) => (
+            <div class="skill-row">
+              <span class="skill-label">{r.label}</span>
+              <span class="skill-values">{r.values}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <AchievementsBlock
+    titles={[
+      'NVIDIA GTC 2026 Demo — Meta Booth',
+      'Open-Source Contributor — LangChain',
+      'ICPC Regionals - Top 300',
+      'Smart India Hackathon Winner (2023)',
+    ]}
+  />
+
+  <CtaBlock altViewLabel="View AI/ML Profile" altViewHref="/datascience/" />
+</Base>

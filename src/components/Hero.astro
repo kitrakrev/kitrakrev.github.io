@@ -1,0 +1,49 @@
+---
+import data from '../data/data.json';
+
+interface Props {
+  subtitle: string;
+  summary: string; // may contain inline HTML (<strong>)
+  badge?: string;
+  badgeClass?: string;
+  scholarButton?: boolean;
+}
+const { subtitle, summary, badge, badgeClass = '', scholarButton = false } = Astro.props;
+const p = data.profile;
+---
+
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-image">
+      <img src={p.profileImage} alt={p.name} />
+    </div>
+    <div class="hero-content">
+      {
+        badge && (
+          <div class:list={['role-target-badge', badgeClass]}>
+            <i class="fas fa-bullseye" /> {badge}
+          </div>
+        )
+      }
+      <h1>{p.name}</h1>
+      <h2>{subtitle}</h2>
+      <p class="hero-summary" set:html={summary} />
+      <div class="contact-bar">
+        <span><i class="fas fa-map-marker-alt"></i> {p.contact.location}</span>
+        <span><i class="fas fa-envelope"></i> {p.contact.email}</span>
+      </div>
+      <div class="hero-actions">
+        <a href={p.links.resume} class="btn btn-primary" download><i class="fas fa-download"></i> Resume</a>
+        <a href={p.links.linkedin} class="btn btn-secondary" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href={p.links.github} class="btn btn-secondary" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        {
+          scholarButton && (
+            <a href={p.contact.googleScholar} class="btn btn-outline" target="_blank">
+              <i class="fas fa-book" /> Scholar
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

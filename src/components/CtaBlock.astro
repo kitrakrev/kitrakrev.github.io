@@ -1,0 +1,26 @@
+---
+import data from '../data/data.json';
+
+interface Props {
+  altViewLabel?: string;
+  altViewHref?: string;
+}
+const { altViewLabel, altViewHref } = Astro.props;
+const p = data.profile;
+---
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-actions">
+      <a href={`mailto:${p.contact.email}`} class="btn btn-primary"><i class="fas fa-envelope"></i> Email Me</a>
+      <a href={p.links.resume} class="btn btn-secondary" download><i class="fas fa-download"></i> Resume</a>
+      {
+        altViewLabel && (
+          <a href={altViewHref} class="btn btn-outline">
+            <i class="fas fa-exchange-alt" /> {altViewLabel}
+          </a>
+        )
+      }
+    </div>
+  </div>
+</section>

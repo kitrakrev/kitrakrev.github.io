@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+import ViewSwitcher from '../components/ViewSwitcher.astro';
+import data from '../data/data.json';
+
+const skills = data.skills;
+const allTech = Object.values(skills.technical).flat() as Record<string, any>[];
+const label = (key: string) =>
+  key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+const techCategories = Object.entries(skills.technical)
+  .map(([key, items]) => ({ key, items: items as Record<string, any>[] }))
+  .filter((c) => c.items?.length);
+---
+
+<Base title="Skills & Expertise - Karthik Raja Anandan">
+  <ViewSwitcher current="none" />
+  <div class="page-header">
+    <div class="container">
+      <h1>Skills & Expertise</h1>
+    </div>
+  </div>
+
+  <section class="skills-summary-section">
+    <div class="container">
+      <div class="skills-summary-grid">
+        <div class="summary-card">
+          <div class="summary-icon"><i class="fas fa-code"></i></div>
+          <div class="summary-content"><h3>{allTech.length}</h3><p>Technical Skills</p></div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-icon expert"><i class="fas fa-star"></i></div>
+          <div class="summary-content"><h3>{allTech.filter((s) => s.level === 'Expert').length}</h3><p>Expert Level</p></div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-icon advanced"><i class="fas fa-rocket"></i></div>
+          <div class="summary-content"><h3>{allTech.filter((s) => s.level === 'Advanced').length}</h3><p>Advanced Level</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <div class="container">
+      {
+        techCategories.map(({ key, items }) => (
+            <div class="skill-category">
+              <h3>{label(key)}</h3>
+              <div class="skills-grid">
+                {items.map((s) => (
+                  <div class:list={['skill-card', s.level.toLowerCase()]}>
+                    <div class="skill-icon" style={`color:${s.color}`}>
+                      <i class={s.icon} />
+                    </div>
+                    <div class="skill-content">
+                      <h4>{s.name}</h4>
+                      <div class="skill-level">
+                        <span class:list={['level-badge', s.level.toLowerCase()]}>{s.level}</span>
+                      </div>
+                      <p>{s.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <div class="container">
+      <h2 style="text-align:center">Research Expertise</h2>
+      <div class="research-skills-grid">
+        {
+          skills.research_areas.map((a) => (
+            <div class="research-skill-card">
+              <div class="skill-icon" style={`color:${a.color}`}>
+                <i class={a.icon} />
+              </div>
+              <div class="skill-content">
+                <h4>{a.name}</h4>
+                <div class="skill-level">
+                  <span class:list={['level-badge', a.expertise.toLowerCase()]}>{a.expertise}</span>
+                </div>
+                <p>{a.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

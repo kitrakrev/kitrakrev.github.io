@@ -1,0 +1,47 @@
+---
+import data from '../data/data.json';
+
+interface Props {
+  titles?: string[];
+}
+const { titles } = Astro.props;
+const items = titles
+  ? data.achievements.filter((a) => titles.includes(a.title))
+  : data.achievements;
+---
+
+{
+  items.length > 0 && (
+    <section class="achievements-section">
+      <div class="container">
+        <p class="section-label">
+          <i class="fas fa-trophy" /> Recognition
+        </p>
+        <div class="achievements-grid">
+          {items.map((a) => (
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-trophy" />
+              </div>
+              <div>
+                <h4>
+                  {a.link ? (
+                    <a href={a.link} target="_blank" rel="noopener noreferrer">
+                      {a.title}{' '}
+                      <i
+                        class="fas fa-external-link-alt"
+                        style="font-size:0.65rem;opacity:0.5"
+                      />
+                    </a>
+                  ) : (
+                    a.title
+                  )}
+                </h4>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

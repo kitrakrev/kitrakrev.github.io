@@ -1,0 +1,48 @@
+---
+// Experience card. view: 'sde' | 'ds' picks tailored bullets/techs; omit for generic card.
+interface Props {
+  exp: Record<string, any>;
+  view?: 'sde' | 'ds';
+  full?: boolean; // full card with award ribbon, focus, impact (research style)
+}
+const { exp, view, full = false } = Astro.props;
+const bullets = view
+  ? (view === 'sde' ? exp.sde_bullets : exp.ds_bullets) || exp.achievements || []
+  : exp.achievements || [];
+const techs = view
+  ? (view === 'sde' ? exp.sde_techs : exp.ds_techs) || exp.technologies || []
+  : exp.technologies || [];
+---
+
+<div class:list={['exp-card', { 'has-award': full && exp.award }]}>
+  {full && exp.award && <div class="award-ribbon"><i class="fas fa-trophy" /> {exp.award}</div>}
+  <div class="exp-card-header">
+    <div class="exp-main-info">
+      <h3 class="exp-title">{exp.title}</h3>
+      <h4 class="exp-company">{exp.company}</h4>
+      {full && exp.focus && (
+        <p class="research-focus"><i class="fas fa-bullseye" /> {exp.focus}</p>
+      )}
+    </div>
+    <div class="exp-meta-info">
+      <span class="exp-duration">{full && <i class="far fa-calendar-alt" />} {exp.duration}</span>
+      <span class="exp-location">{full && <i class="fas fa-map-marker-alt" />} {exp.location}</span>
+    </div>
+  </div>
+  {full && exp.impact && (
+    <div class="exp-impact"><i class="fas fa-chart-line" /> {exp.impact}</div>
+  )}
+  <div class="exp-achievements">
+    {
+      bullets.map((b: string) => (
+        <div class="achievement-item">
+          <i class="fas fa-circle" />
+          <span set:html={b} />
+        </div>
+      ))
+    }
+  </div>
+  <div class="exp-tech-stack">
+    {techs.map((t: string) => <span class="tech-badge">{t}</span>)}
+  </div>
+</div>

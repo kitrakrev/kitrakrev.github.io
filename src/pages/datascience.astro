@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import ViewSwitcher from '../components/ViewSwitcher.astro';
+import EducationBlock from '../components/EducationBlock.astro';
+import AchievementsBlock from '../components/AchievementsBlock.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+import ExpCard from '../components/ExpCard.astro';
+import data from '../data/data.json';
+
+const label = (key: string) =>
+  key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+const skillRows = Object.entries(data.ds_skills).map(([key, vals]) => ({
+  label: label(key),
+  values: (vals as string[]).join('  ·  '),
+}));
+---
+
+<Base title="Karthik Raja Anandan - AI/ML Engineer">
+  <ViewSwitcher current="datascience" />
+
+  <Hero
+    badge="Tailored for AI / ML roles"
+    badgeClass="ds"
+    subtitle="AI / ML Engineer"
+    summary="<strong>Production AI agents, evals, multi-agent systems.</strong> Founding engineer; open-source Google Tunix, LangChain, Ivy. NVIDIA GTC 2026 &middot; SemEval 2025 Task 4 Winner. M.S. AI @ UC Santa Cruz (3.9)."
+    scholarButton
+  />
+
+  <EducationBlock />
+
+  <section class="experience-section">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-brain"></i> Experience</p>
+      <div class="experience-grid">
+        {data.career_experience.map((e) => <ExpCard exp={e} view="ds" />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="experience-section">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-flask"></i> Research</p>
+      <div class="experience-grid">
+        {data.research_experience.map((e) => <ExpCard exp={e} full />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-project-diagram"></i> Projects</p>
+      <div class="sde-projects-grid">
+        {
+          data.projects
+            .filter((p) => p.category === 'Data Science')
+            .map((proj) => (
+              <div class="project-card-compact">
+                <h3>{proj.title}</h3>
+                <p>{proj.description}</p>
+                <div class="project-tags">
+                  {proj.tags.map((t) => (
+                    <span class="tag">{t}</span>
+                  ))}
+                </div>
+              </div>
+            ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-section-compact">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-tools"></i> Technical Skills</p>
+      <div class="skills-table">
+        {
+          skillRows.map((r) => (
+            <div class="skill-row">
+              <span class="skill-label">{r.label}</span>
+              <span class="skill-values">{r.values}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="publications-compact-section">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-book"></i> Publications</p>
+      <div class="publications-list">
+        {
+          data.publications.map((pub) => (
+            <div class="pub-item">
+              <h4>{pub.title}</h4>
+              <p class="pub-meta">
+                {pub.authors} &mdash; {pub.venue} ({pub.year})
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <AchievementsBlock />
+  <CtaBlock altViewLabel="View SDE Profile" altViewHref="/sde/" />
+</Base>
