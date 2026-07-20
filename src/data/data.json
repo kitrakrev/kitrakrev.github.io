@@ -1,9 +1,9 @@
 {
   "profile": {
     "name": "Karthik Raja Anandan",
-    "title": "AI/Software Engineer",
-    "description": "Founding engineer building and validating production agentic AI systems — test automation, multi-agent routing, and developer infrastructure. Open-source contributor to Google Tunix, LangChain, and Ivy; demoed GPU kernels at NVIDIA GTC 2026. M.S. AI @ UC Santa Cruz (GPA 3.9); SemEval 2025 Task 4 Winner (Best Paper).",
-    "longDescription": "Founding engineer focused on building and validating agentic AI systems — test-automation frameworks, multi-agent routing, and developer tooling across 10+ services. M.S. in Artificial Intelligence at UC Santa Cruz (GPA 3.9/4.0). Open-source contributor to Google Tunix, LangChain, and Ivy; SemEval 2025 Task 4 Winner with Best Paper Award for hallucination detection; demoed GPU kernels at NVIDIA GTC 2026.",
+    "title": "Founding AI/ML Engineer at Elas",
+    "description": "Founding AI/ML Engineer at Elas (Pleasanton, CA), building and validating production agentic AI systems — test automation, multi-agent routing, and developer infrastructure. Open-source contributor to Google Tunix, LangChain, and Ivy; demoed GPU kernels at NVIDIA GTC 2026. M.S. AI, UC Santa Cruz (2025, GPA 3.9); SemEval 2025 Task 4 Winner (Best Paper).",
+    "longDescription": "Founding AI/ML Engineer at Elas (Pleasanton, CA), building and validating agentic AI systems — test-automation frameworks, multi-agent routing, and developer tooling across 10+ services. M.S. in Artificial Intelligence, UC Santa Cruz (2025, GPA 3.9/4.0). Open-source contributor to Google Tunix, LangChain, and Ivy; SemEval 2025 Task 4 Winner with Best Paper Award for hallucination detection; demoed GPU kernels at NVIDIA GTC 2026.",
     "contact": {
       "email": "kanandan@ucsc.edu",
       "phone": "+1-669-325-0235",
@@ -20,7 +20,7 @@
       "Reinforcement Learning"
     ],
     "links": {
-      "linkedin": "https://www.linkedin.com/in/karthikrajaanandan",
+      "linkedin": "https://www.linkedin.com/in/kitrakrev",
       "github": "https://github.com/kitrakrev",
       "githubPages": "https://kitrakrev.github.io",
       "resume": "/assets/karthik_F25.pdf"
