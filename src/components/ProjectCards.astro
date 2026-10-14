@@ -2,7 +2,7 @@
 import data from '../data/data.json';
 const { view } = Astro.props;
 const cat = view === 'sde' ? 'SDE' : 'Data Science';
-const projects = data.projects.filter((p) => p.category === cat || p.category === 'Both');
+const projects = view === 'all' ? data.projects : data.projects.filter((p) => p.category === cat || p.category === 'Both');
 ---
 <div class="sde-projects-grid">
   {

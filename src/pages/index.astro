@@ -1,4 +1,5 @@
 ---
+import ProjectCards from '../components/ProjectCards.astro';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import EducationBlock from '../components/EducationBlock.astro';
@@ -40,6 +41,13 @@ const competencies = [
   </section>
 
   <EducationBlock />
+
+  <section class="projects-section">
+    <div class="container">
+      <p class="section-label"><i class="fas fa-project-diagram"></i> Projects</p>
+      <ProjectCards view="all" />
+    </div>
+  </section>
 
   <section class="experience-section">
     <div class="container">
