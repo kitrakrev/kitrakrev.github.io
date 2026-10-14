@@ -1,8 +1,9 @@
 ---
-import data from '../data/data.json';
+import { getProjects } from '../lib/repos';
 const { view } = Astro.props;
 const cat = view === 'sde' ? 'SDE' : 'Data Science';
-const projects = view === 'all' ? data.projects : data.projects.filter((p) => p.category === cat || p.category === 'Both');
+const all = await getProjects();
+const projects = view === 'all' ? all : all.filter((p) => p.category === cat || p.category === 'Both');
 ---
 <div class="sde-projects-grid">
   {

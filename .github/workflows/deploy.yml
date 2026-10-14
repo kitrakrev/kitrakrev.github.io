@@ -4,6 +4,8 @@ on:
   push:
     branches: [active-page]
   workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * *'
 
 permissions:
   contents: read
@@ -20,6 +22,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: withastro/action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: build
