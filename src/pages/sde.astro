@@ -1,4 +1,5 @@
 ---
+import ProjectCards from '../components/ProjectCards.astro';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import ViewSwitcher from '../components/ViewSwitcher.astro';
@@ -63,22 +64,7 @@ const skillRows = Object.entries(data.sde_skills).map(([key, vals]) => ({
   <section class="projects-section">
     <div class="container">
       <p class="section-label"><i class="fas fa-project-diagram"></i> Projects</p>
-      <div class="sde-projects-grid">
-        <div class="project-card-compact">
-          <h3>Distributed URL Shortener</h3>
-          <p>Consistent hashing, Redis caching, AWS auto-scaling for high throughput.</p>
-          <div class="project-tags">
-            {['Go', 'Redis', 'AWS', 'Docker', 'Kubernetes'].map((t) => <span class="tag">{t}</span>)}
-          </div>
-        </div>
-        <div class="project-card-compact">
-          <h3>Real-Time Log Pipeline</h3>
-          <p>Fault-tolerant ingestion with Kafka + Spark Streaming, PostgreSQL metrics.</p>
-          <div class="project-tags">
-            {['Kafka', 'Spark Streaming', 'PostgreSQL', 'REST APIs'].map((t) => <span class="tag">{t}</span>)}
-          </div>
-        </div>
-      </div>
+      <ProjectCards view="sde" />
     </div>
   </section>
 

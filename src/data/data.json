@@ -2,7 +2,7 @@
   "profile": {
     "name": "Karthik Raja Anandan",
     "title": "Founding AI/ML Engineer at Elas",
-    "description": "Founding AI/ML Engineer at Elas (Pleasanton, CA), building and validating production agentic AI systems — test automation, multi-agent routing, and developer infrastructure. Open-source contributor to Google Tunix, LangChain, and Ivy; demoed GPU kernels at NVIDIA GTC 2026. M.S. AI, UC Santa Cruz (2025, GPA 3.9); SemEval 2025 Task 4 Winner (Best Paper).",
+    "description": "Founding AI/ML Engineer at Elas (Pleasanton, CA), building and validating production agentic AI systems — test automation, multi-agent routing, and developer infrastructure. Open-source contributor to Google Tunix, LangChain, and Ivy; demoed Helion GPU kernels at NVIDIA GTC 2026. M.S. AI, UC Santa Cruz (2025, GPA 3.9); SemEval 2025 Task 4 Winner (Best Paper).",
     "longDescription": "Founding AI/ML Engineer at Elas (Pleasanton, CA), building and validating agentic AI systems — test-automation frameworks, multi-agent routing, and developer tooling across 10+ services. M.S. in Artificial Intelligence, UC Santa Cruz (2025, GPA 3.9/4.0). Open-source contributor to Google Tunix, LangChain, and Ivy; SemEval 2025 Task 4 Winner with Best Paper Award for hallucination detection; demoed GPU kernels at NVIDIA GTC 2026.",
     "contact": {
       "email": "kanandan@ucsc.edu",
@@ -392,11 +392,15 @@
         "REST APIs"
       ],
       "achievements": [
+        "Scaled multi-agent platform to 100+ daily active users",
+        "GRPO post-training on multi-GPU (DDP/NCCL); ~1 s agent TTFT",
         "160-scenario test automation framework with golden replay harness",
         "Routing engine with 100% test coverage and CI quality gates across 10+ agents",
         "Led 10+ repos (800+ commits); 168-page docs; Argo CI/CD on AWS ECS, Kubernetes"
       ],
       "sde_bullets": [
+        "Scaled a production multi-agent AI platform to <strong>100+ daily active users</strong> — agent orchestrator, LLM gateway with routing and fallback, memory/state and RAG",
+        "Cut agent response <strong>TTFT to ~1 second</strong> by optimizing routing, streaming and pipeline execution",
         "Built <strong>160-scenario test automation framework</strong> validating agentic AI correctness — eval suite with <strong>golden replay harness</strong> across routing, tool selection, and code generation",
         "Designed routing engine with <strong>100% test coverage</strong> and <strong>CI-enforced quality gates</strong> across <strong>10+ specialized agents</strong>",
         "Led development across <strong>10+ repos (800+ commits)</strong>; authored <strong>168-page</strong> docs (57 service flows) and <strong>Argo CI/CD</strong> release pipelines on <strong>AWS ECS, Kubernetes</strong>"
@@ -410,6 +414,8 @@
         "MCP"
       ],
       "ds_bullets": [
+        "Ran <strong>GRPO post-training on multi-GPU (DDP/NCCL)</strong> with reward and rollout pipelines built from scratch",
+        "Platform serves <strong>100+ daily active users</strong> at <strong>~1 s TTFT</strong>",
         "Built <strong>160-scenario eval framework</strong> with <strong>golden replay harness</strong> for agentic correctness (routing, tool selection, code gen)",
         "Designed routing across <strong>10+ specialized agents</strong> with quality gates and regression feedback before deploy",
         "Authored <strong>168-page</strong> developer docs and automated release pipelines for the agent platform"
@@ -421,7 +427,7 @@
         "MCP",
         "Argo CI/CD"
       ],
-      "impact": "160-scenario eval suite · 100% routing coverage · 10+ repos (800+ commits)",
+      "impact": "100+ DAU · ~1 s TTFT · GRPO post-training · 160-scenario eval suite",
       "view_tags": [
         "sde",
         "datascience"
@@ -481,10 +487,10 @@
     },
     {
       "id": "career-3",
-      "title": "Software Development Engineer",
+      "title": "Software Developer (C09)",
       "company": "Citi Corp",
       "location": "Chennai, India",
-      "duration": "Aug 2023 - Sep 2024",
+      "duration": "Jul 2023 - Sep 2024",
       "type": "Full-time",
       "description": "Built event-driven microservices processing millions of financial events daily, with integration tests, CI/CD, and developer tooling.",
       "technologies": [
@@ -534,8 +540,8 @@
     {
       "id": "career-4",
       "title": "NLP Engineering Intern",
-      "company": "MultiOn (Stanford Startup)",
-      "location": "Palo Alto, CA",
+      "company": "MultiOn (AI agents startup)",
+      "location": "Remote",
       "duration": "Jun 2023 - Aug 2023",
       "type": "Internship",
       "description": "Shipped open-source integrations for agentic browser automation; improved agent accuracy by 40%.",
@@ -546,12 +552,10 @@
         "Open Source"
       ],
       "achievements": [
-        "Merged LangChain PR #12392; +40% agent accuracy",
-        "Open source: Google Tunix #1552, Ivy #13280 (merged)"
+        "Merged LangChain PR #12392 (MultiOn client toolkit); +40% agent accuracy"
       ],
       "sde_bullets": [
-        "Shipped validated integration merged into <strong>LangChain (PR #12392)</strong>; enhanced agentic system accuracy by <strong>40%</strong>",
-        "Open source: <strong>Google Tunix #1552</strong>, <strong>LangChain #12392 (merged)</strong>, <strong>Ivy #13280 (merged)</strong>"
+        "Shipped validated integration merged into <strong>LangChain (PR #12392)</strong>; enhanced agentic system accuracy by <strong>40%</strong>"
       ],
       "sde_techs": [
         "Python",
@@ -560,8 +564,7 @@
         "Open Source"
       ],
       "ds_bullets": [
-        "Merged <strong>LangChain PR #12392</strong>; <strong>+40%</strong> agentic accuracy with retrieval + vector DBs",
-        "Open source: <strong>Tunix #1552</strong>, <strong>Ivy #13280 (merged)</strong>"
+        "Merged <strong>LangChain PR #12392</strong>; <strong>+40%</strong> agentic accuracy with retrieval + vector DBs"
       ],
       "ds_techs": [
         "LangChain",
@@ -594,8 +597,9 @@
         "rllm"
       ],
       "achievements": [
-        "Contributing to <strong>Google Tunix (PR #1552)</strong>, <strong>Ivy</strong> (merged), <strong>massgen</strong>, and <strong>rllm</strong>",
-        "Collaboration with <strong>AutoGen</strong> creator Chi Wang (DeepMind) on consensus-based multi-agent frameworks",
+        "<strong>Circuit-adaptive machine unlearning</strong> (NeurIPS 2026 submission): MIA AUC 1.0 with best retain accuracy (60.5%) on Gemma-2-2B / TOFU; mechanistic analysis of selective gradient masking (second submission)",
+        "Merged contributions to <strong>Google Tunix (PR #1552)</strong>, <strong>LangChain (#12392)</strong> and <strong>Ivy (#13280)</strong>",
+        "Collaboration with <strong>AutoGen</strong> creator Chi Wang on consensus-based multi-agent frameworks",
         "<strong>SemEval 2025 Task 4 Winner — Best Paper Award</strong> (hallucination detection); 4 published ML papers"
       ],
       "focus": "Multi-Agent Interpretability, Agentic ML",
@@ -626,113 +630,195 @@
   ],
   "projects": [
     {
-      "id": "project-sde-1",
-      "title": "Distributed URL Shortener",
-      "description": "Scalable URL service with consistent hashing, Redis caching, and AWS auto-scaling; designed for high read/write throughput with load balancing and health monitoring.",
+      "id": "p-morph",
+      "title": "Morph — Self-Evolving Robot-Fleet Harness",
+      "description": "Harness where LLM agents compose and evolve robot skills for fleets whose bodies change: physics backends (incl. MuJoCo), a verifier that rejects illegal skill edits, controlled-experiment switches, and an occlusion-aware 3D camera for attempt videos.",
       "technologies": [
-        "Go",
-        "Redis",
-        "AWS",
-        "Docker",
-        "Kubernetes"
+        "Python",
+        "MuJoCo",
+        "LLM Agents",
+        "Robotics",
+        "Simulation"
       ],
-      "category": "SDE",
-      "github": "https://github.com/kitrakrev/distributed-url-shortener",
+      "category": "Both",
+      "github": "https://github.com/kitrakrev/morph",
       "tags": [
-        "Go",
-        "Redis",
-        "AWS",
-        "Distributed Systems",
-        "Docker",
-        "Kubernetes"
+        "Python",
+        "MuJoCo",
+        "LLM Agents",
+        "Robotics",
+        "Simulation"
       ],
-      "date": "2025"
+      "date": "2026",
+      "page": "https://kitrakrev.github.io/morph/"
     },
     {
-      "id": "project-sde-2",
-      "title": "Real-Time Log Processing Pipeline",
-      "description": "Fault-tolerant distributed log ingestion using Kafka + Spark Structured Streaming; aggregated metrics stored in PostgreSQL with REST querying layer for analysis.",
+      "id": "p-router",
+      "title": "Smart Router — Multi-Modal LLM Router",
+      "description": "Routing layer that extracts 9 query signals (complexity, domain, safety, PII, vision, tools) and matches embedding centroids of decision exemplars to pick the cheapest capable model in under 15 ms, with budget limits, guardrails and health-aware fallback.",
       "technologies": [
-        "Kafka",
-        "Spark",
-        "PostgreSQL",
-        "REST APIs"
+        "Python",
+        "Embeddings",
+        "LLM Routing",
+        "Guardrails",
+        "Hugging Face"
       ],
-      "category": "SDE",
-      "github": "https://github.com/kitrakrev/log-pipeline",
+      "category": "Both",
+      "github": "https://github.com/kitrakrev/smart-router-multi-modal",
       "tags": [
-        "Kafka",
-        "Spark",
-        "PostgreSQL",
-        "Distributed Systems",
-        "Streaming"
+        "Python",
+        "Embeddings",
+        "LLM Routing",
+        "Guardrails",
+        "Hugging Face"
       ],
-      "date": "2025"
+      "date": "2026",
+      "page": "https://kitrakrev.github.io/smart-router-multi-modal/"
     },
     {
-      "id": "project-ds-1",
+      "id": "p-kernels",
+      "title": "Kernel Dev — Cross-Stack Kernels",
+      "description": "Softmax implemented four ways (MLX, JAX, CUDA, Triton) and a matmul optimization ladder with roofline analysis, benchmarked on Apple M4, NVIDIA T4 and TPU v5e.",
+      "technologies": [
+        "CUDA",
+        "Triton",
+        "JAX/TPU",
+        "MLX",
+        "Roofline"
+      ],
+      "category": "Both",
+      "github": "https://github.com/kitrakrev/kernel-dev",
+      "tags": [
+        "CUDA",
+        "Triton",
+        "JAX/TPU",
+        "MLX",
+        "Roofline"
+      ],
+      "date": "2026",
+      "page": "https://kitrakrev.github.io/kernel-dev/"
+    },
+    {
+      "id": "p-helion",
+      "title": "Helion Optimizations",
+      "description": "Helion DSL kernel work lowering to Triton, profiled for occupancy, memory bandwidth and warp divergence; methodology demoed at NVIDIA GTC 2026.",
+      "technologies": [
+        "Helion",
+        "Triton",
+        "PyTorch",
+        "GPU Profiling"
+      ],
+      "category": "Both",
+      "github": "https://github.com/kitrakrev/helion_optimizations",
+      "tags": [
+        "Helion",
+        "Triton",
+        "PyTorch",
+        "GPU Profiling"
+      ],
+      "date": "2026",
+      "page": "https://kitrakrev.github.io/helion_optimizations/"
+    },
+    {
+      "id": "p-staffinggym",
+      "title": "StaffingGym — RL Environment for LLM Agents",
+      "description": "Long-horizon RL environment (OpenEnv Hackathon, Mar 2026) where an LLM agent runs a staffing agency over a simulated 52-week year, balancing clients, candidates and bench costs.",
+      "technologies": [
+        "Python",
+        "Reinforcement Learning",
+        "OpenEnv",
+        "LLM Agents"
+      ],
+      "category": "Data Science",
+      "github": "https://github.com/kitrakrev/rl-recruits",
+      "tags": [
+        "Python",
+        "Reinforcement Learning",
+        "OpenEnv",
+        "LLM Agents"
+      ],
+      "date": "2026",
+      "page": "https://kitrakrev.github.io/rl-recruits/"
+    },
+    {
+      "id": "p-teamhq",
+      "title": "TeamHQ — Autonomous Code-Change Hub",
+      "description": "Org-level command center (Nozomio Hackathon) where proposed code changes become cards that a coding agent turns into pull requests on a target repo.",
+      "technologies": [
+        "TypeScript",
+        "Coding Agents",
+        "GitHub API"
+      ],
+      "category": "SDE",
+      "github": "https://github.com/kitrakrev/teamhq",
+      "tags": [
+        "TypeScript",
+        "Coding Agents",
+        "GitHub API"
+      ],
+      "date": "2026",
+      "page": "https://kitrakrev.github.io/teamhq/"
+    },
+    {
+      "id": "p-evals",
       "title": "LLM Evaluation Framework",
-      "description": "Built automated eval pipeline for RAG systems measuring faithfulness, relevance, and hallucination rate across model versions; supports regression detection and multi-model comparison.",
+      "description": "Multi-model evaluation framework with RAG, voice, tracing, regression detection and OpenTelemetry observability.",
       "technologies": [
         "Python",
-        "PyTorch",
         "RAG",
-        "OpenAI API",
-        "PostgreSQL"
+        "Evals",
+        "OpenTelemetry"
       ],
       "category": "Data Science",
-      "github": "https://github.com/kitrakrev/llm-eval",
+      "github": "https://github.com/kitrakrev/mulit-modal-llm-evals",
       "tags": [
         "Python",
-        "PyTorch",
         "RAG",
-        "LLM",
-        "Evaluation"
+        "Evals",
+        "OpenTelemetry"
       ],
-      "date": "2025"
+      "date": "2026",
+      "page": "https://kitrakrev.github.io/mulit-modal-llm-evals/"
     },
     {
-      "id": "project-ds-2",
-      "title": "AI Agent Framework",
-      "description": "End-to-end agentic framework with SQS-backed task pipelines, Hybrid RAG with pgvector, MCP tool orchestration, and comprehensive agent evaluation suite.",
+      "id": "p-url",
+      "title": "Distributed URL Shortener",
+      "description": "URL shortener with consistent hashing, Redis caching and OpenTelemetry observability.",
       "technologies": [
-        "Python",
-        "AWS SQS",
-        "pgvector",
-        "MCP",
-        "LiveKit"
+        "Go",
+        "Redis",
+        "Consistent Hashing",
+        "OpenTelemetry"
       ],
-      "category": "Data Science",
-      "github": "https://github.com/kitrakrev/ai-agent-framework",
+      "category": "SDE",
+      "github": "https://github.com/kitrakrev/url-shortener",
       "tags": [
-        "Python",
-        "AI Agents",
-        "RAG",
-        "MCP",
-        "Production ML"
+        "Go",
+        "Redis",
+        "Consistent Hashing",
+        "OpenTelemetry"
       ],
-      "date": "2025"
+      "date": "2026"
     },
     {
-      "id": "project-ds-3",
-      "title": "Multimodal RAG System",
-      "description": "Advanced retrieval-augmented generation system combining text, image, and audio modalities for enhanced knowledge retrieval.",
+      "id": "p-logs",
+      "title": "Real-Time Log Processing Pipeline",
+      "description": "Distributed log ingestion, stream processing and analytics with Kafka, Faust, Spark and OpenTelemetry.",
       "technologies": [
-        "Python",
-        "PyTorch",
-        "RAG",
-        "Multimodal AI"
+        "Kafka",
+        "Faust",
+        "Spark",
+        "OpenTelemetry"
       ],
-      "category": "Data Science",
-      "github": "https://github.com/kitrakrev/multimodal-rag",
+      "category": "SDE",
+      "github": "https://github.com/kitrakrev/realtime-log-processor",
       "tags": [
-        "Multimodal AI",
-        "RAG",
-        "Knowledge Retrieval",
-        "Python",
-        "PyTorch"
+        "Kafka",
+        "Faust",
+        "Spark",
+        "OpenTelemetry"
       ],
-      "date": "2024"
+      "date": "2026"
     }
   ],
   "qualifications_sde": [
@@ -846,7 +932,7 @@
   "achievements": [
     {
       "id": "achievement-1",
-      "title": "NVIDIA GTC 2026 Demo — Meta Booth",
+      "title": "NVIDIA GTC 2026 — Helion DSL kernel demo (Meta booth)",
       "category": "Industry",
       "date": "2026",
       "organization": "NVIDIA / Meta",
@@ -862,7 +948,7 @@
     },
     {
       "id": "achievement-3",
-      "title": "Google Tunix Contributor — PR #1552",
+      "title": "Google Tunix — Merged PR #1552",
       "category": "Open Source",
       "date": "2025",
       "organization": "Google"
@@ -897,6 +983,27 @@
       "date": "2023",
       "organization": "ICPC",
       "link": "https://icpc.global/"
+    },
+    {
+      "id": "achievement-rocm",
+      "title": "AMD ROCm Certified Associate",
+      "category": "Certification",
+      "date": "2026",
+      "organization": "AMD"
+    },
+    {
+      "id": "achievement-baylearn",
+      "title": "BayLearn — Oral Presentation (hallucination detection)",
+      "category": "Research",
+      "date": "2025",
+      "organization": "BayLearn"
+    },
+    {
+      "id": "achievement-calhacks",
+      "title": "Cal Hacks 13.0 — Judge",
+      "category": "Community",
+      "date": "2026",
+      "organization": "Cal Hacks"
     }
   ],
   "publications": [
