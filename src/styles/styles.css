@@ -1093,3 +1093,9 @@ section, .section-block, .education-section, .experience-section,
 
 .project-links{margin-top:.5rem;font-size:.85rem}
 .project-links a,.project-card-compact h3 a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+.pager-controls{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.5rem}
+.pager-controls button{font:inherit;padding:.4rem .9rem;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;cursor:pointer}
+.pager-controls button:disabled{opacity:.35;cursor:default}
+.pager-status{font-size:.9rem;opacity:.75;min-width:3.5rem;text-align:center}
+.project-card-compact[hidden]{display:none}

@@ -5,6 +5,7 @@ const cat = view === 'sde' ? 'SDE' : 'Data Science';
 const all = await getProjects();
 const projects = view === 'all' ? all : all.filter((p) => p.category === cat || p.category === 'Both');
 ---
+<div class="project-pager" data-per-page="6">
 <div class="sde-projects-grid">
   {
     projects.map((proj) => (
@@ -25,3 +26,33 @@ const projects = view === 'all' ? all : all.filter((p) => p.category === cat || 
     ))
   }
 </div>
+<nav class="pager-controls" hidden>
+  <button type="button" class="pager-prev" aria-label="Previous projects">&larr; Prev</button>
+  <span class="pager-status" aria-live="polite"></span>
+  <button type="button" class="pager-next" aria-label="Next projects">Next &rarr;</button>
+</nav>
+</div>
+
+<script>
+  document.querySelectorAll('.project-pager').forEach((root) => {
+    const per = Number(root.dataset.perPage) || 6;
+    const cards = [...root.querySelectorAll('.project-card-compact')];
+    const pages = Math.ceil(cards.length / per);
+    if (pages <= 1) return;
+    const nav = root.querySelector('.pager-controls');
+    const prev = nav.querySelector('.pager-prev');
+    const next = nav.querySelector('.pager-next');
+    const status = nav.querySelector('.pager-status');
+    let page = 0;
+    const show = () => {
+      cards.forEach((c, i) => { c.hidden = Math.floor(i / per) !== page; });
+      status.textContent = `${page + 1} / ${pages}`;
+      prev.disabled = page === 0;
+      next.disabled = page === pages - 1;
+    };
+    prev.addEventListener('click', () => { page--; show(); });
+    next.addEventListener('click', () => { page++; show(); });
+    nav.hidden = false;
+    show();
+  });
+</script>
