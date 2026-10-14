@@ -1,9 +1,9 @@
 {
   "profile": {
     "name": "Karthik Raja Anandan",
-    "title": "Founding AI/ML Engineer at Elas",
-    "description": "Founding AI/ML Engineer at Elas (Pleasanton, CA), building and validating production agentic AI systems — test automation, multi-agent routing, and developer infrastructure. Open-source contributor to Google Tunix, LangChain, and Ivy; demoed Helion GPU kernels at NVIDIA GTC 2026. M.S. AI, UC Santa Cruz (2025, GPA 3.9); SemEval 2025 Task 4 Winner (Best Paper).",
-    "longDescription": "Founding AI/ML Engineer at Elas (Pleasanton, CA), building and validating agentic AI systems — test-automation frameworks, multi-agent routing, and developer tooling across 10+ services. M.S. in Artificial Intelligence, UC Santa Cruz (2025, GPA 3.9/4.0). Open-source contributor to Google Tunix, LangChain, and Ivy; SemEval 2025 Task 4 Winner with Best Paper Award for hallucination detection; demoed GPU kernels at NVIDIA GTC 2026.",
+    "title": "Founding ML Engineer (Data Scientist) at Elas",
+    "description": "Founding ML Engineer (Data Scientist) at Elas (Pleasanton, CA), building and validating production agentic AI systems — test automation, multi-agent routing, and developer infrastructure. Open-source contributor to Google Tunix, LangChain, and Ivy; demoed Helion GPU kernels at NVIDIA GTC 2026. M.S. AI (NLP), UC Santa Cruz (2025, GPA 3.9); SemEval 2025 Task 4 Winner (Best Paper).",
+    "longDescription": "Founding ML Engineer (Data Scientist) at Elas (Pleasanton, CA), building and validating agentic AI systems — test-automation frameworks, multi-agent routing, and developer tooling across 10+ services. M.S. in Artificial Intelligence (Natural Language Processing), UC Santa Cruz (2025, GPA 3.9/4.0). Open-source contributor to Google Tunix, LangChain, and Ivy; SemEval 2025 Task 4 Winner with Best Paper Award for hallucination detection; demoed GPU kernels at NVIDIA GTC 2026.",
     "contact": {
       "email": "kanandan@ucsc.edu",
       "phone": "+1-669-325-0235",
@@ -353,7 +353,7 @@
   "education": [
     {
       "id": "edu-1",
-      "degree": "M.S. in Artificial Intelligence",
+      "degree": "M.S. in Artificial Intelligence (Natural Language Processing)",
       "major": "Distributed & ML Systems",
       "institution": "University of California, Santa Cruz",
       "location": "Santa Cruz, CA",
@@ -375,12 +375,12 @@
   "career_experience": [
     {
       "id": "career-1",
-      "title": "AI/ML Engineer (Founding Engineer)",
+      "title": "Data Scientist — Founding ML Engineer",
       "company": "Elas",
       "location": "Pleasanton, CA",
       "duration": "Jan 2026 - Present",
       "type": "Full-time",
-      "description": "Founding engineer building and validating agentic AI systems — test automation, multi-agent routing, and developer tooling across 10+ services.",
+      "description": "Founding ML engineer (title: Data Scientist) building and validating production agentic AI systems — post-training, evals, multi-agent routing, and developer tooling across 10+ services.",
       "technologies": [
         "Python",
         "AWS ECS",
@@ -428,6 +428,53 @@
         "Argo CI/CD"
       ],
       "impact": "100+ DAU · ~1 s TTFT · GRPO post-training · 160-scenario eval suite",
+      "view_tags": [
+        "sde",
+        "datascience"
+      ]
+    },
+    {
+      "id": "career-1b",
+      "title": "Data Analysis & Machine Learning Intern",
+      "company": "Elas",
+      "location": "Pleasanton, CA",
+      "duration": "Jun 2025 - Sep 2025",
+      "type": "Internship",
+      "description": "Full-time summer internship on Elas's AI platform, reporting to the data science lead.",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "LLM Agents"
+      ],
+      "achievements": [
+        "Built backend APIs and chatbot-driven org-chart creation",
+        "Prototyped HR / interview agent workflows and timesheet workflow demo",
+        "EDA, feature engineering and model tuning on platform data"
+      ],
+      "sde_bullets": [
+        "Built backend APIs and <strong>chatbot-driven org-chart creation</strong> for the Artie platform",
+        "Prototyped <strong>HR / interview agent</strong> workflows and shipped a <strong>timesheet workflow demo</strong>",
+        "Containerized services with <strong>Docker</strong> and the company registry"
+      ],
+      "sde_techs": [
+        "Python",
+        "FastAPI",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "ds_bullets": [
+        "Exploratory data analysis and <strong>feature engineering</strong> on structured and unstructured platform data",
+        "Assisted in training, validation and tuning of ML models and LLM agent workflows",
+        "Prototyped <strong>HR / interview agent</strong> workflows"
+      ],
+      "ds_techs": [
+        "Python",
+        "Pandas",
+        "LLM Agents"
+      ],
+      "impact": "Internship → full-time return offer",
       "view_tags": [
         "sde",
         "datascience"
@@ -823,11 +870,11 @@
   ],
   "qualifications_sde": [
     {
-      "t": "M.S. in AI",
+      "t": "M.S. in AI (NLP)",
       "d": "UC Santa Cruz — 3.9 GPA"
     },
     {
-      "t": "Founding Engineer",
+      "t": "Founding ML Engineer",
       "d": "Elas — agentic AI across 10+ services"
     },
     {
