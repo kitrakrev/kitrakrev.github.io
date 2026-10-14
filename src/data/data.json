@@ -987,6 +987,14 @@
       "link": "https://www.nvidia.com/gtc/"
     },
     {
+      "id": "achievement-gpumode",
+      "title": "GPU MODE Helion kernel contest (NVIDIA B200) — 🥇 1st gated_deltanet_recompute_w_u, 🥈 2nd fp8_quant, 4th chunk_fwd_h, 6th causal_conv1d",
+      "category": "Competition",
+      "date": "2026",
+      "organization": "GPU MODE / PyTorch",
+      "link": "https://www.gpumode.com/leaderboard/770"
+    },
+    {
       "id": "achievement-2",
       "title": "SemEval-2025 Task 3 — Best System Paper (co-author)",
       "category": "Competition",
