@@ -2,8 +2,8 @@
   "profile": {
     "name": "Karthik Raja Anandan",
     "title": "Founding ML Engineer (Data Scientist) at Elas",
-    "description": "Founding ML Engineer (Data Scientist) at Elas (Pleasanton, CA), building and validating production agentic AI systems — test automation, multi-agent routing, and developer infrastructure. Open-source contributor to Google Tunix, LangChain, and Ivy; demoed Helion GPU kernels at NVIDIA GTC 2026. M.S. AI (NLP), UC Santa Cruz (2025, GPA 3.9); SemEval 2025 Task 4 Winner (Best Paper).",
-    "longDescription": "Founding ML Engineer (Data Scientist) at Elas (Pleasanton, CA), building and validating agentic AI systems — test-automation frameworks, multi-agent routing, and developer tooling across 10+ services. M.S. in Artificial Intelligence (Natural Language Processing), UC Santa Cruz (2025, GPA 3.9/4.0). Open-source contributor to Google Tunix, LangChain, and Ivy; SemEval 2025 Task 4 Winner with Best Paper Award for hallucination detection; demoed GPU kernels at NVIDIA GTC 2026.",
+    "description": "Founding ML Engineer (Data Scientist) at Elas (Pleasanton, CA), building and validating production agentic AI systems — test automation, multi-agent routing, and developer infrastructure. Open-source contributor to Google Tunix, LangChain, and Ivy; demoed Helion GPU kernels at NVIDIA GTC 2026. M.S. AI (NLP), UC Santa Cruz (2025, GPA 3.9); co-author, SemEval-2025 Task 3 Best System Paper.",
+    "longDescription": "Founding ML Engineer (Data Scientist) at Elas (Pleasanton, CA), building and validating agentic AI systems — test-automation frameworks, multi-agent routing, and developer tooling across 10+ services. M.S. in Artificial Intelligence (Natural Language Processing), UC Santa Cruz (2025, GPA 3.9/4.0). Open-source contributor to Google Tunix, LangChain, and Ivy; co-author of the SemEval-2025 Task 3 Best System Paper (hallucination detection); demoed GPU kernels at NVIDIA GTC 2026.",
     "contact": {
       "email": "kanandan@ucsc.edu",
       "phone": "+1-669-325-0235",
@@ -644,13 +644,14 @@
         "rllm"
       ],
       "achievements": [
-        "<strong>Circuit-adaptive machine unlearning</strong> (NeurIPS 2026 submission): MIA AUC 1.0 with best retain accuracy (60.5%) on Gemma-2-2B / TOFU; mechanistic analysis of selective gradient masking (second submission)",
+        "<strong>Circuit-adaptive machine unlearning</strong> (manuscript in preparation): MIA AUC 1.0 with best retain accuracy (60.5%) on Gemma-2-2B / TOFU; companion mechanistic analysis of selective gradient masking (in preparation)",
+        "Co-author, <strong>Every Eval Ever</strong> (NeurIPS 2026 E&D submission; invited to Nature Machine Intelligence)",
         "Merged contributions to <strong>Google Tunix (PR #1552)</strong>, <strong>LangChain (#12392)</strong> and <strong>Ivy (#13280)</strong>",
         "Collaboration with <strong>AutoGen</strong> creator Chi Wang on consensus-based multi-agent frameworks",
-        "<strong>SemEval 2025 Task 4 Winner — Best Paper Award</strong> (hallucination detection); 4 published ML papers"
+        "Co-author, <strong>SemEval-2025 Task 3 Best System Paper</strong> (hallucination detection, #1 average ranking); 7 published papers"
       ],
       "focus": "Multi-Agent Interpretability, Agentic ML",
-      "award": "SemEval 2025 Task 4 Winner - Best Paper Award"
+      "award": "Co-author, SemEval-2025 Task 3 Best System Paper"
     },
     {
       "id": "research-2",
@@ -987,11 +988,11 @@
     },
     {
       "id": "achievement-2",
-      "title": "SemEval 2025 Task 4 Winner — Best Paper Award",
+      "title": "SemEval-2025 Task 3 — Best System Paper (co-author)",
       "category": "Competition",
       "date": "2025",
       "organization": "SemEval",
-      "link": "https://semeval.github.io/SemEval2025/"
+      "link": "https://semeval.github.io/SemEval2025/awards.html"
     },
     {
       "id": "achievement-3",
@@ -1040,7 +1041,7 @@
     },
     {
       "id": "achievement-baylearn",
-      "title": "BayLearn — Oral Presentation (hallucination detection)",
+      "title": "BayLearn 2025 — Oral Presentation (hallucination detection)",
       "category": "Research",
       "date": "2025",
       "organization": "BayLearn"
@@ -1055,71 +1056,118 @@
   ],
   "publications": [
     {
-      "id": "pub-1",
-      "title": "A Novel Dataset for Fake News in Tamil",
-      "authors": "Karthik Raja Anandan, et al.",
-      "venue": "SPELLL 2022",
-      "year": "2022",
-      "abstract": "Using Sentence transformers and web scraping for Tamil fake news detection.",
-      "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/tamil-fake-news",
+      "id": "pub-semeval",
+      "title": "UCSC at SemEval-2025 Task 3: Context, Models and Prompt Optimization for Automated Hallucination Detection in LLM Output",
+      "authors": "Sicong Huang, Jincheng He, Shiyuan Huang, <strong>Karthik Raja Anandan</strong>, Arkajyoti Chakraborty, Ian Lane",
+      "venue": "SemEval-2025 (ACL Anthology) — Best System Paper, Task 3; BayLearn 2025 oral",
+      "year": "2025",
+      "abstract": "Retrieve context, identify false content in the answer, map it back to spans, with automatic prompt optimization. #1 by average ranking across 14 languages in Mu-SHROOM.",
+      "pdf": "https://aclanthology.org/2025.semeval-1.257/",
       "tags": [
-        "Fake News Detection",
-        "Tamil NLP",
-        "Sentence Transformers"
+        "Hallucination Detection",
+        "LLMs",
+        "Prompt Optimization"
       ],
       "category": "Conference"
     },
     {
-      "id": "pub-2",
-      "title": "Abusive and Threatening Language Detection in Native Urdu Tweets",
-      "authors": "Karthik Raja Anandan, et al.",
-      "venue": "FIRE 2021",
-      "year": "2021",
-      "abstract": "Using BERT, BiLSTM models for detecting abusive and threatening language in Urdu tweets.",
-      "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/urdu-abuse-detection",
+      "id": "pub-eee",
+      "title": "Every Eval Ever: A Unifying Schema and Community Repository for AI Evaluation Results",
+      "authors": "Jan Batzner et al. (EEE team), incl. <strong>Karthik Raja Anandan</strong>",
+      "venue": "NeurIPS 2026 Evaluations & Datasets Track submission; invited to Nature Machine Intelligence",
+      "year": "2026",
+      "abstract": "Shared schema and community repository for AI evaluation results.",
+      "pdf": null,
       "tags": [
-        "Urdu NLP",
-        "Abuse Detection",
-        "BERT",
-        "BiLSTM"
+        "Evaluation",
+        "Benchmarks",
+        "Open Science"
       ],
-      "category": "Conference"
+      "category": "Under Review"
     },
     {
-      "id": "pub-3",
-      "title": "Detecting Malicious IoT Traffic Using Machine Learning Techniques",
-      "authors": "Karthik Raja Anandan, et al.",
-      "venue": "Romanian Journal of Information Technology and Automatic Control",
+      "id": "pub-less",
+      "title": "LeSS agile projects: a machine learning driven empirical model to predict the human resource allocation",
+      "authors": "Srinivasan Vaidyanathan, Chamundeswari Arumugam, Kavya Jaganathan, Sowmya Ramesh, Anirudh Anand, <strong>Karthik Raja Anandan</strong>",
+      "venue": "International Journal of Information Technology (Springer), vol. 16, p. 861",
       "year": "2023",
-      "abstract": "Using ML models like RandomForest, XGBoost for detecting malicious IoT traffic.",
-      "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/iot-malware-detection",
+      "abstract": "MLP, linear regression, decision tree and SVM multi-output regressors predicting HR allocation scores for LeSS Agile projects.",
+      "pdf": "https://doi.org/10.1007/s41870-023-01513-2",
       "tags": [
-        "IoT Security",
         "Machine Learning",
-        "RandomForest",
-        "XGBoost"
+        "Software Engineering"
       ],
       "category": "Journal"
     },
     {
-      "id": "pub-4",
-      "title": "LeSS Agile Projects: A Machine Learning-Driven Empirical Model",
-      "authors": "Karthik Raja Anandan, et al.",
-      "venue": "International Journal of Information Technology",
-      "year": "2021",
-      "abstract": "Using SVM-based models to predict human resource allocation in LeSS Agile projects.",
-      "pdf": "https://arxiv.org/abs/example",
-      "code": "https://github.com/kitrakrev/less-agile-hr",
+      "id": "pub-iot",
+      "title": "Detecting malicious IoT traffic using Machine Learning techniques",
+      "authors": "Bhuvana Jayaraman, Mirnalinee T. T., Anirudh Anand, <strong>Karthik Raja Anandan</strong>",
+      "venue": "Romanian Journal of Information Technology and Automatic Control, vol. 33(4), pp. 47–58",
+      "year": "2023",
+      "abstract": "ML classifiers for detecting malicious IoT network traffic.",
+      "pdf": "https://rria.ici.ro/en/rria-vol-33-no-4-2023/detecting-malicious-iot-traffic-using-machine-learning-techniques/",
       "tags": [
-        "Agile",
-        "HR Prediction",
-        "SVM",
+        "IoT Security",
         "Machine Learning"
       ],
       "category": "Journal"
+    },
+    {
+      "id": "pub-tamil",
+      "title": "A Novel Dataset for Fake News Detection in Tamil Regional Language",
+      "authors": "Mirnalinee T. T., Bhuvana Jayaraman, Anirudh A., Jagadish R., <strong>Karthik Raja A.</strong>",
+      "venue": "SPELLL 2022 (Springer CCIS)",
+      "year": "2022",
+      "abstract": "A new Tamil fake-news dataset built with web scraping, with sentence-transformer baselines.",
+      "pdf": "https://doi.org/10.1007/978-3-031-33231-9_22",
+      "tags": [
+        "Fake News Detection",
+        "Tamil NLP"
+      ],
+      "category": "Conference"
+    },
+    {
+      "id": "pub-clef",
+      "title": "Multi Regressor Based User Rating Predictor for ImageCLEF Aware 2022",
+      "authors": "Aarthi Suresh Kumar, Anirudh Anand, Jeet Golecha, <strong>Karthik Raja Anandan</strong>, Bhuvana Jayaraman, Mirnalinee T. T.",
+      "venue": "CLEF 2022 Working Notes (CEUR-WS), pp. 1590–1595",
+      "year": "2022",
+      "abstract": "Multi-regressor model predicting user ratings for the ImageCLEF Aware task.",
+      "pdf": "https://dblp.org/pid/325/8646.html",
+      "tags": [
+        "Regression",
+        "ImageCLEF"
+      ],
+      "category": "Workshop"
+    },
+    {
+      "id": "pub-offensive",
+      "title": "Offensive Text Prediction using Machine Learning and Deep Learning Approaches",
+      "authors": "Bhuvana Jayaraman, Mirnalinee T. T., <strong>Karthik Raja Anandan</strong>, Aarthi Suresh Kumar, Anirudh Anand",
+      "venue": "FIRE 2021 Working Notes (CEUR-WS Vol-3159), pp. 688–695",
+      "year": "2021",
+      "abstract": "ML and DL classifiers for offensive text detection.",
+      "pdf": "https://ceur-ws.org/Vol-3159/",
+      "tags": [
+        "Offensive Language",
+        "NLP"
+      ],
+      "category": "Workshop"
+    },
+    {
+      "id": "pub-urdu",
+      "title": "Abusive and Threatening Language Detection in Native Urdu Script Tweets Exploring Four Conventional Machine Learning Techniques and MLP",
+      "authors": "<strong>K. A. Karthikraja</strong>, Aarthi Suresh Kumar, B. Bharathi, Jayaraman Bhuvana, T. T. Mirnalinee",
+      "venue": "FIRE 2021 Working Notes (CEUR-WS Vol-3159), pp. 806–812",
+      "year": "2021",
+      "abstract": "Four conventional ML techniques and an MLP for abusive/threatening Urdu tweets.",
+      "pdf": "https://ceur-ws.org/Vol-3159/",
+      "tags": [
+        "Urdu NLP",
+        "Abuse Detection"
+      ],
+      "category": "Workshop"
     }
   ],
   "blogs": [

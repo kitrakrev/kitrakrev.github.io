@@ -15,7 +15,7 @@ export const GET: APIRoute = async ({ site }) => {
     .join('\n');
 
   const publications = data.publications
-    .map((pub) => `- "${pub.title}" — ${pub.venue} (${pub.year})`)
+    .map((pub) => `- "${pub.title}" — ${pub.venue} (${pub.year})${pub.pdf ? ` ${pub.pdf}` : ''}`)
     .join('\n');
 
   const achievements = data.achievements.map((a) => `- ${a.title}`).join('\n');
