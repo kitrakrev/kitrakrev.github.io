@@ -1099,3 +1099,8 @@ section, .section-block, .education-section, .experience-section,
 .pager-controls button:disabled{opacity:.35;cursor:default}
 .pager-status{font-size:.9rem;opacity:.75;min-width:3.5rem;text-align:center}
 .project-card-compact[hidden]{display:none}
+
+/* Equal-height project cards: tags + links pinned to the bottom */
+.project-card-compact{display:flex;flex-direction:column}
+.project-card-compact .project-tags{margin-top:auto}
+.project-card-compact .project-links{margin-bottom:0;padding-top:var(--sp-3)}
