@@ -1104,3 +1104,9 @@ section, .section-block, .education-section, .experience-section,
 .project-card-compact{display:flex;flex-direction:column}
 .project-card-compact .project-tags{margin-top:auto}
 .project-card-compact .project-links{margin-bottom:0;padding-top:var(--sp-3)}
+
+/* Skimmable project cards */
+.proj-badge{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--accent,#2563eb);background:color-mix(in srgb,var(--accent,#2563eb) 10%,transparent);padding:.2rem .55rem;border-radius:999px;margin-bottom:.6rem}
+.project-card-compact h3{margin-bottom:.4rem}
+.project-card-compact p{margin-bottom:.9rem}
+.tag.tag-domain{background:color-mix(in srgb,var(--accent,#2563eb) 12%,transparent);color:var(--accent,#2563eb);border-color:transparent;font-weight:600}

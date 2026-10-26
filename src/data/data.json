@@ -680,7 +680,7 @@
     {
       "id": "p-morph",
       "title": "Morph — Self-Evolving Robot-Fleet Harness",
-      "description": "Harness where LLM agents compose and evolve robot skills for fleets whose bodies change: physics backends (incl. MuJoCo), a verifier that rejects illegal skill edits, controlled-experiment switches, and an occlusion-aware 3D camera for attempt videos.",
+      "description": "LLM agents write and evolve skills for robot fleets; a verifier blocks unsafe edits. MuJoCo sim.",
       "technologies": [
         "Python",
         "MuJoCo",
@@ -699,12 +699,13 @@
         "Simulation"
       ],
       "date": "2026",
-      "page": "https://kitrakrev.github.io/morph/"
+      "page": "https://kitrakrev.github.io/morph/",
+      "badge": "Robotics × LLM Agents"
     },
     {
       "id": "p-mindnest",
       "title": "MindNest — AI Personas + SO-101 Robot Arm",
-      "description": "Cal Hacks 12.0 (Oct 2025), my first hardware project: a multi-agent persona chat simulator with Letta memory, wired to an SO-101 arm that plays rock-paper-scissors and reaches toward people (OpenCV) through a FastAPI robot API.",
+      "description": "My first hardware build: AI personas driving a real SO-101 arm (rock-paper-scissors) via a FastAPI API.",
       "technologies": [
         "Python",
         "FastAPI",
@@ -723,12 +724,13 @@
         "FastAPI"
       ],
       "date": "2025",
-      "page": "https://kitrakrev.github.io/mindnest/"
+      "page": "https://kitrakrev.github.io/mindnest/",
+      "badge": "Cal Hacks 12.0"
     },
     {
       "id": "p-router",
       "title": "Smart Router — Multi-Modal LLM Router",
-      "description": "Routing layer that extracts 9 query signals (complexity, domain, safety, PII, vision, tools) and matches embedding centroids of decision exemplars to pick the cheapest capable model in under 15 ms, with budget limits, guardrails and health-aware fallback.",
+      "description": "Picks the cheapest capable LLM per query in under 15 ms, with guardrails and fallback.",
       "technologies": [
         "Python",
         "Embeddings",
@@ -748,12 +750,13 @@
         "Hugging Face"
       ],
       "date": "2026",
-      "page": "https://kitrakrev.github.io/smart-router-multi-modal/"
+      "page": "https://kitrakrev.github.io/smart-router-multi-modal/",
+      "badge": "<15 ms routing"
     },
     {
       "id": "p-kernels",
       "title": "Kernel Dev — Cross-Stack Kernels",
-      "description": "Softmax implemented four ways (MLX, JAX, CUDA, Triton) and a matmul optimization ladder with roofline analysis, benchmarked on Apple M4, NVIDIA T4 and TPU v5e.",
+      "description": "Softmax in CUDA, Triton, JAX and MLX + matmul roofline study on M4, T4 and TPU v5e.",
       "technologies": [
         "CUDA",
         "Triton",
@@ -773,12 +776,13 @@
         "Roofline"
       ],
       "date": "2026",
-      "page": "https://kitrakrev.github.io/kernel-dev/"
+      "page": "https://kitrakrev.github.io/kernel-dev/",
+      "badge": "4 backends · 3 chips"
     },
     {
       "id": "p-helion",
       "title": "Helion Optimizations",
-      "description": "Helion DSL kernel work lowering to Triton, profiled for occupancy, memory bandwidth and warp divergence; methodology demoed at NVIDIA GTC 2026.",
+      "description": "Helion → Triton kernels profiled for occupancy and bandwidth; demoed at NVIDIA GTC 2026.",
       "technologies": [
         "Helion",
         "Triton",
@@ -796,12 +800,13 @@
         "GPU Profiling"
       ],
       "date": "2026",
-      "page": "https://kitrakrev.github.io/helion_optimizations/"
+      "page": "https://kitrakrev.github.io/helion_optimizations/",
+      "badge": "NVIDIA GTC 2026"
     },
     {
       "id": "p-staffinggym",
       "title": "StaffingGym — RL Environment for LLM Agents",
-      "description": "Long-horizon RL environment (OpenEnv Hackathon, Mar 2026) where an LLM agent runs a staffing agency over a simulated 52-week year, balancing clients, candidates and bench costs.",
+      "description": "RL environment where an LLM agent runs a staffing agency for a simulated 52-week year.",
       "technologies": [
         "Python",
         "Reinforcement Learning",
@@ -818,12 +823,13 @@
         "LLM Agents"
       ],
       "date": "2026",
-      "page": "https://kitrakrev.github.io/rl-recruits/"
+      "page": "https://kitrakrev.github.io/rl-recruits/",
+      "badge": "OpenEnv Hackathon"
     },
     {
       "id": "p-teamhq",
       "title": "TeamHQ — Autonomous Code-Change Hub",
-      "description": "Org-level command center (Nozomio Hackathon) where proposed code changes become cards that a coding agent turns into pull requests on a target repo.",
+      "description": "Proposed code changes become cards; a coding agent turns them into pull requests.",
       "technologies": [
         "TypeScript",
         "Coding Agents",
@@ -839,12 +845,13 @@
         "GitHub API"
       ],
       "date": "2026",
-      "page": "https://kitrakrev.github.io/teamhq/"
+      "page": "https://kitrakrev.github.io/teamhq/",
+      "badge": "Nozomio Hackathon"
     },
     {
       "id": "p-evals",
       "title": "LLM Evaluation Framework",
-      "description": "Multi-model evaluation framework with RAG, voice, tracing, regression detection and OpenTelemetry observability.",
+      "description": "Multi-model eval harness: RAG, voice, tracing and regression detection.",
       "technologies": [
         "Python",
         "RAG",
@@ -866,7 +873,7 @@
     {
       "id": "p-url",
       "title": "Distributed URL Shortener",
-      "description": "URL shortener with consistent hashing, Redis caching and OpenTelemetry observability.",
+      "description": "Go URL shortener: consistent hashing, Redis cache, OpenTelemetry.",
       "technologies": [
         "Go",
         "Redis",
@@ -888,7 +895,7 @@
     {
       "id": "p-logs",
       "title": "Real-Time Log Processing Pipeline",
-      "description": "Distributed log ingestion, stream processing and analytics with Kafka, Faust, Spark and OpenTelemetry.",
+      "description": "Real-time log pipeline: Kafka ingest, Faust/Spark processing, analytics.",
       "technologies": [
         "Kafka",
         "Faust",
