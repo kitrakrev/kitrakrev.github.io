@@ -691,14 +691,39 @@
       "category": "Both",
       "github": "https://github.com/kitrakrev/morph",
       "tags": [
+        "Robotics",
+        "AI Agents",
         "Python",
         "MuJoCo",
         "LLM Agents",
-        "Robotics",
         "Simulation"
       ],
       "date": "2026",
       "page": "https://kitrakrev.github.io/morph/"
+    },
+    {
+      "id": "p-mindnest",
+      "title": "MindNest — AI Personas + SO-101 Robot Arm",
+      "description": "Cal Hacks 12.0 (Oct 2025), my first hardware project: a multi-agent persona chat simulator with Letta memory, wired to an SO-101 arm that plays rock-paper-scissors and reaches toward people (OpenCV) through a FastAPI robot API.",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "LeRobot",
+        "OpenCV",
+        "Letta"
+      ],
+      "category": "Both",
+      "github": "https://github.com/kitrakrev/mindnest",
+      "tags": [
+        "Robotics",
+        "Hardware",
+        "AI Agents",
+        "Hackathon",
+        "LeRobot",
+        "FastAPI"
+      ],
+      "date": "2025",
+      "page": "https://kitrakrev.github.io/mindnest/"
     },
     {
       "id": "p-router",
@@ -714,6 +739,8 @@
       "category": "Both",
       "github": "https://github.com/kitrakrev/smart-router-multi-modal",
       "tags": [
+        "LLM Infra",
+        "AI Safety",
         "Python",
         "Embeddings",
         "LLM Routing",
@@ -737,6 +764,8 @@
       "category": "Both",
       "github": "https://github.com/kitrakrev/kernel-dev",
       "tags": [
+        "GPU Kernels",
+        "ML Systems",
         "CUDA",
         "Triton",
         "JAX/TPU",
@@ -759,6 +788,8 @@
       "category": "Both",
       "github": "https://github.com/kitrakrev/helion_optimizations",
       "tags": [
+        "GPU Kernels",
+        "ML Systems",
         "Helion",
         "Triton",
         "PyTorch",
@@ -780,8 +811,9 @@
       "category": "Data Science",
       "github": "https://github.com/kitrakrev/rl-recruits",
       "tags": [
-        "Python",
         "Reinforcement Learning",
+        "AI Agents",
+        "Python",
         "OpenEnv",
         "LLM Agents"
       ],
@@ -800,6 +832,8 @@
       "category": "SDE",
       "github": "https://github.com/kitrakrev/teamhq",
       "tags": [
+        "AI Agents",
+        "Developer Tools",
         "TypeScript",
         "Coding Agents",
         "GitHub API"
@@ -820,9 +854,10 @@
       "category": "Data Science",
       "github": "https://github.com/kitrakrev/mulit-modal-llm-evals",
       "tags": [
+        "Evals",
+        "LLM Infra",
         "Python",
         "RAG",
-        "Evals",
         "OpenTelemetry"
       ],
       "date": "2026",
@@ -841,6 +876,8 @@
       "category": "SDE",
       "github": "https://github.com/kitrakrev/url-shortener",
       "tags": [
+        "Backend",
+        "Distributed Systems",
         "Go",
         "Redis",
         "Consistent Hashing",
@@ -861,6 +898,8 @@
       "category": "SDE",
       "github": "https://github.com/kitrakrev/realtime-log-processor",
       "tags": [
+        "Data Engineering",
+        "Distributed Systems",
         "Kafka",
         "Faust",
         "Spark",
