@@ -10,6 +10,9 @@ const projects = view === 'all' ? all : all.filter((p) => p.category === cat || 
   {
     projects.map((proj) => (
       <div class="project-card-compact">
+        <a class="proj-media" href={proj.page || proj.github} aria-hidden="true" tabindex="-1">
+          {proj.thumb ? <img src={proj.thumb} alt="" loading="lazy" /> : <i class={`fas ${proj.icon || 'fa-code'}`}></i>}
+        </a>
         {proj.badge && <span class="proj-badge">{proj.badge}</span>}
         <h3>{proj.page ? <a href={proj.page}>{proj.title}</a> : proj.title}</h3>
         <p>{proj.description}</p>

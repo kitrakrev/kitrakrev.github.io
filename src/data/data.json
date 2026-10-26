@@ -700,7 +700,9 @@
       ],
       "date": "2026",
       "page": "https://kitrakrev.github.io/morph/",
-      "badge": "Robotics × LLM Agents"
+      "badge": "🤖 Robotics × LLM Agents",
+      "icon": "fa-robot",
+      "thumb": "/assets/projects/morph.jpg"
     },
     {
       "id": "p-mindnest",
@@ -725,7 +727,9 @@
       ],
       "date": "2025",
       "page": "https://kitrakrev.github.io/mindnest/",
-      "badge": "Cal Hacks 12.0"
+      "badge": "🛠️ Cal Hacks 12.0",
+      "icon": "fa-hand-scissors",
+      "thumb": "/assets/projects/mindnest.jpg"
     },
     {
       "id": "p-router",
@@ -751,7 +755,8 @@
       ],
       "date": "2026",
       "page": "https://kitrakrev.github.io/smart-router-multi-modal/",
-      "badge": "<15 ms routing"
+      "badge": "⚡ <15 ms routing",
+      "icon": "fa-route"
     },
     {
       "id": "p-kernels",
@@ -777,7 +782,8 @@
       ],
       "date": "2026",
       "page": "https://kitrakrev.github.io/kernel-dev/",
-      "badge": "4 backends · 3 chips"
+      "badge": "🧮 4 backends · 3 chips",
+      "icon": "fa-microchip"
     },
     {
       "id": "p-helion",
@@ -801,7 +807,8 @@
       ],
       "date": "2026",
       "page": "https://kitrakrev.github.io/helion_optimizations/",
-      "badge": "NVIDIA GTC 2026"
+      "badge": "🎤 NVIDIA GTC 2026",
+      "icon": "fa-bolt"
     },
     {
       "id": "p-staffinggym",
@@ -824,7 +831,9 @@
       ],
       "date": "2026",
       "page": "https://kitrakrev.github.io/rl-recruits/",
-      "badge": "OpenEnv Hackathon"
+      "badge": "🛠️ OpenEnv Hackathon",
+      "icon": "fa-chart-line",
+      "thumb": "/assets/projects/staffinggym.jpg"
     },
     {
       "id": "p-teamhq",
@@ -846,7 +855,9 @@
       ],
       "date": "2026",
       "page": "https://kitrakrev.github.io/teamhq/",
-      "badge": "Nozomio Hackathon"
+      "badge": "🛠️ Nozomio Hackathon",
+      "icon": "fa-code-pull-request",
+      "thumb": "/assets/projects/teamhq.jpg"
     },
     {
       "id": "p-evals",
@@ -868,7 +879,8 @@
         "OpenTelemetry"
       ],
       "date": "2026",
-      "page": "https://kitrakrev.github.io/mulit-modal-llm-evals/"
+      "page": "https://kitrakrev.github.io/mulit-modal-llm-evals/",
+      "icon": "fa-vial-circle-check"
     },
     {
       "id": "p-url",
@@ -890,7 +902,8 @@
         "Consistent Hashing",
         "OpenTelemetry"
       ],
-      "date": "2026"
+      "date": "2026",
+      "icon": "fa-link"
     },
     {
       "id": "p-logs",
@@ -912,7 +925,8 @@
         "Spark",
         "OpenTelemetry"
       ],
-      "date": "2026"
+      "date": "2026",
+      "icon": "fa-bars-staggered"
     }
   ],
   "qualifications_sde": [

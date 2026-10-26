@@ -1110,3 +1110,7 @@ section, .section-block, .education-section, .experience-section,
 .project-card-compact h3{margin-bottom:.4rem}
 .project-card-compact p{margin-bottom:.9rem}
 .tag.tag-domain{background:color-mix(in srgb,var(--accent,#2563eb) 12%,transparent);color:var(--accent,#2563eb);border-color:transparent;font-weight:600}
+.project-card-compact{overflow:hidden}
+.proj-media{display:flex;align-items:center;justify-content:center;height:130px;margin:calc(-1 * var(--sp-6)) calc(-1 * var(--sp-6)) var(--sp-4);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,transparent),color-mix(in srgb,var(--accent) 4%,transparent));border-bottom:1px solid var(--border);overflow:hidden}
+.proj-media img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.proj-media i{font-size:2.4rem;color:var(--accent);opacity:.75}
