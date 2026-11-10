@@ -678,6 +678,34 @@
   ],
   "projects": [
     {
+      "id": "p-calllens",
+      "title": "CallLens — See Inside Every Voice-Agent Call",
+      "description": "Per-turn root cause for Vapi voice calls: latency by stage, mishearing, dead air. TypeSafe Jev judges every turn in ~120 ms; one click self-heals the live agent. Built at the Vapi hackathon.",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "Vapi",
+        "Deepgram",
+        "Exa",
+        "TypeSafe Jev"
+      ],
+      "category": "Both",
+      "github": "https://github.com/kitrakrev/calllens",
+      "tags": [
+        "Voice AI",
+        "AI Agents",
+        "Evals",
+        "Observability",
+        "Vapi",
+        "Deepgram"
+      ],
+      "date": "2026",
+      "page": "https://kitrakrev.github.io/calllens/",
+      "badge": "🎙️ Voice AI × Evals",
+      "icon": "fa-phone",
+      "thumb": "/assets/projects/calllens.jpg"
+    },
+    {
       "id": "p-morph",
       "title": "Morph — Self-Evolving Robot-Fleet Harness",
       "description": "LLM agents write and evolve skills for robot fleets; a verifier blocks unsafe edits. MuJoCo sim.",
