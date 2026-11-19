@@ -1,0 +1,49 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('projects');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+
+<Base
+  title={`${post.data.title} - Karthik Raja Anandan`}
+  description={post.data.excerpt}
+  ogType="article"
+>
+  <div class="blog-post">
+    <a href="/" class="back-to-blogs"><i class="fas fa-arrow-left"></i> Home</a>
+
+    <article>
+      <header class="blog-header">
+        <h1>{post.data.title}</h1>
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> {fmt(post.data.date)}</span>
+          <span><i class="fas fa-clock"></i> {post.data.readTime}</span>
+          <span><i class="fas fa-user"></i> Karthik Raja Anandan</span>
+        </div>
+        <div class="blog-tags">
+          {post.data.tags.map((t) => <span class="tag">{t}</span>)}
+        </div>
+        {post.data.repo && (
+          <p><a href={post.data.repo}><i class="fab fa-github"></i> Code, logs and reproduce steps</a></p>
+        )}
+      </header>
+
+      <div class="blog-content">
+        <Content />
+      </div>
+    </article>
+  </div>
+</Base>
