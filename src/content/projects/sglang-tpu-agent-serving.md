@@ -2,7 +2,7 @@
 title: "Serving Multi-Turn Agents with SGLang on Cloud TPU v6e (and how it compares to A100/H100)"
 excerpt: "Benchmarking SGLang (sgl_jax) on TPU v6e with a multi-turn agent workload: prefix caching, a hybrid linear-attention model where the cache hurts, and an honest TPU vs GPU comparison."
 date: 2026-11-18
-readTime: "10 min read"
+readTime: "13 min read"
 repo: "https://github.com/kitrakrev/sglang-tpu-agentbench"
 tags: ["TPU", "SGLang", "LLM Inference", "Agents", "Benchmarking", "TorchTPUSprint"]
 ---
@@ -12,7 +12,9 @@ tags: ["TPU", "SGLang", "LLM Inference", "Agents", "Benchmarking", "TorchTPUSpri
 > - On one TPU v6e chip, Qwen2.5-7B with SGLang's radix prefix cache does **1,523 output tok/s at 32 agent sessions vs 930 without it (+64%)**, and TTFT p99 drops **598 → 138 ms**. 87% of prompt tokens come from cache and 100% of requests meet a TTFT < 200 ms / ITL < 25 ms SLO.
 > - On a **hybrid linear-attention** model (Qwen3.8-27B, v6e-4), the prefix cache made serving **slower at every concurrency**: cache off reached 968 tok/s vs a ~520 tok/s plateau with it on.
 > - Against GPUs on the same workload, **H100 wins on speed (1.65–2x)**; v6e-1 roughly **ties A100 on cost** and has the **best tail latency**.
-> - Whole study: ~$14 TPU + ~$2 GPU, 11,000+ requests, 0 errors, fully reproducible.
+> - **int8 weights** (sgl_jax built-in, weight-only) make decode **1.84x faster** at c=1 and lift c=32 throughput **1,505 → 2,342 tok/s**.
+> - I **ported OLMo 2 and Olmo 3** to sgl_jax: numerically matches HF, decodes at Qwen speed, but prefill is 10–30x slower because the TPU attention kernel has no tuned tiles for 32-KV-head models.
+> - Whole study: ~$20 TPU + ~$2 GPU, 15,000+ requests, 0 errors, fully reproducible.
 
 ## Why agent workloads are different
 
@@ -114,15 +116,52 @@ The honest read:
 3. **Per HBM byte, all three land in the same place:** ~73% of roofline at c=1. The H100 gap is mostly bandwidth (3.35 vs 1.64 TB/s), not software.
 4. **Caveats:** mature SGLang CUDA (CUDA graphs) vs young sgl_jax; page size 1 on GPU vs 128 on TPU; neither server tuned per platform beyond the shared flags.
 
+## Result 4: int8 weights
+
+sgl_jax ships an int8 weight-only config (`--quantization-config-path=int8.yaml`): per-channel int8 weights, bf16 activations and KV, quantized at load. Same v6e-1, same workload, cache on, baseline re-run on the same build:
+
+| c | bf16 tok/s | int8 tok/s | bf16 ITL p50 ms | int8 ITL p50 ms |
+|---|---|---|---|---|
+| 1 | 74 | **135** | 13.0 | **7.1** |
+| 8 | 506 | **875** | 14.7 | **8.5** |
+| 32 | 1,505 | **2,342** | 20.1 | **12.9** |
+
+![int8 vs bf16 throughput](/projects/sglang-tpu-agent-serving/int8-tokps.png)
+
+Decode is HBM-bound, so halving weight bytes nearly halves per-token latency, and the freed memory grows the KV pool from 232k to 345k tokens. Cost at c=32 drops from $0.50 to ~$0.32 per 1M output tokens. Caveat: I did not run an accuracy eval on the int8 model, so this is a speed result only.
+
+## Result 5: porting OLMo 2 and Olmo 3 to sgl_jax
+
+sgl_jax didn't support AI2's fully open OLMo models, so I added them ([branch](https://github.com/kitrakrev/sglang-jax/tree/add-olmo3-support)):
+
+- **OLMo 2:** post-sublayer RMSNorm and full-width QK-norm.
+- **Olmo 3:** the same block plus 3:1 interleaved sliding-window attention (window 4096) and YaRN RoPE; it plugs into sgl_jax's hybrid SWA KV pool.
+
+Against HF transformers on CPU (tiny random fp32 models, sliding window forced short enough to mask), the worst prompt-logprob difference is 2.9e-6 (OLMo 2) and 1.9e-6 (Olmo 3), with identical greedy tokens. On TPU both served the full agent workload with 0 errors.
+
+| model (v6e-1, cache on) | c=1 TTFT p50 | c=1 ITL p50 | c=32 tok/s |
+|---|---|---|---|
+| Qwen2.5-7B | 30 ms | 13.0 ms | 1,505 |
+| OLMo-2-7B | 219 ms | 13.4 ms | 162 |
+| Olmo-3-7B | 124 ms | 13.4 ms | 65 |
+
+Decode matches Qwen, but prefill is 10–30x slower and throughput collapses under load. The server logs show why: OLMo 7B uses full multi-head attention (32 KV heads vs 4 for Qwen). The TPU ragged paged attention kernel has no tuned block sizes for that shape on v6e, and its fallback heuristic picks a query block of 2 (vs 32 for Qwen), so every prefill chunk takes 1–2 seconds. MHA also makes the KV cache 8x larger per token. That's kernel tuning, not model correctness: the next step is adding v6e tile sizes for 32-KV-head attention.
+
+## A note on capacity
+
+I also wanted Qwen2.5-72B on a v6e-8. There was no v6e-8 capacity, spot or on-demand, in any of six zones I tried across two days, and a spot v6e-1 was preempted mid-run. Plan TPU experiments with on-demand fallbacks and expect to retry.
+
 ## Cost and reproducibility
 
-The whole study cost about **$14 of TPU time and $2 of GPU time**. The repo has every log, metrics table and chart, plus `REPRODUCE.md` with step-by-step instructions for both TPU (GCP setup, budget kill-switch, VM create/delete, each run) and GPU (Modal).
+The whole study cost about **$20 of TPU time and $2 of GPU time**. The repo has every log, metrics table and chart, plus `REPRODUCE.md` with step-by-step instructions for both TPU (GCP setup, budget kill-switch, VM create/delete, each run) and GPU (Modal).
 
 **Code, logs and reproduce steps:** [github.com/kitrakrev/sglang-tpu-agentbench](https://github.com/kitrakrev/sglang-tpu-agentbench)
 
 ## What's next
 
-- v6e-8 with Qwen2.5-72B (no spot capacity during this sprint).
+- v6e-8 with Qwen2.5-72B (no capacity during this sprint).
+- Tuned attention tiles for 32-KV-head models (OLMo), then re-run.
+- Accuracy eval of int8 weights; int8 KV cache.
 - EAGLE3 speculative decoding for agent turns.
 - Host-memory KV offload and longer sessions (20+ turns), where per-session history dominates.
 
