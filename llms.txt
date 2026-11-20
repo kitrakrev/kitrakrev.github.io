@@ -1,0 +1,55 @@
+# Karthik Raja Anandan
+
+> Founding ML Engineer (Data Scientist) at Elas (Pleasanton, CA), building and validating agentic AI systems — test-automation frameworks, multi-agent routing, and developer tooling across 10+ services. M.S. in Artificial Intelligence (Natural Language Processing), UC Santa Cruz (2025, GPA 3.9/4.0). Open-source contributor to Google Tunix, LangChain, and Ivy; co-author of the SemEval-2025 Task 3 Best System Paper (hallucination detection); demoed GPU kernels at NVIDIA GTC 2026.
+
+Personal portfolio and blog of Karthik Raja Anandan, Founding ML Engineer (Data Scientist) at Elas based in Pleasanton, CA. Contact: kanandan@ucsc.edu. GitHub: https://github.com/kitrakrev. LinkedIn: https://www.linkedin.com/in/kitrakrev. Google Scholar: https://scholar.google.com/citations?user=fK1cR-8AAAAJ&hl=en.
+
+## Pages
+
+- [Overview](https://kitrakrev.github.io/): Profile summary, education, experience, core competencies
+- [Software Engineer profile](https://kitrakrev.github.io/sde/): SDE-tailored experience, projects, and skills
+- [AI/ML Engineer profile](https://kitrakrev.github.io/datascience/): AI/ML-tailored experience, research, projects, and publications
+- [Skills](https://kitrakrev.github.io/skills/): Full technical skill inventory with proficiency levels
+- [Blog](https://kitrakrev.github.io/blog/): Technical writing on AI systems
+- [Contact](https://kitrakrev.github.io/contact/): Contact details
+- [Resume (PDF)](https://kitrakrev.github.io/assets/karthik_F25.pdf): Downloadable resume
+
+## Experience
+
+- Data Scientist — Founding ML Engineer @ Elas (Jan 2026 - Present): Founding ML engineer (title: Data Scientist) building and validating production agentic AI systems — post-training, evals, multi-agent routing, and developer tooling across 10+ services.
+- Data Analysis & Machine Learning Intern @ Elas (Jun 2025 - Sep 2025): Full-time summer internship on Elas's AI platform, reporting to the data science lead.
+- AI Research Engineer @ Samsung Research Capstone (Sep 2025 - Dec 2025): Built an autonomous GUI agent and automated test harnesses for long-horizon web task validation and quantized model inference.
+- Software Developer (C09) @ Citi Corp (Jul 2023 - Sep 2024): Built event-driven microservices processing millions of financial events daily, with integration tests, CI/CD, and developer tooling.
+- NLP Engineering Intern @ MultiOn (AI agents startup) (Jun 2023 - Aug 2023): Shipped open-source integrations for agentic browser automation; improved agent accuracy by 40%.
+
+## Publications
+
+- "UCSC at SemEval-2025 Task 3: Context, Models and Prompt Optimization for Automated Hallucination Detection in LLM Output" — SemEval-2025 (ACL Anthology) — Best System Paper, Task 3; BayLearn 2025 oral (2025) https://aclanthology.org/2025.semeval-1.257/
+- "Every Eval Ever: A Unifying Schema and Community Repository for AI Evaluation Results" — NeurIPS 2026 Evaluations & Datasets Track submission; invited to Nature Machine Intelligence (2026)
+- "LeSS agile projects: a machine learning driven empirical model to predict the human resource allocation" — International Journal of Information Technology (Springer), vol. 16, p. 861 (2023) https://doi.org/10.1007/s41870-023-01513-2
+- "Detecting malicious IoT traffic using Machine Learning techniques" — Romanian Journal of Information Technology and Automatic Control, vol. 33(4), pp. 47–58 (2023) https://rria.ici.ro/en/rria-vol-33-no-4-2023/detecting-malicious-iot-traffic-using-machine-learning-techniques/
+- "A Novel Dataset for Fake News Detection in Tamil Regional Language" — SPELLL 2022 (Springer CCIS) (2022) https://doi.org/10.1007/978-3-031-33231-9_22
+- "Multi Regressor Based User Rating Predictor for ImageCLEF Aware 2022" — CLEF 2022 Working Notes (CEUR-WS), pp. 1590–1595 (2022) https://dblp.org/pid/325/8646.html
+- "Offensive Text Prediction using Machine Learning and Deep Learning Approaches" — FIRE 2021 Working Notes (CEUR-WS Vol-3159), pp. 688–695 (2021) https://ceur-ws.org/Vol-3159/
+- "Abusive and Threatening Language Detection in Native Urdu Script Tweets Exploring Four Conventional Machine Learning Techniques and MLP" — FIRE 2021 Working Notes (CEUR-WS Vol-3159), pp. 806–812 (2021) https://ceur-ws.org/Vol-3159/
+
+## Recognition
+
+- NVIDIA GTC 2026 — Helion DSL kernel demo (Meta booth)
+- GPU MODE Helion kernel contest (NVIDIA B200) — 🥇 1st gated_deltanet_recompute_w_u, 🥈 2nd fp8_quant, 4th chunk_fwd_h, 6th causal_conv1d
+- SemEval-2025 Task 3 — Best System Paper (co-author)
+- Google Tunix — Merged PR #1552
+- LangChain — Merged PR #12392
+- Ivy — Merged PR #13280
+- Smart India Hackathon Winner (2023)
+- ICPC Regionals — Top 300
+- AMD ROCm Certified Associate
+- BayLearn 2025 — Oral Presentation (hallucination detection)
+- Cal Hacks 13.0 — Judge
+
+## Blog Posts
+
+- [Understanding Multimodal RAG Systems](https://kitrakrev.github.io/blog/multimodal-rag/): A comprehensive guide to building retrieval-augmented generation systems that can handle multiple modalities.
+- [Mechanistic Interpretability: A Deep Dive](https://kitrakrev.github.io/blog/mechanistic-interpretability/): Exploring the internal mechanisms of large language models.
+- [Building Multi-Agent Conversation Systems](https://kitrakrev.github.io/blog/multi-agent-systems/): How to design and implement intelligent multi-agent systems.
+- [Graph-Based Knowledge Retrieval: Beyond Traditional RAG](https://kitrakrev.github.io/blog/graph-rag/): Exploring advanced knowledge retrieval techniques using graph neural networks.

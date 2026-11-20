@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Exploring the internal mechanisms of large language models."><meta name="author" content="Karthik Raja Anandan"><meta name="keywords" content="AI Engineer, ML Engineer, Elas, Machine Learning, Agentic AI, Multi-Agent Systems, Distributed Systems, Python, Java, C++, Go, AWS, Kubernetes, Docker, LLM Systems, RAG, System Design, NLP, PyTorch, NVIDIA GTC"><title>Mechanistic Interpretability: A Deep Dive - Karthik Raja Anandan</title><link rel="canonical" href="https://kitrakrev.github.io/blog/mechanistic-interpretability/"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:url" content="https://kitrakrev.github.io/blog/mechanistic-interpretability/"><meta property="og:title" content="Mechanistic Interpretability: A Deep Dive - Karthik Raja Anandan"><meta property="og:description" content="Exploring the internal mechanisms of large language models."><meta property="og:image" content="https://kitrakrev.github.io/assets/profile.jpg"><meta property="og:site_name" content="Karthik Raja Anandan"><!-- Twitter --><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Mechanistic Interpretability: A Deep Dive - Karthik Raja Anandan"><meta name="twitter:description" content="Exploring the internal mechanisms of large language models."><meta name="twitter:image" content="https://kitrakrev.github.io/assets/profile.jpg"><!-- Fonts: DM Sans for body (high x-height, great readability), Instrument Serif for display --><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><!-- Favicon --><link rel="icon" type="image/x-icon" href="/assets/profile.jpg"><script>(function(){const phKey = "phc_kL3Y5RPC35DXAkbfuoDE9qJkdUpTJ9dVccHd963jyWnZ";
+const phHost = "https://us.i.posthog.com";
+
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init(phKey, {
+    api_host: phHost,
+    ui_host: 'https://us.posthog.com',
+    person_profiles: 'identified_only',
+    capture_pageview: true,
+    capture_pageleave: true,
+    autocapture: true,
+    enable_heatmaps: true,
+  });
+})();</script><link rel="stylesheet" href="/_astro/_slug_.C-x1NzzX.css"></head> <body> <!-- Navigation --> <nav class="navbar"> <div class="nav-container"> <a href="/" class="nav-logo">
+Karthik<span class="logo-accent">.</span> </a> <div class="nav-menu" id="nav-menu"> <a href="/" class="nav-link"> Home </a><a href="/skills/" class="nav-link"> Skills </a><a href="/blog/" class="nav-link active"> Blog </a><a href="https://scholar.google.com/citations?user=fK1cR-8AAAAJ&hl=en" class="nav-link" target="_blank" rel="noopener noreferrer"> Publications </a><a href="/contact/" class="nav-link"> Contact </a> </div> <div class="nav-actions"> <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button> </div> </div> </nav> <!-- Mobile Menu --> <div class="mobile-menu" id="mobile-menu"> <a href="/" class="mobile-nav-link"> Home </a><a href="/skills/" class="mobile-nav-link"> Skills </a><a href="/blog/" class="mobile-nav-link active"> Blog </a><a href="https://scholar.google.com/citations?user=fK1cR-8AAAAJ&hl=en" class="mobile-nav-link" target="_blank" rel="noopener noreferrer"> Publications </a><a href="/contact/" class="mobile-nav-link"> Contact </a> </div> <!-- Main Content --> <main id="main-content">  <div class="blog-post"> <a href="/blog/" class="back-to-blogs"><i class="fas fa-arrow-left"></i> Back to Blog</a> <article> <header class="blog-header"> <h1>Mechanistic Interpretability: A Deep Dive</h1> <div class="blog-meta"> <span><i class="fas fa-calendar"></i> December 20, 2023</span> <span><i class="fas fa-clock"></i> 12 min read</span> <span><i class="fas fa-user"></i> Karthik Raja Anandan</span> </div> <div class="blog-tags"> <span class="tag">Mechanistic Interpretability</span><span class="tag">LLMs</span><span class="tag">Analysis</span><span class="tag">Research</span> </div> </header> <div class="blog-content"> <p>Large Language Models (LLMs) have achieved remarkable performance across a wide range of tasks, but their internal workings remain largely opaque. Mechanistic interpretability aims to understand these models by reverse-engineering their computational mechanisms. In this deep dive, we’ll explore the techniques and insights that make this field so fascinating and important.</p>
+<blockquote>
+<p><strong>Key Insight</strong></p>
+<p>Mechanistic interpretability seeks to understand not just what a model does, but how it does it. By understanding the internal mechanisms, we can build safer, more reliable, and more controllable AI systems.</p>
+</blockquote>
+<h2 id="what-is-mechanistic-interpretability">What is Mechanistic Interpretability?</h2>
+<p>Mechanistic interpretability is the study of understanding neural networks by identifying and characterizing the computational mechanisms that implement specific behaviors. Unlike other interpretability approaches that focus on correlations or feature importance, mechanistic interpretability aims to understand the causal relationships within the model.</p>
+<h2 id="core-principles">Core Principles</h2>
+<h3 id="1-circuit-discovery">1. Circuit Discovery</h3>
+<p>The fundamental unit of analysis in mechanistic interpretability is the “circuit” - a collection of neurons that work together to implement a specific computation. Circuits can be:</p>
+<ul>
+<li><strong>Feature Circuits:</strong> Detect specific patterns in the input</li>
+<li><strong>Computation Circuits:</strong> Perform mathematical operations</li>
+<li><strong>Control Circuits:</strong> Decide when to apply certain computations</li>
+</ul>
+<h3 id="2-ablation-studies">2. Ablation Studies</h3>
+<p>Ablation studies involve systematically removing or modifying parts of the model to understand their contribution to specific behaviors. This helps identify which components are necessary for particular functions.</p>
+<h3 id="3-activation-analysis">3. Activation Analysis</h3>
+<p>By analyzing the activation patterns of neurons, we can understand what features or patterns they respond to and how they contribute to the model’s output.</p>
+<h2 id="key-techniques-in-mechanistic-interpretability">Key Techniques in Mechanistic Interpretability</h2>
+<h3 id="1-attention-visualization">1. Attention Visualization</h3>
+<p>Attention mechanisms are crucial components of transformer models. Understanding how attention flows through the model can reveal how information is processed and combined.</p>
+<p><strong>Attention Pattern Example</strong></p>
+<p>Consider the sentence: “The cat sat on the mat”</p>
+<p><code>The</code> <code>cat</code> <code>sat</code> <code>on</code> <code>the</code> <code>mat</code></p>
+<p>This visualization shows how each token attends to other tokens in the sequence.</p>
+<h3 id="2-neuron-analysis">2. Neuron Analysis</h3>
+<p>Individual neurons can be analyzed to understand what features they detect. Techniques include:</p>
+<ul>
+<li><strong>Activation Maximization:</strong> Finding inputs that maximally activate a neuron</li>
+<li><strong>Dataset Examples:</strong> Examining real examples that strongly activate a neuron</li>
+<li><strong>Feature Visualization:</strong> Creating synthetic inputs that activate specific neurons</li>
+</ul>
+<h3 id="3-path-analysis">3. Path Analysis</h3>
+<p>Path analysis traces how information flows through the network from input to output, identifying the specific computational steps involved in generating a response.</p>
+<h2 id="case-study-understanding-mathematical-reasoning">Case Study: Understanding Mathematical Reasoning</h2>
+<p>Let’s examine how a language model might implement basic mathematical operations. Research has shown that models often develop specialized circuits for arithmetic:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Example: Analyzing mathematical reasoning circuits</span></span>
+<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> analyze_math_circuit</span><span style="color:#E1E4E8">(model, input_text):</span></span>
+<span class="line"><span style="color:#6A737D">    # Extract attention patterns</span></span>
+<span class="line"><span style="color:#E1E4E8">    attention_weights </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> model.get_attention_weights(input_text)</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    # Identify number tokens</span></span>
+<span class="line"><span style="color:#E1E4E8">    number_tokens </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> extract_numbers(input_text)</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    # Analyze attention to number tokens</span></span>
+<span class="line"><span style="color:#E1E4E8">    number_attention </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> attention_weights[:, number_tokens]</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    # Look for computation patterns</span></span>
+<span class="line"><span style="color:#E1E4E8">    computation_neurons </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> find_math_neurons(model, number_attention)</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">        'attention_pattern'</span><span style="color:#E1E4E8">: number_attention,</span></span>
+<span class="line"><span style="color:#9ECBFF">        'computation_neurons'</span><span style="color:#E1E4E8">: computation_neurons,</span></span>
+<span class="line"><span style="color:#9ECBFF">        'circuit_analysis'</span><span style="color:#E1E4E8">: analyze_circuit(computation_neurons)</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span></code></pre>
+<h2 id="challenges-in-mechanistic-interpretability">Challenges in Mechanistic Interpretability</h2>
+<blockquote>
+<p><strong>Important Challenges</strong></p>
+<p>Mechanistic interpretability faces several significant challenges that make it a complex and ongoing research area.</p>
+</blockquote>
+<h3 id="1-scale-and-complexity">1. Scale and Complexity</h3>
+<p>Modern language models contain billions of parameters and thousands of layers, making comprehensive analysis extremely challenging. The number of possible interactions between components grows exponentially with model size.</p>
+<h3 id="2-emergent-behavior">2. Emergent Behavior</h3>
+<p>Many behaviors emerge from the interaction of multiple components rather than being implemented by a single circuit. This makes it difficult to isolate specific mechanisms.</p>
+<h3 id="3-non-linearity">3. Non-linearity</h3>
+<p>Neural networks are highly non-linear, meaning that the contribution of individual components can vary dramatically depending on the context.</p>
+<h2 id="tools-and-frameworks">Tools and Frameworks</h2>
+<h3 id="1-transformerlens">1. TransformerLens</h3>
+<p>A library specifically designed for mechanistic interpretability of transformer models. It provides tools for:</p>
+<ul>
+<li>Hook-based analysis of activations</li>
+<li>Attention pattern visualization</li>
+<li>Circuit discovery and analysis</li>
+</ul>
+<h3 id="2-anthropics-interpretability-tools">2. Anthropic’s Interpretability Tools</h3>
+<p>Various tools and techniques developed by Anthropic for understanding large language models, including activation atlases and circuit analysis methods.</p>
+<h3 id="3-custom-analysis-pipelines">3. Custom Analysis Pipelines</h3>
+<p>Many researchers develop custom tools tailored to their specific research questions and model architectures.</p>
+<h2 id="applications-and-implications">Applications and Implications</h2>
+<h3 id="1-safety-and-alignment">1. Safety and Alignment</h3>
+<p>Understanding how models work internally can help us:</p>
+<ul>
+<li>Identify potential failure modes</li>
+<li>Detect harmful behaviors before deployment</li>
+<li>Design more robust and controllable systems</li>
+</ul>
+<h3 id="2-model-improvement">2. Model Improvement</h3>
+<p>Mechanistic insights can guide:</p>
+<ul>
+<li>Architecture design decisions</li>
+<li>Training procedure optimization</li>
+<li>Efficiency improvements</li>
+</ul>
+<h3 id="3-scientific-understanding">3. Scientific Understanding</h3>
+<p>Studying artificial neural networks can provide insights into:</p>
+<ul>
+<li>How biological brains might process information</li>
+<li>General principles of intelligent computation</li>
+<li>The nature of learning and representation</li>
+</ul>
+<h2 id="future-directions">Future Directions</h2>
+<p>The field of mechanistic interpretability is rapidly evolving. Key areas for future research include:</p>
+<ul>
+<li>Automated circuit discovery and analysis</li>
+<li>Scalable techniques for larger models</li>
+<li>Integration with other interpretability approaches</li>
+<li>Development of standardized evaluation metrics</li>
+<li>Cross-model generalization of findings</li>
+</ul>
+<blockquote>
+<p><strong>Conclusion</strong></p>
+<p>Mechanistic interpretability represents a crucial step toward building AI systems that we can truly understand and trust. While the challenges are significant, the potential benefits for safety, reliability, and scientific understanding make this an essential area of research in AI.</p>
+</blockquote>
+<h2 id="resources-and-further-reading">Resources and Further Reading</h2>
+<ul>
+<li><a href="https://transformerlens.com/">TransformerLens Documentation</a></li>
+<li><a href="https://arxiv.org/abs/2204.02311">A Mathematical Framework for Transformer Circuits</a></li>
+<li><a href="https://distill.pub/2021/gnn-modules/">The Building Blocks of Interpretability</a></li>
+<li><a href="https://arxiv.org/abs/2303.08774">Towards Monosemanticity: Decomposing Language Models With Dictionary Learning</a></li>
+</ul> </div> </article> </div>  </main> <!-- Footer --> <footer class="footer"> <div class="container"> <div class="footer-inner"> <div class="footer-left"> <p class="footer-name">Karthik Raja Anandan</p> <p class="footer-sub">AI/Software Engineer &middot; Pleasanton, CA</p> </div> <div class="footer-links"> <a href="/">Overview</a> <a href="/blog/">Blog</a> <a href="/assets/karthik_F25.pdf" download>Resume</a> <a href="/contact/">Contact</a> </div> <div class="footer-social"> <a href="https://www.linkedin.com/in/kitrakrev" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/kitrakrev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a> <a href="mailto:kanandan@ucsc.edu" aria-label="Email"><i class="fas fa-envelope"></i></a> </div> </div> <div class="footer-bottom"> <p>&copy; 2026 Karthik Raja Anandan</p> </div> </div> </footer> <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var menuToggle = document.getElementById('menu-toggle');
+        var mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle) {
+          menuToggle.addEventListener('click', function () {
+            mobileMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+          });
+        }
+
+        document.addEventListener('click', function (e) {
+          if (
+            mobileMenu &&
+            mobileMenu.classList.contains('active') &&
+            !mobileMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)
+          ) {
+            mobileMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+          }
+        });
+      });
+    </script> <div id="optin" class="optin" role="dialog" aria-labelledby="optin-h" aria-modal="false" hidden data-astro-cid-o5r437bz><form id="optin-form" novalidate data-astro-cid-o5r437bz><button type="button" class="optin-x" data-dismiss aria-label="Close" data-astro-cid-o5r437bz>&times;</button><h3 id="optin-h" data-astro-cid-o5r437bz>Hiring for ML / inference roles?</h3><p data-astro-cid-o5r437bz>Leave your email and Karthik will reach out.</p><label for="optin-email" data-astro-cid-o5r437bz>Email <span data-astro-cid-o5r437bz>(optional)</span></label><input id="optin-email" type="email" autocomplete="email" placeholder="you@company.com" data-astro-cid-o5r437bz><p id="optin-err" class="optin-err" role="alert" hidden data-astro-cid-o5r437bz>Please enter a valid email.</p><label class="optin-check" data-astro-cid-o5r437bz><input id="optin-ok" type="checkbox" data-astro-cid-o5r437bz> I'm hiring or know a role that fits</label><div class="optin-btns" data-astro-cid-o5r437bz><button type="submit" id="optin-submit" class="btn btn-primary" disabled data-astro-cid-o5r437bz>Submit</button><button type="button" class="btn btn-ghost" data-dismiss data-astro-cid-o5r437bz>No thanks</button></div></form><p id="optin-thanks" class="optin-thanks" hidden data-astro-cid-o5r437bz>Thanks! Karthik will be in touch.</p></div><script>
+(function () {
+  var ph = function () { return window.posthog; };
+  function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  function ss(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
+
+  // Named click events (autocapture also records raw clicks)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (/\.pdf($|\?)/i.test(href) || /resume/i.test(href)) ph().capture('resume_click', { href: href });
+    else if (/^mailto:|github\.com|linkedin\.com|(^|\/\/)(www\.)?(x|twitter)\.com/i.test(href)) ph().capture('outbound_click', { href: href });
+  }, true);
+
+  // blog_read_complete: once per page view on /blog/<slug> or /projects/<slug>
+  var path = location.pathname;
+  if (/^\/(blog|projects)\/[^/]+/.test(path)) {
+    var done = false;
+    var onScroll = function () {
+      var d = document.documentElement;
+      if (done || (window.scrollY + window.innerHeight) / d.scrollHeight < 0.9) return;
+      done = true; window.removeEventListener('scroll', onScroll);
+      ph().capture('blog_read_complete', { path: path });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // Opt-in card
+  var DONE = 'optin_done', DISMISS = 'optin_dismissed_at', TIME = 'optin_active_ms', NEED = 180000;
+  var test = /[?&]optin_test=1/.test(location.search);
+  var SEEN = 'optin_seen';
+  if (!test && (ls(DONE) || ls(DISMISS) || ls(SEEN))) return;
+
+  var card = document.getElementById('optin'), form = document.getElementById('optin-form');
+  var email = document.getElementById('optin-email'), ok = document.getElementById('optin-ok');
+  var submit = document.getElementById('optin-submit'), err = document.getElementById('optin-err');
+  var lastFocus;
+
+  function show() {
+    if (!card.hidden) return;
+    lastFocus = document.activeElement;
+    if (!test) ls(SEEN, '1');
+    card.hidden = false; email.focus({ preventScroll: true });
+  }
+  function close() { card.hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function dismiss() { ls(DISMISS, String(Date.now())); ph().capture('hire_optin_dismissed', { page: path }); close(); }
+
+  ok.addEventListener('change', function () { submit.disabled = !ok.checked; });
+  card.querySelectorAll('[data-dismiss]').forEach(function (b) { b.addEventListener('click', dismiss); });
+  card.addEventListener('keydown', function (e) { if (e.key === 'Escape') dismiss(); });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = email.value.trim();
+    if (v && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { err.hidden = false; email.focus(); return; }
+    err.hidden = true;
+    var props = { interested: true, page: path };
+    if (v) { props.email = v; ph().identify(v, { email: v }); }
+    ph().capture('hire_interest', props);
+    ls(DONE, '1');
+    form.hidden = true; document.getElementById('optin-thanks').hidden = false;
+    setTimeout(close, 3000);
+  });
+
+  if (test) { setTimeout(show, 5000); return; }
+
+  // Accumulate visible time across pages in this session
+  var acc = Number(ss(TIME) || 0), since = document.visibilityState === 'visible' ? Date.now() : 0;
+  function flush() { if (since) { acc += Date.now() - since; since = document.visibilityState === 'visible' ? Date.now() : 0; ss(TIME, String(acc)); } }
+  document.addEventListener('visibilitychange', function () { flush(); if (!since && document.visibilityState === 'visible') since = Date.now(); });
+  window.addEventListener('pagehide', flush);
+  var timer = setInterval(function () { flush(); if (acc >= NEED) { clearInterval(timer); show(); } }, 5000);
+})();
+</script> </body></html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Benchmarking SGLang (sgl_jax) on TPU v6e with a multi-turn agent workload: prefix caching, a hybrid linear-attention model where the cache hurts, int8 weights, new model ports, and a TPU vs GPU cost comparison."><meta name="author" content="Karthik Raja Anandan"><meta name="keywords" content="AI Engineer, ML Engineer, Elas, Machine Learning, Agentic AI, Multi-Agent Systems, Distributed Systems, Python, Java, C++, Go, AWS, Kubernetes, Docker, LLM Systems, RAG, System Design, NLP, PyTorch, NVIDIA GTC"><title>Serving Multi-Turn Agents with SGLang on Cloud TPU v6e (and how it compares to A100/H100) - Karthik Raja Anandan</title><link rel="canonical" href="https://kitrakrev.github.io/projects/sglang-tpu-agent-serving/"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:url" content="https://kitrakrev.github.io/projects/sglang-tpu-agent-serving/"><meta property="og:title" content="Serving Multi-Turn Agents with SGLang on Cloud TPU v6e (and how it compares to A100/H100) - Karthik Raja Anandan"><meta property="og:description" content="Benchmarking SGLang (sgl_jax) on TPU v6e with a multi-turn agent workload: prefix caching, a hybrid linear-attention model where the cache hurts, int8 weights, new model ports, and a TPU vs GPU cost comparison."><meta property="og:image" content="https://kitrakrev.github.io/assets/profile.jpg"><meta property="og:site_name" content="Karthik Raja Anandan"><!-- Twitter --><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Serving Multi-Turn Agents with SGLang on Cloud TPU v6e (and how it compares to A100/H100) - Karthik Raja Anandan"><meta name="twitter:description" content="Benchmarking SGLang (sgl_jax) on TPU v6e with a multi-turn agent workload: prefix caching, a hybrid linear-attention model where the cache hurts, int8 weights, new model ports, and a TPU vs GPU cost comparison."><meta name="twitter:image" content="https://kitrakrev.github.io/assets/profile.jpg"><!-- Fonts: DM Sans for body (high x-height, great readability), Instrument Serif for display --><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><!-- Favicon --><link rel="icon" type="image/x-icon" href="/assets/profile.jpg"><script>(function(){const phKey = "phc_kL3Y5RPC35DXAkbfuoDE9qJkdUpTJ9dVccHd963jyWnZ";
+const phHost = "https://us.i.posthog.com";
+
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init(phKey, {
+    api_host: phHost,
+    ui_host: 'https://us.posthog.com',
+    person_profiles: 'identified_only',
+    capture_pageview: true,
+    capture_pageleave: true,
+    autocapture: true,
+    enable_heatmaps: true,
+  });
+})();</script><link rel="stylesheet" href="/_astro/_slug_.C-x1NzzX.css"></head> <body> <!-- Navigation --> <nav class="navbar"> <div class="nav-container"> <a href="/" class="nav-logo">
+Karthik<span class="logo-accent">.</span> </a> <div class="nav-menu" id="nav-menu"> <a href="/" class="nav-link"> Home </a><a href="/skills/" class="nav-link"> Skills </a><a href="/blog/" class="nav-link"> Blog </a><a href="https://scholar.google.com/citations?user=fK1cR-8AAAAJ&hl=en" class="nav-link" target="_blank" rel="noopener noreferrer"> Publications </a><a href="/contact/" class="nav-link"> Contact </a> </div> <div class="nav-actions"> <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button> </div> </div> </nav> <!-- Mobile Menu --> <div class="mobile-menu" id="mobile-menu"> <a href="/" class="mobile-nav-link"> Home </a><a href="/skills/" class="mobile-nav-link"> Skills </a><a href="/blog/" class="mobile-nav-link"> Blog </a><a href="https://scholar.google.com/citations?user=fK1cR-8AAAAJ&hl=en" class="mobile-nav-link" target="_blank" rel="noopener noreferrer"> Publications </a><a href="/contact/" class="mobile-nav-link"> Contact </a> </div> <!-- Main Content --> <main id="main-content">  <div class="blog-post"> <a href="/" class="back-to-blogs"><i class="fas fa-arrow-left"></i> Home</a> <article> <header class="blog-header"> <h1>Serving Multi-Turn Agents with SGLang on Cloud TPU v6e (and how it compares to A100/H100)</h1> <div class="blog-meta"> <span><i class="fas fa-calendar"></i> November 18, 2026</span> <span><i class="fas fa-clock"></i> 10 min read</span> <span><i class="fas fa-user"></i> Karthik Raja Anandan</span> </div> <div class="blog-tags"> <span class="tag">TPU</span><span class="tag">SGLang</span><span class="tag">LLM Inference</span><span class="tag">Agents</span><span class="tag">Benchmarking</span><span class="tag">TorchTPUSprint</span> </div> <p><a href="https://github.com/kitrakrev/sglang-tpu-agentbench"><i class="fab fa-github"></i> Code, logs and reproduce steps</a></p> </header> <div class="blog-content"> <blockquote>
+<p><strong>TL;DR.</strong> On one TPU v6e chip, SGLang’s radix prefix cache lifts Qwen2.5-7B from <strong>930 to 1,523 output tok/s</strong> at 32 agent sessions and cuts TTFT p99 from <strong>598 to 138 ms</strong>, with 100% of requests inside a 200 ms TTFT SLO. On a hybrid linear-attention model (Qwen3.8-27B) the same cache made serving <strong>slower at every concurrency</strong>, and int8 weights add another <strong>1.55x</strong> on top (2,342 tok/s at c=32). H100 is 1.65 to 2x faster, while v6e-1 roughly ties A100 on cost and has the best tail latency.</p>
+</blockquote>
+<p>The whole study cost about $20 of TPU time and $2 of GPU time: 15,000+ requests, 0 errors, all logs and scripts public. Along the way I ported five model families to sgl_jax and opened three of them upstream.</p>
+<h2 id="why-agent-serving-on-tpu">Why agent serving on TPU</h2>
+<p>Chat benchmarks send one-shot random prompts. Agents do not. Every turn resends the same long system prompt (tool schemas) plus a growing history with each tool result appended.</p>
+<p>So serving speed depends on <strong>prefix-cache reuse</strong>. If the server can skip re-prefilling the shared prefix, time-to-first-token stays flat as sessions grow. I wanted two answers:</p>
+<ol>
+<li>Does SGLang’s radix cache deliver that on TPU through sgl_jax, the JAX port?</li>
+<li>How does a TPU v6e compare to an A100 or H100 on this pattern, in speed and in dollars?</li>
+</ol>
+<h2 id="setup">Setup</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>TPU</strong></td><td>Cloud TPU v6e-1 (1 chip, 31.24 GiB HBM) and v6e-4</td></tr><tr><td><strong>GPU</strong></td><td>Modal A100-80GB SXM and H100 SXM</td></tr><tr><td><strong>Server</strong></td><td>sgl_jax (<code>sgl-project/sglang-jax</code>) on TPU; SGLang v0.5.2 on GPU</td></tr><tr><td><strong>Workload</strong></td><td>4 sessions per concurrency level x 6 turns, 600-word shared system prompt, 150-word tool results, 128 max output tokens, temperature 0. Mean prompt about 1,240 tokens</td></tr><tr><td><strong>SLO</strong></td><td>TTFT &#x3C; 200 ms and mean ITL &#x3C; 25 ms per request</td></tr></tbody></table>
+<p>Shared server flags:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">--chunked-prefill-size</span><span style="color:#79B8FF"> 2048</span><span style="color:#79B8FF"> --mem-fraction-static</span><span style="color:#79B8FF"> 0.85</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">--max-running-requests </span><span style="color:#79B8FF">128</span><span style="color:#79B8FF"> --enable-cache-report</span></span>
+<span class="line"><span style="color:#6A737D"># cache off: add --disable-radix-cache</span></span></code></pre>
+<p>The client, <a href="https://github.com/kitrakrev/sglang-tpu-agentbench">agentbench</a>, works with any OpenAI-compatible server. It reports output tok/s, TTFT and ITL percentiles, cached-token share, goodput under the SLO, $/1M output tokens and percent of the HBM decode roofline.</p>
+<h2 id="run-a-prefix-caching-on-qwen25-7b-v6e-1">Run A: prefix caching on Qwen2.5-7B, v6e-1</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>cache</th><th align="right">c</th><th align="right">tok/s</th><th align="right">TTFT p50 / p99 (ms)</th><th align="right">ITL p50 (ms)</th><th align="right">cached</th><th align="right">$/1M out</th></tr></thead><tbody><tr><td>on</td><td align="right">1</td><td align="right">75</td><td align="right">30 / 33</td><td align="right">12.9</td><td align="right">84%</td><td align="right">10.01</td></tr><tr><td>on</td><td align="right">8</td><td align="right">515</td><td align="right">40 / 65</td><td align="right">14.5</td><td align="right">88%</td><td align="right">1.46</td></tr><tr><td>on</td><td align="right">32</td><td align="right"><strong>1,515</strong></td><td align="right">42 / <strong>134</strong></td><td align="right">19.8</td><td align="right">88%</td><td align="right"><strong>0.50</strong></td></tr><tr><td>off</td><td align="right">1</td><td align="right">72</td><td align="right">64 / 81</td><td align="right">12.9</td><td align="right">0%</td><td align="right">10.36</td></tr><tr><td>off</td><td align="right">8</td><td align="right">434</td><td align="right">74 / 187</td><td align="right">16.9</td><td align="right">0%</td><td align="right">1.73</td></tr><tr><td>off</td><td align="right">32</td><td align="right">930</td><td align="right">109 / 598</td><td align="right">32.4</td><td align="right">0%</td><td align="right">0.81</td></tr></tbody></table>
+<p><img src="/projects/sglang-tpu-agent-serving/v6e1-tokps.png" alt="Output tok/s with the radix cache on vs off">
+<em>Output throughput on v6e-1, cache on vs off.</em></p>
+<p>Three things stand out:</p>
+<ul>
+<li><strong>The benefit grows with concurrency.</strong> It is +4% at c=1 and +63% at c=32. Without the cache, 1.2k-token prefills compete with decode and push ITL from 20 to 32 ms.</li>
+<li><strong>Hit rate is 84 to 88% from turn 1</strong>, because every session shares the system prompt.</li>
+<li><strong>High turn-1 TTFT is queueing, not cache misses.</strong> All sessions start at the same moment.</li>
+</ul>
+<p><img src="/projects/sglang-tpu-agent-serving/v6e1-ttft-p99.png" alt="TTFT p99, cache on vs off">
+<em>TTFT p99. The cache keeps the tail flat as concurrency rises.</em></p>
+<p><img src="/projects/sglang-tpu-agent-serving/v6e1-ttft-by-turn.png" alt="TTFT by turn">
+<em>TTFT per turn. Turn 1 is a queueing spike.</em></p>
+<h3 id="tuning">Tuning</h3>
+<p>Throughput peaks at <strong>2,755 tok/s at c=96</strong> ($0.27/1M on-demand, about $0.10 spot). At c=128 the KV pool starts evicting prefixes: hit rate falls from 88% to 75% and TTFT p50 grows 10x.</p>
+<p>Under the SLO, <strong>c=32 with page size 128 is the best interactive point: 1,523 tok/s with 100% of requests in SLO.</strong> Page size 256 lowered the hit rate (81% vs 87%). Chunked prefill from 512 to 4096 made no difference (within 1.5%).</p>
+<p><img src="/projects/sglang-tpu-agent-serving/runA-tokps.png" alt="Run A throughput sweep">
+<em>Concurrency sweep. Throughput peaks at c=96, then KV eviction sets in.</em></p>
+<h3 id="where-the-time-goes">Where the time goes</h3>
+<p>Decode is HBM-bound. The per-token floor on v6e-1 is weight bytes over bandwidth: 15.2 GB / 1.64 TB/s = 9.3 ms. Measured ITL is 12.9 ms at c=1 (<strong>73% of roofline</strong>) and 19.8 ms at c=32 (55%).</p>
+<p>Prefix caching skips prefill FLOPs, not decode KV reads. That is why it cuts TTFT 4.5x but barely moves ITL.</p>
+<p><img src="/projects/sglang-tpu-agent-serving/v6e1-roofline.png" alt="v6e-1 decode roofline">
+<em>Measured ITL against the HBM bandwidth floor.</em></p>
+<h2 id="run-b-qwen38-27b-on-v6e-4-where-the-cache-hurts">Run B: Qwen3.8-27B on v6e-4, where the cache hurts</h2>
+<p>Qwen3.8-27B is a hybrid: 48 Gated-DeltaNet (linear-attention) layers and 16 full-attention layers. I served it on v6e-4 with TP=4 and a merged LoRA adapter.</p>
+<p>Turning the cache on took work. sgl_jax rejects the plain radix cache for recurrent-state models. It needs <code>--enable-unified-radix-tree --enable-recurrent-extra-buffer</code>, which OOMs at compile with mem-fraction 0.85. Dropping to <code>--mem-fraction-static 0.7 --chunked-prefill-size 1024</code> works.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>cache</th><th align="right">c</th><th align="right">tok/s</th><th align="right">TTFT p99 (ms)</th><th align="right">ITL p50 (ms)</th><th align="right">cached</th></tr></thead><tbody><tr><td>off</td><td align="right">1</td><td align="right">78</td><td align="right">138</td><td align="right">12.0</td><td align="right">0%</td></tr><tr><td>off</td><td align="right">16</td><td align="right">655</td><td align="right">872</td><td align="right">21.1</td><td align="right">0%</td></tr><tr><td>off</td><td align="right">64</td><td align="right"><strong>968</strong></td><td align="right">3,060</td><td align="right">55.8</td><td align="right">0%</td></tr><tr><td>on</td><td align="right">1</td><td align="right">36</td><td align="right">244</td><td align="right">26.7</td><td align="right">38%</td></tr><tr><td>on</td><td align="right">16</td><td align="right">536</td><td align="right">1,915</td><td align="right">23.7</td><td align="right">32%</td></tr><tr><td>on</td><td align="right">64</td><td align="right">517</td><td align="right">11,443</td><td align="right">46.7</td><td align="right">~0%</td></tr></tbody></table>
+<p><img src="/projects/sglang-tpu-agent-serving/runB-tokps.png" alt="Run B throughput">
+<em>Qwen3.8-27B on v6e-4. Cache off wins at every concurrency.</em></p>
+<p>Cache off wins everywhere, for three reasons:</p>
+<ol>
+<li><strong>Hits round down to snapshot boundaries.</strong> A prefix is reusable only where a recurrent-state snapshot exists, so hits land on 1,024-token blocks. Hit rate is 32 to 38%, against 84 to 88% on the pure-attention model.</li>
+<li><strong>Snapshots cost concurrency.</strong> The state buffers cut max running requests from 96 to 27. Throughput plateaus near 520 tok/s and TTFT p99 explodes from queueing.</li>
+<li><strong>Extra per-step work.</strong> ITL at c=1 doubles, from 12.0 to 26.7 ms.</li>
+</ol>
+<p>For hybrid linear-attention models, the radix cache needs a cheaper recurrent-state checkpoint before it pays off. Until then, turn it off.</p>
+<h2 id="run-c-int8-weights-and-olmo-ports">Run C: int8 weights and OLMo ports</h2>
+<h3 id="int8-weights">int8 weights</h3>
+<p>sgl_jax ships an int8 weight-only config (<code>--quantization-config-path=int8.yaml</code>): per-channel int8 weights, bf16 activations and KV cache, quantized at load. Same v6e-1, same workload, cache on, with the bf16 baseline re-run on the same build.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="right">c</th><th align="right">bf16 tok/s</th><th align="right">int8 tok/s</th><th align="right">bf16 ITL p50 (ms)</th><th align="right">int8 ITL p50 (ms)</th></tr></thead><tbody><tr><td align="right">1</td><td align="right">74</td><td align="right"><strong>135</strong></td><td align="right">13.0</td><td align="right"><strong>7.1</strong></td></tr><tr><td align="right">8</td><td align="right">506</td><td align="right"><strong>875</strong></td><td align="right">14.7</td><td align="right"><strong>8.5</strong></td></tr><tr><td align="right">32</td><td align="right">1,505</td><td align="right"><strong>2,342</strong></td><td align="right">20.1</td><td align="right"><strong>12.9</strong></td></tr></tbody></table>
+<p><img src="/projects/sglang-tpu-agent-serving/int8-tokps.png" alt="int8 vs bf16 throughput">
+<em>int8 weight-only vs bf16 on v6e-1.</em></p>
+<p>Halving weight bytes nearly halves per-token latency (1.84x faster decode at c=1), since decode is HBM-bound. The freed memory also grows the KV pool from 232k to 345k tokens. Cost at c=32 drops from $0.50 to about $0.32 per 1M output tokens.</p>
+<p>I did not run an accuracy eval on the int8 model, so treat this as a speed result only.</p>
+<h3 id="olmo-2-and-olmo-3">OLMo 2 and Olmo 3</h3>
+<p>sgl_jax did not support AI2’s fully open OLMo models, so I added them on a <a href="https://github.com/kitrakrev/sglang-jax/tree/add-olmo3-support">fork branch</a>:</p>
+<ul>
+<li><strong>OLMo 2:</strong> post-sublayer RMSNorm and full-width QK-norm.</li>
+<li><strong>Olmo 3:</strong> the same block plus 3:1 interleaved sliding-window attention (window 4096) and YaRN RoPE, plugged into sgl_jax’s hybrid SWA KV pool.</li>
+</ul>
+<p>Against HF transformers on CPU (tiny random fp32 models), the worst prompt-logprob difference is 2.9e-6 for OLMo 2 and 1.9e-6 for Olmo 3, with identical greedy tokens. On TPU both served the full agent workload with 0 errors.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>model (v6e-1, cache on)</th><th align="right">TTFT p50, c=1</th><th align="right">ITL p50, c=1</th><th align="right">tok/s, c=32</th></tr></thead><tbody><tr><td>Qwen2.5-7B</td><td align="right">30 ms</td><td align="right">13.0 ms</td><td align="right">1,505</td></tr><tr><td>OLMo-2-7B</td><td align="right">219 ms</td><td align="right">13.4 ms</td><td align="right">162</td></tr><tr><td>Olmo-3-7B</td><td align="right">124 ms</td><td align="right">13.4 ms</td><td align="right">65</td></tr></tbody></table>
+<p>Decode matches Qwen. Prefill is 10 to 30x slower, and throughput collapses under load.</p>
+<p>The logs show why. OLMo 7B uses full multi-head attention: 32 KV heads against 4 for Qwen. The TPU ragged paged attention kernel has no tuned block sizes for that shape on v6e, so its fallback picks a query block of 2 (vs 32 for Qwen) and each prefill chunk takes 1 to 2 seconds. MHA also makes the KV cache 8x larger per token. This is kernel tuning, not model correctness.</p>
+<h2 id="tpu-vs-a100-vs-h100-speed-and-cost">TPU vs A100 vs H100: speed and cost</h2>
+<p>Same workload and flags, Qwen2.5-7B, radix cache on. Prices are on-demand: GCP v6e $2.70/chip-h, Modal A100-80GB $2.50/h, H100 $3.95/h.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="right">c</th><th>device</th><th align="right">tok/s</th><th align="right">TTFT p99 (ms)</th><th align="right">ITL p50 (ms)</th><th align="right">in SLO</th><th align="right">$/1M out</th><th align="right">roofline</th></tr></thead><tbody><tr><td align="right">1</td><td>v6e-1</td><td align="right">75</td><td align="right">33</td><td align="right">12.9</td><td align="right">100%</td><td align="right">10.01</td><td align="right">73%</td></tr><tr><td align="right">1</td><td>A100</td><td align="right">90</td><td align="right">51</td><td align="right">10.3</td><td align="right">100%</td><td align="right">7.69</td><td align="right">73%</td></tr><tr><td align="right">1</td><td>H100</td><td align="right"><strong>149</strong></td><td align="right">33</td><td align="right"><strong>6.2</strong></td><td align="right">100%</td><td align="right">7.34</td><td align="right">74%</td></tr><tr><td align="right">32</td><td>v6e-1</td><td align="right">1,515</td><td align="right"><strong>134</strong></td><td align="right">19.8</td><td align="right"><strong>100%</strong></td><td align="right">0.50</td><td align="right"><strong>55%</strong></td></tr><tr><td align="right">32</td><td>A100</td><td align="right">1,548</td><td align="right">410</td><td align="right">18.9</td><td align="right">96.7%</td><td align="right">0.45</td><td align="right">46%</td></tr><tr><td align="right">32</td><td>H100</td><td align="right"><strong>2,502</strong></td><td align="right">529</td><td align="right"><strong>11.1</strong></td><td align="right">96.4%</td><td align="right"><strong>0.44</strong></td><td align="right">48%</td></tr><tr><td align="right">96</td><td>v6e-1</td><td align="right">2,755</td><td align="right">520</td><td align="right">30.1</td><td align="right">7.4%</td><td align="right">0.27</td><td align="right">46%</td></tr><tr><td align="right">96</td><td>A100</td><td align="right">3,001</td><td align="right">821</td><td align="right">26.3</td><td align="right">5.3%</td><td align="right">0.23</td><td align="right">43%</td></tr><tr><td align="right">96</td><td>H100</td><td align="right"><strong>5,197</strong></td><td align="right">618</td><td align="right"><strong>13.2</strong></td><td align="right">31.5%</td><td align="right"><strong>0.21</strong></td><td align="right">52%</td></tr></tbody></table>
+<p><img src="/projects/sglang-tpu-agent-serving/h100-roofline.png" alt="H100 decode roofline">
+<em>H100 decode against its HBM floor.</em></p>
+<p>My read:</p>
+<ul>
+<li><strong>H100 wins outright.</strong> It has 1.65 to 2x the v6e-1 throughput, about half the ITL, and the lowest $/1M at every concurrency despite costing 1.46x per hour.</li>
+<li><strong>A100 vs v6e-1 is roughly a tie.</strong> A100 has slightly more tok/s and 10 to 23% lower $/1M. v6e-1 has much better tail TTFT (134 vs 410 ms p99 at c=32) and is the only device at 100% SLO there. With the cache off, v6e-1 beats A100 from c=8 up.</li>
+<li><strong>Per HBM byte, all three are the same.</strong> Each sits near 73% of roofline at c=1. The H100 gap is mostly bandwidth (3.35 vs 1.64 TB/s), not software.</li>
+</ul>
+<p>Caveats: mature SGLang CUDA (with CUDA graphs) against a young sgl_jax; page size 1 on GPU vs 128 on TPU; no per-platform tuning beyond the shared flags.</p>
+<h2 id="upstream-contributions">Upstream contributions</h2>
+<p>Beyond OLMo, I ported four more model families that upstream sgl_jax lacked: Gemma 3 (text), GLM-4, InternVL 3 and Qwen2-Audio. Gemma 3 text already has an open PR upstream, so I did not open a competing one. The other three are now open pull requests on <code>sgl-project/sglang-jax</code>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>PR</th><th>Model</th><th>What it adds</th></tr></thead><tbody><tr><td><a href="https://github.com/sgl-project/sglang-jax/pull/1829">#1829</a></td><td>GLM-4 dense</td><td>Sandwich norms, fused <code>gate_up_proj</code> split at load, partial interleaved RoPE, q/k/v bias</td></tr><tr><td><a href="https://github.com/sgl-project/sglang-jax/pull/1830">#1830</a></td><td>InternVL 3</td><td>InternViT encoder, pixel shuffle and MLP projector on the existing Qwen2 backbone</td></tr><tr><td><a href="https://github.com/sgl-project/sglang-jax/pull/1831">#1831</a></td><td>Qwen2-Audio</td><td>Whisper-style encoder with padded-frame masking; the first mel-spectrogram input on the in-model multimodal path</td></tr></tbody></table>
+<p>Each port is checked the same way. On CPU, tiny random fp32 checkpoints run through the full engine and must produce identical greedy tokens to HF transformers. The worst logprob gap is 2.9e-6 for GLM-4 and InternVL 3 and 2.0e-5 for Qwen2-Audio. Negative controls (for example, the wrong RoPE style for GLM-4) must fail. The same checks are committed as tests on each branch.</p>
+<p>On a real v6e-1:</p>
+<ul>
+<li><strong>GLM-4-9B</strong> serves the agent workload at 739 tok/s at c=16, ITL p50 20.4 ms.</li>
+<li><strong>InternVL3-2B</strong>, with 3,328 image tokens per request, reaches 177 tok/s at c=1 with TTFT p50 258 ms.</li>
+<li><strong>Qwen2-Audio-7B</strong>, with a 10 s clip per request, reaches 72 tok/s at c=1 with TTFT p50 129 ms.</li>
+</ul>
+<p>One trap: the first multimodal pass, which warmed only one batch shape, hit XLA compile stalls of up to 52 s TTFT p99 when a new shape appeared. Warm every shape you plan to serve.</p>
+<h2 id="lessons">Lessons</h2>
+<ul>
+<li><strong>Measure the cache on your model, not in general.</strong> The same flag gave +64% on a pure-attention model and nearly halved throughput on a hybrid one.</li>
+<li><strong>Decode is a bandwidth problem.</strong> Roofline math predicted the int8 win and the H100 gap before I ran them.</li>
+<li><strong>Kernel tile tables matter as much as model code.</strong> OLMo was numerically correct and still 10 to 30x slower at prefill because of one missing tile config.</li>
+<li><strong>Report goodput, not just throughput.</strong> v6e-1 loses to A100 on raw tok/s at c=32 but is the only device that keeps every request inside the SLO.</li>
+<li><strong>Plan for TPU capacity.</strong> I wanted Qwen2.5-72B on a v6e-8 and found none, spot or on-demand, across six zones over two days. A spot v6e-1 was also preempted mid-run. Keep on-demand fallbacks and expect to retry.</li>
+</ul>
+<p>Next on my list: tuned attention tiles for 32-KV-head models, an accuracy eval for int8 plus int8 KV cache, EAGLE3 speculative decoding, and longer sessions (20+ turns) with host-memory KV offload.</p>
+<h2 id="reproduce">Reproduce</h2>
+<p>Everything is in <a href="https://github.com/kitrakrev/sglang-tpu-agentbench">github.com/kitrakrev/sglang-tpu-agentbench</a>: every log, metrics table and chart. <code>REPRODUCE.md</code> walks through both sides step by step:</p>
+<ul>
+<li><strong>TPU:</strong> GCP setup, a budget kill-switch, VM create and delete, and each run.</li>
+<li><strong>GPU:</strong> Modal scripts for the A100 and H100 baselines.</li>
+<li><strong>Ports:</strong> <code>PORTS.md</code> has the parity scripts, throughput tables and the TPU vs GPU numbers for each new model.</li>
+</ul>
+<p><em>Built for the #TorchTPUSprint.</em></p> </div> </article> </div>  </main> <!-- Footer --> <footer class="footer"> <div class="container"> <div class="footer-inner"> <div class="footer-left"> <p class="footer-name">Karthik Raja Anandan</p> <p class="footer-sub">AI/Software Engineer &middot; Pleasanton, CA</p> </div> <div class="footer-links"> <a href="/">Overview</a> <a href="/blog/">Blog</a> <a href="/assets/karthik_F25.pdf" download>Resume</a> <a href="/contact/">Contact</a> </div> <div class="footer-social"> <a href="https://www.linkedin.com/in/kitrakrev" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/kitrakrev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a> <a href="mailto:kanandan@ucsc.edu" aria-label="Email"><i class="fas fa-envelope"></i></a> </div> </div> <div class="footer-bottom"> <p>&copy; 2026 Karthik Raja Anandan</p> </div> </div> </footer> <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var menuToggle = document.getElementById('menu-toggle');
+        var mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle) {
+          menuToggle.addEventListener('click', function () {
+            mobileMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+          });
+        }
+
+        document.addEventListener('click', function (e) {
+          if (
+            mobileMenu &&
+            mobileMenu.classList.contains('active') &&
+            !mobileMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)
+          ) {
+            mobileMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+          }
+        });
+      });
+    </script> <div id="optin" class="optin" role="dialog" aria-labelledby="optin-h" aria-modal="false" hidden data-astro-cid-o5r437bz><form id="optin-form" novalidate data-astro-cid-o5r437bz><button type="button" class="optin-x" data-dismiss aria-label="Close" data-astro-cid-o5r437bz>&times;</button><h3 id="optin-h" data-astro-cid-o5r437bz>Hiring for ML / inference roles?</h3><p data-astro-cid-o5r437bz>Leave your email and Karthik will reach out.</p><label for="optin-email" data-astro-cid-o5r437bz>Email <span data-astro-cid-o5r437bz>(optional)</span></label><input id="optin-email" type="email" autocomplete="email" placeholder="you@company.com" data-astro-cid-o5r437bz><p id="optin-err" class="optin-err" role="alert" hidden data-astro-cid-o5r437bz>Please enter a valid email.</p><label class="optin-check" data-astro-cid-o5r437bz><input id="optin-ok" type="checkbox" data-astro-cid-o5r437bz> I'm hiring or know a role that fits</label><div class="optin-btns" data-astro-cid-o5r437bz><button type="submit" id="optin-submit" class="btn btn-primary" disabled data-astro-cid-o5r437bz>Submit</button><button type="button" class="btn btn-ghost" data-dismiss data-astro-cid-o5r437bz>No thanks</button></div></form><p id="optin-thanks" class="optin-thanks" hidden data-astro-cid-o5r437bz>Thanks! Karthik will be in touch.</p></div><script>
+(function () {
+  var ph = function () { return window.posthog; };
+  function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  function ss(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
+
+  // Named click events (autocapture also records raw clicks)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (/\.pdf($|\?)/i.test(href) || /resume/i.test(href)) ph().capture('resume_click', { href: href });
+    else if (/^mailto:|github\.com|linkedin\.com|(^|\/\/)(www\.)?(x|twitter)\.com/i.test(href)) ph().capture('outbound_click', { href: href });
+  }, true);
+
+  // blog_read_complete: once per page view on /blog/<slug> or /projects/<slug>
+  var path = location.pathname;
+  if (/^\/(blog|projects)\/[^/]+/.test(path)) {
+    var done = false;
+    var onScroll = function () {
+      var d = document.documentElement;
+      if (done || (window.scrollY + window.innerHeight) / d.scrollHeight < 0.9) return;
+      done = true; window.removeEventListener('scroll', onScroll);
+      ph().capture('blog_read_complete', { path: path });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // Opt-in card
+  var DONE = 'optin_done', DISMISS = 'optin_dismissed_at', TIME = 'optin_active_ms', NEED = 180000;
+  var test = /[?&]optin_test=1/.test(location.search);
+  var SEEN = 'optin_seen';
+  if (!test && (ls(DONE) || ls(DISMISS) || ls(SEEN))) return;
+
+  var card = document.getElementById('optin'), form = document.getElementById('optin-form');
+  var email = document.getElementById('optin-email'), ok = document.getElementById('optin-ok');
+  var submit = document.getElementById('optin-submit'), err = document.getElementById('optin-err');
+  var lastFocus;
+
+  function show() {
+    if (!card.hidden) return;
+    lastFocus = document.activeElement;
+    if (!test) ls(SEEN, '1');
+    card.hidden = false; email.focus({ preventScroll: true });
+  }
+  function close() { card.hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function dismiss() { ls(DISMISS, String(Date.now())); ph().capture('hire_optin_dismissed', { page: path }); close(); }
+
+  ok.addEventListener('change', function () { submit.disabled = !ok.checked; });
+  card.querySelectorAll('[data-dismiss]').forEach(function (b) { b.addEventListener('click', dismiss); });
+  card.addEventListener('keydown', function (e) { if (e.key === 'Escape') dismiss(); });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = email.value.trim();
+    if (v && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { err.hidden = false; email.focus(); return; }
+    err.hidden = true;
+    var props = { interested: true, page: path };
+    if (v) { props.email = v; ph().identify(v, { email: v }); }
+    ph().capture('hire_interest', props);
+    ls(DONE, '1');
+    form.hidden = true; document.getElementById('optin-thanks').hidden = false;
+    setTimeout(close, 3000);
+  });
+
+  if (test) { setTimeout(show, 5000); return; }
+
+  // Accumulate visible time across pages in this session
+  var acc = Number(ss(TIME) || 0), since = document.visibilityState === 'visible' ? Date.now() : 0;
+  function flush() { if (since) { acc += Date.now() - since; since = document.visibilityState === 'visible' ? Date.now() : 0; ss(TIME, String(acc)); } }
+  document.addEventListener('visibilitychange', function () { flush(); if (!since && document.visibilityState === 'visible') since = Date.now(); });
+  window.addEventListener('pagehide', flush);
+  var timer = setInterval(function () { flush(); if (acc >= NEED) { clearInterval(timer); show(); } }, 5000);
+})();
+</script> </body></html>

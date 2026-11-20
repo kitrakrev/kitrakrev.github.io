@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Exploring advanced knowledge retrieval techniques using graph neural networks."><meta name="author" content="Karthik Raja Anandan"><meta name="keywords" content="AI Engineer, ML Engineer, Elas, Machine Learning, Agentic AI, Multi-Agent Systems, Distributed Systems, Python, Java, C++, Go, AWS, Kubernetes, Docker, LLM Systems, RAG, System Design, NLP, PyTorch, NVIDIA GTC"><title>Graph-Based Knowledge Retrieval: Beyond Traditional RAG - Karthik Raja Anandan</title><link rel="canonical" href="https://kitrakrev.github.io/blog/graph-rag/"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:url" content="https://kitrakrev.github.io/blog/graph-rag/"><meta property="og:title" content="Graph-Based Knowledge Retrieval: Beyond Traditional RAG - Karthik Raja Anandan"><meta property="og:description" content="Exploring advanced knowledge retrieval techniques using graph neural networks."><meta property="og:image" content="https://kitrakrev.github.io/assets/profile.jpg"><meta property="og:site_name" content="Karthik Raja Anandan"><!-- Twitter --><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Graph-Based Knowledge Retrieval: Beyond Traditional RAG - Karthik Raja Anandan"><meta name="twitter:description" content="Exploring advanced knowledge retrieval techniques using graph neural networks."><meta name="twitter:image" content="https://kitrakrev.github.io/assets/profile.jpg"><!-- Fonts: DM Sans for body (high x-height, great readability), Instrument Serif for display --><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><!-- Favicon --><link rel="icon" type="image/x-icon" href="/assets/profile.jpg"><script>(function(){const phKey = "phc_kL3Y5RPC35DXAkbfuoDE9qJkdUpTJ9dVccHd963jyWnZ";
+const phHost = "https://us.i.posthog.com";
+
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init(phKey, {
+    api_host: phHost,
+    ui_host: 'https://us.posthog.com',
+    person_profiles: 'identified_only',
+    capture_pageview: true,
+    capture_pageleave: true,
+    autocapture: true,
+    enable_heatmaps: true,
+  });
+})();</script><link rel="stylesheet" href="/_astro/_slug_.C-x1NzzX.css"></head> <body> <!-- Navigation --> <nav class="navbar"> <div class="nav-container"> <a href="/" class="nav-logo">
+Karthik<span class="logo-accent">.</span> </a> <div class="nav-menu" id="nav-menu"> <a href="/" class="nav-link"> Home </a><a href="/skills/" class="nav-link"> Skills </a><a href="/blog/" class="nav-link active"> Blog </a><a href="https://scholar.google.com/citations?user=fK1cR-8AAAAJ&hl=en" class="nav-link" target="_blank" rel="noopener noreferrer"> Publications </a><a href="/contact/" class="nav-link"> Contact </a> </div> <div class="nav-actions"> <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button> </div> </div> </nav> <!-- Mobile Menu --> <div class="mobile-menu" id="mobile-menu"> <a href="/" class="mobile-nav-link"> Home </a><a href="/skills/" class="mobile-nav-link"> Skills </a><a href="/blog/" class="mobile-nav-link active"> Blog </a><a href="https://scholar.google.com/citations?user=fK1cR-8AAAAJ&hl=en" class="mobile-nav-link" target="_blank" rel="noopener noreferrer"> Publications </a><a href="/contact/" class="mobile-nav-link"> Contact </a> </div> <!-- Main Content --> <main id="main-content">  <div class="blog-post"> <a href="/blog/" class="back-to-blogs"><i class="fas fa-arrow-left"></i> Back to Blog</a> <article> <header class="blog-header"> <h1>Graph-Based Knowledge Retrieval: Beyond Traditional RAG</h1> <div class="blog-meta"> <span><i class="fas fa-calendar"></i> October 25, 2023</span> <span><i class="fas fa-clock"></i> 15 min read</span> <span><i class="fas fa-user"></i> Karthik Raja Anandan</span> </div> <div class="blog-tags"> <span class="tag">Graph RAG</span><span class="tag">Knowledge Graphs</span><span class="tag">GNN</span><span class="tag">Advanced RAG</span> </div> </header> <div class="blog-content"> <p>Traditional Retrieval-Augmented Generation (RAG) systems have revolutionized how we approach knowledge-intensive tasks, but they have limitations when dealing with complex, interconnected information. Graph-based knowledge retrieval represents the next evolution, leveraging the power of knowledge graphs and graph neural networks to provide more sophisticated and contextually rich information retrieval.</p>
+<blockquote>
+<p><strong>Key Insight</strong></p>
+<p>Graph-based RAG systems can capture complex relationships and dependencies that traditional vector-based retrieval methods miss, enabling more accurate and contextually relevant information retrieval.</p>
+</blockquote>
+<h2 id="limitations-of-traditional-rag">Limitations of Traditional RAG</h2>
+<p>Traditional RAG systems, while powerful, face several limitations:</p>
+<ul>
+<li><strong>Loss of Structural Information:</strong> Vector embeddings flatten complex relationships</li>
+<li><strong>Limited Context Understanding:</strong> Difficulty capturing multi-hop reasoning</li>
+<li><strong>Scalability Issues:</strong> Performance degrades with large knowledge bases</li>
+<li><strong>Relationship Blindness:</strong> Cannot leverage explicit relationship information</li>
+</ul>
+<h2 id="graph-based-knowledge-retrieval">Graph-Based Knowledge Retrieval</h2>
+<h3 id="1-knowledge-graph-representation">1. Knowledge Graph Representation</h3>
+<p>Knowledge graphs represent information as a network of entities and relationships:</p>
+<p><strong>Knowledge Graph Example</strong></p>
+<ul>
+<li>Albert Einstein → Theory of Relativity → E=mc²</li>
+<li>Einstein —worked_at→ Princeton → Physics Department</li>
+</ul>
+<p>Entities and relationships form a rich, interconnected knowledge structure.</p>
+<h3 id="2-graph-neural-networks-gnns">2. Graph Neural Networks (GNNs)</h3>
+<p>GNNs are specifically designed to process graph-structured data:</p>
+<ul>
+<li><strong>Message Passing:</strong> Information flows between connected nodes</li>
+<li><strong>Aggregation:</strong> Combines information from neighboring nodes</li>
+<li><strong>Graph Convolution:</strong> Applies convolution operations on graph structure</li>
+</ul>
+<h2 id="architecture-of-graph-based-rag">Architecture of Graph-Based RAG</h2>
+<blockquote>
+<p><strong>System Architecture</strong></p>
+<p>Graph-based RAG systems combine the power of knowledge graphs with advanced neural network architectures to provide superior information retrieval capabilities.</p>
+</blockquote>
+<h3 id="1-knowledge-graph-construction">1. Knowledge Graph Construction</h3>
+<p>The first step involves building a comprehensive knowledge graph:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> KnowledgeGraphBuilder</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">    def</span><span style="color:#79B8FF"> __init__</span><span style="color:#E1E4E8">(self):</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.entities </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {}</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.relationships </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> []</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.graph </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> nx.Graph()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    def</span><span style="color:#B392F0"> add_entity</span><span style="color:#E1E4E8">(self, entity_id, entity_type, properties):</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.entities[entity_id] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            'type'</span><span style="color:#E1E4E8">: entity_type,</span></span>
+<span class="line"><span style="color:#9ECBFF">            'properties'</span><span style="color:#E1E4E8">: properties</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.graph.add_node(entity_id, </span><span style="color:#F97583">**</span><span style="color:#E1E4E8">properties)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    def</span><span style="color:#B392F0"> add_relationship</span><span style="color:#E1E4E8">(self, source, target, relationship_type):</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.relationships.append({</span></span>
+<span class="line"><span style="color:#9ECBFF">            'source'</span><span style="color:#E1E4E8">: source,</span></span>
+<span class="line"><span style="color:#9ECBFF">            'target'</span><span style="color:#E1E4E8">: target,</span></span>
+<span class="line"><span style="color:#9ECBFF">            'type'</span><span style="color:#E1E4E8">: relationship_type</span></span>
+<span class="line"><span style="color:#E1E4E8">        })</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.graph.add_edge(source, target, </span><span style="color:#FFAB70">type</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">relationship_type)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    def</span><span style="color:#B392F0"> build_graph</span><span style="color:#E1E4E8">(self):</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> self</span><span style="color:#E1E4E8">.graph</span></span></code></pre>
+<h3 id="2-graph-neural-network-encoder">2. Graph Neural Network Encoder</h3>
+<p>GNNs encode graph structure into meaningful representations:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> GraphEncoder</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">nn</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Module</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#F97583">    def</span><span style="color:#79B8FF"> __init__</span><span style="color:#E1E4E8">(self, input_dim, hidden_dim, output_dim):</span></span>
+<span class="line"><span style="color:#79B8FF">        super</span><span style="color:#E1E4E8">().</span><span style="color:#79B8FF">__init__</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.conv1 </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> GCNConv(input_dim, hidden_dim)</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.conv2 </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> GCNConv(hidden_dim, hidden_dim)</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.conv3 </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> GCNConv(hidden_dim, output_dim)</span></span>
+<span class="line"><span style="color:#79B8FF">        self</span><span style="color:#E1E4E8">.dropout </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> nn.Dropout(</span><span style="color:#79B8FF">0.2</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    def</span><span style="color:#B392F0"> forward</span><span style="color:#E1E4E8">(self, x, edge_index):</span></span>
+<span class="line"><span style="color:#E1E4E8">        x </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> F.relu(</span><span style="color:#79B8FF">self</span><span style="color:#E1E4E8">.conv1(x, edge_index))</span></span>
+<span class="line"><span style="color:#E1E4E8">        x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> self</span><span style="color:#E1E4E8">.dropout(x)</span></span>
+<span class="line"><span style="color:#E1E4E8">        x </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> F.relu(</span><span style="color:#79B8FF">self</span><span style="color:#E1E4E8">.conv2(x, edge_index))</span></span>
+<span class="line"><span style="color:#E1E4E8">        x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> self</span><span style="color:#E1E4E8">.dropout(x)</span></span>
+<span class="line"><span style="color:#E1E4E8">        x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> self</span><span style="color:#E1E4E8">.conv3(x, edge_index)</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> x</span></span></code></pre>
+<h3 id="3-graph-aware-retrieval">3. Graph-Aware Retrieval</h3>
+<p>Retrieval process leverages graph structure for better context understanding:</p>
+<ul>
+<li><strong>Subgraph Extraction:</strong> Identify relevant subgraphs for queries</li>
+<li><strong>Multi-hop Reasoning:</strong> Follow relationships across multiple steps</li>
+<li><strong>Path-based Retrieval:</strong> Use graph paths to find relevant information</li>
+</ul>
+<h2 id="advantages-of-graph-based-rag">Advantages of Graph-Based RAG</h2>
+<h3 id="1-rich-contextual-understanding">1. Rich Contextual Understanding</h3>
+<p>Graph-based systems can understand complex relationships and dependencies:</p>
+<ul>
+<li>Multi-hop reasoning across entities</li>
+<li>Explicit relationship modeling</li>
+<li>Hierarchical knowledge representation</li>
+</ul>
+<h3 id="2-improved-accuracy">2. Improved Accuracy</h3>
+<p>By leveraging structural information, graph-based RAG achieves higher accuracy:</p>
+<ul>
+<li>Better disambiguation of entities</li>
+<li>More precise relationship understanding</li>
+<li>Reduced hallucination through structural constraints</li>
+</ul>
+<h3 id="3-scalability-and-efficiency">3. Scalability and Efficiency</h3>
+<p>Graph-based approaches can handle large-scale knowledge bases efficiently:</p>
+<ul>
+<li>Indexed graph traversal</li>
+<li>Parallel processing of graph operations</li>
+<li>Incremental knowledge updates</li>
+</ul>
+<h2 id="implementation-challenges">Implementation Challenges</h2>
+<h3 id="1-knowledge-graph-construction-1">1. Knowledge Graph Construction</h3>
+<p>Building comprehensive knowledge graphs is resource-intensive:</p>
+<ul>
+<li>Entity extraction and linking</li>
+<li>Relationship identification</li>
+<li>Quality assurance and validation</li>
+</ul>
+<h3 id="2-graph-neural-network-training">2. Graph Neural Network Training</h3>
+<p>Training GNNs on large knowledge graphs presents challenges:</p>
+<ul>
+<li>Memory requirements for large graphs</li>
+<li>Training data generation</li>
+<li>Optimization strategies</li>
+</ul>
+<h3 id="3-integration-with-language-models">3. Integration with Language Models</h3>
+<p>Combining graph-based retrieval with language model generation:</p>
+<ul>
+<li>Graph-to-text conversion</li>
+<li>Multi-modal fusion strategies</li>
+<li>End-to-end training</li>
+</ul>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<h3 id="1-scientific-literature-analysis">1. Scientific Literature Analysis</h3>
+<p>Graph-based RAG can analyze complex scientific relationships:</p>
+<ul>
+<li>Citation networks and influence analysis</li>
+<li>Research trend identification</li>
+<li>Cross-disciplinary knowledge discovery</li>
+</ul>
+<h3 id="2-medical-knowledge-systems">2. Medical Knowledge Systems</h3>
+<p>Healthcare applications benefit from structured medical knowledge:</p>
+<ul>
+<li>Drug interaction networks</li>
+<li>Disease-symptom relationships</li>
+<li>Treatment pathway optimization</li>
+</ul>
+<h3 id="3-financial-analysis">3. Financial Analysis</h3>
+<p>Financial systems can leverage complex market relationships:</p>
+<ul>
+<li>Company relationship networks</li>
+<li>Market influence analysis</li>
+<li>Risk assessment and prediction</li>
+</ul>
+<h2 id="future-directions">Future Directions</h2>
+<p>The field of graph-based knowledge retrieval is rapidly evolving:</p>
+<ul>
+<li><strong>Dynamic Knowledge Graphs:</strong> Real-time graph updates and evolution</li>
+<li><strong>Multi-modal Graph Integration:</strong> Combining text, images, and structured data</li>
+<li><strong>Federated Graph Learning:</strong> Distributed graph processing across organizations</li>
+<li><strong>Explainable Graph Reasoning:</strong> Interpretable graph-based decision making</li>
+<li><strong>Scalable Graph Architectures:</strong> Efficient processing of billion-scale graphs</li>
+</ul>
+<blockquote>
+<p><strong>Conclusion</strong></p>
+<p>Graph-based knowledge retrieval represents a significant advancement over traditional RAG systems, offering richer contextual understanding and more accurate information retrieval. As the technology matures, we can expect to see increasingly sophisticated applications that leverage the full power of structured knowledge representation.</p>
+</blockquote>
+<h2 id="resources-and-further-reading">Resources and Further Reading</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2005.11401">Graph Neural Networks: A Review of Methods and Applications</a></li>
+<li><a href="https://arxiv.org/abs/2004.13637">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a></li>
+<li><a href="https://arxiv.org/abs/2103.10385">Graph Attention Networks</a></li>
+<li><a href="https://github.com/pyg-team/pytorch_geometric">PyTorch Geometric Library</a></li>
+</ul> </div> </article> </div>  </main> <!-- Footer --> <footer class="footer"> <div class="container"> <div class="footer-inner"> <div class="footer-left"> <p class="footer-name">Karthik Raja Anandan</p> <p class="footer-sub">AI/Software Engineer &middot; Pleasanton, CA</p> </div> <div class="footer-links"> <a href="/">Overview</a> <a href="/blog/">Blog</a> <a href="/assets/karthik_F25.pdf" download>Resume</a> <a href="/contact/">Contact</a> </div> <div class="footer-social"> <a href="https://www.linkedin.com/in/kitrakrev" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/kitrakrev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a> <a href="mailto:kanandan@ucsc.edu" aria-label="Email"><i class="fas fa-envelope"></i></a> </div> </div> <div class="footer-bottom"> <p>&copy; 2026 Karthik Raja Anandan</p> </div> </div> </footer> <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var menuToggle = document.getElementById('menu-toggle');
+        var mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle) {
+          menuToggle.addEventListener('click', function () {
+            mobileMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+          });
+        }
+
+        document.addEventListener('click', function (e) {
+          if (
+            mobileMenu &&
+            mobileMenu.classList.contains('active') &&
+            !mobileMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)
+          ) {
+            mobileMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+          }
+        });
+      });
+    </script> <div id="optin" class="optin" role="dialog" aria-labelledby="optin-h" aria-modal="false" hidden data-astro-cid-o5r437bz><form id="optin-form" novalidate data-astro-cid-o5r437bz><button type="button" class="optin-x" data-dismiss aria-label="Close" data-astro-cid-o5r437bz>&times;</button><h3 id="optin-h" data-astro-cid-o5r437bz>Hiring for ML / inference roles?</h3><p data-astro-cid-o5r437bz>Leave your email and Karthik will reach out.</p><label for="optin-email" data-astro-cid-o5r437bz>Email <span data-astro-cid-o5r437bz>(optional)</span></label><input id="optin-email" type="email" autocomplete="email" placeholder="you@company.com" data-astro-cid-o5r437bz><p id="optin-err" class="optin-err" role="alert" hidden data-astro-cid-o5r437bz>Please enter a valid email.</p><label class="optin-check" data-astro-cid-o5r437bz><input id="optin-ok" type="checkbox" data-astro-cid-o5r437bz> I'm hiring or know a role that fits</label><div class="optin-btns" data-astro-cid-o5r437bz><button type="submit" id="optin-submit" class="btn btn-primary" disabled data-astro-cid-o5r437bz>Submit</button><button type="button" class="btn btn-ghost" data-dismiss data-astro-cid-o5r437bz>No thanks</button></div></form><p id="optin-thanks" class="optin-thanks" hidden data-astro-cid-o5r437bz>Thanks! Karthik will be in touch.</p></div><script>
+(function () {
+  var ph = function () { return window.posthog; };
+  function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  function ss(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
+
+  // Named click events (autocapture also records raw clicks)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (/\.pdf($|\?)/i.test(href) || /resume/i.test(href)) ph().capture('resume_click', { href: href });
+    else if (/^mailto:|github\.com|linkedin\.com|(^|\/\/)(www\.)?(x|twitter)\.com/i.test(href)) ph().capture('outbound_click', { href: href });
+  }, true);
+
+  // blog_read_complete: once per page view on /blog/<slug> or /projects/<slug>
+  var path = location.pathname;
+  if (/^\/(blog|projects)\/[^/]+/.test(path)) {
+    var done = false;
+    var onScroll = function () {
+      var d = document.documentElement;
+      if (done || (window.scrollY + window.innerHeight) / d.scrollHeight < 0.9) return;
+      done = true; window.removeEventListener('scroll', onScroll);
+      ph().capture('blog_read_complete', { path: path });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // Opt-in card
+  var DONE = 'optin_done', DISMISS = 'optin_dismissed_at', TIME = 'optin_active_ms', NEED = 180000;
+  var test = /[?&]optin_test=1/.test(location.search);
+  var SEEN = 'optin_seen';
+  if (!test && (ls(DONE) || ls(DISMISS) || ls(SEEN))) return;
+
+  var card = document.getElementById('optin'), form = document.getElementById('optin-form');
+  var email = document.getElementById('optin-email'), ok = document.getElementById('optin-ok');
+  var submit = document.getElementById('optin-submit'), err = document.getElementById('optin-err');
+  var lastFocus;
+
+  function show() {
+    if (!card.hidden) return;
+    lastFocus = document.activeElement;
+    if (!test) ls(SEEN, '1');
+    card.hidden = false; email.focus({ preventScroll: true });
+  }
+  function close() { card.hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  function dismiss() { ls(DISMISS, String(Date.now())); ph().capture('hire_optin_dismissed', { page: path }); close(); }
+
+  ok.addEventListener('change', function () { submit.disabled = !ok.checked; });
+  card.querySelectorAll('[data-dismiss]').forEach(function (b) { b.addEventListener('click', dismiss); });
+  card.addEventListener('keydown', function (e) { if (e.key === 'Escape') dismiss(); });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = email.value.trim();
+    if (v && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { err.hidden = false; email.focus(); return; }
+    err.hidden = true;
+    var props = { interested: true, page: path };
+    if (v) { props.email = v; ph().identify(v, { email: v }); }
+    ph().capture('hire_interest', props);
+    ls(DONE, '1');
+    form.hidden = true; document.getElementById('optin-thanks').hidden = false;
+    setTimeout(close, 3000);
+  });
+
+  if (test) { setTimeout(show, 5000); return; }
+
+  // Accumulate visible time across pages in this session
+  var acc = Number(ss(TIME) || 0), since = document.visibilityState === 'visible' ? Date.now() : 0;
+  function flush() { if (since) { acc += Date.now() - since; since = document.visibilityState === 'visible' ? Date.now() : 0; ss(TIME, String(acc)); } }
+  document.addEventListener('visibilitychange', function () { flush(); if (!since && document.visibilityState === 'visible') since = Date.now(); });
+  window.addEventListener('pagehide', flush);
+  var timer = setInterval(function () { flush(); if (acc >= NEED) { clearInterval(timer); show(); } }, 5000);
+})();
+</script> </body></html>
