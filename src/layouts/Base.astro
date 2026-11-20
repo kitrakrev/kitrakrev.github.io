@@ -1,6 +1,7 @@
 ---
 import '../styles/styles.css';
 import data from '../data/data.json';
+import Analytics from '../components/Analytics.astro';
 
 interface Props {
   title?: string;
@@ -73,6 +74,8 @@ const navLinks = [
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/profile.jpg" />
+
+    <Analytics />
   </head>
 
   <body>
@@ -182,5 +185,6 @@ const navLinks = [
         });
       });
     </script>
+    <Analytics part="body" />
   </body>
 </html>
