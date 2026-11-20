@@ -68,8 +68,8 @@ const host = import.meta.env.PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com';
   // Opt-in card
   var DONE = 'optin_done', DISMISS = 'optin_dismissed_at', TIME = 'optin_active_ms', NEED = 180000;
   var test = /[?&]optin_test=1/.test(location.search);
-  var snoozed = Number(ls(DISMISS) || 0) > Date.now() - 30 * 864e5;
-  if (!test && (ls(DONE) || snoozed)) return;
+  var SEEN = 'optin_seen';
+  if (!test && (ls(DONE) || ls(DISMISS) || ls(SEEN))) return;
 
   var card = document.getElementById('optin'), form = document.getElementById('optin-form');
   var email = document.getElementById('optin-email'), ok = document.getElementById('optin-ok');
@@ -79,6 +79,7 @@ const host = import.meta.env.PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com';
   function show() {
     if (!card.hidden) return;
     lastFocus = document.activeElement;
+    if (!test) ls(SEEN, '1');
     card.hidden = false; email.focus({ preventScroll: true });
   }
   function close() { card.hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
